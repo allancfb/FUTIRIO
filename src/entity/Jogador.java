@@ -4,8 +4,6 @@ import java.util.Random;
 
 /**
  * <p>Classe que gera objetos que representam jogadores de futebol.<p>
- * 
- * @author Allan
  */
 public class Jogador {
 
@@ -40,7 +38,7 @@ public class Jogador {
 	/**
 	 * <p>Construtor recebendo um {@link Nome} como parâmetro.</p>
 	 * 
-	 * <p>Instancia um novo <code>Jogador</code> e o <code>nome</code> é atribuíbo ao atributo <code>nome</code>.</p>
+	 * <p>Instancia um novo <code>Jogador</code> e o <code>nome</code> é atribuíbo ao <code>nome</code>.</p>
 	 * 
 	 * @param nome o nome do jogador
 	 */
