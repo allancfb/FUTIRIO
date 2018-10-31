@@ -22,10 +22,12 @@ public class Jogador {
 	protected Posicao posicao;
 	protected Posicao posicaoRecomendada;
 	
+	// Construtores
+	
 	/**
 	 * <p>Construtor sem parâmetros.</p>
 	 * 
-	 * <p>Instancia um novo jogador e gera o novo {@link Nome} aleatório para ele.</p>
+	 * <p>Instancia um novo <code>Jogador<code> e gera o novo {@link Nome} aleatório para ele.</p>
 	 */
 	Jogador() {
 		Random random = new Random();
@@ -38,13 +40,15 @@ public class Jogador {
 	/**
 	 * <p>Construtor recebendo um {@link Nome} como parâmetro.</p>
 	 * 
-	 * <p>Esse nome é atribuíbo ao atributo <code>nome</code>.</p>
+	 * <p>Instancia um novo <code>Jogador</code> e o <code>nome</code> é atribuíbo ao atributo <code>nome</code>.</p>
 	 * 
-	 * @param nome o nome do jogador a ser instanciado
+	 * @param nome o nome do jogador
 	 */
 	Jogador(Nome nome) {
 		this.nome = nome;
 	}
+	
+	// Getters and Setters
 	
 	/**
 	 * Retorna o objeto da classe {@link Nome} do jogador.
@@ -150,7 +154,7 @@ public class Jogador {
 	/**
 	 * <p>Retorna um objeto do Enum {@link Posicao} de recomendação para o jogador.</p>
 	 * 
-	 * <p>Essa recomendação é feita através de médias ponderadas e a posição.<p>
+	 * <p>Essa recomendação é feita através de médias ponderadas das habilidades e a <code>posicao</code> do jogador.<p>
 	 * 
 	 * @return a posição recomendada
 	 */
@@ -158,71 +162,157 @@ public class Jogador {
 		return posicaoRecomendada;
 	}
 	
+	/**
+	 * Retorna um <code>boolean</code> contendo se o jogador é capitão ou não.
+	 * 
+	 * @return <code>true</code> se for capitão, <code>false</code> se não for
+	 */
+	public boolean isCapitao() {
+		return isCapitao;
+	}
+	
+	/**
+	 * Atribui um {@link Nome} ao <code>nome</code> do jogador.
+	 * 
+	 * @param nome o nome do jogador
+	 */
 	public void setNome(Nome nome) {
 		this.nome = nome;
 	}
 	
+	/**
+	 * Atribui um {@link Time} ao <code>time</code> do jogador.
+	 * 
+	 * @param time o time do jogador
+	 */
 	public void setTime(Time time) {
 		this.time = time;
 	}
 
+	/**
+	 * Atribui um <code>double</code> salário ao <code>salario</code> do jogador.
+	 * 
+	 * @param salario o salário do jogador
+	 */
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
 
+	/**
+	 * <p>Atribui um Enum {@link Posicao} à <code>posicao<code> do jogador.</p>
+	 * 
+	 * <p>Depois de atribuir, atualiza a <code>habilidade</code> e a <code>posicaoRecomendada</code> do jogador.</p>
+	 * 
+	 * @param posicao a posição do jogador
+	 */
 	public void setPosicao(Posicao posicao) {
 		this.posicao = posicao;
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
 
+	/**
+	 * <p>Atribui um <code>int</code> chute à habilidade <code>chute</code> do jogador.</p>
+	 * 
+	 * <p>Depois de atribuir, atualiza a <code>habilidade</code> e a <code>posicaoRecomendada</code> do jogador.</p>
+	 * 
+	 * @param chute a habilidade chute do jogador
+	 */
 	public void setChute(int chute) {
 		this.chute = chute;
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
 
+	/**
+	 * <p>Atribui um <code>int</code> drible à habilidade <code>drible</code> do jogador.</p>
+	 * 
+	 * <p>Depois de atribuir, atualiza a <code>habilidade</code> e a <code>posicaoRecomendada</code> do jogador.</p>
+	 * 
+	 * @param drible a habilidade drible do jogador
+	 */
 	public void setDrible(int drible) {
 		this.drible = drible;
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
 
+	/**
+	 * <p>Atribui um <code>int</code> passe à habilidade <code>passe</code> do jogador.</p>
+	 * 
+	 * <p>Depois de atribuir, atualiza a <code>habilidade</code> e a <code>posicaoRecomendada</code> do jogador.</p>
+	 * 
+	 * @param passe a habilidade passe do jogador
+	 */
 	public void setPasse(int passe) {
 		this.passe = passe;
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
 
+	/**
+	 * <p>Atribui um <code>int</code> desarme à habilidade <code>desarme</code> do jogador.</p>
+	 * 
+	 * <p>Depois de atribuir, atualiza a <code>habilidade</code> e a <code>posicaoRecomendada</code> do jogador.</p>
+	 * 
+	 * @param desarme a habilidade desarme do jogador
+	 */
 	public void setDesarme(int desarme) {
 		this.desarme = desarme;
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
 
+	/**
+	 * <p>Atribui um <code>int</code> defesa à habilidade <code>defesa</code> do jogador.</p>
+	 * 
+	 * <p>Depois de atribuir, atualiza a <code>habilidade</code> e a <code>posicaoRecomendada</code> do jogador.</p>
+	 * 
+	 * @param defesa a habilidade defesa do jogador
+	 */
 	public void setDefesa(int defesa) {
 		this.defesa = defesa;
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
 
+	/**
+	 * Atribui um <code>boolean<code> em que <code>true</code> é capitão e <code>false</code> não é.
+	 * 
+	 * @param isCapitao <code>boolean</code> contendo a informação se o jogador é capitão ou não
+	 */
 	public void setIsCapitao(boolean isCapitao) {
 		this.isCapitao = isCapitao;
 	}
 
 	// Métodos
-	public boolean isCapitao() {
-		return isCapitao;
-	}
 	
+	/**
+	 * <p>Atualiza a <code>habilidade</code> do jogador.</p>
+	 * 
+	 * <p>Essa atualização é feita através da função privada <code>calcularHabilidade()</code>.</p>
+	 */
 	protected void atualizarHabilidade() {
 		habilidade = calcularHabilidade(posicao);
 	}
 	
+	/**
+	 * <p>Atualiza a <code>posicaoRecomendada</code> do jogador.</p>
+	 * 
+	 * <p>Essa atualização é feita através da função privada <code>calcularPosicaoRecomendada()</code>.</p>
+	 */
 	protected void atualizarPosicaoRecomendada() {
 		posicaoRecomendada = calcularPosicaoRecomendada();
 	}
 	
+	/**
+	 * <p>Calcula a habilidade do jogador.</p>
+	 * 
+	 * <p>Esse cálculo é feito com uma média ponderada das habilidades que varia de acordo com a <code>posicao</code> do jogador.</p>
+	 * 
+	 * @param posicao a posição do jogador
+	 * @return a habilidade do jogador
+	 */
 	private double calcularHabilidade(Posicao posicao) {
 		switch (posicao) {
 			case GOL:
@@ -246,9 +336,33 @@ public class Jogador {
 		}
 	}
 	
+	/**
+	 * <p>Retorna a posição recomendada do jogador.</p>
+	 * 
+	 * <p>Essa recomendação é feita através de médias ponderadas das habilidades e a <code>posicao</code> do jogador.</p>
+	 * 
+	 * @return a posição recomendada do jogador
+	 */
 	private Posicao calcularPosicaoRecomendada() {
-		// TODO: estabelece média ponderada
-		return Posicao.ATAQUE;
+		// TODO: estabelecer média ponderada
+		double mediaGOL = 0;
+		double mediaDEFESA = 0;
+		double mediaMEIA = 0;
+		double mediaATAQUE = 0;
+		
+		mediaGOL = (1 * defesa) + (1 * desarme) + (1 * passe) + (1 * drible) + (1 * chute);
+		mediaDEFESA = (1 * defesa) + (1 * desarme) + (1 * passe) + (1 * drible) + (1 * chute);
+		mediaMEIA = (1 * defesa) + (1 * desarme) + (1 * passe) + (1 * drible) + (1 * chute);
+		mediaATAQUE = (1 * defesa) + (1 * desarme) + (1 * passe) + (1 * drible) + (1 * chute);
+		
+		if (mediaGOL >= mediaDEFESA && mediaGOL >= mediaMEIA && mediaGOL >= mediaATAQUE)
+			return Posicao.GOL;
+		else if (mediaDEFESA >= mediaGOL && mediaDEFESA >= mediaMEIA && mediaDEFESA >= mediaATAQUE)
+			return Posicao.DEFESA;
+		else if (mediaMEIA >= mediaGOL && mediaMEIA >= mediaDEFESA && mediaMEIA >= mediaATAQUE)
+			return Posicao.MEIA;
+		else
+			return Posicao.ATAQUE;
 	}
 	
 }

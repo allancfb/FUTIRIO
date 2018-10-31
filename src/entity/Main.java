@@ -7,7 +7,7 @@ public class Main {
 		Time t = new Time("Bangu");
 		
 		System.out.println(t.getJogadores().get(0).getNomeTodo());
-
+		
 	}
 
 }
