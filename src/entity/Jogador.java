@@ -51,7 +51,7 @@ public class Jogador {
 	// Getters and Setters
 	
 	/**
-	 * Retorna o objeto da classe {@link Nome} do jogador.
+	 * <p>Retorna o objeto da classe {@link Nome} do jogador.</p>
 	 * 
 	 * @return o nome do jogador
 	 */
@@ -60,7 +60,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna a {@link String} contendo o <code>nome</code> e <code>sobrenome</code> do jogador.
+	 * <p>Retorna a {@link String} contendo o <code>nome</code> e <code>sobrenome</code> do jogador.</p>
 	 * 
 	 * @return o nome todo do jogador.
 	 */
@@ -69,7 +69,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna o objeto da classe {@link Time} que o jogador pertence.
+	 * <p>Retorna o objeto da classe {@link Time} que o jogador pertence.</p>
 	 * 
 	 * @return o time que o jogador está está no momento.
 	 */
@@ -78,7 +78,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna um <code>double</code> que contém o <code>salario</code> atual do jogador.
+	 * <p>Retorna um <code>double</code> que contém o <code>salario</code> atual do jogador.</p>
 	 * 
 	 * @return o salário atual do jogador.
 	 */
@@ -87,7 +87,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna um objeto do Enum {@link Posicao} contendo a <code>posicao</code> atual do jogador.
+	 * <p>Retorna um objeto do Enum {@link Posicao} contendo a <code>posicao</code> atual do jogador.</p>
 	 * 
 	 * @return a posição atual do jogador
 	 */
@@ -96,7 +96,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna um <code>int</code> que contém a habilidade do jogador em <code>chute</code>.
+	 * <p>Retorna um <code>int</code> que contém a habilidade do jogador em <code>chute</code>.</p>
 	 * 
 	 * @return a habilidade em chute do jogador
 	 */
@@ -105,7 +105,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna um <code>int</code> que contém a habilidade do jogador em <code>drible</code>.
+	 * <p>Retorna um <code>int</code> que contém a habilidade do jogador em <code>drible</code>.</p>
 	 * 
 	 * @return a habilidade em drible do jogador
 	 */
@@ -114,7 +114,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna um <code>int</code> que contém a habilidade do jogador em <code>passe</code>.
+	 * <p>Retorna um <code>int</code> que contém a habilidade do jogador em <code>passe</code>.</p>
 	 * 
 	 * @return a habilidade em passe do jogador
 	 */
@@ -123,7 +123,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna um <code>int</code> que contém a habilidade do jogador em <code>defesa</code>.
+	 * <p>Retorna um <code>int</code> que contém a habilidade do jogador em <code>defesa</code>.</p>
 	 * 
 	 * @return a habilidade em defesa do jogador
 	 */
@@ -132,7 +132,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna um <code>int</code> que contém a habilidade do jogador em <code>desarme</code>.
+	 * <p>Retorna um <code>int</code> que contém a habilidade do jogador em <code>desarme</code>.</p>
 	 * 
 	 * @return a habilidade em desarme do jogador
 	 */
@@ -163,7 +163,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Retorna um <code>boolean</code> contendo se o jogador é capitão ou não.
+	 * <p>Retorna um <code>boolean</code> contendo se o jogador é capitão ou não.</p>
 	 * 
 	 * @return <code>true</code> se for capitão, <code>false</code> se não for
 	 */
@@ -172,7 +172,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Atribui um {@link Nome} ao <code>nome</code> do jogador.
+	 * <p>Atribui um {@link Nome} ao <code>nome</code> do jogador.</p>
 	 * 
 	 * @param nome o nome do jogador
 	 */
@@ -181,7 +181,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * Atribui um {@link Time} ao <code>time</code> do jogador.
+	 * <p>Atribui um {@link Time} ao <code>time</code> do jogador.</p>
 	 * 
 	 * @param time o time do jogador
 	 */
@@ -190,7 +190,7 @@ public class Jogador {
 	}
 
 	/**
-	 * Atribui um <code>double</code> salário ao <code>salario</code> do jogador.
+	 * <p>Atribui um <code>double</code> salário ao <code>salario</code> do jogador.</p>
 	 * 
 	 * @param salario o salário do jogador
 	 */
@@ -277,7 +277,7 @@ public class Jogador {
 	}
 
 	/**
-	 * Atribui um <code>boolean<code> em que <code>true</code> é capitão e <code>false</code> não é.
+	 * <p>Atribui um <code>boolean<code> em que <code>true</code> é capitão e <code>false</code> não é.</p>
 	 * 
 	 * @param isCapitao <code>boolean</code> contendo a informação se o jogador é capitão ou não
 	 */
