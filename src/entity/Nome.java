@@ -96,6 +96,8 @@ public class Nome {
 		primeiroNome = primeiroNome.trim();
 		
 		this.primeiroNome = primeiroNome.substring(0, 1).toUpperCase() + primeiroNome.substring(1).toLowerCase();
+		
+		atualizarNomeTodo();
 	}
 
 	public String getSobrenome() {
@@ -106,6 +108,8 @@ public class Nome {
 		sobrenome = sobrenome.trim();
 		
 		this.sobrenome = sobrenome.substring(0, 1).toUpperCase() + sobrenome.substring(1).toLowerCase();
+		
+		atualizarNomeTodo();
 	}
 
 	public String getNomeTodo() {
@@ -118,6 +122,13 @@ public class Nome {
 		
 		this.primeiroNome = primeiroNome.substring(0, 1).toUpperCase() + primeiroNome.substring(0).toLowerCase();
 		this.sobrenome = sobrenome.substring(0, 1).toUpperCase() + sobrenome.substring(0).toLowerCase();
+		
+		atualizarNomeTodo();
 	}
 
+	// Métodos
+	private void atualizarNomeTodo() {
+		nomeTodo = primeiroNome + " " + sobrenome;
+	}
+	
 }

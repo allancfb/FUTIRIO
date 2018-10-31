@@ -35,6 +35,10 @@ public class Jogador {
 		return nome;
 	}
 	
+	public String getNomeTodo() {
+		return nome.getNomeTodo();
+	}
+	
 	public Time getTime() {
 		return time;
 	}
