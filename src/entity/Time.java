@@ -12,6 +12,7 @@ public class Time {
 	private ArrayList<Jogador> jogadores;
 	
 	// Construtores
+	
 	Time() {
 		Random random = new Random();
 		String nomesTimes[] = new String[1000];
@@ -33,6 +34,8 @@ public class Time {
 			for (int i = 0; i < 20; i++) {
 				jogadores.add(new Jogador());
 			}
+			
+			nomesTimesScanner.close();
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
@@ -51,6 +54,7 @@ public class Time {
 	}
 
 	// Getters and Setters
+	
 	public String getNome() {
 		return nome;
 	}
