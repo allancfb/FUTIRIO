@@ -11,18 +11,24 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class Inicio extends Application {
+public class Main extends Application {
+	
+	public Stage window;
+	public Scene creditos, jogar;
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
+			window = primaryStage;
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
 
+			//Criando cenas
+			Scene inicio = new Scene(root);
 			// configurando os estilos das aplicações
-			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			inicio.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
 			primaryStage.setTitle("FUTIRIO");
-			primaryStage.setScene(scene);
+			primaryStage.setScene(inicio);
 
 			// mostrando a cena
 			primaryStage.show();
