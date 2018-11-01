@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="387.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.mainController">
+   <children>
+      <ImageView fitHeight="399.0" fitWidth="619.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@campo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="203.0" fitWidth="210.0" layoutX="199.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo-sem-fundo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="246.0" layoutY="105.0" />
+      <AnchorPane layoutX="200.0" layoutY="209.0" prefHeight="176.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="jogar" layoutX="75.0" layoutY="38.0" mnemonicParsing="false" onAction="#jogar" text="Jogar" />
+            <Button fx:id="creditos" layoutX="70.0" layoutY="88.0" mnemonicParsing="false" onAction="#creditos" text="Créditos" />
+            <Button fx:id="sair" layoutX="79.0" layoutY="134.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
