@@ -1,10 +1,15 @@
 package entity;
 
+/**
+ * <p>Classe que gera objetos que representam jogadores estrela.</p>
+ */
 public class JogadorEstrela extends Jogador {
 	
 	private double habMinDoTimePCompra;
 	
 	// Construtores
+	
+	// TODO: comentar
 	JogadorEstrela() {
 		super();
 		chute += 50;
@@ -16,7 +21,8 @@ public class JogadorEstrela extends Jogador {
 		atualizarPosicaoRecomendada();
 	}
 	
-	JogadorEstrela(Nome nome) {
+	// TODO: comentar
+	JogadorEstrela(String nome) {
 		super(nome);
 		chute += 50;
 		drible += 50;
@@ -26,9 +32,9 @@ public class JogadorEstrela extends Jogador {
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
-
 	
 	// Getters and Setters
+	
 	public double getHabMinDoTimePCompra() {
 		return habMinDoTimePCompra;
 	}
@@ -75,6 +81,7 @@ public class JogadorEstrela extends Jogador {
 	}
 	
 	// Métodos
+	
 	public void atualizarHabMinDoTimePCompra() {
 		// TODO: estabelecer critérios para habilidade mínima para o time comprar
 	}

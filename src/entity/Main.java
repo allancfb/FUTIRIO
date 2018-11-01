@@ -6,7 +6,10 @@ public class Main {
 
 		Time t = new Time("Bangu");
 		
-		System.out.println(t.getJogadores().get(0).getNomeTodo());
+		for (int i = 0; i < t.getJogadores().size(); i++) {
+			System.out.println(t.getJogadores().get(i).getNome());
+			System.out.println(t.getJogadores().get(i).getChute());
+		}
 		
 	}
 
