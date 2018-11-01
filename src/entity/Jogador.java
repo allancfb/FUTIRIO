@@ -48,6 +48,8 @@ public class Jogador {
 	 */
 	Jogador(String nome) {
 		this.nome = nome;
+		
+		// Gerar atributos
 	}
 	
 	// Getters and Setters

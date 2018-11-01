@@ -19,7 +19,7 @@ public class Time {
 		
 		try {
 			// Lê o arquivo
-			File nomesTimesFile = new File("src/unifoot/nomesTimes.txt");
+			File nomesTimesFile = new File("src/entity/nomesTimes.txt");
 			Scanner nomesTimesScanner = new Scanner(nomesTimesFile);
 			jogadores = new ArrayList<Jogador>();
 			
