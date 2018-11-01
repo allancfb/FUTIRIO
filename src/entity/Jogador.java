@@ -1,21 +1,23 @@
 package entity;
 
+import java.io.File;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * <p>Classe que gera objetos que representam jogadores de futebol.<p>
  */
 public class Jogador {
 
-	private Nome nome;
+	private String nome;
 	private Time time;
-	private double salario;
 	protected int chute;
 	protected int drible;
 	protected int passe;
 	protected int desarme;
 	protected int defesa;
 	private double habilidade;
+	private double salario;
 	private boolean isCapitao;
 	protected Posicao posicao;
 	protected Posicao posicaoRecomendada;
@@ -25,45 +27,38 @@ public class Jogador {
 	/**
 	 * <p>Construtor sem parâmetros.</p>
 	 * 
-	 * <p>Instancia um novo <code>Jogador<code> e gera o novo {@link Nome} aleatório para ele.</p>
+	 * <p>Instancia um novo <code>Jogador<code> e gera o novo <code>nome</code> aleatório para ele.</p>
 	 */
 	Jogador() {
 		Random random = new Random();
 		
 		random.nextInt(4);
 		
-		nome = new Nome();
+		gerarNome();
+		
+		// TODO: Gerar atributos
 	}
 	
 	/**
-	 * <p>Construtor recebendo um {@link Nome} como parâmetro.</p>
+	 * <p>Construtor recebendo um <code>nome</code> como parâmetro.</p>
 	 * 
 	 * <p>Instancia um novo <code>Jogador</code> e o <code>nome</code> é atribuíbo ao <code>nome</code>.</p>
 	 * 
 	 * @param nome o nome do jogador
 	 */
-	Jogador(Nome nome) {
+	Jogador(String nome) {
 		this.nome = nome;
 	}
 	
 	// Getters and Setters
 	
 	/**
-	 * <p>Retorna o objeto da classe {@link Nome} do jogador.</p>
+	 * <p>Retorna um {@link String} que contém o <code>nome</code> do jogador.</p>
 	 * 
 	 * @return o nome do jogador
 	 */
-	public Nome getNome() {
+	public String getNome() {
 		return nome;
-	}
-	
-	/**
-	 * <p>Retorna a {@link String} contendo o <code>nome</code> e <code>sobrenome</code> do jogador.</p>
-	 * 
-	 * @return o nome todo do jogador.
-	 */
-	public String getNomeTodo() {
-		return nome.getNomeTodo();
 	}
 	
 	/**
@@ -174,7 +169,7 @@ public class Jogador {
 	 * 
 	 * @param nome o nome do jogador
 	 */
-	public void setNome(Nome nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
@@ -361,6 +356,53 @@ public class Jogador {
 			return Posicao.MEIA;
 		else
 			return Posicao.ATAQUE;
+	}
+	
+	// TODO: comentar
+	private String gerarNome() {
+		Random random = new Random();
+		String nomes[] = new String [468];
+		
+		// Tenta ler o arquivo
+		// Se conseguir, sorteia dentre os disponíveis
+		try {
+			File nomesFile = new File("src/entity/nomesJogadores.txt");
+			Scanner nomesScanner = new Scanner(nomesFile);
+			
+			// Coloca os nomes do arquivo no array
+			for (int i = 0; i < nomes.length; i++) {
+				nomes[i] = nomesScanner.nextLine();
+			}
+			
+			// Sorteia um nome e sobrenome e coloca no atributo do objeto
+			nome = nomes[random.nextInt(nomes.length)];
+			
+			nomesScanner.close();
+		}
+		catch(Exception e) {
+			String vogal = "";
+			String consoante = "";
+			String silaba = "";
+			
+			e.printStackTrace();
+			
+			// Cria um array das vogais e das consoantes
+			String vogais[] = { "a", "e", "i", "o", "u" };
+			String consoantes[] = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "w", "x","y", "z" };
+			
+			// Gera o nome juntado 3 silabas formadas por consoante + vogal
+			for (int i = 0; i < 3; i++) {
+				vogal = vogais[random.nextInt(5)];
+				consoante = consoantes[random.nextInt(20)];
+				silaba = consoante + vogal;
+				nome += silaba;
+			}
+			
+			// Deixa a primeira letra maiuscula e as restantes minusculas
+			nome = nome.substring(0, 1).toUpperCase() + nome.substring(1).toLowerCase();
+		}
+		
+		return nome;
 	}
 	
 }
