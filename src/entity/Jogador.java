@@ -35,7 +35,7 @@ public class Jogador {
 	Jogador(Posicao posicao) {
 		Random random = new Random();
 		
-		random.nextInt(4);
+		this.posicao = posicao;
 		
 		gerarNome();
 		
@@ -90,6 +90,7 @@ public class Jogador {
 		Random random = new Random();
 		
 		this.nome = nome;
+		this.posicao = posicao;
 		
 		// TODO: Gerar atributos
 		switch (posicao) {
