@@ -31,8 +31,17 @@ public class Time {
 			nome = nomesTimes[random.nextInt(nomesTimes.length)];
 			
 			// cria jogadores
-			for (int i = 0; i < 20; i++) {
-				jogadores.add(new Jogador());
+			for (int i = 0; i < 2; i++) {
+				jogadores.add(new Jogador(Posicao.GOL));
+			}
+			for (int i = 0; i < 8; i++) {
+				jogadores.add(new Jogador(Posicao.DEFESA));
+			}
+			for (int i = 0; i < 8; i++) {
+				jogadores.add(new Jogador(Posicao.MEIA));
+			}
+			for (int i = 0; i < 4; i++) {
+				jogadores.add(new Jogador(Posicao.ATAQUE));
 			}
 			
 			nomesTimesScanner.close();
@@ -48,8 +57,17 @@ public class Time {
 		this.nome = nome;
 		
 		// cria jogadores
-		for (int i = 0; i < 20; i++) {
-			jogadores.add(new Jogador());
+		for (int i = 0; i < 2; i++) {
+			jogadores.add(new Jogador(Posicao.GOL));
+		}
+		for (int i = 0; i < 8; i++) {
+			jogadores.add(new Jogador(Posicao.DEFESA));
+		}
+		for (int i = 0; i < 8; i++) {
+			jogadores.add(new Jogador(Posicao.MEIA));
+		}
+		for (int i = 0; i < 4; i++) {
+			jogadores.add(new Jogador(Posicao.ATAQUE));
 		}
 	}
 

@@ -2,6 +2,16 @@ package entity;
 
 public enum Posicao {
 	
-	GOL, DEFESA, MEIA, ATAQUE;
+	GOL("Gol"), DEFESA("Defesa"), MEIA("Meia"), ATAQUE("Ataque");
+	
+	private String nome;
+	
+	Posicao(String nome) {
+		this.nome = nome;
+	}
+
+	public String getNome() {
+		return nome;
+	}
 	
 }

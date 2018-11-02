@@ -10,8 +10,8 @@ public class JogadorEstrela extends Jogador {
 	// Construtores
 	
 	// TODO: comentar
-	JogadorEstrela() {
-		super();
+	JogadorEstrela(Posicao posicao) {
+		super(posicao);
 		chute += 50;
 		drible += 50;
 		passe += 50;
@@ -22,8 +22,8 @@ public class JogadorEstrela extends Jogador {
 	}
 	
 	// TODO: comentar
-	JogadorEstrela(String nome) {
-		super(nome);
+	JogadorEstrela(String nome, Posicao posicao) {
+		super(nome, posicao);
 		chute += 50;
 		drible += 50;
 		passe += 50;

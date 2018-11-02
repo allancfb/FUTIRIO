@@ -24,12 +24,15 @@ public class Jogador {
 	
 	// Construtores
 	
+	
 	/**
-	 * <p>Construtor sem parâmetros.</p>
+	 * <p>Construtor recebendo um objeto do Enum {@link Posicao}.</p>
 	 * 
-	 * <p>Instancia um novo <code>Jogador<code> e gera o novo <code>nome</code> aleatório para ele.</p>
+	 * <p>Instancia um jogador, atribui a <code>posicao</code> enviada como parâmetro à <code>posicao</code> do jogador e gera um nome aleatório para ele.</p>
+	 * 
+	 * @param posicao a posição do jogador
 	 */
-	Jogador() {
+	Jogador(Posicao posicao) {
 		Random random = new Random();
 		
 		random.nextInt(4);
@@ -37,19 +40,94 @@ public class Jogador {
 		gerarNome();
 		
 		// TODO: Gerar atributos
+		switch (posicao) {
+		case GOL:
+			chute = random.nextInt(50) + 1;
+			drible = random.nextInt(50) + 1;
+			passe = random.nextInt(50) + 26;
+			desarme = random.nextInt(50) + 1;
+			defesa = random.nextInt(50) + 51;
+			break;
+			
+		case DEFESA:
+			chute = random.nextInt(50) + 26;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 51;
+			defesa = random.nextInt(50) + 26;
+			
+			break;
+			
+		case MEIA:
+			chute = random.nextInt(50) + 51;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 51;
+			defesa = random.nextInt(50) + 1;
+			
+			break;
+			
+		case ATAQUE:
+			chute = random.nextInt(50) + 51;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 26;
+			defesa = random.nextInt(50) + 1;
+			
+			break;
+		}
 	}
 	
 	/**
-	 * <p>Construtor recebendo um <code>nome</code> como parâmetro.</p>
+	 * <p>Construtor recebendo um {@link String} nome e uma {@link Posicao} posição como parâmetro.</p>
 	 * 
-	 * <p>Instancia um novo <code>Jogador</code> e o <code>nome</code> é atribuíbo ao <code>nome</code>.</p>
+	 * <p>Instancia um novo <code>Jogador</code>, o <code>nome</code> é atribuíbo ao <code>nome</code> e a <code>posicao</code> é atribuída à <code>posicao</code> do jogador.</p>
 	 * 
 	 * @param nome o nome do jogador
+	 * @param posicao a posição do jogador
 	 */
-	Jogador(String nome) {
+	Jogador(String nome, Posicao posicao) {
+		Random random = new Random();
+		
 		this.nome = nome;
 		
-		// Gerar atributos
+		// TODO: Gerar atributos
+		switch (posicao) {
+		case GOL:
+			chute = random.nextInt(50) + 1;
+			drible = random.nextInt(50) + 1;
+			passe = random.nextInt(50) + 26;
+			desarme = random.nextInt(50) + 1;
+			defesa = random.nextInt(50) + 51;
+			break;
+			
+		case DEFESA:
+			chute = random.nextInt(50) + 26;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 51;
+			defesa = random.nextInt(50) + 26;
+			
+			break;
+			
+		case MEIA:
+			chute = random.nextInt(50) + 51;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 51;
+			defesa = random.nextInt(50) + 1;
+			
+			break;
+			
+		case ATAQUE:
+			chute = random.nextInt(50) + 51;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 26;
+			defesa = random.nextInt(50) + 1;
+			
+			break;
+		}
 	}
 	
 	// Getters and Setters
@@ -167,7 +245,7 @@ public class Jogador {
 	}
 	
 	/**
-	 * <p>Atribui um {@link Nome} ao <code>nome</code> do jogador.</p>
+	 * <p>Atribui uma {@link String} nome e atribui ao <code>nome</code> do jogador.</p>
 	 * 
 	 * @param nome o nome do jogador
 	 */
