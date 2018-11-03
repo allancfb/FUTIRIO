@@ -1,8 +1,12 @@
 package application;
 
+import java.io.IOException;
+
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,20 +17,35 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	
-	public Stage window;
-	public Scene creditos, jogar;
+	@FXML
+	private Button jogar;
+
+	@FXML
+	private Button creditos;
+
+	@FXML
+	private Button sair;
+	
+	@FXML
+	private Button voltar;
+	
+	Stage stage = new Stage();
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			window = primaryStage;
-			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
+			stage = primaryStage;
+			Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 
 			//Criando cenas
 			Scene inicio = new Scene(root);
 			// configurando os estilos das aplicações
-			inicio.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-
+			//inicio.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
 			primaryStage.setTitle("FUTIRIO");
 			primaryStage.setScene(inicio);
 
@@ -36,9 +55,40 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	//CENA DE INICIO
+	@FXML
+	public void jogar(ActionEvent event) throws IOException {
+		Parent jogarParent = FXMLLoader.load(getClass().getResource("selecionaOpcoes.fxml"));
+		Scene jogar = new Scene(jogarParent);
+		
+		stage.setScene(jogar);
+		stage.show();
+	}
 
-	public static void main(String[] args) {
-		launch(args);
+	@FXML
+	public void creditos(ActionEvent event) throws IOException {
+		Parent creditosParent = FXMLLoader.load(getClass().getResource("Creditos.fxml"));
+		Scene creditos = new Scene(creditosParent);
+		
+		stage.setScene(creditos);
+		stage.show();
+	}
+
+	@FXML
+	public void sair(ActionEvent event) {
+		Platform.exit();
+	}
+	//////////////////////////////////////////////////////////////////
+	//Cena de Créditos
+	@FXML
+	public void voltar(ActionEvent event) throws IOException{
+		Parent inicioParent = FXMLLoader.load(getClass().getResource("Main.fxml"));
+		Scene inicio = new Scene(inicioParent);
+		
+		//Setando a cena a ser mostrada
+		stage.setScene(inicio);
+		stage.show();
 	}
 
 }

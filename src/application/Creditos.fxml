@@ -5,14 +5,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="387.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.creditosController">
+<AnchorPane prefHeight="387.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Main">
    <children>
       <ImageView pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/campo.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="45.0" layoutY="337.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+      <Button fx:id="voltar" layoutX="45.0" layoutY="337.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
       <ImageView fitHeight="307.0" fitWidth="307.0" layoutX="146.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/Creditos.png" />
