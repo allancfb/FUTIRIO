@@ -10,12 +10,12 @@
    <children>
       <ImageView fitHeight="399.0" fitWidth="619.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@campo.jpg" />
+            <Image url="@../Imagens/campo.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="203.0" fitWidth="210.0" layoutX="199.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@logo-sem-fundo.png" />
+            <Image url="@../Imagens/logo-sem-fundo.png" />
          </image>
       </ImageView>
       <Label layoutX="246.0" layoutY="105.0" />
