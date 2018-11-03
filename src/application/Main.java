@@ -41,15 +41,10 @@ public class Main extends Application {
 			stage = primaryStage;
 			Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 
-			//Criando cenas
 			Scene inicio = new Scene(root);
-			// configurando os estilos das aplicações
-			//inicio.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 			primaryStage.setTitle("FUTIRIO");
 			primaryStage.setScene(inicio);
-
-			// mostrando a cena
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -88,7 +83,7 @@ public class Main extends Application {
 		
 		//Setando a cena a ser mostrada
 		stage.setScene(inicio);
-		stage.show();
+		stage.show();		
 	}
 
 }
