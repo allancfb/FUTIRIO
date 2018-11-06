@@ -1,0 +1,24 @@
+Irupi
+Pio,46,45,45,26,83,1.0,0.0,false,GOL,GOL
+Ayram,34,26,33,31,98,1.0,0.0,false,GOL,GOL
+Firmo,59,75,75,61,40,1.0,0.0,false,DEFESA,GOL
+Pablo,26,62,76,59,49,1.0,0.0,false,DEFESA,GOL
+Aquiles,26,88,94,69,47,1.0,0.0,false,DEFESA,GOL
+Caique,61,94,67,68,43,1.0,0.0,false,DEFESA,GOL
+André,66,99,92,67,45,1.0,0.0,false,DEFESA,GOL
+Osmar,70,87,64,70,46,1.0,0.0,false,DEFESA,GOL
+Igino,70,51,98,96,31,1.0,0.0,false,DEFESA,GOL
+Orfeu,42,97,60,85,46,1.0,0.0,false,DEFESA,GOL
+Leandro,61,95,87,90,35,1.0,0.0,false,MEIA,GOL
+Arlindo,67,72,86,70,39,1.0,0.0,false,MEIA,GOL
+Ivich,60,83,68,88,47,1.0,0.0,false,MEIA,GOL
+Theophilo,84,51,65,94,45,1.0,0.0,false,MEIA,GOL
+Cristiano,94,88,55,95,44,1.0,0.0,false,MEIA,GOL
+Roberto,67,88,91,82,50,1.0,0.0,false,MEIA,GOL
+Silverio,86,52,75,79,33,1.0,0.0,false,MEIA,GOL
+Felix,67,53,95,66,37,1.0,0.0,false,MEIA,GOL
+João ,68,95,71,73,42,1.0,0.0,false,ATAQUE,GOL
+Tarcisio,83,85,51,30,50,1.0,0.0,false,ATAQUE,GOL
+Eivaldo,100,97,98,58,48,1.0,0.0,false,ATAQUE,GOL
+Eugenio,52,68,83,41,36,1.0,0.0,false,ATAQUE,GOL
+

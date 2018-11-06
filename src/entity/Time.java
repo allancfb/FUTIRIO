@@ -51,6 +51,8 @@ public class Time {
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
+		
+		criarBackup();
 	}
 	
 	// TODO: comentar

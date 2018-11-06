@@ -56,6 +56,7 @@ public class Jogador {
 		gerarAtributos();
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
+		criarBackup();
 	}
 	
 	// Getters and Setters
@@ -463,7 +464,7 @@ public class Jogador {
 	
 	// TODO: comentar
 	public String criarBackup() {
-		return nome + "|" + chute + "|" + drible + "|" + passe + "|" + desarme + "|" + defesa + "|" + habilidade + "|" + salario + "|" + isCapitao + "|" + posicao + "|" + posicaoRecomendada + "\n";
+		return nome + "," + chute + "," + drible + "," + passe + "," + desarme + "," + defesa + "," + habilidade + "," + salario + "," + isCapitao + "," + posicao + "," + posicaoRecomendada + "\n";
 	}
 	
 }
