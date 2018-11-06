@@ -379,14 +379,11 @@ public class Jogador {
 	 * @return a posição recomendada do jogador
 	 */
 	private Posicao calcularPosicaoRecomendada() {
-		double mediaGOL = 0;
-		double mediaDEFESA = 0;
-		double mediaMEIA = 0;
-		double mediaATAQUE = 0;
-		
-		int pesoBaixo = 0;
-		int pesoMedio = 0;
-		int pesoAlto = 0;
+		// TODO: definir pesos
+		int pesoBaixo = 1;
+		int pesoMedio = 5;
+		int pesoAlto = 9;
+		double mediaGOL, mediaDEFESA, mediaMEIA, mediaATAQUE;
 		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
 		
 		// Pesos da posição GOL
