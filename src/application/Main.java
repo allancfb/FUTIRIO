@@ -20,8 +20,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-	
-	//Main
+
+	// Main
 	@FXML
 	private Button jogar;
 
@@ -30,23 +30,29 @@ public class Main extends Application {
 
 	@FXML
 	private Button sair;
-	
-	//Créditos
+
+	// Créditos
 	@FXML
 	private Button voltar;
-	
-	//selecionaOpcoes
+
+	// selecionaOpcoes
 	@FXML
-    private Label nomeLabel;
+	private Label nomeLabel;
 
-    @FXML
-    private TextField nomeTecnico;
+	@FXML
+	private TextField nomeTecnico;
 
-    @FXML
-    private ComboBox<?> selectTime;
+	@FXML
+	private ComboBox<?> selectTime;
 
-    @FXML
-    private Label timeLabel;
+	@FXML
+	private Label timeLabel;
+
+	@FXML
+	private Button btnAvancar;
+
+	@FXML
+	private Label erro;
 
 	Stage stage = new Stage();
 
@@ -54,6 +60,7 @@ public class Main extends Application {
 		launch(args);
 	}
 
+	// Cena de início
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
@@ -70,7 +77,7 @@ public class Main extends Application {
 		}
 	}
 
-	// CENA DE INICIO
+	// go to selecionaOpcoes
 	@FXML
 	public void jogar(ActionEvent event) throws IOException {
 		Parent jogarParent = FXMLLoader.load(getClass().getResource("selecionaOpcoes.fxml"));
@@ -81,6 +88,7 @@ public class Main extends Application {
 		stage.show();
 	}
 
+	// go to Creditos
 	@FXML
 	public void creditos(ActionEvent event) throws IOException {
 		Parent creditosParent = FXMLLoader.load(getClass().getResource("Creditos.fxml"));
@@ -91,12 +99,12 @@ public class Main extends Application {
 		stage.show();
 	}
 
+	// sair
 	@FXML
 	public void sair(ActionEvent event) {
 		Platform.exit();
 	}
 
-	//////////////////////////////////////////////////////////////////
 	// Cena de Créditos
 	@FXML
 	public void voltar(ActionEvent event) throws IOException {
@@ -107,6 +115,17 @@ public class Main extends Application {
 		stage.setTitle("FUTIRIO");
 		stage.setScene(inicio);
 		stage.show();
+	}
+
+	// Cena selecionaOpcoes
+	public void avancar(ActionEvent event) throws IOException {
+		if (nomeTecnico.getText().equals("")) {
+			// TODO seta mensagem de erro na label ("Insira o nome do técnico")
+			erro.setVisible(true);
+		} /*
+			 * else if(){ //se o conteúdo do combobox estiver vazio }else { //carrega página
+			 * de jogo erro.setVisible(false); }
+			 */
 	}
 
 }

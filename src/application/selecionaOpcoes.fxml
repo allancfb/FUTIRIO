@@ -17,7 +17,7 @@
             <Image url="@../Imagens/fundo.png" />
          </image>
       </ImageView>
-      <Button layoutX="251.0" layoutY="302.0" mnemonicParsing="false" prefWidth="100.0" text="Avançar" />
+      <Button fx:id="btnAvancar" layoutX="251.0" layoutY="302.0" mnemonicParsing="false" onAction="#avancar" prefWidth="100.0" text="Avançar" />
       <Label fx:id="nomeLabel" layoutX="133.0" layoutY="81.0" text="Nome do técnico:" textFill="WHITE">
          <font>
             <Font size="20.0" />
@@ -26,6 +26,11 @@
       <TextField fx:id="nomeTecnico" layoutX="133.0" layoutY="120.0" prefHeight="25.0" prefWidth="300.0" promptText="Insira o nome do técnico" />
       <ComboBox fx:id="selectTime" layoutX="133.0" layoutY="205.0" prefWidth="150.0" promptText="Selecione o time" />
       <Label fx:id="timeLabel" layoutX="136.0" layoutY="167.0" text="Selecione o time que deseja dirigir:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="erro" layoutX="133.0" layoutY="257.0" prefHeight="30.0" prefWidth="360.0" text="Selecione todas as opções para avançar" textFill="#ee1c1c" visible="false">
          <font>
             <Font size="20.0" />
          </font>
