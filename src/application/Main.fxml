@@ -13,7 +13,7 @@
             <Image url="@../Imagens/campo.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="203.0" fitWidth="210.0" layoutX="199.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="203.0" fitWidth="210.0" layoutX="199.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/logo-sem-fundo.png" />
          </image>

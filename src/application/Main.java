@@ -36,23 +36,6 @@ public class Main extends Application {
 	private Button voltar;
 
 	// selecionaOpcoes
-	@FXML
-	private Label nomeLabel;
-
-	@FXML
-	private TextField nomeTecnico;
-
-	@FXML
-	private ComboBox<?> selectTime;
-
-	@FXML
-	private Label timeLabel;
-
-	@FXML
-	private Button btnAvancar;
-
-	@FXML
-	private Label erro;
 
 	Stage stage = new Stage();
 
@@ -119,12 +102,12 @@ public class Main extends Application {
 
 	// Cena selecionaOpcoes
 	public void avancar(ActionEvent event) throws IOException {
-		if (nomeTecnico.getText().equals("")) {
+		/*if (nomeTecnico.getText().equals("")) {
 			// TODO seta mensagem de erro na label ("Insira o nome do técnico")
 			erro.setVisible(true);
-		} /*
-			 * else if(){ //se o conteúdo do combobox estiver vazio }else { //carrega página
-			 * de jogo erro.setVisible(false); }
+		} 
+			  else if(){ //se o conteúdo do combobox estiver vazio }else { //carrega página
+			  de jogo erro.setVisible(false); }
 			 */
 	}
 
