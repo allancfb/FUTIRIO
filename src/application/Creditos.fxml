@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="399.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Imagens/campo.jpg" />
+            <Image url="@../Imagens/fundo.png" />
          </image>
       </ImageView>
       <Button fx:id="voltar" layoutX="45.0" layoutY="337.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
