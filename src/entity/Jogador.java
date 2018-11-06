@@ -39,7 +39,6 @@ public class Jogador {
 		gerarAtributos();
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
-		criarBackup();
 	}
 	
 	/**
@@ -57,7 +56,6 @@ public class Jogador {
 		gerarAtributos();
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
-		criarBackup();
 	}
 	
 	// Getters and Setters

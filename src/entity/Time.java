@@ -14,6 +14,7 @@ public class Time {
 	
 	// Construtores
 	
+	// TODO: comentar
 	Time() {
 		Random random = new Random();
 		String nomesTimes[] = new String[1000];
@@ -50,10 +51,9 @@ public class Time {
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
-		criarBackup();
 	}
 	
+	// TODO: comentar
 	Time(String nome) {
 		jogadores = new ArrayList<Jogador>();
 		
@@ -72,33 +72,37 @@ public class Time {
 		for (int i = 0; i < 4; i++) {
 			jogadores.add(new Jogador(Posicao.ATAQUE));
 		}
-		
-		criarBackup();
 	}
 
 	// Getters and Setters
 	
+	// TODO: comentar
 	public String getNome() {
 		return nome;
 	}
 	
+	// TODO: comentar
 	public ArrayList<Jogador> getJogadores() {
 		return jogadores;
 	}
 
+	// TODO: comentar
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
+	// TODO: comentar
 	public void setJogador(Jogador jogador) {
 		jogadores.add(jogador);
 	}
 	
 	// Métodos
+	
+	// TODO: comentar
 	private void criarBackup() {
 		try {
-			File f = new File("src/entity/backupTimes.txt");
-			FileWriter fr = new FileWriter(f);
+			File f = new File("src/entity/backupTime.txt");
+			FileWriter fw = new FileWriter(f);
 			
 			String backup = nome + "\n";
 			
@@ -106,9 +110,9 @@ public class Time {
 				backup += jogador.criarBackup();
 			}
 			
-			fr.append(backup);
-			
-			fr.close();
+			fw.append(backup);
+			fw.append("\n");
+			fw.close();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
