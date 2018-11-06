@@ -37,6 +37,8 @@ public class Jogador {
 		
 		gerarNome();
 		gerarAtributos();
+		atualizarHabilidade();
+		atualizarPosicaoRecomendada();
 		criarBackup();
 	}
 	
@@ -53,6 +55,9 @@ public class Jogador {
 		this.posicao = posicao;
 		
 		gerarAtributos();
+		atualizarHabilidade();
+		atualizarPosicaoRecomendada();
+		criarBackup();
 	}
 	
 	// Getters and Setters
