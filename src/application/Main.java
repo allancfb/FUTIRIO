@@ -1,5 +1,7 @@
 package application;
 
+import java.awt.Label;
+import java.awt.TextField;
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -11,13 +13,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+	
+	//Main
 	@FXML
 	private Button jogar;
 
@@ -26,9 +30,23 @@ public class Main extends Application {
 
 	@FXML
 	private Button sair;
-
+	
+	//Créditos
 	@FXML
 	private Button voltar;
+	
+	//selecionaOpcoes
+	@FXML
+    private Label nomeLabel;
+
+    @FXML
+    private TextField nomeTecnico;
+
+    @FXML
+    private ComboBox<?> selectTime;
+
+    @FXML
+    private Label timeLabel;
 
 	Stage stage = new Stage();
 

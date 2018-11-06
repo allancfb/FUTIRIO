@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Main">
    <children>
       <ImageView fitHeight="399.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -18,14 +18,14 @@
          </image>
       </ImageView>
       <Button layoutX="251.0" layoutY="302.0" mnemonicParsing="false" prefWidth="100.0" text="Avançar" />
-      <Label layoutX="143.0" layoutY="84.0" text="Nome do técnico:" textFill="WHITE">
+      <Label fx:id="nomeLabel" layoutX="133.0" layoutY="81.0" text="Nome do técnico:" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField layoutX="143.0" layoutY="123.0" prefHeight="25.0" prefWidth="300.0" promptText="Insira o nome do técnico" />
-      <ComboBox layoutX="143.0" layoutY="208.0" prefWidth="150.0" promptText="Selecione o time" />
-      <Label layoutX="146.0" layoutY="170.0" text="Selecione o time que deseja dirigir:" textFill="WHITE">
+      <TextField fx:id="nomeTecnico" layoutX="133.0" layoutY="120.0" prefHeight="25.0" prefWidth="300.0" promptText="Insira o nome do técnico" />
+      <ComboBox fx:id="selectTime" layoutX="133.0" layoutY="205.0" prefWidth="150.0" promptText="Selecione o time" />
+      <Label fx:id="timeLabel" layoutX="136.0" layoutY="167.0" text="Selecione o time que deseja dirigir:" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
