@@ -13,17 +13,17 @@
             <Image url="@../Imagens/campo.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="203.0" fitWidth="210.0" layoutX="199.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="203.0" fitWidth="210.0" layoutX="199.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/logo-sem-fundo.png" />
          </image>
       </ImageView>
       <Label layoutX="246.0" layoutY="105.0" />
-      <AnchorPane layoutX="200.0" layoutY="209.0" prefHeight="176.0" prefWidth="200.0">
+      <AnchorPane layoutX="200.0" layoutY="200.0" prefHeight="176.0" prefWidth="200.0">
          <children>
-            <Button fx:id="jogar" layoutX="75.0" layoutY="38.0" mnemonicParsing="false" onAction="#jogar" text="Jogar" />
-            <Button fx:id="creditos" layoutX="70.0" layoutY="88.0" mnemonicParsing="false" onAction="#creditos" text="Créditos" />
-            <Button fx:id="sair" layoutX="79.0" layoutY="134.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+            <Button fx:id="jogar" layoutX="50.0" layoutY="38.0" mnemonicParsing="false" onAction="#jogar" prefWidth="100.0" text="Jogar" />
+            <Button fx:id="creditos" layoutX="50.0" layoutY="88.0" mnemonicParsing="false" onAction="#creditos" prefWidth="100.0" text="Créditos" />
+            <Button fx:id="sair" layoutX="50.0" layoutY="137.0" mnemonicParsing="false" onAction="#sair" prefWidth="100.0" text="Sair" />
          </children>
       </AnchorPane>
    </children>
