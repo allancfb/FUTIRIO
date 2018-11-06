@@ -316,28 +316,58 @@ public class Jogador {
 	 * @return a habilidade do jogador
 	 */
 	private double calcularHabilidade(Posicao posicao) {
+		// TODO: definir pesos
+		int pesoBaixo = 1;
+		int pesoMedio = 5;
+		int pesoAlto = 9;
+		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
+		
 		switch (posicao) {
 			case GOL:
-				//TODO: estabelecer media ponderada
-				return 1.0;
+				chutePeso = pesoBaixo;
+				driblePeso = pesoBaixo;
+				passePeso = pesoMedio;
+				desarmePeso = pesoBaixo;
+				defesaPeso = pesoAlto;
+				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
+				
+				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 				
 			case DEFESA:
-				//TODO: estabelecer media ponderada
-				return 1.0;
+				chutePeso = pesoBaixo;
+				driblePeso = pesoMedio;
+				passePeso = pesoAlto;
+				desarmePeso = pesoAlto;
+				defesaPeso = pesoBaixo;
+				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
+				
+				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 			
 			case MEIA:
-				//TODO: estabelecer media ponderada
-				return 1.0;
+				chutePeso = pesoAlto;
+				driblePeso = pesoAlto;
+				passePeso = pesoAlto;
+				desarmePeso = pesoAlto;
+				defesaPeso = pesoBaixo;
+				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
+				
+				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 				
 			case ATAQUE:
-				//TODO: estabelecer media ponderada
-				return 1.0;
+				chutePeso = pesoAlto;
+				driblePeso = pesoAlto;
+				passePeso = pesoAlto;
+				desarmePeso = pesoMedio;
+				defesaPeso = pesoBaixo;
+				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
+				
+				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 				
 			case DEFAULT:
 				return calcularHabilidade(posicaoRecomendada);
 				
 			default:
-				return 1.0;
+				return calcularHabilidade(posicaoRecomendada);
 		}
 	}
 	
@@ -349,16 +379,55 @@ public class Jogador {
 	 * @return a posição recomendada do jogador
 	 */
 	private Posicao calcularPosicaoRecomendada() {
-		// TODO: estabelecer média ponderada
 		double mediaGOL = 0;
 		double mediaDEFESA = 0;
 		double mediaMEIA = 0;
 		double mediaATAQUE = 0;
 		
-		mediaGOL = (1 * defesa) + (1 * desarme) + (1 * passe) + (1 * drible) + (1 * chute);
-		mediaDEFESA = (1 * defesa) + (1 * desarme) + (1 * passe) + (1 * drible) + (1 * chute);
-		mediaMEIA = (1 * defesa) + (1 * desarme) + (1 * passe) + (1 * drible) + (1 * chute);
-		mediaATAQUE = (1 * defesa) + (1 * desarme) + (1 * passe) + (1 * drible) + (1 * chute);
+		int pesoBaixo = 0;
+		int pesoMedio = 0;
+		int pesoAlto = 0;
+		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
+		
+		// Pesos da posição GOL
+		chutePeso = pesoBaixo;
+		driblePeso = pesoBaixo;
+		passePeso = pesoMedio;
+		desarmePeso = pesoBaixo;
+		defesaPeso = pesoAlto;
+		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
+		
+		mediaGOL = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
+		
+		// Pesos da posição DEFESA
+		chutePeso = pesoBaixo;
+		driblePeso = pesoMedio;
+		passePeso = pesoAlto;
+		desarmePeso = pesoAlto;
+		defesaPeso = pesoBaixo;
+		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
+		
+		mediaDEFESA = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
+		
+		// Pesos da posição MEIA
+		chutePeso = pesoAlto;
+		driblePeso = pesoAlto;
+		passePeso = pesoAlto;
+		desarmePeso = pesoAlto;
+		defesaPeso = pesoBaixo;
+		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
+		
+		mediaMEIA = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
+		
+		// Pesos da posição ATAQUE
+		chutePeso = pesoAlto;
+		driblePeso = pesoAlto;
+		passePeso = pesoAlto;
+		desarmePeso = pesoMedio;
+		defesaPeso = pesoBaixo;
+		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
+		
+		mediaATAQUE = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 		
 		if (mediaGOL >= mediaDEFESA && mediaGOL >= mediaMEIA && mediaGOL >= mediaATAQUE)
 			return Posicao.GOL;
@@ -431,8 +500,8 @@ public class Jogador {
 			break;
 			
 		case DEFESA:
-			chute = random.nextInt(50) + 26;
-			drible = random.nextInt(50) + 51;
+			chute = random.nextInt(25) + 26;
+			drible = random.nextInt(50) + 26;
 			passe = random.nextInt(50) + 51;
 			desarme = random.nextInt(50) + 51;
 			defesa = random.nextInt(25) + 26;
@@ -458,6 +527,9 @@ public class Jogador {
 			break;
 			
 		case DEFAULT:
+			break;
+			
+		default:
 			break;
 		}
 	}
