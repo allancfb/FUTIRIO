@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -49,6 +50,8 @@ public class Time {
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
+		
+		criarBackup();
 	}
 	
 	Time(String nome) {
@@ -69,6 +72,8 @@ public class Time {
 		for (int i = 0; i < 4; i++) {
 			jogadores.add(new Jogador(Posicao.ATAQUE));
 		}
+		
+		criarBackup();
 	}
 
 	// Getters and Setters
@@ -76,17 +81,38 @@ public class Time {
 	public String getNome() {
 		return nome;
 	}
+	
+	public ArrayList<Jogador> getJogadores() {
+		return jogadores;
+	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public ArrayList<Jogador> getJogadores() {
-		return jogadores;
-	}
-
 	public void setJogador(Jogador jogador) {
 		jogadores.add(jogador);
+	}
+	
+	// Métodos
+	private void criarBackup() {
+		try {
+			File f = new File("src/entity/backupTimes.txt");
+			FileWriter fr = new FileWriter(f);
+			
+			String backup = nome + "\n";
+			
+			for (Jogador jogador : jogadores) {
+				backup += jogador.criarBackup();
+			}
+			
+			fr.append(backup);
+			
+			fr.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 }

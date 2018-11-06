@@ -33,49 +33,11 @@ public class Jogador {
 	 * @param posicao a posição do jogador
 	 */
 	Jogador(Posicao posicao) {
-		Random random = new Random();
-		
 		this.posicao = posicao;
 		
 		gerarNome();
-		
-		// TODO: Gerar atributos
-		switch (posicao) {
-		case GOL:
-			chute = random.nextInt(50) + 1;
-			drible = random.nextInt(50) + 1;
-			passe = random.nextInt(50) + 26;
-			desarme = random.nextInt(50) + 1;
-			defesa = random.nextInt(50) + 51;
-			break;
-			
-		case DEFESA:
-			chute = random.nextInt(50) + 26;
-			drible = random.nextInt(50) + 51;
-			passe = random.nextInt(50) + 51;
-			desarme = random.nextInt(50) + 51;
-			defesa = random.nextInt(50) + 26;
-			
-			break;
-			
-		case MEIA:
-			chute = random.nextInt(50) + 51;
-			drible = random.nextInt(50) + 51;
-			passe = random.nextInt(50) + 51;
-			desarme = random.nextInt(50) + 51;
-			defesa = random.nextInt(50) + 1;
-			
-			break;
-			
-		case ATAQUE:
-			chute = random.nextInt(50) + 51;
-			drible = random.nextInt(50) + 51;
-			passe = random.nextInt(50) + 51;
-			desarme = random.nextInt(50) + 26;
-			defesa = random.nextInt(50) + 1;
-			
-			break;
-		}
+		gerarAtributos();
+		criarBackup();
 	}
 	
 	/**
@@ -87,48 +49,10 @@ public class Jogador {
 	 * @param posicao a posição do jogador
 	 */
 	Jogador(String nome, Posicao posicao) {
-		Random random = new Random();
-		
 		this.nome = nome;
 		this.posicao = posicao;
 		
-		// TODO: Gerar atributos
-		switch (posicao) {
-		case GOL:
-			chute = random.nextInt(50) + 1;
-			drible = random.nextInt(50) + 1;
-			passe = random.nextInt(50) + 26;
-			desarme = random.nextInt(50) + 1;
-			defesa = random.nextInt(50) + 51;
-			break;
-			
-		case DEFESA:
-			chute = random.nextInt(50) + 26;
-			drible = random.nextInt(50) + 51;
-			passe = random.nextInt(50) + 51;
-			desarme = random.nextInt(50) + 51;
-			defesa = random.nextInt(50) + 26;
-			
-			break;
-			
-		case MEIA:
-			chute = random.nextInt(50) + 51;
-			drible = random.nextInt(50) + 51;
-			passe = random.nextInt(50) + 51;
-			desarme = random.nextInt(50) + 51;
-			defesa = random.nextInt(50) + 1;
-			
-			break;
-			
-		case ATAQUE:
-			chute = random.nextInt(50) + 51;
-			drible = random.nextInt(50) + 51;
-			passe = random.nextInt(50) + 51;
-			desarme = random.nextInt(50) + 26;
-			defesa = random.nextInt(50) + 1;
-			
-			break;
-		}
+		gerarAtributos();
 	}
 	
 	// Getters and Setters
@@ -405,6 +329,9 @@ public class Jogador {
 				//TODO: estabelecer media ponderada
 				return 1.0;
 				
+			case DEFAULT:
+				return calcularHabilidade(posicaoRecomendada);
+				
 			default:
 				return 1.0;
 		}
@@ -484,6 +411,56 @@ public class Jogador {
 		}
 		
 		return nome;
+	}
+	
+	// TODO: comentar
+	private void gerarAtributos() {
+		Random random = new Random();
+		
+		switch (posicao) {
+		case GOL:
+			chute = random.nextInt(25) + 26;
+			drible = random.nextInt(25) + 26;
+			passe = random.nextInt(50) + 26;
+			desarme = random.nextInt(25) + 26;
+			defesa = random.nextInt(50) + 51;
+			break;
+			
+		case DEFESA:
+			chute = random.nextInt(50) + 26;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 51;
+			defesa = random.nextInt(25) + 26;
+			
+			break;
+			
+		case MEIA:
+			chute = random.nextInt(50) + 51;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 51;
+			defesa = random.nextInt(25) + 26;
+			
+			break;
+			
+		case ATAQUE:
+			chute = random.nextInt(50) + 51;
+			drible = random.nextInt(50) + 51;
+			passe = random.nextInt(50) + 51;
+			desarme = random.nextInt(50) + 26;
+			defesa = random.nextInt(25) + 26;
+			
+			break;
+			
+		case DEFAULT:
+			break;
+		}
+	}
+	
+	// TODO: comentar
+	public String criarBackup() {
+		return nome + "|" + chute + "|" + drible + "|" + passe + "|" + desarme + "|" + defesa + "|" + habilidade + "|" + salario + "|" + isCapitao + "|" + posicao + "|" + posicaoRecomendada + "\n";
 	}
 	
 }
