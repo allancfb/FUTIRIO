@@ -58,7 +58,7 @@ public class Main extends Application {
 		Parent jogarParent = FXMLLoader.load(getClass().getResource("selecionaOpcoes.fxml"));
 		Scene jogar = new Scene(jogarParent);
 
-		stage.setTitle("FUTIRIO");
+		stage.setTitle("Selecione seu time");
 		stage.setScene(jogar);
 		stage.show();
 	}
@@ -68,7 +68,7 @@ public class Main extends Application {
 		Parent creditosParent = FXMLLoader.load(getClass().getResource("Creditos.fxml"));
 		Scene creditos = new Scene(creditosParent);
 
-		stage.setTitle("FUTIRIO");
+		stage.setTitle("Créditos");
 		stage.setScene(creditos);
 		stage.show();
 	}
