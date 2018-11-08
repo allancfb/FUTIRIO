@@ -5,8 +5,7 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Main {
-
-	public static void main(String args[]) {
+	public static void criarTimes() {
 		try {
 			File fileTimes = new File("src/entity/backupTimes.txt");
 			FileWriter fw = new FileWriter(fileTimes);
@@ -30,6 +29,10 @@ public class Main {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static void main(String args[]) {
+		
 	}
 
 }
