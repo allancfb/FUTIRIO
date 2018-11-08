@@ -1,4 +1,4 @@
-package view;
+package swing;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -21,7 +21,7 @@ import java.awt.Label;
 import java.awt.Button;
 import javax.swing.ImageIcon;
 
-public class ViewPrimeiraTela extends JFrame {
+public class Inicio extends JFrame {
 
 	private JPanel contentPane;
 
@@ -32,7 +32,7 @@ public class ViewPrimeiraTela extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ViewPrimeiraTela frame = new ViewPrimeiraTela();
+					Inicio frame = new Inicio();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,7 +44,7 @@ public class ViewPrimeiraTela extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ViewPrimeiraTela() {
+	public Inicio() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
