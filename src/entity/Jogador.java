@@ -324,41 +324,41 @@ public class Jogador {
 		
 		switch (posicao) {
 			case GOL:
-				chutePeso = pesoBaixo;
-				driblePeso = pesoBaixo;
-				passePeso = pesoMedio;
-				desarmePeso = pesoBaixo;
-				defesaPeso = pesoAlto;
+				chutePeso = 10;
+				driblePeso = 5;
+				passePeso = 20;
+				desarmePeso = 5;
+				defesaPeso = 60;
 				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 				
 				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 				
 			case DEFESA:
-				chutePeso = pesoBaixo;
-				driblePeso = pesoMedio;
-				passePeso = pesoAlto;
-				desarmePeso = pesoAlto;
-				defesaPeso = pesoBaixo;
+				chutePeso = 10;
+				driblePeso = 15;
+				passePeso = 30;
+				desarmePeso = 40;
+				defesaPeso = 5;
 				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 				
 				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 			
 			case MEIA:
-				chutePeso = pesoAlto;
-				driblePeso = pesoAlto;
-				passePeso = pesoAlto;
-				desarmePeso = pesoAlto;
-				defesaPeso = pesoBaixo;
+				chutePeso = 20;
+				driblePeso = 25;
+				passePeso = 30;
+				desarmePeso = 20;
+				defesaPeso = 5;
 				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 				
 				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 				
 			case ATAQUE:
-				chutePeso = pesoAlto;
-				driblePeso = pesoAlto;
-				passePeso = pesoAlto;
-				desarmePeso = pesoMedio;
-				defesaPeso = pesoBaixo;
+				chutePeso = 40;
+				driblePeso = 25;
+				passePeso = 20;
+				desarmePeso = 10;
+				defesaPeso = 5;
 				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 				
 				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
