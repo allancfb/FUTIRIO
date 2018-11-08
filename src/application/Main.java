@@ -36,6 +36,14 @@ public class Main extends Application {
 	private Button voltar;
 
 	// selecionaOpcoes
+	@FXML
+    private TextField nomeTecnico;
+
+    @FXML
+    private ComboBox<?> cbbTimes;
+
+    @FXML
+    private Button btnAvancar;
 
 	Stage stage = new Stage();
 
