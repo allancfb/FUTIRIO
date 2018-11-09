@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 
 public class Creditos extends JFrame {
 
+	//private JFrame creditos;
 	private JPanel contentPane;
 
 	/**
@@ -49,7 +50,9 @@ public class Creditos extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "volta pra cena inicial");
+				Inicio inicio = new Inicio();
+				inicio.setVisible(true);
+				Creditos.this.dispose();
 			}
 		});
 		btnVoltar.setBounds(10, 336, 89, 23);

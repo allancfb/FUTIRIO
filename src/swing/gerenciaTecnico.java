@@ -53,8 +53,7 @@ public class gerenciaTecnico {
 		frame.setBounds(100, 100, 600, 399);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		
+
 		JComboBox times = new JComboBox();
 		times.addItem("Botafogo");
 		times.addItem("Flamengo");
@@ -63,19 +62,25 @@ public class gerenciaTecnico {
 		times.setSelectedItem(null);
 		times.setBounds(119, 199, 146, 23);
 		frame.getContentPane().add(times);
-		
+
 		JButton btnAvanar = new JButton("Avan\u00E7ar");
 		btnAvanar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO se os elementos não tiverem sido selecionados, mostra mensagem:
 				// Selecione todas as opções para continuar
 				/* if(elementos não selecionados) */
-				if(nomeTecnico.getText()==null || nomeTecnico.getText().trim().equals("") || times.getSelectedItem()==null)
-				JOptionPane.showMessageDialog(frame, "Selecione todas as opções para continuar", "Erro",
-						JOptionPane.ERROR_MESSAGE);
+				if (nomeTecnico.getText() == null || nomeTecnico.getText().trim().equals("")
+						|| times.getSelectedItem() == null) {
+					JOptionPane.showMessageDialog(frame, "Selecione todas as opções para continuar", "Erro",
+							JOptionPane.ERROR_MESSAGE);
+				} else {
+					Inicio inicio = new Inicio();
+					inicio.setVisible(true);
+					frame.setVisible(false);
+				}
 			}
 		});
-		
+
 		btnAvanar.setBounds(247, 270, 89, 23);
 		frame.getContentPane().add(btnAvanar);
 
