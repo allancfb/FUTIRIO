@@ -53,17 +53,29 @@ public class gerenciaTecnico {
 		frame.setBounds(100, 100, 600, 399);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
+		
+		
+		JComboBox times = new JComboBox();
+		times.addItem("Botafogo");
+		times.addItem("Flamengo");
+		times.addItem("Fluminense");
+		times.addItem("Vasco");
+		times.setSelectedItem(null);
+		times.setBounds(119, 199, 146, 23);
+		frame.getContentPane().add(times);
+		
 		JButton btnAvanar = new JButton("Avan\u00E7ar");
 		btnAvanar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO se os elementos não tiverem sido selecionados, mostra mensagem:
 				// Selecione todas as opções para continuar
 				/* if(elementos não selecionados) */
+				if(nomeTecnico.getText()==null || nomeTecnico.getText().trim().equals("") || times.getSelectedItem()==null)
 				JOptionPane.showMessageDialog(frame, "Selecione todas as opções para continuar", "Erro",
 						JOptionPane.ERROR_MESSAGE);
 			}
 		});
+		
 		btnAvanar.setBounds(247, 270, 89, 23);
 		frame.getContentPane().add(btnAvanar);
 
@@ -72,13 +84,6 @@ public class gerenciaTecnico {
 		lblTimes.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTimes.setBounds(120, 165, 370, 27);
 		frame.getContentPane().add(lblTimes);
-
-		JComboBox times = new JComboBox();
-		times.setModel(new DefaultComboBoxModel(new String[] { "Botafogo", "Flamengo", "Fluminense", "Vasco" }));
-		times.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		times.setToolTipText("Times");
-		times.setBounds(120, 193, 117, 31);
-		frame.getContentPane().add(times);
 
 		nomeTecnico = new JTextField();
 		nomeTecnico.setToolTipText("");
