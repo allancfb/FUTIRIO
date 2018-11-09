@@ -88,7 +88,7 @@ public class gerenciaTecnico {
 		frame.getContentPane().add(lblNome);
 		
 		JLabel background = new JLabel("New label");
-		background.setIcon(new ImageIcon("C:\\Users\\hfogo_000\\Documents\\GitHub\\FUTIRIO\\src\\Imagens\\campo.jpg"));
+		background.setIcon(new ImageIcon(gerenciaTecnico.class.getResource("/Imagens/campo.jpg")));
 		background.setBounds(0, 0, 594, 370);
 		frame.getContentPane().add(background);
 	}

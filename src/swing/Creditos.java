@@ -56,7 +56,7 @@ public class Creditos extends JFrame {
 		contentPane.add(btnVoltar);
 		
 		JLabel background = new JLabel("");
-		background.setIcon(new ImageIcon("C:\\Users\\hfogo_000\\Documents\\GitHub\\FUTIRIO\\src\\Imagens\\creditosBG.png"));
+		background.setIcon(new ImageIcon(Creditos.class.getResource("/Imagens/creditosBG.png")));
 		background.setBounds(0, 0, 600, 399);
 		contentPane.add(background);
 	}

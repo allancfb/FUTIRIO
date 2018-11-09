@@ -82,7 +82,7 @@ public class Inicio extends JFrame {
 		contentPane.add(sair);
 		
 		JLabel background = new JLabel("New label");
-		background.setIcon(new ImageIcon("C:\\Users\\hfogo_000\\Documents\\GitHub\\FUTIRIO\\src\\Imagens\\mainBG.png"));
+		background.setIcon(new ImageIcon(Inicio.class.getResource("/Imagens/mainBG.png")));
 		background.setBounds(0, 0, 594, 370);
 		contentPane.add(background);
 	}
