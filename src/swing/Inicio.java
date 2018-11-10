@@ -22,7 +22,8 @@ import java.awt.Button;
 import javax.swing.ImageIcon;
 
 public class Inicio extends JFrame {
-
+	
+	//private JFrame inicio;
 	private JPanel contentPane;
 
 	/**
@@ -57,7 +58,10 @@ public class Inicio extends JFrame {
 		JButton creditos = new JButton("Cr\u00E9ditos");
 		creditos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "vai pra cena de crédito");
+				//JOptionPane.showMessageDialog(null, "vai pra cena de crédito");
+				Creditos creditos = new Creditos();
+				creditos.setVisible(true);
+				Inicio.this.dispose();
 			}
 		});
 		creditos.setBounds(252, 252, 89, 23);
@@ -73,7 +77,9 @@ public class Inicio extends JFrame {
 		JButton jogar = new JButton("Jogar");
 		jogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Vai pra cena de jogo");
+				gerenciaTecnico gerencia = new gerenciaTecnico();
+				gerencia.setVisible(true);
+				Inicio.this.dispose();				
 			}
 		});
 		jogar.setBounds(252, 200, 89, 23);
@@ -82,7 +88,7 @@ public class Inicio extends JFrame {
 		contentPane.add(sair);
 		
 		JLabel background = new JLabel("New label");
-		background.setIcon(new ImageIcon("C:\\Users\\hfogo_000\\eclipse\\FutirioSwing\\src\\Images\\mainBG.png"));
+		background.setIcon(new ImageIcon(Inicio.class.getResource("/Imagens/mainBG.png")));
 		background.setBounds(0, 0, 594, 370);
 		contentPane.add(background);
 	}

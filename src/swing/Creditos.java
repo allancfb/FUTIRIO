@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 
 public class Creditos extends JFrame {
 
+	//private JFrame creditos;
 	private JPanel contentPane;
 
 	/**
@@ -49,14 +50,16 @@ public class Creditos extends JFrame {
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "volta pra cena inicial");
+				Inicio inicio = new Inicio();
+				inicio.setVisible(true);
+				Creditos.this.dispose();
 			}
 		});
 		btnVoltar.setBounds(10, 336, 89, 23);
 		contentPane.add(btnVoltar);
 		
 		JLabel background = new JLabel("");
-		background.setIcon(new ImageIcon("C:\\Users\\hfogo_000\\eclipse\\FutirioSwing\\src\\Images\\creditosBG.png"));
+		background.setIcon(new ImageIcon(Creditos.class.getResource("/Imagens/creditosBG.png")));
 		background.setBounds(0, 0, 600, 399);
 		contentPane.add(background);
 	}
