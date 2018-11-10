@@ -1,25 +1,25 @@
 package swing;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import java.awt.Font;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.Choice;
+import javax.swing.border.EmptyBorder;
 
-public class gerenciaTecnico {
+public class gerenciaTecnico extends JFrame {
 
-	private JFrame frame;
+	private JPanel contentPane;
 	private JTextField nomeTecnico;
 
 	/**
@@ -29,8 +29,8 @@ public class gerenciaTecnico {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					gerenciaTecnico window = new gerenciaTecnico();
-					window.frame.setVisible(true);
+					gerenciaTecnico frame = new gerenciaTecnico();
+					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,74 +39,68 @@ public class gerenciaTecnico {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
 	public gerenciaTecnico() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 600, 399);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 600, 399);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
 		JComboBox times = new JComboBox();
+		times.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		times.addItem("Botafogo");
 		times.addItem("Flamengo");
 		times.addItem("Fluminense");
 		times.addItem("Vasco");
 		times.setSelectedItem(null);
-		times.setBounds(119, 199, 146, 23);
-		frame.getContentPane().add(times);
+		times.setBounds(114, 191, 142, 32);
+		contentPane.add(times);
 
-		JButton btnAvanar = new JButton("Avan\u00E7ar");
-		btnAvanar.addActionListener(new ActionListener() {
+		JButton btnAvancar = new JButton("Avan\u00E7ar");
+		btnAvancar.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnAvancar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO se os elementos não tiverem sido selecionados, mostra mensagem:
 				// Selecione todas as opções para continuar
 				/* if(elementos não selecionados) */
 				if (nomeTecnico.getText() == null || nomeTecnico.getText().trim().equals("")
 						|| times.getSelectedItem() == null) {
-					JOptionPane.showMessageDialog(frame, "Selecione todas as opções para continuar", "Erro",
+					JOptionPane.showMessageDialog(null, "Selecione todas as opções para continuar", "Erro",
 							JOptionPane.ERROR_MESSAGE);
 				} else {
 					Inicio inicio = new Inicio();
 					inicio.setVisible(true);
-					frame.setVisible(false);
+					gerenciaTecnico.this.dispose();
 				}
 			}
 		});
+		btnAvancar.setBounds(234, 268, 115, 32);
+		contentPane.add(btnAvancar);
 
-		btnAvanar.setBounds(247, 270, 89, 23);
-		frame.getContentPane().add(btnAvanar);
-
-		JLabel lblTimes = new JLabel("Selecione o time que deseja comandar:");
-		lblTimes.setForeground(Color.WHITE);
-		lblTimes.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTimes.setBounds(120, 165, 370, 27);
-		frame.getContentPane().add(lblTimes);
+		JLabel lblTime = new JLabel("Selecione o time que deseja comandar:");
+		lblTime.setForeground(Color.WHITE);
+		lblTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblTime.setBounds(114, 159, 367, 26);
+		contentPane.add(lblTime);
 
 		nomeTecnico = new JTextField();
-		nomeTecnico.setToolTipText("");
 		nomeTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomeTecnico.setForeground(Color.BLACK);
-		nomeTecnico.setBounds(120, 108, 259, 27);
-		frame.getContentPane().add(nomeTecnico);
+		nomeTecnico.setBounds(114, 111, 228, 32);
+		contentPane.add(nomeTecnico);
 		nomeTecnico.setColumns(10);
 
-		JLabel lblNome = new JLabel("Insira o nome do t\u00E9cnico:");
-		lblNome.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNome.setForeground(Color.WHITE);
-		lblNome.setBounds(120, 63, 259, 47);
-		frame.getContentPane().add(lblNome);
+		JLabel lblTecnico = new JLabel("Insira o nome do t\u00E9cnico:");
+		lblTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblTecnico.setForeground(Color.WHITE);
+		lblTecnico.setBounds(114, 76, 267, 32);
+		contentPane.add(lblTecnico);
 
-		JLabel background = new JLabel("New label");
-		background.setIcon(new ImageIcon(gerenciaTecnico.class.getResource("/Imagens/campo.jpg")));
-		background.setBounds(0, 0, 594, 370);
-		frame.getContentPane().add(background);
+		JLabel bg = new JLabel("");
+		bg.setIcon(new ImageIcon(gerenciaTecnico.class.getResource("/Imagens/campo.jpg")));
+		bg.setBounds(0, -23, 600, 399);
+		contentPane.add(bg);
 	}
 }

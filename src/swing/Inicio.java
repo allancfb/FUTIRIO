@@ -59,7 +59,9 @@ public class Inicio extends JFrame {
 		creditos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//JOptionPane.showMessageDialog(null, "vai pra cena de crédito");
-				
+				Creditos creditos = new Creditos();
+				creditos.setVisible(true);
+				Inicio.this.dispose();
 			}
 		});
 		creditos.setBounds(252, 252, 89, 23);
@@ -75,6 +77,9 @@ public class Inicio extends JFrame {
 		JButton jogar = new JButton("Jogar");
 		jogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				gerenciaTecnico gerencia = new gerenciaTecnico();
+				gerencia.setVisible(true);
+				Inicio.this.dispose();				
 			}
 		});
 		jogar.setBounds(252, 200, 89, 23);
