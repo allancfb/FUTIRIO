@@ -20,39 +20,6 @@ public class Main {
 			for (int i = 0; i < 12; i++) {
 				Time t = new Time();
 				times.add(t);
-				int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
-				
-				// Coloca os jogadores em excesso na reserva
-				for (int j = 0; j < times.size(); j++) {
-					if (times.get(i).getJogador(j).getPosicao().equals(Posicao.GOL)) {
-						qtdGOL++;
-						System.out.println(times.get(i).getJogadores().get(j).getNome() + " " + times.get(i).getJogadores().get(j).getPosicao().getNome());
-						
-						if (qtdGOL > 1)
-							times.get(i).getJogador(j).setPosicao(Posicao.DEFAULT);
-						
-						System.out.println(times.get(i).getJogadores().get(j).getNome() + " " + times.get(i).getJogadores().get(j).getPosicao().getNome());
-					}
-					else if (times.get(i).getJogador(j).getPosicao().equals(Posicao.DEFESA)) {
-						qtdDEFESA++;
-						
-						if (qtdDEFESA > 4) {
-							times.get(i).getJogador(j).setPosicao(Posicao.DEFAULT);
-						}
-					}
-					else if (times.get(i).getJogador(j).getPosicao().equals(Posicao.MEIA)) {
-						qtdMEIA++;
-						
-						if (qtdMEIA > 4)
-							times.get(i).getJogador(j).setPosicao(Posicao.DEFAULT);
-					}
-					else if (times.get(i).getJogador(j).getPosicao().equals(Posicao.ATAQUE)) {
-						qtdATAQUE++;
-						
-						if (qtdATAQUE > 2)
-							times.get(i).getJogador(j).setPosicao(Posicao.DEFAULT);
-					}
-				}
 			}
 			
 			// Coloca os 12 times no arquivo de times
