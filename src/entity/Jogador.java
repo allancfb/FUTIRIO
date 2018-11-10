@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -37,6 +38,16 @@ public class Jogador {
 		
 		gerarNome();
 		gerarAtributos();
+		
+		// se o jogador for estrela
+		if (getClass().getSimpleName() == "JogadorEstrela") {
+			chute += 50;
+			drible += 50;
+			passe += 50;
+			desarme += 50;
+			defesa += 50;
+		}
+		
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -56,7 +67,6 @@ public class Jogador {
 		gerarAtributos();
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
-		criarBackup();
 	}
 	
 	// Getters and Setters

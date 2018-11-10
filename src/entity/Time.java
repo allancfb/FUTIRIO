@@ -2,10 +2,10 @@ package entity;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
 
 public class Time {
 	
@@ -63,17 +63,16 @@ public class Time {
 	// TODO: comentar
 	private void criarBackup() {
 		try {
-			File f = new File("src/entity/backupTime.txt");
+			File f = new File("src/times/" + nome + ".txt");
 			FileWriter fw = new FileWriter(f);
 			
-			String backup = nome + "\n";
+			String backup = "";
 			
 			for (Jogador jogador : jogadores) {
 				backup += jogador.criarBackup();
 			}
 			
 			fw.append(backup);
-			fw.append("\n");
 			fw.close();
 		}
 		catch (Exception e) {

@@ -1,5 +1,7 @@
 package entity;
 
+import java.io.Serializable;
+
 /**
  * <p>Classe que gera objetos que representam jogadores estrela.</p>
  */
@@ -12,11 +14,6 @@ public class JogadorEstrela extends Jogador {
 	// TODO: comentar
 	JogadorEstrela(Posicao posicao) {
 		super(posicao);
-		chute += 50;
-		drible += 50;
-		passe += 50;
-		desarme += 50;
-		defesa += 50;
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
