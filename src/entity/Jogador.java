@@ -317,9 +317,6 @@ public class Jogador {
 	 */
 	private double calcularHabilidade(Posicao posicao) {
 		// TODO: definir pesos
-		int pesoBaixo = 1;
-		int pesoMedio = 5;
-		int pesoAlto = 9;
 		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
 		
 		switch (posicao) {
