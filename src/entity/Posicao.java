@@ -1,6 +1,8 @@
 package entity;
 
-public enum Posicao {
+import java.io.Serializable;
+
+public enum Posicao implements Serializable {
 	
 	GOL("Gol"), DEFESA("Defesa"), MEIA("Meia"), ATAQUE("Ataque"), DEFAULT("Default");
 	

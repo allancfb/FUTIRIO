@@ -1,14 +1,17 @@
 package entity;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Time {
+public class Time implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private ArrayList<Jogador> jogadores;
 	
@@ -16,9 +19,9 @@ public class Time {
 	
 	// TODO: comentar
 	Time() {
+		jogadores = new ArrayList<Jogador>();
+		
 		gerarNomeTime();
-		gerarJogadores();
-		criarBackup();
 	}
 	
 	// TODO: comentar
@@ -26,9 +29,6 @@ public class Time {
 		jogadores = new ArrayList<Jogador>();
 		
 		this.nome = nome;
-		
-		gerarJogadores();
-		criarBackup();
 	}
 
 	// Getters and Setters
@@ -61,19 +61,59 @@ public class Time {
 	// Métodos
 	
 	// TODO: comentar
-	private void criarBackup() {
-		try {
-			File f = new File("src/times/" + nome + ".txt");
-			FileWriter fw = new FileWriter(f);
-			
-			String backup = "";
-			
-			for (Jogador jogador : jogadores) {
-				backup += jogador.criarBackup();
+	public void gerarJogadores() {
+		// Gera jogadores para as posições
+		for (int i = 0; i < 2; i++) {
+			jogadores.add(new Jogador(Posicao.GOL));
+		}
+		for (int i = 0; i < 8; i++) {
+			jogadores.add(new Jogador(Posicao.DEFESA));
+		}
+		for (int i = 0; i < 8; i++) {
+			jogadores.add(new Jogador(Posicao.MEIA));
+		}
+		for (int i = 0; i < 4; i++) {
+			jogadores.add(new Jogador(Posicao.ATAQUE));
+		}
+		
+		int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
+		
+		// Coloca os jogadores em excesso no banco
+		for (int j = 0; j < getJogadores().size(); j++) {
+			if (getJogador(j).getPosicao().equals(Posicao.GOL)) {
+				qtdGOL++;
+				
+				if (qtdGOL > 1)
+					getJogador(j).setPosicao(Posicao.DEFAULT);
 			}
-			
-			fw.append(backup);
-			fw.close();
+			else if (getJogador(j).getPosicao().equals(Posicao.DEFESA)) {
+				qtdDEFESA++;
+				
+				if (qtdDEFESA > 4) {
+					getJogador(j).setPosicao(Posicao.DEFAULT);
+				}
+			}
+			else if (getJogador(j).getPosicao().equals(Posicao.MEIA)) {
+				qtdMEIA++;
+				
+				if (qtdMEIA > 4)
+					getJogador(j).setPosicao(Posicao.DEFAULT);
+			}
+			else if (getJogador(j).getPosicao().equals(Posicao.ATAQUE)) {
+				qtdATAQUE++;
+				
+				if (qtdATAQUE > 2)
+					getJogador(j).setPosicao(Posicao.DEFAULT);
+			}
+		}
+	}
+	
+	// TODO: comentar
+	public void criarBackup() {
+		try {
+			ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/times/" + nome)));
+			objectOut.writeObject(this);
+			objectOut.close();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -102,52 +142,6 @@ public class Time {
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
-		}
-	}
-	
-	// TODO: comentar
-	private void gerarJogadores() {
-		for (int i = 0; i < 2; i++) {
-			jogadores.add(new Jogador(Posicao.GOL));
-		}
-		for (int i = 0; i < 8; i++) {
-			jogadores.add(new Jogador(Posicao.DEFESA));
-		}
-		for (int i = 0; i < 8; i++) {
-			jogadores.add(new Jogador(Posicao.MEIA));
-		}
-		for (int i = 0; i < 4; i++) {
-			jogadores.add(new Jogador(Posicao.ATAQUE));
-		}
-		
-		int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
-		
-		for (int j = 0; j < getJogadores().size(); j++) {
-			if (getJogador(j).getPosicao().equals(Posicao.GOL)) {
-				qtdGOL++;
-				
-				if (qtdGOL > 1)
-					getJogador(j).setPosicao(Posicao.DEFAULT);
-			}
-			else if (getJogador(j).getPosicao().equals(Posicao.DEFESA)) {
-				qtdDEFESA++;
-				
-				if (qtdDEFESA > 4) {
-					getJogador(j).setPosicao(Posicao.DEFAULT);
-				}
-			}
-			else if (getJogador(j).getPosicao().equals(Posicao.MEIA)) {
-				qtdMEIA++;
-				
-				if (qtdMEIA > 4)
-					getJogador(j).setPosicao(Posicao.DEFAULT);
-			}
-			else if (getJogador(j).getPosicao().equals(Posicao.ATAQUE)) {
-				qtdATAQUE++;
-				
-				if (qtdATAQUE > 2)
-					getJogador(j).setPosicao(Posicao.DEFAULT);
-			}
 		}
 	}
 	

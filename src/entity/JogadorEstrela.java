@@ -5,8 +5,9 @@ import java.io.Serializable;
 /**
  * <p>Classe que gera objetos que representam jogadores estrela.</p>
  */
-public class JogadorEstrela extends Jogador {
+public class JogadorEstrela extends Jogador implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private double habMinDoTimePCompra;
 	
 	// Construtores

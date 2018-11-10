@@ -8,8 +8,9 @@ import java.util.Scanner;
 /**
  * <p>Classe que gera objetos que representam jogadores de futebol.<p>
  */
-public class Jogador {
+public class Jogador implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private Time time;
 	protected int chute;
@@ -24,7 +25,6 @@ public class Jogador {
 	protected Posicao posicaoRecomendada;
 	
 	// Construtores
-	
 	
 	/**
 	 * <p>Construtor recebendo um objeto do Enum {@link Posicao}.</p>
@@ -536,11 +536,6 @@ public class Jogador {
 		default:
 			break;
 		}
-	}
-	
-	// TODO: comentar
-	public String criarBackup() {
-		return nome + "," + chute + "," + drible + "," + passe + "," + desarme + "," + defesa + "," + habilidade + "," + salario + "," + isCapitao + "," + posicao + "," + posicaoRecomendada + "\n";
 	}
 	
 }
