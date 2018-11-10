@@ -63,16 +63,14 @@ public class gerenciaTecnico extends JFrame {
 		btnAvancar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnAvancar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO se os elementos não tiverem sido selecionados, mostra mensagem:
-				// Selecione todas as opções para continuar
-				/* if(elementos não selecionados) */
 				if (nomeTecnico.getText() == null || nomeTecnico.getText().trim().equals("")
 						|| times.getSelectedItem() == null) {
 					JOptionPane.showMessageDialog(null, "Selecione todas as opções para continuar", "Erro",
 							JOptionPane.ERROR_MESSAGE);
 				} else {
-					Inicio inicio = new Inicio();
-					inicio.setVisible(true);
+					//TODO vai pra cena de gerenciarTime
+					gerenciaTime jogo= new gerenciaTime(times.getItemAt(times.getSelectedIndex()).toString(), times.getSelectedIndex(), nomeTecnico.getText());
+					jogo.setVisible(true);
 					gerenciaTecnico.this.dispose();
 				}
 			}
