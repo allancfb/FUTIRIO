@@ -2,11 +2,14 @@ package entity;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 	// TODO: comentar
 	public static void criarTimes() {
+		ArrayList<Time> times = new ArrayList<Time>();
+		
 		try {
 			// Instancia o arquivo de times
 			File fileTimes = new File("src/entity/backupTimes.txt");
@@ -15,8 +18,45 @@ public class Main {
 			
 			// Gera os 12 times
 			for (int i = 0; i < 12; i++) {
-				int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
 				Time t = new Time();
+				times.add(t);
+				int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
+				
+				// Coloca os jogadores em excesso na reserva
+				for (int j = 0; j < times.size(); j++) {
+					if (times.get(i).getJogador(j).getPosicao().equals(Posicao.GOL)) {
+						qtdGOL++;
+						System.out.println(times.get(i).getJogadores().get(j).getNome() + " " + times.get(i).getJogadores().get(j).getPosicao().getNome());
+						
+						if (qtdGOL > 1)
+							times.get(i).getJogador(j).setPosicao(Posicao.DEFAULT);
+						
+						System.out.println(times.get(i).getJogadores().get(j).getNome() + " " + times.get(i).getJogadores().get(j).getPosicao().getNome());
+					}
+					else if (times.get(i).getJogador(j).getPosicao().equals(Posicao.DEFESA)) {
+						qtdDEFESA++;
+						
+						if (qtdDEFESA > 4) {
+							times.get(i).getJogador(j).setPosicao(Posicao.DEFAULT);
+						}
+					}
+					else if (times.get(i).getJogador(j).getPosicao().equals(Posicao.MEIA)) {
+						qtdMEIA++;
+						
+						if (qtdMEIA > 4)
+							times.get(i).getJogador(j).setPosicao(Posicao.DEFAULT);
+					}
+					else if (times.get(i).getJogador(j).getPosicao().equals(Posicao.ATAQUE)) {
+						qtdATAQUE++;
+						
+						if (qtdATAQUE > 2)
+							times.get(i).getJogador(j).setPosicao(Posicao.DEFAULT);
+					}
+				}
+			}
+			
+			// Coloca os 12 times no arquivo de times
+			for (Time time : times) {
 				// Instancia o arquivo do time
 				File fileTime = new File("src/entity/backupTime.txt");
 				// Cria um Scanner para ler o arquivo que contém os jogadores do time
@@ -27,40 +67,9 @@ public class Main {
 					fw.append(input.nextLine());
 					fw.append("\n");
 				}
-				
-				// Coloca os jogadores em excesso na reserva
-				for (Jogador jogador : t.getJogadores()) {
-					if (jogador.getPosicao() == Posicao.GOL) {
-						qtdGOL++;
-						
-						if (qtdGOL > 1)
-							jogador.setPosicao(Posicao.DEFAULT);
-					}
-					else if (jogador.getPosicao() == Posicao.DEFESA) {
-						qtdDEFESA++;
-						
-						if (qtdDEFESA > 4)
-							jogador.setPosicao(Posicao.DEFAULT);
-					}
-					else if (jogador.getPosicao() == Posicao.MEIA) {
-						qtdMEIA++;
-						
-						if (qtdMEIA > 4)
-							jogador.setPosicao(Posicao.DEFAULT);
-					}
-					else if (jogador.getPosicao() == Posicao.ATAQUE) {
-						qtdATAQUE++;
-						
-						if (qtdATAQUE > 2)
-							jogador.setPosicao(Posicao.DEFAULT);
-					}
-				}
-				
-				input.close();
 			}
 			
 			fw.close();
-			
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -68,7 +77,7 @@ public class Main {
 	}
 
 	public static void main(String args[]) {
-		
+		criarTimes();
 	}
 
 }

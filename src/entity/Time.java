@@ -121,4 +121,9 @@ public class Time {
 		}
 	}
 	
+	// TODO: comentar
+	public Jogador getJogador(int i) {
+		return getJogadores().get(i);
+	}
+	
 }
