@@ -54,7 +54,7 @@ public class Time implements Serializable {
 	}
 
 	// TODO: comentar
-	public void setJogador(Jogador jogador) {
+	public void addJogador(Jogador jogador) {
 		jogadores.add(jogador);
 	}
 	

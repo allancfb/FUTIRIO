@@ -295,7 +295,14 @@ public class Jogador implements Serializable {
 
 	public void setIsEstrela(boolean isEstrela) {
 		if (isEstrela == true) {
+			chute += 50;
+			drible += 50;
+			passe += 50;
+			desarme += 50;
+			defesa += 50;
 			
+			atualizarHabilidade();
+			atualizarPosicaoRecomendada();
 		}
 		
 		this.isEstrela = isEstrela;
@@ -375,7 +382,12 @@ public class Jogador implements Serializable {
 				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 				
 			case DEFAULT:
-				return calcularHabilidade(posicaoRecomendada);
+				if (posicaoRecomendada != null) {
+					return calcularHabilidade(posicaoRecomendada);
+				}
+				else {
+					return 0;
+				}
 				
 			default:
 				return calcularHabilidade(posicaoRecomendada);
