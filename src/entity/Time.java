@@ -14,6 +14,7 @@ public class Time implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String nome;
 	private ArrayList<Jogador> jogadores;
+	private int habilidadeGeral;
 	
 	// Construtores
 	
@@ -44,6 +45,13 @@ public class Time implements Serializable {
 	}
 
 	// TODO: comentar
+	public int getHabilidadeGeral() {
+		atualizarHabilidadeGeral();
+		
+		return habilidadeGeral;
+	}
+	
+	// TODO: comentar
 	public Jogador getJogador(int i) {
 		return getJogadores().get(i);
 	}
@@ -52,13 +60,16 @@ public class Time implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
+	// Métodos
+	
 	// TODO: comentar
 	public void addJogador(Jogador jogador) {
 		jogadores.add(jogador);
+		
+		atualizarHabilidadeGeral();
+		bancarExcesso();
 	}
-	
-	// Métodos
 	
 	// TODO: comentar
 	public void gerarJogadores() {
@@ -76,9 +87,13 @@ public class Time implements Serializable {
 			jogadores.add(new Jogador(Posicao.ATAQUE));
 		}
 		
+		atualizarHabilidadeGeral();
+	}
+	
+	// TODO: comentar
+	public void bancarExcesso() {
 		int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
 		
-		// Coloca os jogadores em excesso no banco
 		for (int j = 0; j < getJogadores().size(); j++) {
 			if (getJogador(j).getPosicao().equals(Posicao.GOL)) {
 				qtdGOL++;
@@ -143,6 +158,23 @@ public class Time implements Serializable {
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
+	}
+
+	// TODO: comentar
+	private void atualizarHabilidadeGeral() {
+		habilidadeGeral = calcularHabilidadeGeral();
+	}
+	
+	// TODO: comentar
+	private int calcularHabilidadeGeral() {
+		int somaMedia = 0;
+		for (Jogador jogador : jogadores) {
+			if (!jogador.getPosicao().equals(Posicao.DEFAULT)) {
+				somaMedia += jogador.getHabilidade();
+			}
+		}
+		
+		return somaMedia / 11;
 	}
 	
 }

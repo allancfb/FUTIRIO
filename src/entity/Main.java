@@ -82,6 +82,7 @@ public class Main {
 		try {
 			ObjectInputStream objectIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream("src/times/" + nome)));
 			Time time = (Time) objectIn.readObject();
+			time.bancarExcesso();
 			objectIn.close();
 			
 			return time;
@@ -94,7 +95,12 @@ public class Main {
 	}
 	
 	public static void main(String args[]) {
-		
+		Time flamengo = carregarTime("Flamengo");
+		Time botafogo = carregarTime("Botafogo");
+		Partida partida = new Partida(flamengo, botafogo);
+		partida.run();
+		System.out.println(flamengo.getHabilidadeGeral());
+		System.out.println(botafogo.getHabilidadeGeral());
 	}
 
 }
