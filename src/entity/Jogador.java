@@ -21,6 +21,7 @@ public class Jogador implements Serializable {
 	private double habilidade;
 	private double salario;
 	private boolean isCapitao;
+	private boolean isEstrela;
 	protected Posicao posicao;
 	protected Posicao posicaoRecomendada;
 	
@@ -37,17 +38,7 @@ public class Jogador implements Serializable {
 		this.posicao = posicao;
 		
 		gerarNome();
-		gerarAtributos();
-		
-		// se o jogador for estrela
-		if (getClass().getSimpleName() == "JogadorEstrela") {
-			chute += 50;
-			drible += 50;
-			passe += 50;
-			desarme += 50;
-			defesa += 50;
-		}
-		
+		gerarAtributos();	
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -183,6 +174,11 @@ public class Jogador implements Serializable {
 		return isCapitao;
 	}
 	
+	// TODO: comentar
+	public boolean isEstrela() {
+		return isEstrela;
+	}
+	
 	/**
 	 * <p>Atribui uma {@link String} nome e atribui ao <code>nome</code> do jogador.</p>
 	 * 
@@ -297,6 +293,14 @@ public class Jogador implements Serializable {
 		this.isCapitao = isCapitao;
 	}
 
+	public void setIsEstrela(boolean isEstrela) {
+		if (isEstrela == true) {
+			
+		}
+		
+		this.isEstrela = isEstrela;
+	}
+	
 	// Métodos
 	
 	/**
