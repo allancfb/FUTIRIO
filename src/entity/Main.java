@@ -1,25 +1,18 @@
 package entity;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class Main {
 
 	// TODO: comentar
-	public static void criarTime() {
-		Time time = new Time();
-	}
-
-	// TODO: comentar
-	public static void criarTime(String nome) {
-		Time time = new Time(nome);
-	}
-
-	// TODO: comentar
-	public static void importarTime(String nome, String urlTXT) {
+	public static void salvarTimeDeTXT(String nome, String urlTXT) {
 		try {
 			Time time = new Time(nome);
 			File file = new File(urlTXT);
@@ -69,6 +62,34 @@ public class Main {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	// TODO: comentar
+	public static void salvarTime(Time time) {
+		try {
+			ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/times/" + time.getNome())));
+			objectOut.writeObject(time);
+			objectOut.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// TODO: comentar
+	public static Time carregarTime(String nome) {
+		try {
+			ObjectInputStream objectIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream("src/times/" + nome)));
+			Time time = (Time) objectIn.readObject();
+			objectIn.close();
+			
+			return time;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			
+			return null;
 		}
 	}
 	
