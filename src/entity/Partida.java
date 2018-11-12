@@ -37,7 +37,12 @@ public class Partida {
 	public String getPlacar() {
 		return placar;
 	}
-	
+
+	// TODO: comentar
+	public int getNumJogadas() {
+		return numJogadas;
+	}
+
 	// TODO: comentar
 	public Tempo getTempo() {
 		return tempo;
@@ -66,7 +71,6 @@ public class Partida {
 		
 		int geral1 = time1.getHabilidadeGeral();
 		int geral2 = time2.getHabilidadeGeral();
-		double chance = 0;
 		
 		// Gera o geral dos times para a partida
 		int geral1Partida = (int) (geral1 + (100 - geral1 - geral2) / 2);
