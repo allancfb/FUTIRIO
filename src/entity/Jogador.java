@@ -337,45 +337,44 @@ public class Jogador implements Serializable {
 	 * @return a habilidade do jogador
 	 */
 	private double calcularHabilidade(Posicao posicao) {
-		// TODO: definir pesos
 		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
 		
 		switch (posicao) {
 			case GOL:
-				chutePeso = 10;
-				driblePeso = 5;
-				passePeso = 20;
-				desarmePeso = 5;
-				defesaPeso = 60;
+				chutePeso = 7;
+				driblePeso = 1;
+				passePeso = 1;
+				desarmePeso = 1;
+				defesaPeso = 90;
 				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 				
 				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 				
 			case DEFESA:
 				chutePeso = 10;
-				driblePeso = 15;
-				passePeso = 30;
-				desarmePeso = 40;
+				driblePeso = 5;
+				passePeso = 35;
+				desarmePeso = 45;
 				defesaPeso = 5;
 				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 				
 				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 			
 			case MEIA:
-				chutePeso = 20;
-				driblePeso = 25;
-				passePeso = 30;
-				desarmePeso = 20;
+				chutePeso = 25;
+				driblePeso = 20;
+				passePeso = 25;
+				desarmePeso = 25;
 				defesaPeso = 5;
 				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 				
 				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 				
 			case ATAQUE:
-				chutePeso = 40;
-				driblePeso = 25;
-				passePeso = 20;
-				desarmePeso = 10;
+				chutePeso = 50;
+				driblePeso = 30; //deixei com a sua base de 5 minima, só não fiz com o goleiro pq o goleiro é um caso especial. mas ta ai ^^ peru
+				passePeso = 10;
+				desarmePeso = 5;
 				defesaPeso = 5;
 				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 				
@@ -402,49 +401,45 @@ public class Jogador implements Serializable {
 	 * @return a posição recomendada do jogador
 	 */
 	private Posicao calcularPosicaoRecomendada() {
-		// TODO: definir pesos
-		int pesoBaixo = 1;
-		int pesoMedio = 5;
-		int pesoAlto = 9;
 		double mediaGOL, mediaDEFESA, mediaMEIA, mediaATAQUE;
 		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
 		
 		// Pesos da posição GOL
-		chutePeso = pesoBaixo;
-		driblePeso = pesoBaixo;
-		passePeso = pesoMedio;
-		desarmePeso = pesoBaixo;
-		defesaPeso = pesoAlto;
+		chutePeso = 7;
+		driblePeso = 1;
+		passePeso = 1;
+		desarmePeso = 1;
+		defesaPeso = 90;
 		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 		
 		mediaGOL = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 		
 		// Pesos da posição DEFESA
-		chutePeso = pesoBaixo;
-		driblePeso = pesoMedio;
-		passePeso = pesoAlto;
-		desarmePeso = pesoAlto;
-		defesaPeso = pesoBaixo;
+		chutePeso = 10;
+		driblePeso = 5;
+		passePeso = 35;
+		desarmePeso = 45;
+		defesaPeso = 5;
 		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 		
 		mediaDEFESA = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 		
 		// Pesos da posição MEIA
-		chutePeso = pesoAlto;
-		driblePeso = pesoAlto;
-		passePeso = pesoAlto;
-		desarmePeso = pesoAlto;
-		defesaPeso = pesoBaixo;
+		chutePeso = 25;
+		driblePeso = 20;
+		passePeso = 25;
+		desarmePeso = 25;
+		defesaPeso = 5;
 		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 		
 		mediaMEIA = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
 		
 		// Pesos da posição ATAQUE
-		chutePeso = pesoAlto;
-		driblePeso = pesoAlto;
-		passePeso = pesoAlto;
-		desarmePeso = pesoMedio;
-		defesaPeso = pesoBaixo;
+		chutePeso = 50;
+		driblePeso = 30;
+		passePeso = 10;
+		desarmePeso = 5;
+		defesaPeso = 5;
 		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 		
 		mediaATAQUE = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
