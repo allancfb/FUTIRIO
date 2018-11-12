@@ -161,7 +161,7 @@ public class Time implements Serializable {
 	}
 
 	// TODO: comentar
-	private void atualizarHabilidadeGeral() {
+	public void atualizarHabilidadeGeral() {
 		habilidadeGeral = calcularHabilidadeGeral();
 	}
 	

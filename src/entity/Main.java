@@ -95,12 +95,11 @@ public class Main {
 	}
 	
 	public static void main(String args[]) {
-		Time flamengo = carregarTime("Flamengo");
-		Time botafogo = carregarTime("Botafogo");
-		Partida partida = new Partida(flamengo, botafogo);
-		partida.run();
-		System.out.println(flamengo.getHabilidadeGeral());
-		System.out.println(botafogo.getHabilidadeGeral());
+		Time time = carregarTime("Volta Redonda");
+		
+		time.atualizarHabilidadeGeral();
+		
+		salvarTime(time);
 	}
 
 }
