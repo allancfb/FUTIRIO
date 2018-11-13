@@ -2,12 +2,13 @@ package swing;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import java.awt.Image;
 import javax.print.DocFlavor.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -47,6 +48,8 @@ public class gerenciaTime extends JFrame {
 		}
 		
 		JLabel escudoTime = new JLabel();
+		Image escudo = new ImageIcon(this.getClass().getResource("/Imagens/"+Integer.toString(index)+".png")).getImage();
+		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(10, 11, 525, 282);
 		contentPane.add(escudoTime);
 
