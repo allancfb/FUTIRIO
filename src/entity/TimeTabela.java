@@ -48,10 +48,13 @@ public class TimeTabela {
 		
 		this.time = time;
 		this.pontos = pontos;
-		
-		
-		
-		
+		this.vitorias = vitorias;
+		this.saldoGols = saldoGols;
+		this.qtGols = qtdGols;
+		this.empates = empates;
+		this.derrotas = derrotas;
+		this.golsSofridos = golSofrido;
+	
 	}
 	
 	
