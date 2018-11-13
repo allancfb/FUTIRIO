@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Campeonato {
 	
+	private String nome;
 	private int ano;
 	private Time Campeao;
 	private static int rodadasTotais = 30;
@@ -12,6 +13,17 @@ public class Campeonato {
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela = new ArrayList <TimeTabela>();
 
+	Campeonato(int ano ){
+	
+		this.ano = ano;
+		this.rodadaAtual = 0;
+		this.numPartidasJogadas = 0;
+		this.nome = "Campeonato Carioca - " + ano;
+		
+	}
+	
+	
+	
 	// TODO: comentar
 	public static int getRodadasTotais() {
 		return rodadasTotais;

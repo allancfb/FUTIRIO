@@ -11,6 +11,19 @@ public class TimeTabela {
 	private int derrotas;
 	private int golsSofridos;
 
+	TimeTabela(Time time, int pontos, int vitorias, int saldoGols, int qtdGols, int empates, int derrotas, int golSofrido){
+		
+		this.time = time;
+		this.pontos = pontos;
+		this.vitorias = vitorias;
+		this.saldoGols = saldoGols;
+		this.qtGols = qtdGols;
+		this.empates = empates;
+		this.derrotas = derrotas;
+		this.golsSofridos = golSofrido;
+	
+	}
+	
 	// TODO:  comentar
 	public Time getTime() {
 		return time;
@@ -43,19 +56,6 @@ public class TimeTabela {
 	public int getSaldoGols() {
 		return saldoGols;
 	}
-	
-	TimeTabela(Time time, int pontos, int vitorias, int saldoGols, int qtdGols, int empates, int derrotas, int golSofrido){
-		
-		this.time = time;
-		this.pontos = pontos;
-		this.vitorias = vitorias;
-		this.saldoGols = saldoGols;
-		this.qtGols = qtdGols;
-		this.empates = empates;
-		this.derrotas = derrotas;
-		this.golsSofridos = golSofrido;
-	
-	}
-	
+
 	
 }
