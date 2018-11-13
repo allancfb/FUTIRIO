@@ -50,7 +50,7 @@ public class gerenciaTime extends JFrame {
 		JLabel escudoTime = new JLabel();
 		Image escudo = new ImageIcon(this.getClass().getResource("/Imagens/"+Integer.toString(index)+".png")).getImage();
 		escudoTime.setIcon(new ImageIcon(escudo));
-		escudoTime.setBounds(10, 11, 525, 282);
+		escudoTime.setBounds(10, 11, 110, 110);
 		contentPane.add(escudoTime);
 
 		JLabel nomeTime = new JLabel(nome);
