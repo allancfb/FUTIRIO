@@ -12,7 +12,9 @@ public class Campeonato {
 	private int rodadaAtual;
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela = new ArrayList <TimeTabela>();
-
+	private ArrayList<Time> jogosTimes = new ArrayList<Time>();
+	//array de rodada  ===========to do
+	
 	Campeonato(int ano){
 	
 		this.ano = ano;
@@ -21,6 +23,12 @@ public class Campeonato {
 		this.nome = "Campeonato Carioca - " + ano;
 		adicionarTimes();
 		
+		
+	}
+	
+	public void organizaJogos() {
+		jogosTimes.set(1, jogosTimes.get(8));
+		jogosTimes.set(15, jogosTimes.get(8));
 	}
 	
 	// TODO: comentar
@@ -86,6 +94,7 @@ public class Campeonato {
 		
 		for(int i = 0; i < nomes.length;i++){
 			tabela.add(new TimeTabela(Main.carregarTime(nomes[i])));
+			jogosTimes.add(Main.carregarTime(nomes[i]));
 		}
 	}
 	
@@ -121,7 +130,7 @@ public class Campeonato {
 									tabela.set(i, timeTabela);
 									break;
 									}
-								}
+								} 
 							}
 						}
 					}
