@@ -13,17 +13,21 @@ public class Campeonato {
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela = new ArrayList <TimeTabela>();
 
-	Campeonato(int ano ){
+	Campeonato(int ano){
 	
 		this.ano = ano;
 		this.rodadaAtual = 0;
 		this.numPartidasJogadas = 0;
 		this.nome = "Campeonato Carioca - " + ano;
+		adicionarTimes();
 		
 	}
 	
-	
-	
+	// TODO: comentar
+	public String getNome() {
+		return nome;
+	}
+
 	// TODO: comentar
 	public static int getRodadasTotais() {
 		return rodadasTotais;
@@ -75,7 +79,24 @@ public class Campeonato {
 		
 	}
 	
-	
+	private void adicionarTimes() {
+		tabela.add(new TimeTabela(Main.carregarTime("America")));
+		tabela.add(new TimeTabela(Main.carregarTime("Bangu")));
+		tabela.add(new TimeTabela(Main.carregarTime("Boavista-RJ")));
+		tabela.add(new TimeTabela(Main.carregarTime("Bonsucesso")));
+		tabela.add(new TimeTabela(Main.carregarTime("Botafogo")));
+		tabela.add(new TimeTabela(Main.carregarTime("Cabofriense")));
+		tabela.add(new TimeTabela(Main.carregarTime("Flamengo")));
+		tabela.add(new TimeTabela(Main.carregarTime("Fluminense")));
+		tabela.add(new TimeTabela(Main.carregarTime("Goytacaz")));
+		tabela.add(new TimeTabela(Main.carregarTime("Macaé")));
+		tabela.add(new TimeTabela(Main.carregarTime("Madureira")));
+		tabela.add(new TimeTabela(Main.carregarTime("Nova Iguaçu")));
+		tabela.add(new TimeTabela(Main.carregarTime("Portuguesa-RJ")));
+		tabela.add(new TimeTabela(Main.carregarTime("Resende")));
+		tabela.add(new TimeTabela(Main.carregarTime("Vasco")));
+		tabela.add(new TimeTabela(Main.carregarTime("Volta Redonda")));
+	}
 	
 	private void organizador(TimeTabela timeTabela) { 
 		
