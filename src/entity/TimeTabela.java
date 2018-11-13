@@ -44,7 +44,15 @@ public class TimeTabela {
 		return saldoGols;
 	}
 	
-	
+	TimeTabela(Time time, int pontos, int vitorias, int saldoGols, int qtdGols, int empates, int derrotas, int golSofrido){
+		
+		this.time = time;
+		this.pontos = pontos;
+		
+		
+		
+		
+	}
 	
 	
 }
