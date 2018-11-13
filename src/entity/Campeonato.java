@@ -52,4 +52,50 @@ public class Campeonato {
 		return ano;
 	}
 	
+	public void organizaTabela(TimeTabela timeTabela) { //organiza os times caralho!
+
+		if (tabela.isEmpty()) {
+			tabela.add(timeTabela);
+		} else {
+			for(int i = 0; i <= tabela.size(); i++) {
+				if(timeTabela.getPontos() > tabela.get(i).getPontos()) {
+					tabela.set(i, timeTabela);
+					break;
+				} else if(timeTabela.getPontos() == tabela.get(i).getPontos()) {
+					if(timeTabela.getVitorias() > tabela.get(i).getVitorias()) {
+						tabela.set(i, timeTabela);
+						break;
+					} else if(timeTabela.getVitorias() == tabela.get(i).getVitorias()) {
+						if(timeTabela.getSaldoGols() > tabela.get(i).getSaldoGols()) {
+							tabela.set(i, timeTabela);
+							break;
+						}else if(timeTabela.getSaldoGols() == tabela.get(i).getSaldoGols()) {
+							if(timeTabela.getQtGols() > tabela.get(i).getQtGols()) {
+								tabela.set(i, timeTabela);
+								break;
+							}else if(timeTabela.getQtGols() == tabela.get(i).getQtGols()) {
+								if(timeTabela.getEmpates() < tabela.get(i).getEmpates()) {
+									tabela.set(i, timeTabela);
+									break;
+								}else if(timeTabela.getEmpates() == tabela.get(i).getEmpates()){
+									if(timeTabela.getDerrotas() < tabela.get(i).getDerrotas()) {
+										tabela.set(i, timeTabela);
+										break;
+									}else if(timeTabela.getDerrotas() == tabela.get(i).getDerrotas()) {
+										if(timeTabela.getGolsSofridos() < tabela.get(i).getGolsSofridos()) {
+											tabela.set(i, timeTabela);
+											break;
+										}
+									}
+								}
+							}
+							
+						}
+						
+					}
+				}
+			}
+		}
+	}
+	
 }
