@@ -24,7 +24,7 @@ public class gerenciaTime extends JFrame {
 		});
 	}
 
-	public gerenciaTime(String nomeCompleto, String tecnico) {
+	public gerenciaTime(String nome, String tecnico) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -32,7 +32,7 @@ public class gerenciaTime extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel nomeTime = new JLabel(nomeCompleto);
+		JLabel nomeTime = new JLabel(nome);
 		nomeTime.setBounds(124, 11, 98, 21);
 		contentPane.add(nomeTime);
 		

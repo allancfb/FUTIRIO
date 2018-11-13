@@ -51,10 +51,10 @@ public class gerenciaTecnico extends JFrame {
 
 		JComboBox times = new JComboBox();
 		times.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		times.addItem(Time.BOTAFOGO.getApelido());
-		times.addItem(Time.FLAMENGO.getApelido());
-		times.addItem(Time.FLUMINENSE.getApelido());
-		times.addItem(Time.VASCO.getApelido());
+		times.addItem(Time.Botafogo.name());
+		times.addItem(Time.Flamengo.name());
+		times.addItem(Time.Fluminense.name());
+		times.addItem(Time.Vasco.name());
 		times.setSelectedItem(null);
 		times.setBounds(114, 191, 142, 32);
 		contentPane.add(times);
@@ -68,7 +68,7 @@ public class gerenciaTecnico extends JFrame {
 					JOptionPane.showMessageDialog(null, "Selecione todas as opções para continuar", "Erro",
 							JOptionPane.ERROR_MESSAGE);
 				} else {
-					gerenciaTime jogo = new gerenciaTime(times.getItemAt(times.getSelectedIndex()), nomeTecnico.getText());
+					gerenciaTime jogo = new gerenciaTime(times.getItemAt(times.getSelectedIndex()).toString(), nomeTecnico.getText());
 					jogo.setVisible(true);
 					gerenciaTecnico.this.dispose();
 				}
