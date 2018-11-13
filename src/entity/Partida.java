@@ -8,7 +8,7 @@ public class Partida {
 	private Time time2;
 	private String placar;
 	private Tempo tempo;
-	private int numJogadas;
+	private int minuto;
 	private int time1Gols;
 	private int time2Gols;
 	
@@ -39,8 +39,8 @@ public class Partida {
 	}
 
 	// TODO: comentar
-	public int getNumJogadas() {
-		return numJogadas;
+	public int getMinuto() {
+		return minuto;
 	}
 
 	// TODO: comentar
@@ -88,7 +88,7 @@ public class Partida {
 			atualizarPlacar();
 			
 			for (int i = 0; i < 90; i++) {
-				numJogadas = i;
+				minuto = i;
 				
 				// Sorteia quem vai jogar a jogada, de acordo com a porcentagem de cada time
 				int sorteioPosse = r.nextInt(100) + 1;

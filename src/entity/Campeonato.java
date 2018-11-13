@@ -99,6 +99,7 @@ public class Campeonato {
 		tabela.add(new TimeTabela(Main.carregarTime("Volta Redonda")));
 	}
 	
+	// TODO: comentar
 	private void organizador(TimeTabela timeTabela) { 
 		
 		for(int i = 0; i <= tabela.size(); i++) {
