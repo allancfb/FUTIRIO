@@ -12,15 +12,11 @@ public class gerenciaTime extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					// gerenciaTime frame = new gerenciaTime();
-					// frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -28,10 +24,7 @@ public class gerenciaTime extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public gerenciaTime(String timeNome, int timeIndex, String tecnico) {
+	public gerenciaTime(String nomeCompleto, String tecnico) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -39,9 +32,12 @@ public class gerenciaTime extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel label = new JLabel(timeNome);
-		label.setBounds(165, 117, 98, 28);
-		contentPane.add(label);
+		JLabel nomeTime = new JLabel(nomeCompleto);
+		nomeTime.setBounds(124, 11, 98, 21);
+		contentPane.add(nomeTime);
+		
+		JLabel nomeTecnico = new JLabel("Técnico: "+tecnico);
+		nomeTecnico.setBounds(124, 32, 98, 21);
+		contentPane.add(nomeTecnico);
 	}
-
 }
