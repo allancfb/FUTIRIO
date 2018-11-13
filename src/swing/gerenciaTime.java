@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class gerenciaTime extends JFrame {
 
@@ -26,18 +27,26 @@ public class gerenciaTime extends JFrame {
 
 	public gerenciaTime(String nome, String tecnico) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 634, 496);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		//Pega o nome completo do time
+		for(Time getTime : Time.values()) {
+			if(getTime.name()==nome) {
+				nome = getTime.getNomeCompleto();
+			}
+		}
 		JLabel nomeTime = new JLabel(nome);
-		nomeTime.setBounds(124, 11, 98, 21);
+		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		nomeTime.setBounds(152, 11, 394, 33);
 		contentPane.add(nomeTime);
 		
 		JLabel nomeTecnico = new JLabel("Técnico: "+tecnico);
-		nomeTecnico.setBounds(124, 32, 98, 21);
+		nomeTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		nomeTecnico.setBounds(152, 55, 394, 33);
 		contentPane.add(nomeTecnico);
 	}
 }
