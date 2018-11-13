@@ -53,23 +53,19 @@ public class Campeonato {
 	}
 	
 	// TODO: comentar
-	public void organizaTabela2(){
-		
+	public void organizaTabela() {
 		
 		ArrayList<TimeTabela> tabelinha = new ArrayList <TimeTabela>();
 		tabelinha = this.tabela;
 		
-		for(int i = 0; i <= tabela.size(); i++){
-			
-			organizaTabela(tabelinha.get(i));
-			
-		}
+		for(int i = tabela.size() - 1; i >= 0; i--)
+			organizador(tabelinha.get(i));
 		
 	}
 	
 	
 	
-	private void organizaTabela(TimeTabela timeTabela) { //organiza os times caralho!
+	private void organizador(TimeTabela timeTabela) { 
 		
 		for(int i = 0; i <= tabela.size(); i++) {
 			if(timeTabela.getPontos() > tabela.get(i).getPontos()) {
