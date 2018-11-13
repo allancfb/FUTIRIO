@@ -80,22 +80,12 @@ public class Campeonato {
 	}
 	
 	private void adicionarTimes() {
-		tabela.add(new TimeTabela(Main.carregarTime("America")));
-		tabela.add(new TimeTabela(Main.carregarTime("Bangu")));
-		tabela.add(new TimeTabela(Main.carregarTime("Boavista-RJ")));
-		tabela.add(new TimeTabela(Main.carregarTime("Bonsucesso")));
-		tabela.add(new TimeTabela(Main.carregarTime("Botafogo")));
-		tabela.add(new TimeTabela(Main.carregarTime("Cabofriense")));
-		tabela.add(new TimeTabela(Main.carregarTime("Flamengo")));
-		tabela.add(new TimeTabela(Main.carregarTime("Fluminense")));
-		tabela.add(new TimeTabela(Main.carregarTime("Goytacaz")));
-		tabela.add(new TimeTabela(Main.carregarTime("Macaé")));
-		tabela.add(new TimeTabela(Main.carregarTime("Madureira")));
-		tabela.add(new TimeTabela(Main.carregarTime("Nova Iguaçu")));
-		tabela.add(new TimeTabela(Main.carregarTime("Portuguesa-RJ")));
-		tabela.add(new TimeTabela(Main.carregarTime("Resende")));
-		tabela.add(new TimeTabela(Main.carregarTime("Vasco")));
-		tabela.add(new TimeTabela(Main.carregarTime("Volta Redonda")));
+		
+		String[] nomes = {"America","Bangu","Boavista-RJ","Bonsucesso","Botafogo","Cabofriense","Flamengo","Fluminense","Goytacaz","Macaé","Madureira","Nova Iguaçu","Portuguesa-RJ","Resende","Vasco","Volta Redonda"};
+		
+		for(int i = 0; i < nomes.length;i++){
+			tabela.add(new TimeTabela(Main.carregarTime(nomes[i])));
+		}
 	}
 	
 	private void organizador(TimeTabela timeTabela) { 
