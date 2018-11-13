@@ -95,7 +95,8 @@ public class Main {
 	}
 	
 	public static void main(String args[]) {
-		
+		Campeonato c = new Campeonato(2018);
+		System.out.println(c.getTabela().get(0).getTime().getNome());
 	}
 
 }

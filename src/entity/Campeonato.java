@@ -79,6 +79,7 @@ public class Campeonato {
 		
 	}
 	
+	// TODO: comentar
 	private void adicionarTimes() {
 		
 		String[] nomes = {"America","Bangu","Boavista-RJ","Bonsucesso","Botafogo","Cabofriense","Flamengo","Fluminense","Goytacaz","Macaé","Madureira","Nova Iguaçu","Portuguesa-RJ","Resende","Vasco","Volta Redonda"};
@@ -88,6 +89,7 @@ public class Campeonato {
 		}
 	}
 	
+	// TODO: comentar
 	private void organizador(TimeTabela timeTabela) { 
 		
 		for(int i = 0; i <= tabela.size(); i++) {
