@@ -68,7 +68,7 @@ public class gerenciaTecnico extends JFrame {
 					JOptionPane.showMessageDialog(null, "Selecione todas as opções para continuar", "Erro",
 							JOptionPane.ERROR_MESSAGE);
 				} else {
-					gerenciaTime jogo = new gerenciaTime(times.getItemAt(times.getSelectedIndex()).toString(), nomeTecnico.getText());
+					gerenciaTime jogo = new gerenciaTime(times.getItemAt(times.getSelectedIndex()).toString(), nomeTecnico.getText(), times.getSelectedIndex());
 					jogo.setVisible(true);
 					gerenciaTecnico.this.dispose();
 				}
