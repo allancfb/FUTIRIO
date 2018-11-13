@@ -79,6 +79,7 @@ public class Campeonato {
 		
 	}
 	
+	// TODO: comentar
 	private void adicionarTimes() {
 		tabela.add(new TimeTabela(Main.carregarTime("America")));
 		tabela.add(new TimeTabela(Main.carregarTime("Bangu")));
