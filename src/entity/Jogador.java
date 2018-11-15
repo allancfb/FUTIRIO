@@ -38,7 +38,7 @@ public class Jogador implements Serializable {
 		this.posicao = posicao;
 		
 		gerarNome();
-		gerarAtributos();	
+		gerarAtributos(posicao);	
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -55,7 +55,7 @@ public class Jogador implements Serializable {
 		this.nome = nome;
 		this.posicao = posicao;
 		
-		gerarAtributos();
+		gerarAtributos(posicao);
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -337,60 +337,10 @@ public class Jogador implements Serializable {
 	 * @return a habilidade do jogador
 	 */
 	private double calcularHabilidade(Posicao posicao) {
-		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
-		
-		switch (posicao) {
-			case GOL:
-				chutePeso = 7;
-				driblePeso = 1;
-				passePeso = 1;
-				desarmePeso = 1;
-				defesaPeso = 90;
-				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
-				
-				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
-				
-			case DEFESA:
-				chutePeso = 10;
-				driblePeso = 5;
-				passePeso = 35;
-				desarmePeso = 45;
-				defesaPeso = 5;
-				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
-				
-				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
-			
-			case MEIA:
-				chutePeso = 25;
-				driblePeso = 20;
-				passePeso = 25;
-				desarmePeso = 25;
-				defesaPeso = 5;
-				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
-				
-				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
-				
-			case ATAQUE:
-				chutePeso = 50;
-				driblePeso = 30; //deixei com a sua base de 5 minima, só não fiz com o goleiro pq o goleiro é um caso especial. mas ta ai ^^ peru
-				passePeso = 10;
-				desarmePeso = 5;
-				defesaPeso = 5;
-				somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
-				
-				return (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso + defesa * defesaPeso) / somaPesos;
-				
-			case DEFAULT:
-				if (posicaoRecomendada != null) {
-					return calcularHabilidade(posicaoRecomendada);
-				}
-				else {
-					return 0;
-				}
-				
-			default:
-				return calcularHabilidade(posicaoRecomendada);
-		}
+		if (posicao != null)
+			return (chute * posicao.getChutePeso() + drible * posicao.getDriblePeso() + passe * posicao.getPassePeso() + desarme * posicao.getDesarmePeso() + defesa * posicao.getDefesaPeso());
+		else
+			return (chute * posicaoRecomendada.getChutePeso() + drible * posicaoRecomendada.getDriblePeso() + passe * posicaoRecomendada.getPassePeso() + desarme * posicaoRecomendada.getDesarmePeso() + defesa * posicaoRecomendada.getDefesaPeso());
 	}
 	
 	/**
@@ -502,7 +452,7 @@ public class Jogador implements Serializable {
 	}
 	
 	// TODO: comentar
-	private void gerarAtributos() {
+	private void gerarAtributos(Posicao posicao) {
 		Random random = new Random();
 		
 		switch (posicao) {
@@ -539,9 +489,6 @@ public class Jogador implements Serializable {
 			desarme = random.nextInt(50) + 26;
 			defesa = random.nextInt(25) + 26;
 			
-			break;
-			
-		case DEFAULT:
 			break;
 			
 		default:

@@ -20,7 +20,7 @@ public class Main {
 		
 			// Adiciona jogadores
 			while (input.hasNextLine()) {
-				Jogador jogador = new Jogador(Posicao.DEFAULT);
+				Jogador jogador = new Jogador(Posicao.ATAQUE);
 				String atributos[] = input.nextLine().split(",");
 				jogador.setNome(atributos[0]); // Nome
 				jogador.setChute(Integer.parseInt(atributos[1])); // Chute

@@ -99,26 +99,26 @@ public class Time implements Serializable {
 				qtdGOL++;
 				
 				if (qtdGOL > 1)
-					getJogador(j).setPosicao(Posicao.DEFAULT);
+					getJogador(j).setPosicao(null);
 			}
 			else if (getJogador(j).getPosicao().equals(Posicao.DEFESA)) {
 				qtdDEFESA++;
 				
 				if (qtdDEFESA > 4) {
-					getJogador(j).setPosicao(Posicao.DEFAULT);
+					getJogador(j).setPosicao(null);
 				}
 			}
 			else if (getJogador(j).getPosicao().equals(Posicao.MEIA)) {
 				qtdMEIA++;
 				
 				if (qtdMEIA > 4)
-					getJogador(j).setPosicao(Posicao.DEFAULT);
+					getJogador(j).setPosicao(null);
 			}
 			else if (getJogador(j).getPosicao().equals(Posicao.ATAQUE)) {
 				qtdATAQUE++;
 				
 				if (qtdATAQUE > 2)
-					getJogador(j).setPosicao(Posicao.DEFAULT);
+					getJogador(j).setPosicao(null);
 			}
 		}
 	}
@@ -169,7 +169,7 @@ public class Time implements Serializable {
 	private int calcularHabilidadeGeral() {
 		int somaMedia = 0;
 		for (Jogador jogador : jogadores) {
-			if (!jogador.getPosicao().equals(Posicao.DEFAULT)) {
+			if (jogador.getPosicao() != null) {
 				somaMedia += jogador.getHabilidade();
 			}
 		}
