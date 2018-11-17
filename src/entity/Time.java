@@ -67,8 +67,8 @@ public class Time implements Serializable {
 	public void addJogador(Jogador jogador) {
 		jogadores.add(jogador);
 
-		atualizarHabilidadeGeral();
 		bancarExcesso();
+		atualizarHabilidadeGeral();
 	}
 
 	// TODO: comentar
@@ -86,8 +86,6 @@ public class Time implements Serializable {
 		for (int i = 0; i < 4; i++) {
 			jogadores.add(new Jogador(Posicao.ATAQUE));
 		}
-
-		atualizarHabilidadeGeral();
 	}
 
 	// TODO: comentar
@@ -164,8 +162,9 @@ public class Time implements Serializable {
 	// TODO: comentar
 	private int calcularHabilidadeGeral() {
 		int somaMedia = 0;
+		
 		for (Jogador jogador : jogadores) {
-			if (jogador.getPosicao() != null) {
+			if (jogador.getPosicao() != Posicao.DEFAULT) {
 				somaMedia += jogador.getHabilidade();
 			}
 		}

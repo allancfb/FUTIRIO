@@ -119,10 +119,7 @@ public class Jogador implements Serializable {
 	 * @return a posição atual do jogador
 	 */
 	public Posicao getPosicao() {
-		if (posicao != null)
-			return posicao;
-		else
-			return null;
+		return posicao;
 	}
 
 	/**
@@ -279,6 +276,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setPosicao(Posicao posicao) {
 		this.posicao = posicao;
+
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -297,6 +295,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setChute(int chute) {
 		this.chute = chute;
+		
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -316,6 +315,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setDrible(int drible) {
 		this.drible = drible;
+		
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -334,6 +334,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setPasse(int passe) {
 		this.passe = passe;
+		
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -353,6 +354,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setDesarme(int desarme) {
 		this.desarme = desarme;
+		
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -372,6 +374,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setDefesa(int defesa) {
 		this.defesa = defesa;
+		
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}

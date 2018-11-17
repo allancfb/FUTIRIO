@@ -22,6 +22,7 @@ public class Main {
 			while (input.hasNextLine()) {
 				Jogador jogador = new Jogador(Posicao.ATAQUE);
 				String atributos[] = input.nextLine().split(",");
+				
 				jogador.setNome(atributos[0]); // Nome
 				jogador.setChute(Integer.parseInt(atributos[1])); // Chute
 				jogador.setPasse(Integer.parseInt(atributos[2])); // Passe
@@ -50,6 +51,8 @@ public class Main {
 
 				time.addJogador(jogador);
 			}
+			
+			time.atualizarHabilidadeGeral();
 
 			input.close();
 
@@ -87,6 +90,14 @@ public class Main {
 	}
 	
 	// TODO: comentar
+	public static void gerarTimesPrincipais() {
+		salvarTimeDeTXT("Botafogo", "src/times/Botafogo.txt");
+		salvarTimeDeTXT("Flamengo", "src/times/Flamengo.txt");
+		salvarTimeDeTXT("Fluminense", "src/times/Fluminense.txt");
+		salvarTimeDeTXT("Vasco", "src/times/Vasco.txt");
+	}
+	
+	// TODO: comentar
 	public static Time carregarTime(String nome) {
 		try {
 			ObjectInputStream objectIn = new ObjectInputStream(
@@ -105,10 +116,7 @@ public class Main {
 	
 	public static void main(String args[]) {
 		Time t = carregarTime("America");
-		
-		for (Jogador jogador : t.getJogadores()) {
-			System.out.println(jogador.getNome() + " " + jogador.getPosicao().getNome());
-		}
+		System.out.println(t.getNome() + " " + t.getHabilidadeGeral());
 	}
 
 }
