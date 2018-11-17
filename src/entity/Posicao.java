@@ -46,5 +46,21 @@ public enum Posicao implements Serializable {
 	public int getSomaPesos() {
 		return somaPesos;
 	}
+	
+	public static Posicao retornaPosicao(String nome) {
+		if (nome == "Gol") {
+			return Posicao.GOL;
+		} else if (nome == "Defesa") {
+			return Posicao.DEFESA;
+		} else if (nome == "Meia") {
+			return Posicao.MEIA;
+		} else if (nome == "Ataque") {
+			return Posicao.ATAQUE;
+		} else if (nome == "Sem posição") {
+		    return Posicao.DEFAULT;
+		}
+		
+		return null;
+	}
 
 }

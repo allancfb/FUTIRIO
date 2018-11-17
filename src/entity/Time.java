@@ -155,7 +155,7 @@ public class Time implements Serializable {
 	}
 
 	// TODO: comentar
-	public void atualizarHabilidadeGeral() {
+	public void atualizarHabilidadeGeral() {                      /*----------------------------------------------*/
 		habilidadeGeral = calcularHabilidadeGeral();
 	}
 
@@ -171,5 +171,18 @@ public class Time implements Serializable {
 
 		return somaMedia / 11;
 	}
+	
+	public void Substituicao(Jogador jogadorTroca1, Jogador jogadorTroca2) {
+		String nomePosicao = jogadorTroca2.getPosicao().getNome(); 
+		jogadorTroca2.setPosicao(jogadorTroca1.getPosicao());
+		jogadorTroca1.setPosicao(Posicao.retornaPosicao(nomePosicao));
+		
+	}
+	
+	
+		
+	
+	
+	
 
 }
