@@ -75,6 +75,18 @@ public class Main {
 	}
 
 	// TODO: comentar
+	public static void gerarTimes() {
+		String[] nomes = { "America", "Bangu", "Boavista-RJ", "Bonsucesso", "Cabofriense", "Goytacaz", "Macaé",
+				"Madureira", "Nova Iguaçu", "Portuguesa-RJ", "Resende", "Volta Redonda" };
+		
+		for (String nome : nomes) {
+			Time t = new Time(nome);
+			t.gerarJogadores();
+			salvarTime(t);
+		}
+	}
+	
+	// TODO: comentar
 	public static Time carregarTime(String nome) {
 		try {
 			ObjectInputStream objectIn = new ObjectInputStream(
@@ -90,10 +102,13 @@ public class Main {
 			return null;
 		}
 	}
-
+	
 	public static void main(String args[]) {
-		Campeonato c = new Campeonato(2018);
-		System.out.println(c.getTabela().get(0).getTime().getNome());
+		Time t = carregarTime("America");
+		
+		for (Jogador jogador : t.getJogadores()) {
+			System.out.println(jogador.getNome() + " " + jogador.getPosicao().getNome());
+		}
 	}
 
 }

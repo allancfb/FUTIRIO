@@ -95,27 +95,27 @@ public class Time implements Serializable {
 		int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
 
 		for (int j = 0; j < getJogadores().size(); j++) {
-			if (getJogador(j).getPosicao().equals(Posicao.GOL)) {
+			if (getJogador(j).getPosicao() == Posicao.GOL) {
 				qtdGOL++;
-
+				
 				if (qtdGOL > 1)
-					getJogador(j).setPosicao(null);
-			} else if (getJogador(j).getPosicao().equals(Posicao.DEFESA)) {
+					getJogador(j).setPosicao(Posicao.DEFAULT);
+			} else if (getJogador(j).getPosicao() == Posicao.DEFESA) {
 				qtdDEFESA++;
-
+				
 				if (qtdDEFESA > 4) {
-					getJogador(j).setPosicao(null);
+					getJogador(j).setPosicao(Posicao.DEFAULT);
 				}
-			} else if (getJogador(j).getPosicao().equals(Posicao.MEIA)) {
+			} else if (getJogador(j).getPosicao() == Posicao.MEIA) {
 				qtdMEIA++;
-
+				
 				if (qtdMEIA > 4)
-					getJogador(j).setPosicao(null);
-			} else if (getJogador(j).getPosicao().equals(Posicao.ATAQUE)) {
+					getJogador(j).setPosicao(Posicao.DEFAULT);
+			} else if (getJogador(j).getPosicao() == Posicao.ATAQUE) {
 				qtdATAQUE++;
-
+				
 				if (qtdATAQUE > 2)
-					getJogador(j).setPosicao(null);
+					getJogador(j).setPosicao(Posicao.DEFAULT);
 			}
 		}
 	}

@@ -11,6 +11,8 @@ public class TimeTabela {
 	private int derrotas;
 	private int golsSofridos;
 
+	// Contrutores
+	
 	// Construtor Definitivo
 	TimeTabela(Time time) {
 
@@ -40,6 +42,8 @@ public class TimeTabela {
 
 	}
 
+	// Getters and Setters
+	
 	// TODO: comentar
 	public Time getTime() {
 		return time;
@@ -80,14 +84,10 @@ public class TimeTabela {
 		return saldoGols;
 	}
 
-	// Adiciona Vitoria
-	public void addVitoria() {
-		this.vitorias += 1;
-		this.pontos += 3;
-	}
-
+	// Métodos
+	
 	// Atualiza o saldo de gols
-	public void attSaldoGols(int gols) {
+	public void atualizarSaldoGols(int gols) {
 		this.saldoGols = this.qtGols - this.golsSofridos;
 	}
 
@@ -96,6 +96,12 @@ public class TimeTabela {
 		this.qtGols += Gols;
 	}
 
+	// Adiciona Vitoria
+	public void addVitoria() {
+		this.vitorias += 1;
+		this.pontos += 3;
+	}
+	
 	// Adiciona empate
 	public void addEmpate() {
 		this.empates += 1;

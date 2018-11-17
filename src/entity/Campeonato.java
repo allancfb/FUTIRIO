@@ -15,6 +15,8 @@ public class Campeonato {
 	private ArrayList<Time> jogosTimes = new ArrayList<Time>();
 	// TODO: array de rodada
 
+	// Construtor
+	
 	Campeonato(int ano) {
 
 		this.ano = ano;
@@ -25,11 +27,8 @@ public class Campeonato {
 
 	}
 
-	public void organizaJogos() {
-		jogosTimes.set(1, jogosTimes.get(8));
-		jogosTimes.set(15, jogosTimes.get(8));
-	}
-
+	// Getters and Setters
+	
 	// TODO: comentar
 	public String getNome() {
 		return nome;
@@ -74,15 +73,22 @@ public class Campeonato {
 	public int getAno() {
 		return ano;
 	}
+	
+	// Métodos
+	
+	public void organizaJogos() {
+		jogosTimes.set(1, jogosTimes.get(8));
+		jogosTimes.set(15, jogosTimes.get(8));
+	}
 
 	// TODO: comentar
 	public void organizaTabela() {
 
-		ArrayList<TimeTabela> tabelinha = new ArrayList<TimeTabela>();
-		tabelinha = this.tabela;
+		ArrayList<TimeTabela> tabela = new ArrayList<TimeTabela>();
+		tabela = this.tabela;
 
 		for (int i = tabela.size() - 1; i >= 0; i--)
-			organizador(tabelinha.get(i));
+			organizador(tabela.get(i));
 
 	}
 

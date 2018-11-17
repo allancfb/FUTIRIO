@@ -119,7 +119,10 @@ public class Jogador implements Serializable {
 	 * @return a posição atual do jogador
 	 */
 	public Posicao getPosicao() {
-		return posicao;
+		if (posicao != null)
+			return posicao;
+		else
+			return null;
 	}
 
 	/**
@@ -445,7 +448,7 @@ public class Jogador implements Serializable {
 	 * @return a habilidade do jogador
 	 */
 	private double calcularHabilidade(Posicao posicao) {
-		if (posicao != null)
+		if (posicao != Posicao.DEFAULT)
 			return (chute * posicao.getChutePeso() + drible * posicao.getDriblePeso() + passe * posicao.getPassePeso()
 					+ desarme * posicao.getDesarmePeso() + defesa * posicao.getDefesaPeso());
 		else
@@ -471,44 +474,44 @@ public class Jogador implements Serializable {
 		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
 
 		// Pesos da posição GOL
-		chutePeso = 7;
-		driblePeso = 1;
-		passePeso = 1;
-		desarmePeso = 1;
-		defesaPeso = 90;
+		chutePeso = Posicao.GOL.getChutePeso();
+		driblePeso = Posicao.GOL.getDriblePeso();
+		passePeso = Posicao.GOL.getPassePeso();
+		desarmePeso = Posicao.GOL.getDesarmePeso();
+		defesaPeso = Posicao.GOL.getDefesaPeso();
 		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 
 		mediaGOL = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso
 				+ defesa * defesaPeso) / somaPesos;
 
 		// Pesos da posição DEFESA
-		chutePeso = 10;
-		driblePeso = 5;
-		passePeso = 35;
-		desarmePeso = 45;
-		defesaPeso = 5;
+		chutePeso = Posicao.DEFESA.getChutePeso();
+		driblePeso = Posicao.DEFESA.getDriblePeso();
+		passePeso = Posicao.DEFESA.getPassePeso();
+		desarmePeso = Posicao.DEFESA.getDesarmePeso();
+		defesaPeso = Posicao.DEFESA.getDefesaPeso();
 		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 
 		mediaDEFESA = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso
 				+ defesa * defesaPeso) / somaPesos;
 
 		// Pesos da posição MEIA
-		chutePeso = 25;
-		driblePeso = 20;
-		passePeso = 25;
-		desarmePeso = 25;
-		defesaPeso = 5;
+		chutePeso = Posicao.MEIA.getChutePeso();
+		driblePeso = Posicao.MEIA.getDriblePeso();
+		passePeso = Posicao.MEIA.getPassePeso();
+		desarmePeso = Posicao.MEIA.getDesarmePeso();
+		defesaPeso = Posicao.MEIA.getDefesaPeso();
 		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 
 		mediaMEIA = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso
 				+ defesa * defesaPeso) / somaPesos;
 
 		// Pesos da posição ATAQUE
-		chutePeso = 50;
-		driblePeso = 30;
-		passePeso = 10;
-		desarmePeso = 5;
-		defesaPeso = 5;
+		chutePeso = Posicao.ATAQUE.getChutePeso();
+		driblePeso = Posicao.ATAQUE.getDriblePeso();
+		passePeso = Posicao.ATAQUE.getPassePeso();
+		desarmePeso = Posicao.ATAQUE.getDesarmePeso();
+		defesaPeso = Posicao.ATAQUE.getDefesaPeso();
 		somaPesos = chutePeso + driblePeso + passePeso + desarmePeso + defesaPeso;
 
 		mediaATAQUE = (chute * chutePeso + drible * driblePeso + passe * passePeso + desarme * desarmePeso
