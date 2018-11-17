@@ -52,6 +52,7 @@ public class Main {
 				time.addJogador(jogador);
 			}
 			
+			time.bancarExcesso();
 			time.atualizarHabilidadeGeral();
 
 			input.close();
@@ -85,6 +86,8 @@ public class Main {
 		for (String nome : nomes) {
 			Time t = new Time(nome);
 			t.gerarJogadores();
+			t.bancarExcesso();
+			t.atualizarHabilidadeGeral();
 			salvarTime(t);
 		}
 	}
