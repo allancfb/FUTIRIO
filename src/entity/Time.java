@@ -10,35 +10,35 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Time implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 	private String nome;
 	private ArrayList<Jogador> jogadores;
 	private int habilidadeGeral;
-	
+
 	// Construtores
-	
+
 	// TODO: comentar
 	Time() {
 		jogadores = new ArrayList<Jogador>();
-		
+
 		gerarNomeTime();
 	}
-	
+
 	// TODO: comentar
 	Time(String nome) {
 		jogadores = new ArrayList<Jogador>();
-		
+
 		this.nome = nome;
 	}
 
 	// Getters and Setters
-	
+
 	// TODO: comentar
 	public String getNome() {
 		return nome;
 	}
-	
+
 	// TODO: comentar
 	public ArrayList<Jogador> getJogadores() {
 		return jogadores;
@@ -47,30 +47,30 @@ public class Time implements Serializable {
 	// TODO: comentar
 	public int getHabilidadeGeral() {
 		atualizarHabilidadeGeral();
-		
+
 		return habilidadeGeral;
 	}
-	
+
 	// TODO: comentar
 	public Jogador getJogador(int i) {
 		return getJogadores().get(i);
 	}
-	
+
 	// TODO: comentar
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	// Métodos
-	
+
 	// TODO: comentar
 	public void addJogador(Jogador jogador) {
 		jogadores.add(jogador);
-		
+
 		atualizarHabilidadeGeral();
 		bancarExcesso();
 	}
-	
+
 	// TODO: comentar
 	public void gerarJogadores() {
 		// Gera jogadores para as posições
@@ -86,55 +86,52 @@ public class Time implements Serializable {
 		for (int i = 0; i < 4; i++) {
 			jogadores.add(new Jogador(Posicao.ATAQUE));
 		}
-		
+
 		atualizarHabilidadeGeral();
 	}
-	
+
 	// TODO: comentar
 	public void bancarExcesso() {
 		int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
-		
+
 		for (int j = 0; j < getJogadores().size(); j++) {
 			if (getJogador(j).getPosicao().equals(Posicao.GOL)) {
 				qtdGOL++;
-				
+
 				if (qtdGOL > 1)
 					getJogador(j).setPosicao(null);
-			}
-			else if (getJogador(j).getPosicao().equals(Posicao.DEFESA)) {
+			} else if (getJogador(j).getPosicao().equals(Posicao.DEFESA)) {
 				qtdDEFESA++;
-				
+
 				if (qtdDEFESA > 4) {
 					getJogador(j).setPosicao(null);
 				}
-			}
-			else if (getJogador(j).getPosicao().equals(Posicao.MEIA)) {
+			} else if (getJogador(j).getPosicao().equals(Posicao.MEIA)) {
 				qtdMEIA++;
-				
+
 				if (qtdMEIA > 4)
 					getJogador(j).setPosicao(null);
-			}
-			else if (getJogador(j).getPosicao().equals(Posicao.ATAQUE)) {
+			} else if (getJogador(j).getPosicao().equals(Posicao.ATAQUE)) {
 				qtdATAQUE++;
-				
+
 				if (qtdATAQUE > 2)
 					getJogador(j).setPosicao(null);
 			}
 		}
 	}
-	
+
 	// TODO: comentar
 	public void criarBackup() {
 		try {
-			ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/times/" + nome)));
+			ObjectOutputStream objectOut = new ObjectOutputStream(
+					new BufferedOutputStream(new FileOutputStream("src/times/" + nome)));
 			objectOut.writeObject(this);
 			objectOut.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// TODO: comentar
 	private void gerarNomeTime() {
 		try {
@@ -144,18 +141,17 @@ public class Time implements Serializable {
 			File nomesTimesFile = new File("src/entity/nomesTimes.txt");
 			Scanner nomesTimesScanner = new Scanner(nomesTimesFile);
 			jogadores = new ArrayList<Jogador>();
-			
+
 			// Coloca os nomes dos times do arquivo no vetor
 			for (int i = 0; i < nomesTimes.length; i++) {
 				nomesTimes[i] = nomesTimesScanner.nextLine();
 			}
-			
+
 			// Sorteia um nome para o time
 			nome = nomesTimes[random.nextInt(nomesTimes.length)];
-			
+
 			nomesTimesScanner.close();
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
@@ -164,7 +160,7 @@ public class Time implements Serializable {
 	public void atualizarHabilidadeGeral() {
 		habilidadeGeral = calcularHabilidadeGeral();
 	}
-	
+
 	// TODO: comentar
 	private int calcularHabilidadeGeral() {
 		int somaMedia = 0;
@@ -173,8 +169,8 @@ public class Time implements Serializable {
 				somaMedia += jogador.getHabilidade();
 			}
 		}
-		
+
 		return somaMedia / 11;
 	}
-	
+
 }

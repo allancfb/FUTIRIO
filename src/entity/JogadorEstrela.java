@@ -3,22 +3,24 @@ package entity;
 import java.io.Serializable;
 
 /**
- * <p>Classe que gera objetos que representam jogadores estrela.</p>
+ * <p>
+ * Classe que gera objetos que representam jogadores estrela.
+ * </p>
  */
 public class JogadorEstrela extends Jogador implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 	private double habMinDoTimePCompra;
-	
+
 	// Construtores
-	
+
 	// TODO: comentar
 	JogadorEstrela(Posicao posicao) {
 		super(posicao);
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
-	
+
 	// TODO: comentar
 	JogadorEstrela(String nome, Posicao posicao) {
 		super(nome, posicao);
@@ -30,9 +32,9 @@ public class JogadorEstrela extends Jogador implements Serializable {
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
-	
+
 	// Getters and Setters
-	
+
 	public double getHabMinDoTimePCompra() {
 		return habMinDoTimePCompra;
 	}
@@ -77,11 +79,11 @@ public class JogadorEstrela extends Jogador implements Serializable {
 		atualizarPosicaoRecomendada();
 		atualizarHabMinDoTimePCompra();
 	}
-	
+
 	// Métodos
-	
+
 	public void atualizarHabMinDoTimePCompra() {
 		// TODO: estabelecer critérios para habilidade mínima para o time comprar
 	}
-	
+
 }

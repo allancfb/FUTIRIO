@@ -17,7 +17,7 @@ public class Main {
 			Time time = new Time(nome);
 			File file = new File(urlTXT);
 			Scanner input = new Scanner(file);
-		
+
 			// Adiciona jogadores
 			while (input.hasNextLine()) {
 				Jogador jogador = new Jogador(Posicao.ATAQUE);
@@ -28,72 +28,69 @@ public class Main {
 				jogador.setDrible(Integer.parseInt(atributos[3])); // Drible
 				jogador.setDesarme(Integer.parseInt(atributos[4])); // Desarme
 				jogador.setDefesa(Integer.parseInt(atributos[5])); // Defesa
-				
+
 				// Estrela
 				if (Boolean.parseBoolean(atributos[9]) == true) {
 					jogador.setIsEstrela(true);
 				}
-				
+
 				// Posição
 				if (atributos[10].equals("GOL")) {
 					jogador.setPosicao(Posicao.GOL);
-				}
-				else if (atributos[10].equals("DEFESA")) {
+				} else if (atributos[10].equals("DEFESA")) {
 					jogador.setPosicao(Posicao.DEFESA);
-				}
-				else if (atributos[10].equals("MEIA")) {
+				} else if (atributos[10].equals("MEIA")) {
 					jogador.setPosicao(Posicao.MEIA);
-				}
-				else if (atributos[10].equals("ATAQUE")) {
+				} else if (atributos[10].equals("ATAQUE")) {
 					jogador.setPosicao(Posicao.ATAQUE);
 				}
-				
+
 				jogador.atualizarHabilidade();
 				jogador.atualizarPosicaoRecomendada();
-				
+
 				time.addJogador(jogador);
 			}
-			
+
 			input.close();
-			
-			ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/times/" + time.getNome())));
+
+			ObjectOutputStream objectOut = new ObjectOutputStream(
+					new BufferedOutputStream(new FileOutputStream("src/times/" + time.getNome())));
 			objectOut.writeObject(time);
 			objectOut.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// TODO: comentar
 	public static void salvarTime(Time time) {
 		try {
-			ObjectOutputStream objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("src/times/" + time.getNome())));
+			ObjectOutputStream objectOut = new ObjectOutputStream(
+					new BufferedOutputStream(new FileOutputStream("src/times/" + time.getNome())));
 			objectOut.writeObject(time);
 			objectOut.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// TODO: comentar
 	public static Time carregarTime(String nome) {
 		try {
-			ObjectInputStream objectIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream("src/times/" + nome)));
+			ObjectInputStream objectIn = new ObjectInputStream(
+					new BufferedInputStream(new FileInputStream("src/times/" + nome)));
 			Time time = (Time) objectIn.readObject();
 			time.bancarExcesso();
 			objectIn.close();
-			
+
 			return time;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 			return null;
 		}
 	}
-	
+
 	public static void main(String args[]) {
 		Campeonato c = new Campeonato(2018);
 		System.out.println(c.getTabela().get(0).getTime().getNome());
