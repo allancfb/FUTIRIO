@@ -95,23 +95,23 @@ public class Time implements Serializable {
 		for (int j = 0; j < getJogadores().size(); j++) {
 			if (getJogador(j).getPosicao() == Posicao.GOL) {
 				qtdGOL++;
-				
+
 				if (qtdGOL > 1)
 					getJogador(j).setPosicao(Posicao.DEFAULT);
 			} else if (getJogador(j).getPosicao() == Posicao.DEFESA) {
 				qtdDEFESA++;
-				
+
 				if (qtdDEFESA > 4) {
 					getJogador(j).setPosicao(Posicao.DEFAULT);
 				}
 			} else if (getJogador(j).getPosicao() == Posicao.MEIA) {
 				qtdMEIA++;
-				
+
 				if (qtdMEIA > 4)
 					getJogador(j).setPosicao(Posicao.DEFAULT);
 			} else if (getJogador(j).getPosicao() == Posicao.ATAQUE) {
 				qtdATAQUE++;
-				
+
 				if (qtdATAQUE > 2)
 					getJogador(j).setPosicao(Posicao.DEFAULT);
 			}
@@ -155,14 +155,14 @@ public class Time implements Serializable {
 	}
 
 	// TODO: comentar
-	public void atualizarHabilidadeGeral() {                      /*----------------------------------------------*/
+	public void atualizarHabilidadeGeral() { /*----------------------------------------------*/
 		habilidadeGeral = calcularHabilidadeGeral();
 	}
 
 	// TODO: comentar
 	private int calcularHabilidadeGeral() {
 		int somaMedia = 0;
-		
+
 		for (Jogador jogador : jogadores) {
 			if (jogador.getPosicao() != Posicao.DEFAULT) {
 				somaMedia += jogador.getHabilidade();
@@ -171,18 +171,11 @@ public class Time implements Serializable {
 
 		return somaMedia / 11;
 	}
-	
+
 	public void Substituicao(Jogador jogadorTroca1, Jogador jogadorTroca2) {
-		String nomePosicao = jogadorTroca2.getPosicao().getNome(); 
+		String nomePosicao = jogadorTroca2.getPosicao().getNome();
 		jogadorTroca2.setPosicao(jogadorTroca1.getPosicao());
 		jogadorTroca1.setPosicao(Posicao.retornaPosicao(nomePosicao));
-		
 	}
-	
-	
-		
-	
-	
-	
 
 }
