@@ -48,15 +48,15 @@ public enum Posicao implements Serializable {
 	}
 	
 	public static Posicao retornaPosicao(String nome) {
-		if (nome == "Gol") {
+		if (nome == "Gol" || nome == "GOL") {
 			return Posicao.GOL;
-		} else if (nome == "Defesa") {
+		} else if (nome == "Defesa" || nome == "DEFESA") {
 			return Posicao.DEFESA;
-		} else if (nome == "Meia") {
+		} else if (nome == "Meia" || nome == "MEIA") {
 			return Posicao.MEIA;
-		} else if (nome == "Ataque") {
+		} else if (nome == "Ataque" || nome == "ATAQUE") {
 			return Posicao.ATAQUE;
-		} else if (nome == "Sem posição") {
+		} else if (nome == "Sem posição" || nome == "SEM POSIÇÃO") {
 		    return Posicao.DEFAULT;
 		}
 		
