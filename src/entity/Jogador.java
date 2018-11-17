@@ -295,7 +295,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setChute(int chute) {
 		this.chute = chute;
-		
+
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -315,7 +315,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setDrible(int drible) {
 		this.drible = drible;
-		
+
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -334,7 +334,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setPasse(int passe) {
 		this.passe = passe;
-		
+
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -354,7 +354,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setDesarme(int desarme) {
 		this.desarme = desarme;
-		
+
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -374,7 +374,7 @@ public class Jogador implements Serializable {
 	 */
 	public void setDefesa(int defesa) {
 		this.defesa = defesa;
-		
+
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
 	}
@@ -451,13 +451,23 @@ public class Jogador implements Serializable {
 	 * @return a habilidade do jogador
 	 */
 	private double calcularHabilidade(Posicao posicao) {
-		if (posicao != Posicao.DEFAULT)
+		int somaPeso = 0;
+
+		if (posicao != Posicao.DEFAULT) {
+			somaPeso = posicao.getChutePeso() + posicao.getDriblePeso() + posicao.getPassePeso()
+					+ posicao.getDesarmePeso() + posicao.getDefesaPeso();
+
 			return (chute * posicao.getChutePeso() + drible * posicao.getDriblePeso() + passe * posicao.getPassePeso()
-					+ desarme * posicao.getDesarmePeso() + defesa * posicao.getDefesaPeso());
-		else
+					+ desarme * posicao.getDesarmePeso() + defesa * posicao.getDefesaPeso()) / somaPeso;
+		} else {
+			somaPeso = posicaoRecomendada.getChutePeso() + posicaoRecomendada.getDriblePeso()
+					+ posicaoRecomendada.getPassePeso() + posicaoRecomendada.getDesarmePeso()
+					+ posicaoRecomendada.getDefesaPeso();
+
 			return (chute * posicaoRecomendada.getChutePeso() + drible * posicaoRecomendada.getDriblePeso()
 					+ passe * posicaoRecomendada.getPassePeso() + desarme * posicaoRecomendada.getDesarmePeso()
-					+ defesa * posicaoRecomendada.getDefesaPeso());
+					+ defesa * posicaoRecomendada.getDefesaPeso()) / somaPeso;
+		}
 	}
 
 	/**

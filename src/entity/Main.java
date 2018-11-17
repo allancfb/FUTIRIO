@@ -106,7 +106,6 @@ public class Main {
 			ObjectInputStream objectIn = new ObjectInputStream(
 					new BufferedInputStream(new FileInputStream("src/times/" + nome)));
 			Time time = (Time) objectIn.readObject();
-			time.bancarExcesso();
 			objectIn.close();
 
 			return time;
@@ -118,8 +117,8 @@ public class Main {
 	}
 	
 	public static void main(String args[]) {
-		Time t = carregarTime("America");
-		System.out.println(t.getNome() + " " + t.getHabilidadeGeral());
+		Time t = carregarTime("");
+		System.out.println(t.getHabilidadeGeral());
 	}
 
 }
