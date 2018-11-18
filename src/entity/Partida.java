@@ -67,6 +67,7 @@ public class Partida {
 
 	// TODO: comentar
 	public void run() {
+		minuto++;
 		Random r = new Random();
 
 		int geral1 = time1.getHabilidadeGeral();
