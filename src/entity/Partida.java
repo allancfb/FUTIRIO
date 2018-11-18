@@ -75,48 +75,23 @@ public class Partida {
 		// Gera o geral dos times para a partida
 		int geral1Partida = (int) (geral1 + (100 - geral1 - geral2) / 2);
 		int geral2Partida = (int) (geral2 + (100 - geral1 - geral2) / 2);
-		System.out.println("Geral de " + time1.getNome() + " durante a partida: " + geral1Partida);
-		System.out.println("Geral de " + time2.getNome() + " durante a partida: " + geral2Partida);
 
 		// Roda a partida
-		int vf = 0;
-		int vbf = 0;
-		int emp = 0;
-		for (int j = 0; j < 100000; j++) {
-			time1Gols = 0;
-			time2Gols = 0;
+		atualizarPlacar();
+
+		// Sorteia um número de 1 a 100
+		int sorteioPosse = r.nextInt(100) + 1;
+
+		// Se 
+		if (sorteioPosse <= geral1Partida / 18) {
+			time1Gols++;
+
 			atualizarPlacar();
+		} else if (sorteioPosse <= (geral2Partida / 18) + (geral1Partida / 18)) {
+			time2Gols++;
 
-			for (int i = 0; i < 90; i++) {
-				minuto = i;
-
-				// Sorteia quem vai jogar a jogada, de acordo com a porcentagem de cada time
-				int sorteioPosse = r.nextInt(100) + 1;
-
-				// Se o número sorteado estiver dentro da chance do time 1 de jogar, ele joga
-				// Senão, time 2 joga
-				if (sorteioPosse <= geral1Partida / 18) {
-					time1Gols++;
-
-					atualizarPlacar();
-				} else if (sorteioPosse <= (geral2Partida / 18) + (geral1Partida / 18)) {
-					time2Gols++;
-
-					atualizarPlacar();
-				}
-			}
-
-			if (time1Gols > time2Gols) {
-				vf++;
-			} else if (time2Gols > time1Gols) {
-				vbf++;
-			} else {
-				emp++;
-			}
+			atualizarPlacar();
 		}
-		System.out.println("Vitórias Flamengo: " + vf);
-		System.out.println("Vitórias Botafogo: " + vbf);
-		System.out.println("Empates: " + emp);
 	}
 
 }

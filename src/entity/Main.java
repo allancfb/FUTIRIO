@@ -117,8 +117,11 @@ public class Main {
 	}
 	
 	public static void main(String args[]) {
-		Time t = carregarTime("");
-		System.out.println(t.getHabilidadeGeral());
+		Time f = carregarTime("Flamengo");
+		Time b = carregarTime("Botafogo");
+		
+		Partida p = new Partida(f, b);
+		System.out.println(p.getPlacar());
 	}
 
 }

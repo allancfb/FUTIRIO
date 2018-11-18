@@ -10,6 +10,7 @@ public class TimeTabela {
 	private int empates;
 	private int derrotas;
 	private int golsSofridos;
+	private String nome;
 
 	// Contrutores
 	
@@ -24,6 +25,7 @@ public class TimeTabela {
 		this.empates = 0;
 		this.derrotas = 0;
 		this.golsSofridos = 0;
+		this.nome = time.getNome();
 
 	}
 
@@ -84,6 +86,11 @@ public class TimeTabela {
 		return saldoGols;
 	}
 
+	// TODO: comentar
+	public String getNome() {
+		return nome;
+	}
+	
 	// Métodos
 	
 	// Atualiza o saldo de gols

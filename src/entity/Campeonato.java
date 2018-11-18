@@ -74,8 +74,12 @@ public class Campeonato {
 		return ano;
 	}
 	
-	// Métodos
+	public ArrayList<Time> getJogosTimes() {
+		return jogosTimes;
+	}
 	
+	// Métodos
+
 	public void organizaJogos() {
 		jogosTimes.set(1, jogosTimes.get(8));
 		jogosTimes.set(15, jogosTimes.get(8));
