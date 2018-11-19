@@ -448,9 +448,11 @@ public class Jogador implements Serializable {
 
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
+			this.isEstrela = isEstrela;
+		} else {
+			this.isEstrela = isEstrela;
 		}
 
-		this.isEstrela = isEstrela;
 	}
 
 	// Métodos

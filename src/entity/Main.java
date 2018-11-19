@@ -24,7 +24,7 @@ public class Main {
 			while (input.hasNextLine()) {
 				Jogador jogador = new Jogador(Posicao.ATAQUE);
 				String atributos[] = input.nextLine().split(",");
-				
+
 				jogador.setNome(atributos[0]); // Nome
 				jogador.setChute(Integer.parseInt(atributos[1])); // Chute
 				jogador.setPasse(Integer.parseInt(atributos[2])); // Passe
@@ -35,6 +35,8 @@ public class Main {
 				// Estrela
 				if (Boolean.parseBoolean(atributos[9]) == true) {
 					jogador.setIsEstrela(true);
+				} else {
+					jogador.setIsEstrela(false);
 				}
 
 				// Posição
@@ -53,7 +55,7 @@ public class Main {
 
 				time.addJogador(jogador);
 			}
-			
+
 			time.bancarExcesso();
 			time.atualizarHabilidadeGeral();
 
@@ -84,7 +86,7 @@ public class Main {
 	public static void gerarTimes() {
 		String[] nomes = { "America", "Bangu", "Boavista-RJ", "Bonsucesso", "Cabofriense", "Goytacaz", "Macaé",
 				"Madureira", "Nova Iguaçu", "Portuguesa-RJ", "Resende", "Volta Redonda" };
-		
+
 		for (String nome : nomes) {
 			Time t = new Time(nome);
 			t.gerarJogadores();
@@ -93,7 +95,7 @@ public class Main {
 			salvarTime(t);
 		}
 	}
-	
+
 	// TODO: comentar
 	public static void gerarTimesPrincipais() {
 		salvarTimeDeTXT("Botafogo", "src/times/Botafogo.txt");
@@ -101,7 +103,7 @@ public class Main {
 		salvarTimeDeTXT("Fluminense", "src/times/Fluminense.txt");
 		salvarTimeDeTXT("Vasco", "src/times/Vasco.txt");
 	}
-	
+
 	// TODO: comentar
 	public static Time carregarTime(String nome) {
 		try {
@@ -117,9 +119,9 @@ public class Main {
 			return null;
 		}
 	}
-	
+
 	public static void main(String args[]) {
-		
+
 	}
 
 }
