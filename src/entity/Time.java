@@ -227,10 +227,15 @@ public class Time implements Serializable {
 		return somaMedia / 11;
 	}
 
-	public void Substituicao(Jogador jogadorTroca1, Jogador jogadorTroca2) {
+	public void substituicao(Jogador jogadorTroca1, Jogador jogadorTroca2) {
 		String nomePosicao = jogadorTroca2.getPosicao().getNome();
 		jogadorTroca2.setPosicao(jogadorTroca1.getPosicao());
 		jogadorTroca1.setPosicao(Posicao.retornaPosicao(nomePosicao));
+	}
+	
+	public void atualizarTitulares() {
+		
+		
 	}
 
 }
