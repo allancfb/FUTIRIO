@@ -235,6 +235,8 @@ public class Time implements Serializable {
 		String nomePosicao = jogadorTroca2.getPosicao().getNome();
 		jogadorTroca2.setPosicao(jogadorTroca1.getPosicao());
 		jogadorTroca1.setPosicao(Posicao.retornaPosicao(nomePosicao));
+		
+		atualizarTitulares();
 	}
 
 	// TODO: comentar

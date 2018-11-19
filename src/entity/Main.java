@@ -57,8 +57,8 @@ public class Main {
 			}
 
 			time.bancarExcesso();
-			// TODO: atualizarTitulares();
-			time.atualizarHabilidadeGeral();
+			time.atualizarTitulares();
+			
 
 			input.close();
 
@@ -89,11 +89,10 @@ public class Main {
 				"Madureira", "Nova Iguaçu", "Portuguesa-RJ", "Resende", "Volta Redonda" };
 
 		for (String nome : nomes) {
-			Time t = new Time(nome);
+			Time t = new Time(nome); //gfvbgfbvgtfegfwe
 			t.gerarJogadores();
 			t.bancarExcesso();
-			// TODO: atualizarTitulares();
-			t.atualizarHabilidadeGeral();
+			t.atualizarTitulares();
 			salvarTime(t);
 		}
 	}
