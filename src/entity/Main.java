@@ -119,21 +119,7 @@ public class Main {
 	}
 	
 	public static void main(String args[]) {
-		Time f = carregarTime("Flamengo");
-		Time b = carregarTime("Botafogo");
-		Time v = carregarTime("Vasco");
-		Time f2 = carregarTime("Fluminense");
 		
-		ArrayList<Time> t = new ArrayList<Time>();
-		t.add(f);
-		t.add(b);
-		t.add(v);
-		t.add(f2);
-		Rodada r = new Rodada(t);
-		System.out.println(r.getPartidas().get(0).getPlacar());
-		System.out.println(r.getPartidas().get(1).getPlacar());
-		Random ran = new Random();
-		System.out.println(ran.nextInt(1));
 	}
 
 }
