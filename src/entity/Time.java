@@ -16,6 +16,7 @@ public class Time implements Serializable {
 	private ArrayList<Jogador> jogadores;
 	private int habilidadeGeral;
 	private double fundos;
+	private double salarioTotal;
 
 	// Construtores
 
@@ -36,8 +37,29 @@ public class Time implements Serializable {
 	// Getters and Setters
 
 	// TODO: comentar
+	
+	
+	
 	public String getNome() {
 		return nome;
+	}
+	
+	public double getSalarioTotal() {
+		return salarioTotal;
+	}
+
+	public void atualizarSalarioTotal() {
+		
+		this.salarioTotal = 0;
+		
+		for(int i = 0; i < this.jogadores.size();i++) {
+			this.salarioTotal += jogadores.get(i).getSalario();
+		}
+		
+	}
+
+	public void subtrairFundos(double fundos) {
+		this.fundos -= fundos;
 	}
 
 	public double getFundos() {
@@ -74,6 +96,7 @@ public class Time implements Serializable {
 
 	public void addJogador(Jogador jogador) {
 		jogadores.add(jogador);
+		atualizarSalarioTotal();
 	}
 
 	// TODO: comentar AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
@@ -81,9 +104,11 @@ public class Time implements Serializable {
 	// DO CONTRATO
 	public void comprarJogador(Jogador jogador) {
 		jogadores.add(jogador);
+		this.subtrairFundos(jogador.getTxContrato());
 
 		bancarExcesso();
 		atualizarHabilidadeGeral();
+		atualizarSalarioTotal();
 	}
 
 	// TODO: COMENTAR AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
@@ -93,6 +118,7 @@ public class Time implements Serializable {
 
 		bancarExcesso();
 		atualizarHabilidadeGeral();
+		atualizarSalarioTotal();
 
 		return jogador;
 	}

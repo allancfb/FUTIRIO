@@ -54,6 +54,7 @@ public class Jogador implements Serializable {
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
+			gerarTxContrato();
 
 		} else if (random.nextInt(50) == 7) {
 			this.isEstrela = true;
@@ -62,12 +63,15 @@ public class Jogador implements Serializable {
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
+			gerarTxContrato();
 		} else {
 			gerarNome();
 			gerarAtributos(posicao);
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
+			gerarTxContrato();
+			
 		}
 
 	}
@@ -100,6 +104,7 @@ public class Jogador implements Serializable {
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
+			gerarTxContrato();
 
 		} else if (random.nextInt(50) == 7) {
 			this.isEstrela = true;
@@ -107,11 +112,13 @@ public class Jogador implements Serializable {
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
+			gerarTxContrato();
 		} else {
 			gerarAtributos(posicao);
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
+			gerarTxContrato();
 		}
 	}
 
@@ -458,6 +465,13 @@ public class Jogador implements Serializable {
 	// Métodos
 
 	// TODO: COMENTAR
+	
+	private void gerarTxContrato() {
+		
+		this.txContrato = 0;
+		
+	}
+	
 	private void gerarPelezinShiny() {
 
 		this.chute = 150;
