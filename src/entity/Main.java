@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -131,6 +132,8 @@ public class Main {
 		Rodada r = new Rodada(t);
 		System.out.println(r.getPartidas().get(0).getPlacar());
 		System.out.println(r.getPartidas().get(1).getPlacar());
+		Random ran = new Random();
+		System.out.println(ran.nextInt(1));
 	}
 
 }
