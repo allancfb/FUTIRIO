@@ -14,6 +14,7 @@ public class Time implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String nome;
 	private ArrayList<Jogador> jogadores;
+	private ArrayList<Jogador> jogadoresTitulares;
 	private int habilidadeGeral;
 	private double fundos;
 	private double salarioTotal;
@@ -23,14 +24,16 @@ public class Time implements Serializable {
 	// TODO: comentar
 	public Time() {
 		jogadores = new ArrayList<Jogador>();
-
+		jogadoresTitulares = new ArrayList<Jogador>();
+		
 		gerarNomeTime();
 	}
 
 	// TODO: comentar
 	public Time(String nome) {
 		jogadores = new ArrayList<Jogador>();
-
+		jogadoresTitulares = new ArrayList<Jogador>();
+		
 		this.nome = nome;
 	}
 
@@ -105,7 +108,7 @@ public class Time implements Serializable {
 	public void comprarJogador(Jogador jogador) {
 		jogadores.add(jogador);
 		this.subtrairFundos(jogador.getTxContrato());
-
+		
 		bancarExcesso();
 		atualizarHabilidadeGeral();
 		atualizarSalarioTotal();
