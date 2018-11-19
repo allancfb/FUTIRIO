@@ -72,12 +72,24 @@ public class Time implements Serializable {
 
 	// Métodos
 
-	// TODO: comentar
-	public void addJogador(Jogador jogador) {
+	// TODO: comentar AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
+	// fazer isso"
+	public void comprarJogador(Jogador jogador) {
 		jogadores.add(jogador);
 
 		bancarExcesso();
 		atualizarHabilidadeGeral();
+	}
+
+	// TODO: COMENTAR AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
+	// fazer isso"
+	public Jogador venderJogador(Jogador jogador) {
+		jogadores.remove(jogador);
+
+		bancarExcesso();
+		atualizarHabilidadeGeral();
+
+		return jogador;
 	}
 
 	// TODO: comentar
