@@ -94,7 +94,7 @@ public class ListaDeTransferencia {
 	public Jogador enviarJogadorComprado(Jogador jogador) {
 		
 		jogadores.remove(jogador);
-		
+		AtualizaLista();
 		return jogador;
 		
 	}
