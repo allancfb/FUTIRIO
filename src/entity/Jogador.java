@@ -117,8 +117,6 @@ public class Jogador implements Serializable {
 
 	// Getters and Setters
 
-	
-	
 	/**
 	 * <p>
 	 * Retorna um {@link String} que contém o <code>nome</code> do jogador.
@@ -130,7 +128,7 @@ public class Jogador implements Serializable {
 		return nome;
 	}
 
-	//TODO: COMENTAR
+	// TODO: COMENTAR
 	public double getTxContrato() {
 		return txContrato;
 	}
