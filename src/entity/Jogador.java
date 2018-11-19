@@ -506,7 +506,7 @@ public class Jogador implements Serializable {
 	 * @param posicao a posição do jogador
 	 * @return a habilidade do jogador
 	 */
-e 	private double calcularHabilidade(Posicao posicao) {
+ 	private double calcularHabilidade(Posicao posicao) {
 		int somaPeso = 0;
 
 		if (posicao != Posicao.DEFAULT) {
