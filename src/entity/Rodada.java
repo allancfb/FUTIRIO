@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class Rodada {
 
-	private ArrayList<Time> jogosTimes;
+	private ArrayList<Time> timesJogos;
 	private ArrayList<Partida> partidas;
 	
 	// Construtor
 	
-	Rodada(ArrayList<Time> jogosTimes) {
-		this.jogosTimes = jogosTimes;
+	Rodada(ArrayList<Time> timesJogos) {
+		this.timesJogos = timesJogos;
 		
 	}
 	
 	// Getters and Setters
 	
-	public ArrayList<Time> getJogosTimes() {
-		return jogosTimes;
+	public ArrayList<Time> gettimesJogos() {
+		return timesJogos;
 	}
 	
 	// Métodos

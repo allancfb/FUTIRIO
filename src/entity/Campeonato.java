@@ -12,7 +12,7 @@ public class Campeonato {
 	private int rodadaAtual;
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela = new ArrayList<TimeTabela>();
-	private ArrayList<Time> jogosTimes = new ArrayList<Time>();
+	private ArrayList<Time> timesJogos = new ArrayList<Time>();
 	// TODO: array de rodada
 
 	// Construtor
@@ -74,15 +74,15 @@ public class Campeonato {
 		return ano;
 	}
 	
-	public ArrayList<Time> getJogosTimes() {
-		return jogosTimes;
+	public ArrayList<Time> gettimesJogos() {
+		return timesJogos;
 	}
 	
 	// Métodos
 
 	public void organizaJogos() {
-		jogosTimes.set(1, jogosTimes.get(8));
-		jogosTimes.set(15, jogosTimes.get(8));
+		timesJogos.set(1, timesJogos.get(8));
+		timesJogos.set(15, timesJogos.get(8));
 	}
 
 	// TODO: comentar
@@ -105,7 +105,7 @@ public class Campeonato {
 
 		for (int i = 0; i < nomes.length; i++) {
 			tabela.add(new TimeTabela(Main.carregarTime(nomes[i])));
-			jogosTimes.add(Main.carregarTime(nomes[i]));
+			timesJogos.add(Main.carregarTime(nomes[i]));
 		}
 	}
 
