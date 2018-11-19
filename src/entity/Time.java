@@ -25,7 +25,7 @@ public class Time implements Serializable {
 	public Time() {
 		jogadores = new ArrayList<Jogador>();
 		jogadoresTitulares = new ArrayList<Jogador>();
-		
+
 		gerarNomeTime();
 	}
 
@@ -33,44 +33,23 @@ public class Time implements Serializable {
 	public Time(String nome) {
 		jogadores = new ArrayList<Jogador>();
 		jogadoresTitulares = new ArrayList<Jogador>();
-		
+
 		this.nome = nome;
 	}
 
 	// Getters and Setters
 
 	// TODO: comentar
-	
-	
-	
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public double getSalarioTotal() {
 		return salarioTotal;
 	}
 
-	public void atualizarSalarioTotal() {
-		
-		this.salarioTotal = 0;
-		
-		for(int i = 0; i < this.jogadores.size();i++) {
-			this.salarioTotal += jogadores.get(i).getSalario();
-		}
-		
-	}
-
-	public void subtrairFundos(double fundos) {
-		this.fundos -= fundos;
-	}
-
 	public double getFundos() {
 		return fundos;
-	}
-
-	public void addFundos(double fundos) {
-		this.fundos += fundos;
 	}
 
 	// TODO: comentar
@@ -97,6 +76,24 @@ public class Time implements Serializable {
 
 	// Métodos
 
+	public void addFundos(double fundos) {
+		this.fundos += fundos;
+	}
+
+	public void atualizarSalarioTotal() {
+
+		this.salarioTotal = 0;
+
+		for (int i = 0; i < this.jogadores.size(); i++) {
+			this.salarioTotal += jogadores.get(i).getSalario();
+		}
+
+	}
+
+	public void subtrairFundos(double fundos) {
+		this.fundos -= fundos;
+	}
+
 	public void addJogador(Jogador jogador) {
 		jogadores.add(jogador);
 		atualizarSalarioTotal();
@@ -108,7 +105,7 @@ public class Time implements Serializable {
 	public void comprarJogador(Jogador jogador) {
 		jogadores.add(jogador);
 		this.subtrairFundos(jogador.getTxContrato());
-		
+
 		bancarExcesso();
 		atualizarHabilidadeGeral();
 		atualizarSalarioTotal();
@@ -232,10 +229,9 @@ public class Time implements Serializable {
 		jogadorTroca2.setPosicao(jogadorTroca1.getPosicao());
 		jogadorTroca1.setPosicao(Posicao.retornaPosicao(nomePosicao));
 	}
-	
+
 	public void atualizarTitulares() {
-		
-		
+
 	}
 
 }
