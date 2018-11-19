@@ -15,7 +15,7 @@ public class TimeTabela {
 	// Contrutores
 	
 	// Construtor Definitivo
-	TimeTabela(Time time) {
+	public TimeTabela(Time time) {
 
 		this.time = time;
 		this.pontos = 0;

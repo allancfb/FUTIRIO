@@ -17,7 +17,7 @@ public class Campeonato {
 
 	// Construtor
 	
-	Campeonato(int ano) {
+	public Campeonato(int ano) {
 
 		this.ano = ano;
 		this.rodadaAtual = 0;

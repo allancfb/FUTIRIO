@@ -9,7 +9,7 @@ public class Rodada {
 	
 	// Construtor
 	
-	Rodada(ArrayList<Time> timesJogos) {
+	public Rodada(ArrayList<Time> timesJogos) {
 		this.timesJogos = timesJogos;
 		partidas = new ArrayList<Partida>();
 		

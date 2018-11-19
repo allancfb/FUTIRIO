@@ -9,7 +9,7 @@ public class ListaDeTransferencia {
 	// CONSTRUTOR
 
 	// TODO: COMENTAR
-	ListaDeTransferencia() {
+	public ListaDeTransferencia() {
 
 		Random random = new Random();
 

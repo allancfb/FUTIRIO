@@ -42,7 +42,7 @@ public class Jogador implements Serializable {
 	 * 
 	 * @param posicao a posição do jogador
 	 */
-	Jogador(Posicao posicao) {
+	public Jogador(Posicao posicao) {
 		this.posicao = posicao;
 		Random random = new Random();
 

@@ -20,14 +20,14 @@ public class Time implements Serializable {
 	// Construtores
 
 	// TODO: comentar
-	Time() {
+	public Time() {
 		jogadores = new ArrayList<Jogador>();
 
 		gerarNomeTime();
 	}
 
 	// TODO: comentar
-	Time(String nome) {
+	public Time(String nome) {
 		jogadores = new ArrayList<Jogador>();
 
 		this.nome = nome;

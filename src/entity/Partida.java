@@ -15,7 +15,7 @@ public class Partida {
 	// Construtor
 
 	// TODO: comentar
-	Partida(Time time1, Time time2) {
+	public Partida(Time time1, Time time2) {
 		setTime1(time1);
 		setTime2(time2);
 		atualizarPlacar();
