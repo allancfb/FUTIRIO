@@ -74,9 +74,6 @@ public class Time implements Serializable {
 
 	public void addJogador(Jogador jogador) {
 		jogadores.add(jogador);
-
-		bancarExcesso();
-		atualizarHabilidadeGeral();
 	}
 
 	// TODO: comentar AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
