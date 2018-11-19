@@ -22,6 +22,7 @@ public class Jogador implements Serializable {
 	protected int defesa;
 	private double habilidade;
 	private double salario;
+	private double txContrato;
 	private boolean isCapitao;
 	private boolean isEstrela;
 	protected Posicao posicao;
