@@ -16,7 +16,7 @@ public class Campeonato {
 	// TODO: array de rodada
 
 	// Construtor
-	
+
 	public Campeonato(int ano) {
 
 		this.ano = ano;
@@ -28,7 +28,7 @@ public class Campeonato {
 	}
 
 	// Getters and Setters
-	
+
 	// TODO: comentar
 	public String getNome() {
 		return nome;
@@ -59,9 +59,10 @@ public class Campeonato {
 		return Campeao;
 	}
 
-	// TODO: comentar
+	// TODO: comentar POR ENQUANTO O TIME GANHA UM MILHAO QD GANHA O CAMPEONATO
 	public void setCampeao(Time campeao) {
 		Campeao = campeao;
+		campeao.addFundos(1000000000);
 	}
 
 	// TODO: comentar
@@ -73,11 +74,11 @@ public class Campeonato {
 	public int getAno() {
 		return ano;
 	}
-	
+
 	public ArrayList<Time> gettimesJogos() {
 		return timesJogos;
 	}
-	
+
 	// Métodos
 
 	public void organizaJogos() {
