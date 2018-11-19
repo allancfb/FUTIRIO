@@ -468,7 +468,7 @@ public class Jogador implements Serializable {
 	
 	private void gerarTxContrato() {
 		
-		this.txContrato = 0;
+		this.txContrato = this.getSalario()*3;
 		
 	}
 	
@@ -485,22 +485,22 @@ public class Jogador implements Serializable {
 	private void gerarSalario() {
 
 		if (this.getHabilidade() >= 90) {
-			this.salario = 0;
+			this.salario = this.getHabilidade()*1000;
 
 		} else if ((this.getHabilidade() >= 80) && (this.getHabilidade() < 90)) {
-			this.salario = 0;
+			this.salario = this.getHabilidade()*900;
 
 		} else if ((this.getHabilidade() >= 65) && (this.getHabilidade() < 80)) {
-			this.salario = 0;
+			this.salario = this.getHabilidade()*600;
 
 		} else if ((this.getHabilidade() >= 50) && (this.getHabilidade() < 65)) {
-			this.salario = 0;
+			this.salario = this.getHabilidade()*450;
 
 		} else if ((this.getHabilidade() >= 30) && (this.getHabilidade() < 50)) {
-			this.salario = 0;
+			this.salario = this.getHabilidade()*300;
 
 		} else if (this.getHabilidade() < 30) {
-			this.salario = 0;
+			this.salario = this.getHabilidade()*250;
 		}
 	}
 
