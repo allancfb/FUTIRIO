@@ -57,6 +57,7 @@ public class Main {
 			}
 
 			time.bancarExcesso();
+			// TODO: atualizarTitulares();
 			time.atualizarHabilidadeGeral();
 
 			input.close();
@@ -91,6 +92,7 @@ public class Main {
 			Time t = new Time(nome);
 			t.gerarJogadores();
 			t.bancarExcesso();
+			// TODO: atualizarTitulares();
 			t.atualizarHabilidadeGeral();
 			salvarTime(t);
 		}
