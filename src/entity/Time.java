@@ -15,6 +15,7 @@ public class Time implements Serializable {
 	private String nome;
 	private ArrayList<Jogador> jogadores;
 	private int habilidadeGeral;
+	private double fundos;
 
 	// Construtores
 
@@ -37,6 +38,14 @@ public class Time implements Serializable {
 	// TODO: comentar
 	public String getNome() {
 		return nome;
+	}
+
+	public double getFundos() {
+		return fundos;
+	}
+
+	public void addFundos(double fundos) {
+		this.fundos += fundos;
 	}
 
 	// TODO: comentar

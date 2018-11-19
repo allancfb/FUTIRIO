@@ -43,11 +43,33 @@ public class Jogador implements Serializable {
 	 */
 	Jogador(Posicao posicao) {
 		this.posicao = posicao;
-
-		gerarNome();
-		gerarAtributos(posicao);
-		atualizarHabilidade();
-		atualizarPosicaoRecomendada();
+		Random random = new Random();
+		
+		if(random.nextInt(999)==7) {
+			this.nome = "Pelézin";
+			this.gerarPelezinShiny();
+			this.isEstrela = true;
+			this.posicaoRecomendada = posicao;
+			atualizarHabilidade();
+			gerarSalario();
+			
+		}else if(random.nextInt(49)==7) {
+			this.isEstrela = true;
+			gerarNome();
+			gerarAtributos(posicao);
+			atualizarHabilidade();
+			atualizarPosicaoRecomendada();
+			gerarSalario();
+		}else {
+			gerarNome();
+			gerarAtributos(posicao);
+			atualizarHabilidade();
+			atualizarPosicaoRecomendada();
+			gerarSalario();
+		}
+		
+		
+		
 	}
 
 	/**
@@ -72,6 +94,7 @@ public class Jogador implements Serializable {
 		gerarAtributos(posicao);
 		atualizarHabilidade();
 		atualizarPosicaoRecomendada();
+		gerarSalario();
 	}
 
 	// Getters and Setters
@@ -409,6 +432,39 @@ public class Jogador implements Serializable {
 
 	// Métodos
 
+	// TODO: COMENTAR
+	private void gerarPelezinShiny() {
+		
+		this.chute = 150;
+		this.drible = 150;
+		this.passe = 150;
+		this.desarme = 150;
+		this.defesa = 150;
+		
+	}
+	
+	private void gerarSalario() {
+		
+		if(this.getHabilidade()>= 90) {
+			this.salario = 0 ;
+			
+		}else if((this.getHabilidade() >= 80) && (this.getHabilidade() < 90))  {
+			this.salario = 0 ;
+			
+		}else if((this.getHabilidade() >= 65) && (this.getHabilidade() < 80))  {
+			this.salario = 0 ;
+			
+		}else if((this.getHabilidade() >= 50) && (this.getHabilidade() < 65))  {
+			this.salario = 0 ;
+			
+		}else if((this.getHabilidade() >= 30) && (this.getHabilidade() < 50))  {
+			this.salario = 0 ;
+			
+		}else if(this.getHabilidade() < 30)  {
+			this.salario = 0 ;
+		}
+	}
+	
 	/**
 	 * <p>
 	 * Atualiza a <code>habilidade</code> do jogador.
@@ -450,7 +506,7 @@ public class Jogador implements Serializable {
 	 * @param posicao a posição do jogador
 	 * @return a habilidade do jogador
 	 */
-	private double calcularHabilidade(Posicao posicao) {
+e 	private double calcularHabilidade(Posicao posicao) {
 		int somaPeso = 0;
 
 		if (posicao != Posicao.DEFAULT) {
