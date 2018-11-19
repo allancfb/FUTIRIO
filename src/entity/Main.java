@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -119,9 +120,17 @@ public class Main {
 	public static void main(String args[]) {
 		Time f = carregarTime("Flamengo");
 		Time b = carregarTime("Botafogo");
+		Time v = carregarTime("Vasco");
+		Time f2 = carregarTime("Fluminense");
 		
-		Partida p = new Partida(f, b);
-		System.out.println(p.getPlacar());
+		ArrayList<Time> t = new ArrayList<Time>();
+		t.add(f);
+		t.add(b);
+		t.add(v);
+		t.add(f2);
+		Rodada r = new Rodada(t);
+		System.out.println(r.getPartidas().get(0).getPlacar());
+		System.out.println(r.getPartidas().get(1).getPlacar());
 	}
 
 }
