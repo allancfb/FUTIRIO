@@ -18,6 +18,7 @@ public class Partida {
 	public Partida(Time time1, Time time2) {
 		setTime1(time1);
 		setTime2(time2);
+		tempo = Tempo.DEFAULT;
 		atualizarPlacar();
 	}
 
@@ -65,7 +66,7 @@ public class Partida {
 
 	// Métodos
 
-	// TODO: comentar
+	// Roda 1 minuto da partida
 	public void run() {
 		minuto++;
 		Random r = new Random();
@@ -83,7 +84,7 @@ public class Partida {
 		// Sorteia um número de 1 a 100
 		int sorteioPosse = r.nextInt(100) + 1;
 
-		// Se 
+		// Confere se algum time fez gol
 		if (sorteioPosse <= geral1Partida / 18) {
 			time1Gols++;
 
@@ -93,6 +94,48 @@ public class Partida {
 
 			atualizarPlacar();
 		}
+
+		atualizarTempo();
 	}
 
+	// Atualiza em que tempo o jogo está
+	private void atualizarTempo() {
+		switch (minuto) {
+		case 1:
+			tempo = Tempo.PRIMEIRO;
+			break;
+
+		case 45:
+			tempo = Tempo.INTERVALO;
+			break;
+
+		case 46:
+			tempo = Tempo.SEGUNDO;
+			break;
+
+		case 90:
+			tempo = Tempo.FIM;
+			break;
+
+		case 91:
+			tempo = Tempo.PRORROGAÇÃO1;
+			break;
+
+		case 105:
+			tempo = Tempo.INTERVALOPRORROGAÇÃO;
+			break;
+
+		case 106:
+			tempo = Tempo.PRORROGAÇÃO2;
+			break;
+
+		case 120:
+			tempo = Tempo.DEFAULT;
+			break;
+
+		default:
+			break;
+		}
+	}
+	
 }

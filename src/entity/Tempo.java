@@ -4,7 +4,7 @@ public enum Tempo {
 
 	PRIMEIRO("Primeiro tempo"), INTERVALO("Intevalo"), SEGUNDO("Segundo Tempo"),
 	PRORROGAÇÃO1("Primeiro Tempo da Prorrogação"), INTERVALOPRORROGAÇÃO("Intevalo da Prorrogação"),
-	PRORROGAÇÃO2("Segundo Tempo da Prorrogação"), DEFAULT("Não iniciado");
+	PRORROGAÇÃO2("Segundo Tempo da Prorrogação"), DEFAULT("Não iniciado"), FIM("Fim de jogo");
 
 	private String nome;
 

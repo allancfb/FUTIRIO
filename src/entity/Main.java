@@ -122,7 +122,23 @@ public class Main {
 	}
 
 	public static void main(String args[]) {
+		Time a = carregarTime("America");
+		Time b = carregarTime("Botafogo");
+		Time c = carregarTime("Cabofriense");
+		Time f = carregarTime("Flamengo");
+		Time g = carregarTime("Goytacaz");
+		Time m = carregarTime("Macaé");
 		
+		ArrayList<Time> timesJogos = new ArrayList<Time>();
+		timesJogos.add(a);
+		timesJogos.add(b);
+		timesJogos.add(c);
+		timesJogos.add(f);
+		timesJogos.add(g);
+		timesJogos.add(m);
+		Rodada r = new Rodada(timesJogos);
+		r.start();
+		r.start();
 	}
 
 }
