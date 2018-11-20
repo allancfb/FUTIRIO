@@ -13,17 +13,19 @@ public class Campeonato {
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela = new ArrayList<TimeTabela>();
 	private ArrayList<Time> timesJogos = new ArrayList<Time>();
-	// TODO: array de rodada
+	private ArrayList<Rodada> rodadas = new ArrayList<Rodada>();
 
 	// Construtor
 
 	public Campeonato(int ano) {
 
 		this.ano = ano;
-		this.rodadaAtual = 0;
+		this.rodadaAtual = 1;
 		this.numPartidasJogadas = 0;
 		this.nome = "Campeonato Carioca - " + ano;
+		
 		adicionarTimes();
+		gerarRodadas();
 
 	}
 
@@ -32,6 +34,10 @@ public class Campeonato {
 	// TODO: comentar
 	public String getNome() {
 		return nome;
+	}
+
+	public ArrayList<Time> getTimesJogos() {
+		return timesJogos;
 	}
 
 	// TODO: comentar
@@ -80,6 +86,21 @@ public class Campeonato {
 	}
 
 	// Métodos
+	
+	public void gerarRodadas() {  /* 0--------------------------------------0 */
+		
+		for(int i = 0; i < 30; i++) {
+		Rodada rodada = new Rodada(getTimesJogos());
+		organizaJogos();
+		rodadas.add(rodada);
+		}
+	}
+	public void PassarRodada() {
+		rodadaAtual++;
+		numPartidasJogadas = numPartidasJogadas + 8;
+		
+	}
+	
 
 	public void organizaJogos() {
 		timesJogos.set(1, timesJogos.get(8));
