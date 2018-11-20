@@ -14,10 +14,16 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Toolkit;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.JMenu;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
 
 public class gerenciaTime extends JFrame {
 
 	private JPanel contentPane;
+	private JTable jogadores;
 
 	static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -49,6 +55,13 @@ public class gerenciaTime extends JFrame {
 		
 		JLabel escudoTime = new JLabel();
 		Image escudo = new ImageIcon(this.getClass().getResource("/Imagens/"+Integer.toString(index)+".png")).getImage();
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(31, 132, 440, 302);
+		contentPane.add(scrollPane);
+		
+		jogadores = new JTable();
+		scrollPane.setViewportView(jogadores);
 		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(21, 11, 110, 110);
 		contentPane.add(escudoTime);

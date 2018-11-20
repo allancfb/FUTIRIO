@@ -89,7 +89,6 @@ public class Time implements Serializable {
 
 	// TODO: comentar
 	public void atualizarSalarioTotal() {
-
 		this.salarioTotal = 0;
 
 		for (int i = 0; i < this.jogadores.size(); i++) {
