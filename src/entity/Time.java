@@ -245,14 +245,14 @@ public class Time implements Serializable {
 		    int contadorDeJogadores = 1;
 		    for (int i = 0; i < jogadores.size(); i++) {
 			    if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Gol")) {
-				    jogadoresTitulares.set(0,jogadores.get(i));
+				    jogadoresTitulares.add(jogadores.get(i));
 				    break;
 			    }
 		    }
 			
 		    for (int i = 0; i < jogadores.size(); i++) {
 			    if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Defesa")) {
-			     	jogadoresTitulares.set(1,jogadores.get(i));	
+			     	jogadoresTitulares.add(jogadores.get(i));	
 			     	contadorDeJogadores++;
 			    }
 			    if (contadorDeJogadores == 5)
@@ -262,7 +262,7 @@ public class Time implements Serializable {
 		    
 		    for (int i = 0; i < jogadores.size(); i++) {
 		    	if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Meia")) {
-		    		jogadoresTitulares.set(5,jogadores.get(i));
+		    		jogadoresTitulares.add(jogadores.get(i));
 		    		contadorDeJogadores++;
 		    	}
 		    	if (contadorDeJogadores == 9)
@@ -271,7 +271,7 @@ public class Time implements Serializable {
 		    
 		    for (int i = 0; i < jogadores.size(); i++) {
 		    	if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Ataque")) {
-		    		jogadoresTitulares.set(9,jogadores.get(i));
+		    		jogadoresTitulares.add(jogadores.get(i));
 		    		contadorDeJogadores++;
 		    	}
 		    	if (contadorDeJogadores == 11)
