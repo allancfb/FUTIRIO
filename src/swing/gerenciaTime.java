@@ -39,7 +39,7 @@ public class gerenciaTime extends JFrame {
 
 	public gerenciaTime(String nome, String tecnico, int index) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 634, 496);
+		setBounds(100, 100, 687, 496);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -75,5 +75,9 @@ public class gerenciaTime extends JFrame {
 		nomeTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		nomeTecnico.setBounds(152, 55, 394, 33);
 		contentPane.add(nomeTecnico);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(0, 0, 687, 457);
+		contentPane.add(label);
 	}
 }
