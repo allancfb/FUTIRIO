@@ -66,6 +66,10 @@ public class Time implements Serializable {
 		return habilidadeGeral;
 	}
 
+	public ArrayList<Jogador> getJogadoresTitulares() {
+		return jogadoresTitulares;
+	}
+
 	// TODO: comentar
 	public Jogador getJogador(int i) {
 		return getJogadores().get(i);
@@ -282,38 +286,3 @@ public class Time implements Serializable {
 	}
 
 }
-/*  pera, não apaga
-
-public void atualizarTitulares() {
-	jogadoresTitulares.clear();
-	    int contadorDeJogadores = 1;
-	    for (int i = 0; i < jogadores.size(); i++) {
-		
-		if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Gol")) {
-			jogadoresTitulares.set(0,jogadores.get(i));
-			break;
-		    }
-	    }
-		
-	    for (int i = 0; i < jogadores.size(); i++) {
-		    if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Defesa")) {
-		     	jogadoresTitulares.set(1,jogadores.get(i));	
-		     	contadorDeJogadores++;
-		    }
-	    }
-	    
-	    for (int i = 0; i < jogadores.size(); i++) {
-	    	if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Meia")) {
-	    		jogadoresTitulares.set(5,jogadores.get(i));
-	    	}
-	    }
-	    
-	    for (int i = 0; i < jogadores.size(); i++) {
-	    	if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Ataque")) {
-	    		jogadoresTitulares.set(9,jogadores.get(i));
-	    	}
-	    }
-	    
-	    atualizarHabilidadeGeral();
-}
-*/
