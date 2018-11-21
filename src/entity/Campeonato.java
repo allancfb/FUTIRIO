@@ -13,7 +13,7 @@ public class Campeonato {
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela = new ArrayList<TimeTabela>();
 	private ArrayList<Time> timesJogos = new ArrayList<Time>();
-	private ArrayList<Rodada> rodadas = new ArrayList<Rodada>();
+	private Rodada[] rodadas = new Rodada[30];
 
 	// Construtor
 
@@ -36,7 +36,7 @@ public class Campeonato {
 		return nome;
 	}
 
-	public ArrayList<Rodada> getRodadas() {
+	public Rodada[] getRodadas() {
 		return rodadas;
 	}
 
@@ -94,7 +94,7 @@ public class Campeonato {
 	public void gerarRodadas() { /* 0--------------------------------------0 */
 
 		for (int i = 0; i < 30; i++) {
-			rodadas.add(new Rodada(timesJogos));
+			rodadas[i] = new Rodada(timesJogos);
 			organizaJogos();
 		}
 	}
