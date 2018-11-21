@@ -95,8 +95,12 @@ public class Campeonato {
 	public void gerarRodadas() { /* 0--------------------------------------0 */
 
 		for (int i = 0; i < 30; i++) {
+            if (i != 0) {	
+				for(int j = 0; j <= 1; j++) {
+				organizaJogos();
+				}
+			}
 			rodadas[i] = new Rodada(timesJogos);
-			organizaJogos();
 		}
 	}
 
