@@ -23,6 +23,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.Color;
 
+import entity.Campeonato;
+
 public class gerenciaTime extends JFrame {
 
 	private JPanel contentPane;
@@ -160,13 +162,13 @@ public class gerenciaTime extends JFrame {
 		btnTabela.setBounds(508, 20, 89, 23);
 		contentPane.add(btnTabela);
 
-		JLabel lblNewLabel = new JLabel("Posi\u00E7\u00E3o: 1\u00BA");
+		JLabel lblNewLabel = new JLabel("Posição: ");//+
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 
-		JLabel lblAno = new JLabel("Ano: 2019");
+		JLabel lblAno = new JLabel("Ano: "); //+campeonato.getAno();
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAno.setBounds(378, 94, 110, 27);
