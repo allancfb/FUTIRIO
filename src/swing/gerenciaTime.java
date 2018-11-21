@@ -29,12 +29,12 @@ public class gerenciaTime extends JFrame {
 
 	private JPanel contentPane;
 	private JTable jogadores;
+	public static int ano = 2019;
 
 	static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -43,6 +43,9 @@ public class gerenciaTime extends JFrame {
 	}
 
 	public gerenciaTime(String nome, String tecnico, int index) {
+		//Criando o campeonato
+		Campeonato carioca = new Campeonato(ano);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
 		setResizable(false);
@@ -77,45 +80,51 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(scrollPane);
 
 		String[] colunas = { "Posição", "Nome", "Habilidade", "Chute", "Passe", "Desarme", "Defesa" };
-		String[][] players = {{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" }};
+		String[][] players = { { "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" } };
 		JTable jogadores = new JTable(players, colunas);
 		jogadores.setShowVerticalLines(false);
 		scrollPane.setViewportView(jogadores);
 		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(21, 11, 110, 110);
 		contentPane.add(escudoTime);
+		
+		JLabel lblFundosR = new JLabel("Fundos: R$");//+Time.getFundos()
+		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFundosR.setForeground(Color.WHITE);
+		lblFundosR.setBounds(378, 64, 110, 20);
+		contentPane.add(lblFundosR);
 
 		JLabel nomeTime = new JLabel(nome);
 		nomeTime.setForeground(Color.WHITE);
 		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomeTime.setBounds(152, 11, 336, 33);
+		nomeTime.setBounds(152, 20, 336, 33);
 		contentPane.add(nomeTime);
 
 		JLabel nomeTecnico = new JLabel("Técnico: " + tecnico);
 		nomeTecnico.setForeground(Color.WHITE);
 		nomeTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomeTecnico.setBounds(152, 50, 336, 33);
+		nomeTecnico.setBounds(152, 56, 336, 33);
 		contentPane.add(nomeTecnico);
 
 		JLabel lblPrximoJogo = new JLabel("Pr\u00F3ximo jogo:");
@@ -148,7 +157,8 @@ public class gerenciaTime extends JFrame {
 
 		////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblCampeonato = new JLabel("Campeonato Carioca");
+		JLabel lblCampeonato = new JLabel(carioca.getNome());
+		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCampeonato.setBounds(498, 167, 110, 33);
@@ -159,16 +169,21 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(btnJogar);
 
 		JButton btnTabela = new JButton("Tabela");
-		btnTabela.setBounds(508, 20, 89, 23);
+		btnTabela.setBounds(508, 20, 110, 23);
 		contentPane.add(btnTabela);
+		
+		JButton btnNegociarJogador = new JButton("Negociar Jogador");
+		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnNegociarJogador.setBounds(508, 59, 110, 23);
+		contentPane.add(btnNegociarJogador);
 
-		JLabel lblNewLabel = new JLabel("Posição: ");//+
+		JLabel lblNewLabel = new JLabel("Posição: ");// +
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 
-		JLabel lblAno = new JLabel("Ano: "); //+campeonato.getAno();
+		JLabel lblAno = new JLabel("Ano: "+carioca.getAno()); // +campeonato.getAno();
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAno.setBounds(378, 94, 110, 27);
