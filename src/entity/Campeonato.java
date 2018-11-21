@@ -13,6 +13,7 @@ public class Campeonato {
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela = new ArrayList<TimeTabela>();
 	private ArrayList<Time> timesJogos = new ArrayList<Time>();
+	private ArrayList<Time> auxiliarJogos = new ArrayList<Time>();
 	private Rodada[] rodadas;
 
 	// Construtor
@@ -95,12 +96,8 @@ public class Campeonato {
 	public void gerarRodadas() { /* 0--------------------------------------0 */
 
 		for (int i = 0; i < 30; i++) {
-            if (i != 0) {	
-				for(int j = 0; j <= 1; j++) {
-				organizaJogos();
-				}
-			}
 			rodadas[i] = new Rodada(timesJogos);
+			organizaJogos();
 		}
 	}
 
@@ -111,27 +108,31 @@ public class Campeonato {
 	}
 
 	public void organizaJogos() {
-		ArrayList<Time> auxiliarJogos = timesJogos;
-		
+		auxiliarJogos.clear();
+		for(int i = 0; i < timesJogos.size(); i++) {
+		auxiliarJogos.add(timesJogos.get(i));
+		}
+		timesJogos.clear();
 		//0 -- 15     8 ir para 1 ; 9 ir para 15  
 		//0  8 1  2  3  4  5  6 
 		//9 10 11 12 13 14 15 7 
-	
-		timesJogos.set(1, auxiliarJogos.get(8));
-		timesJogos.set(2, auxiliarJogos.get(1));
-		timesJogos.set(3, auxiliarJogos.get(2));
-		timesJogos.set(4, auxiliarJogos.get(3));
-		timesJogos.set(5, auxiliarJogos.get(4));
-		timesJogos.set(6, auxiliarJogos.get(5));
-		timesJogos.set(7, auxiliarJogos.get(6));
-		timesJogos.set(8, auxiliarJogos.get(9));
-		timesJogos.set(9, auxiliarJogos.get(10));
-		timesJogos.set(10, auxiliarJogos.get(11));
-		timesJogos.set(11, auxiliarJogos.get(12));
-		timesJogos.set(12, auxiliarJogos.get(13));
-		timesJogos.set(13, auxiliarJogos.get(14));
-		timesJogos.set(14, auxiliarJogos.get(15));
-		timesJogos.set(15, auxiliarJogos.get(7));
+		
+		timesJogos.add(auxiliarJogos.get(0));
+		timesJogos.add(auxiliarJogos.get(8));
+		timesJogos.add(auxiliarJogos.get(1));
+		timesJogos.add(auxiliarJogos.get(2));
+		timesJogos.add(auxiliarJogos.get(3));
+		timesJogos.add(auxiliarJogos.get(4));
+		timesJogos.add(auxiliarJogos.get(5));
+		timesJogos.add(auxiliarJogos.get(6));
+		timesJogos.add(auxiliarJogos.get(9));
+		timesJogos.add(auxiliarJogos.get(10));
+		timesJogos.add(auxiliarJogos.get(11));
+		timesJogos.add(auxiliarJogos.get(12));
+		timesJogos.add(auxiliarJogos.get(13));
+		timesJogos.add(auxiliarJogos.get(14));
+		timesJogos.add(auxiliarJogos.get(15));
+		timesJogos.add(auxiliarJogos.get(7));
 	}
 
 	// TODO: comentar
