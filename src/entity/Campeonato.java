@@ -111,8 +111,27 @@ public class Campeonato {
 	}
 
 	public void organizaJogos() {
-		timesJogos.set(1, timesJogos.get(8));
-		timesJogos.set(15, timesJogos.get(8));
+		ArrayList<Time> auxiliarJogos = timesJogos;
+		
+		//0 -- 15     8 ir para 1 ; 9 ir para 15  
+		//0  8 1  2  3  4  5  6 
+		//9 10 11 12 13 14 15 7 
+	
+		timesJogos.set(1, auxiliarJogos.get(8));
+		timesJogos.set(2, auxiliarJogos.get(1));
+		timesJogos.set(3, auxiliarJogos.get(2));
+		timesJogos.set(4, auxiliarJogos.get(3));
+		timesJogos.set(5, auxiliarJogos.get(4));
+		timesJogos.set(6, auxiliarJogos.get(5));
+		timesJogos.set(7, auxiliarJogos.get(6));
+		timesJogos.set(8, auxiliarJogos.get(9));
+		timesJogos.set(9, auxiliarJogos.get(10));
+		timesJogos.set(10, auxiliarJogos.get(11));
+		timesJogos.set(11, auxiliarJogos.get(12));
+		timesJogos.set(12, auxiliarJogos.get(13));
+		timesJogos.set(13, auxiliarJogos.get(14));
+		timesJogos.set(14, auxiliarJogos.get(15));
+		timesJogos.set(15, auxiliarJogos.get(7));
 	}
 
 	// TODO: comentar
