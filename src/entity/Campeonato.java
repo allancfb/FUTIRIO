@@ -36,6 +36,10 @@ public class Campeonato {
 		return nome;
 	}
 
+	public ArrayList<Rodada> getRodadas() {
+		return rodadas;
+	}
+
 	public ArrayList<Time> getTimesJogos() {
 		return timesJogos;
 	}
