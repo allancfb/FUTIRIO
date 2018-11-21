@@ -74,9 +74,31 @@ public class gerenciaTime extends JFrame {
 		scrollPane.setBounds(31, 132, 457, 302);
 		contentPane.add(scrollPane);
 
-		String[] colunas = { "eae", "meu", "Chapa" };
-		String[][] players = {{ "kk" , "blz", "fera" } };
+		String[] colunas = { "Posição", "Nome", "Habilidade", "Chute", "Passe", "Desarme", "Defesa" };
+		String[][] players = {{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+				{ "kk" , "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" }};
 		JTable jogadores = new JTable(players, colunas);
+		jogadores.setShowVerticalLines(false);
 		scrollPane.setViewportView(jogadores);
 		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(21, 11, 110, 110);
@@ -116,7 +138,7 @@ public class gerenciaTime extends JFrame {
 		nomeAdversario.setBounds(498, 322, 110, 23);
 		contentPane.add(nomeAdversario);
 
-		JLabel lblPosio = new JLabel("Posi\u00E7\u00E3o:");
+		JLabel lblPosio = new JLabel("Posi\u00E7\u00E3o: 3\u00BA");
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPosio.setBounds(498, 356, 110, 23);
@@ -124,7 +146,7 @@ public class gerenciaTime extends JFrame {
 
 		////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblCampeonato = new JLabel("Campeonato");
+		JLabel lblCampeonato = new JLabel("Campeonato Carioca");
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCampeonato.setBounds(498, 167, 110, 33);
@@ -138,13 +160,13 @@ public class gerenciaTime extends JFrame {
 		btnTabela.setBounds(508, 20, 89, 23);
 		contentPane.add(btnTabela);
 
-		JLabel lblNewLabel = new JLabel("Posi\u00E7\u00E3o: ");
+		JLabel lblNewLabel = new JLabel("Posi\u00E7\u00E3o: 1\u00BA");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 
-		JLabel lblAno = new JLabel("Ano: ");
+		JLabel lblAno = new JLabel("Ano: 2019");
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAno.setBounds(378, 94, 110, 27);
