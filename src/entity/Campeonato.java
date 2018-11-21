@@ -13,7 +13,7 @@ public class Campeonato {
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela = new ArrayList<TimeTabela>();
 	private ArrayList<Time> timesJogos = new ArrayList<Time>();
-	private Rodada[] rodadas = new Rodada[30];
+	private Rodada[] rodadas;
 
 	// Construtor
 
@@ -23,6 +23,7 @@ public class Campeonato {
 		this.rodadaAtual = 1;
 		this.numPartidasJogadas = 0;
 		this.nome = "Campeonato Carioca - " + ano;
+		rodadas = new Rodada[30];
 
 		adicionarTimes();
 		gerarRodadas();
