@@ -71,18 +71,18 @@ public class Partida {
 		minuto++;
 		Random r = new Random();
 
-		int geral1 = time1.getHabilidadeGeral();
-		int geral2 = time2.getHabilidadeGeral();
+		double geral1 = time1.getHabilidadeGeral();
+		double geral2 = time2.getHabilidadeGeral();
 
 		// Gera o geral dos times para a partida
-		int geral1Partida = (int) (geral1 + (100 - geral1 - geral2) / 2);
-		int geral2Partida = (int) (geral2 + (100 - geral1 - geral2) / 2);
+		double geral1Partida = geral1 + (100 - geral1 - geral2) / 2;
+		double geral2Partida = geral2 + (100 - geral1 - geral2) / 2;
 
 		// Roda a partida
 		atualizarPlacar();
 
 		// Sorteia um número de 1 a 100
-		int sorteioPosse = r.nextInt(100) + 1;
+		double sorteioPosse = r.nextDouble() * 100;
 
 		// Confere se algum time fez gol
 		if (sorteioPosse <= geral1Partida / 18) {
