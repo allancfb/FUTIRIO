@@ -21,6 +21,7 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class gerenciaTime extends JFrame {
 
@@ -42,6 +43,7 @@ public class gerenciaTime extends JFrame {
 	public gerenciaTime(String nome, String tecnico, int index) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -55,7 +57,7 @@ public class gerenciaTime extends JFrame {
 			}
 		}
 		//pegando o time adversário
-		int intAdver = 3; //número do adversário
+		int intAdver = 2; //número do adversário
 		String nomeAdver = new String("");
 		for (Time getTime : Time.values()) {
 			if (getTime.getIndex() == intAdver) {
@@ -78,16 +80,19 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(escudoTime);
 
 		JLabel nomeTime = new JLabel(nome);
+		nomeTime.setForeground(Color.WHITE);
 		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		nomeTime.setBounds(152, 11, 336, 33);
 		contentPane.add(nomeTime);
 
 		JLabel nomeTecnico = new JLabel("Técnico: " + tecnico);
+		nomeTecnico.setForeground(Color.WHITE);
 		nomeTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		nomeTecnico.setBounds(152, 50, 336, 33);
 		contentPane.add(nomeTecnico);
 		
 		JLabel lblPrximoJogo = new JLabel("Pr\u00F3ximo jogo:");
+		lblPrximoJogo.setForeground(Color.WHITE);
 		lblPrximoJogo.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblPrximoJogo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPrximoJogo.setBounds(498, 133, 110, 23);
@@ -102,12 +107,13 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(escudoAdversario);
 		
 		JLabel nomeAdversario = new JLabel(nomeAdver);
-		nomeAdversario.setText(nomeAdver);
+		nomeAdversario.setForeground(Color.WHITE);
 		nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
 		nomeAdversario.setBounds(498, 322, 110, 23);
 		contentPane.add(nomeAdversario);
 		
 		JLabel lblPosio = new JLabel("Posi\u00E7\u00E3o:");
+		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPosio.setBounds(498, 356, 110, 23);
 		contentPane.add(lblPosio);
@@ -115,8 +121,9 @@ public class gerenciaTime extends JFrame {
 		////////////////////////////////////////////////////////////////////////////////////////////
 		
 		JLabel lblCampeonato = new JLabel("Campeonato");
+		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCampeonato.setBounds(498, 167, 110, 23);
+		lblCampeonato.setBounds(498, 167, 110, 33);
 		contentPane.add(lblCampeonato);
 		
 		JButton btnJogar = new JButton("Jogar");
@@ -128,12 +135,20 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(btnTabela);
 		
 		JLabel lblNewLabel = new JLabel("Posi\u00E7\u00E3o: ");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(152, 94, 336, 27);
+		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 		
+		JLabel lblAno = new JLabel("Ano: ");
+		lblAno.setForeground(Color.WHITE);
+		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblAno.setBounds(378, 94, 110, 27);
+		contentPane.add(lblAno);
+		
 		JLabel bg = new JLabel("");
-		bg.setBounds(0, 0, 618, 457);
+		bg.setIcon(new ImageIcon(gerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
+		bg.setBounds(0, 0, 628, 467);
 		contentPane.add(bg);
 	}
 }
