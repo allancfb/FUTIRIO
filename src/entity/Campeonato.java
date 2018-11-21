@@ -88,10 +88,6 @@ public class Campeonato {
 		return ano;
 	}
 
-	public ArrayList<Time> gettimesJogos() {
-		return timesJogos;
-	}
-
 	// Métodos
 
 	public void gerarRodadas() { /* 0--------------------------------------0 */
