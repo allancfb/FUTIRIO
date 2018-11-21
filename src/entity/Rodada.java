@@ -16,8 +16,8 @@ public class Rodada {
 		partidas = new ArrayList<Partida>();
 		tempo = Tempo.DEFAULT;
 
-		for (int i = 0; i < timesJogos.size(); i += 2) {
-			partidas.add(new Partida(timesJogos.get(i), timesJogos.get(i + 1)));
+		for (int i = 0; i < timesJogos.size(); i++) {
+			partidas.add(new Partida(timesJogos.get(i), timesJogos.get(i + 8)));
 		}
 	}
 
