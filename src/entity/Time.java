@@ -15,7 +15,7 @@ public class Time implements Serializable {
 	private String nome;
 	private ArrayList<Jogador> jogadores;
 	private ArrayList<Jogador> jogadoresTitulares;
-	private int habilidadeGeral;
+	private double habilidadeGeral;
 	private double fundos;
 	private double salarioTotal;
 
@@ -60,7 +60,7 @@ public class Time implements Serializable {
 	}
 
 	// TODO: comentar
-	public int getHabilidadeGeral() {
+	public double getHabilidadeGeral() {
 		atualizarHabilidadeGeral();
 
 		return habilidadeGeral;
@@ -221,7 +221,7 @@ public class Time implements Serializable {
 	}
 
 	// TODO: comentar
-	private int calcularHabilidadeGeral() {
+	private double calcularHabilidadeGeral() {
 		int somaMedia = 0;
 
 		for (Jogador jogador : jogadores) {
