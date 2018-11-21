@@ -149,7 +149,7 @@ public class gerenciaTime extends JFrame {
 		nomeAdversario.setBounds(498, 322, 110, 23);
 		contentPane.add(nomeAdversario);
 
-		JLabel lblPosio = new JLabel("Posi\u00E7\u00E3o: 3\u00BA");
+		JLabel lblPosio = new JLabel("Posição");
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPosio.setBounds(498, 356, 110, 23);
