@@ -122,6 +122,22 @@ public class Main {
 	}
 
 	public static void main(String args[]) {
+		/*
+		Campeonato c = new Campeonato(2018);
+		int nRodada = 0;
+		for (Rodada rodada : c.getRodadas()) {
+			int nPartida = 0;
+			nRodada++;
+			System.out.println("-----Rodada " + nRodada + "-----");
+			
+			for (Partida partida : rodada.getPartidas()) {
+				nPartida++;
+				System.out.println("-----Partida " + nPartida + " da rodada " + nRodada + "-----");
+				System.out.println(partida.getPlacar());
+			}
+		}
+		*/
+		/*
 		Time a = carregarTime("America");
 		Time b = carregarTime("Botafogo");
 		Time c = carregarTime("Cabofriense");
@@ -139,6 +155,7 @@ public class Main {
 		Rodada r = new Rodada(timesJogos);
 		r.start();
 		r.start();
+		*/
 	}
 
 }
