@@ -19,11 +19,14 @@ import javax.swing.border.EmptyBorder;
 
 import entity.*;
 
-public class newGame extends JFrame {
+public class GerenciaTecnico extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField nomeTecnico;
 	public static int ano = 2019;
+	protected NewGame futirio;
+	// Criando o campeonato
+//	protected ;
 
 	/**
 	 * Launch the application.
@@ -32,7 +35,7 @@ public class newGame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					newGame frame = new newGame();
+					GerenciaTecnico frame = new GerenciaTecnico();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,10 +47,12 @@ public class newGame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public newGame() {
-		// Criando o campeonato
-		Campeonato carioca = new Campeonato(ano);
+	
+	
+	
+	public GerenciaTecnico() {
 
+		futirio = new NewGame(ano);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		setResizable(false);
@@ -58,10 +63,10 @@ public class newGame extends JFrame {
 
 		JComboBox times = new JComboBox();
 		times.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		times.addItem(carioca.getTimes().get(4).getNome());
-		times.addItem(carioca.getTimes().get(6).getNome());
-		times.addItem(carioca.getTimes().get(7).getNome());
-		times.addItem(carioca.getTimes().get(14).getNome());
+		times.addItem(futirio.getCarioca().getTimes().get(4).getNome());
+		times.addItem(futirio.getCarioca().getTimes().get(6).getNome());
+		times.addItem(futirio.getCarioca().getTimes().get(7).getNome());
+		times.addItem(futirio.getCarioca().getTimes().get(14).getNome());
 		times.setSelectedItem(null);
 		times.setBounds(114, 191, 142, 32);
 		contentPane.add(times);
@@ -85,10 +90,9 @@ public class newGame extends JFrame {
 					}else if(times.getSelectedIndex()==3){
 						index = 14;
 					}
-					Campeonato carioca = new Campeonato(2019);
-					gerenciaTime jogo = new gerenciaTime(carioca.getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex(),carioca);
+					gerenciaTime jogo = new gerenciaTime(futirio.getCarioca().getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex(),futirio.getCarioca());
 					jogo.setVisible(true);
-					newGame.this.dispose();
+					GerenciaTecnico.this.dispose();
 				}
 			}
 		});
@@ -114,8 +118,9 @@ public class newGame extends JFrame {
 		contentPane.add(lblTecnico);
 
 		JLabel bg = new JLabel("");
-		bg.setIcon(new ImageIcon(newGame.class.getResource("/Imagens/campo.jpg")));
+		bg.setIcon(new ImageIcon(GerenciaTecnico.class.getResource("/Imagens/campo.jpg")));
 		bg.setBounds(0, -23, 600, 399);
 		contentPane.add(bg);
 	}
+
 }

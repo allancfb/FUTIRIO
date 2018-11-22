@@ -75,7 +75,7 @@ public class Inicio extends JFrame {
 		JButton jogar = new JButton("Jogar");
 		jogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				newGame gerencia = new newGame();
+				GerenciaTecnico gerencia = new GerenciaTecnico();
 				gerencia.setVisible(true);
 				Inicio.this.dispose();				
 			}
