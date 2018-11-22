@@ -108,5 +108,19 @@ public class ListaDeTransferencia {
 		return jogador;
 
 	}
+	
+	public ArrayList<String[]> getAllAtributosJogador() {
+		
+		ArrayList<String[]> retorno = new ArrayList<String[]>();
+		
+		for(int i = 0 ; i<jogadores.size();i++) {
+			String[] aux = {this.jogadores.get(i).getPosicao().getNome(),jogadores.get(i).getNome(),Double.toString(jogadores.get(i).getHabilidade()),Double.toString(jogadores.get(i).getSalario()),Double.toString(jogadores.get(i).getTxContrato())};
+			retorno.add(aux);
+			
+			
+		}
+		return retorno;
+		
+	}
 
 }
