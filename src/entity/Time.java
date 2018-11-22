@@ -81,6 +81,10 @@ public class Time implements Serializable {
 	public ArrayList<Jogador> getJogadoresTitulares() {
 		return jogadoresTitulares;
 	}
+	
+	public ArrayList<Jogador> getJogadoresReservas() {
+		return jogadoresReservas;
+	}
 
 	// TODO: comentar
 	public Jogador getJogador(int i) {
@@ -134,11 +138,13 @@ public class Time implements Serializable {
 		
 		jogadores.add(jogador);
 		atualizarSalarioTotal();
+		
 	}
 
 	// TODO: comentar AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
 	// fazer isso" ESSA PORRA AKI N TA PRONTA N!!! FALTA FAZER ELE GASTAR O DINHEIRO
 	// DO CONTRATO
+	
 	public void comprarJogador(Jogador jogador) {
 		jogador.setPosicao(Posicao.DEFAULT);
 		jogadores.add(jogador);
@@ -147,6 +153,7 @@ public class Time implements Serializable {
 		bancarExcesso();
 		atualizarHabilidadeGeral();
 		atualizarSalarioTotal();
+		atualizarTitulares();
 	}
 
 	// TODO: COMENTAR AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
@@ -158,7 +165,7 @@ public class Time implements Serializable {
 		bancarExcesso();
 		atualizarHabilidadeGeral();
 		atualizarSalarioTotal();
-
+		atualizarTitulares();
 		return jogador;
 	}
 
@@ -273,8 +280,9 @@ public class Time implements Serializable {
 	}
 
 	// TODO: comentar
-	public void atualizarTitulares() {
+	public void atualizarTitulares() { // seta os titulares e os reservas
 		jogadoresTitulares.clear();
+		jogadoresReservas.clear();
 		int contadorDeJogadores = 1;
 		for (int i = 0; i < jogadores.size(); i++) {
 			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Gol")) {
@@ -309,6 +317,13 @@ public class Time implements Serializable {
 			}
 			if (contadorDeJogadores == 11)
 				break;
+		}
+		
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Sem posição")) {
+				jogadoresReservas.add(jogadores.get(i));
+				contadorDeJogadores++;
+			}
 		}
 		
 
