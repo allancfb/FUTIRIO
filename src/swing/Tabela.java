@@ -84,30 +84,8 @@ public class Tabela extends JFrame {
 		contentPane.add(scrollPane);
 		
 		table = new JTable(times,colunas);
+		table.setEnabled(false);
 		scrollPane.setViewportView(table);
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-			},
-			new String[] {
-				"Time", "Pontos", "Vitorias", "Saldo de Gols", "Empates", "Derrotas"
-			}
-		));
 		table.setFillsViewportHeight(true);
 		table.setBorder(new LineBorder(new Color(0, 0, 0)));
 		bg.setIcon(new ImageIcon(Tabela.class.getResource("/Imagens/fundo.png")));
