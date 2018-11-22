@@ -30,7 +30,7 @@ public class Time implements Serializable {
 		jogadores = new ArrayList<Jogador>();
 		jogadoresTitulares = new ArrayList<Jogador>();
 		jogadoresReservas = new ArrayList<Jogador>();
-		
+
 		gerarNomeTime();
 	}
 
@@ -40,7 +40,7 @@ public class Time implements Serializable {
 		jogadoresTitulares = new ArrayList<Jogador>();
 		jogadoresReservas = new ArrayList<Jogador>();
 		adversarios = new ArrayList<Time>();
-		
+
 		this.nome = nome;
 	}
 
@@ -58,7 +58,7 @@ public class Time implements Serializable {
 	public void setEscudo(String escudo) {
 		this.escudo = escudo;
 	}
-	
+
 	// TODO: comentar
 	public double getSalarioTotal() {
 		return salarioTotal;
@@ -84,7 +84,7 @@ public class Time implements Serializable {
 	public ArrayList<Jogador> getJogadoresTitulares() {
 		return jogadoresTitulares;
 	}
-	
+
 	public ArrayList<Jogador> getJogadoresReservas() {
 		return jogadoresReservas;
 	}
@@ -92,6 +92,14 @@ public class Time implements Serializable {
 	// TODO: comentar
 	public Jogador getJogador(int i) {
 		return getJogadores().get(i);
+	}
+
+	public void addAdversario(Time adversario) {
+		adversarios.add(adversario);
+	}
+
+	public ArrayList<Time> getAdversarios() {
+		return adversarios;
 	}
 
 	public ArrayList<String[]> getAllAtributosJogador() {
@@ -138,33 +146,36 @@ public class Time implements Serializable {
 
 	// TODO: comentar
 	public void addJogador(Jogador jogador) {
-		
+
 		jogadores.add(jogador);
 		atualizarSalarioTotal();
-		
+
 	}
 
-	// TODO: comentar AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
-	// fazer isso" ESSA PORRA AKI N TA PRONTA N!!! FALTA FAZER ELE GASTAR O DINHEIRO
+	// TODO: comentar AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n
+	// sei
+	// fazer isso" ESSA PORRA AKI N TA PRONTA N!!! FALTA FAZER ELE GASTAR O
+	// DINHEIRO
 	// DO CONTRATO
-	
+
 	public void comprarJogador(Jogador jogador) {
 		jogador.setPosicao(Posicao.DEFAULT);
 		jogadores.add(jogador);
 		this.subtrairFundos(jogador.getTxContrato());
-		
+
 		bancarExcesso();
 		atualizarHabilidadeGeral();
 		atualizarSalarioTotal();
 		atualizarTitulares();
 	}
 
-	// TODO: COMENTAR AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n sei
+	// TODO: COMENTAR AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n
+	// sei
 	// fazer isso"
 	public Jogador venderJogador(Jogador jogador) {
 		jogadores.remove(jogador);
 		addFundos(jogador.getTxContrato());
-		
+
 		bancarExcesso();
 		atualizarHabilidadeGeral();
 		atualizarSalarioTotal();
@@ -321,14 +332,13 @@ public class Time implements Serializable {
 			if (contadorDeJogadores == 11)
 				break;
 		}
-		
+
 		for (int i = 0; i < jogadores.size(); i++) {
 			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Sem posição")) {
 				jogadoresReservas.add(jogadores.get(i));
 				contadorDeJogadores++;
 			}
 		}
-		
 
 		atualizarHabilidadeGeral();
 	}

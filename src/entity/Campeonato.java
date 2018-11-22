@@ -29,22 +29,22 @@ public class Campeonato {
 		times = new ArrayList<Time>();
 
 		adicionarTimes();
-		
+
 		for (Time time : timesJogos) {
 			times.add(time);
 		}
-		
+
 		gerarRodadas();
-		//MEEEE TODO : gerarAdversarios
+		gerarAdversarios();
 	}
-	
+
 	// Getters and Setters
 
 	// TODO: comentar
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public Time getTime(int posicao) {
 		return times.get(posicao);
 	}
@@ -99,17 +99,33 @@ public class Campeonato {
 	}
 
 	// Métodos
-	
+	// ////////////////////////////////////////////////////////////////////////
+
 	public Rodada getProximaRodada() {
 		return rodadas[rodadaAtual + 1];
 	}
 
-	public void gerarRodadas() { /* 0--------------------------------------0 */
+	public void gerarAdversarios() {
+
+		for (Rodada rodada : rodadas) {
+			for (Time time : times) {
+				for (Partida partida : rodada.getPartidas()) {
+					if (partida.getTime1().getNome() == time.getNome()) {
+						time.addAdversario(partida.getTime2());
+					} else if (partida.getTime2().getNome() == time.getNome()) {
+						time.addAdversario(partida.getTime1());
+					}
+				}
+			}
+		}
+	}
+
+	public void gerarRodadas() {
 
 		for (int i = 0; i < 30; i++) {
 			rodadas[i] = new Rodada(timesJogos);
 			organizaJogos();
-			
+
 		}
 	}
 
