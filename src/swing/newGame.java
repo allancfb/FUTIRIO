@@ -46,7 +46,7 @@ public class newGame extends JFrame {
 	 */
 	public newGame() {
 		// Criando o campeonato
-		Campeonato carioca = new Campeonato(ano);
+		Campeonato campeonato = new Campeonato(ano);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
@@ -58,10 +58,10 @@ public class newGame extends JFrame {
 
 		JComboBox times = new JComboBox();
 		times.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		times.addItem(carioca.getTimes().get(4).getNome());
-		times.addItem(carioca.getTimes().get(6).getNome());
-		times.addItem(carioca.getTimes().get(7).getNome());
-		times.addItem(carioca.getTimes().get(14).getNome());
+		times.addItem(campeonato.getTimes().get(4).getNome());
+		times.addItem(campeonato.getTimes().get(6).getNome());
+		times.addItem(campeonato.getTimes().get(7).getNome());
+		times.addItem(campeonato.getTimes().get(14).getNome());
 		times.setSelectedItem(null);
 		times.setBounds(114, 191, 142, 32);
 		contentPane.add(times);
