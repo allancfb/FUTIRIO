@@ -101,6 +101,10 @@ public class Time implements Serializable {
 	public ArrayList<Time> getAdversarios() {
 		return adversarios;
 	}
+	
+	public Time getAdversario(int i){
+		return adversarios.get(i);
+	}
 
 	public ArrayList<String[]> getAllAtributosJogador() {
 
