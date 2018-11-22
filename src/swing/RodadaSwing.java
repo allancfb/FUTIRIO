@@ -15,7 +15,7 @@ import javax.swing.JProgressBar;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 
-public class Partida extends JFrame {
+public class RodadaSwing extends JFrame {
 
 	private JPanel contentPane;
 	private final JLabel bg = new JLabel("");
@@ -27,7 +27,7 @@ public class Partida extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Partida frame = new Partida();
+					RodadaSwing frame = new RodadaSwing();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class Partida extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Partida() {
+	public RodadaSwing() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		contentPane = new JPanel();
@@ -349,7 +349,7 @@ public class Partida extends JFrame {
 		progressBar.setMaximum(89);
 		progressBar.setBounds(428, 11, 146, 25);
 		contentPane.add(progressBar);
-		bg.setIcon(new ImageIcon(Partida.class.getResource("/Imagens/fundo.png")));
+		bg.setIcon(new ImageIcon(RodadaSwing.class.getResource("/Imagens/fundo.png")));
 		bg.setBounds(0, 0, 584, 360);
 		contentPane.add(bg);
 	}
