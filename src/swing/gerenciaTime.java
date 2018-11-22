@@ -1,30 +1,28 @@
 package swing;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.Image;
-import javax.print.DocFlavor.URL;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import java.awt.Toolkit;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.JMenu;
-import javax.swing.JList;
-import javax.swing.JScrollPane;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Image;
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
-import entity.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+
+import entity.Campeonato;
+import entity.Time;
 
 public class gerenciaTime extends JFrame {
 
@@ -50,7 +48,7 @@ public class gerenciaTime extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-				
+
 		// Pega o nome completo do time e seu index no enum timesGrandes
 		String nomeCompleto = new String("");
 		for (timesGrandes getTime : timesGrandes.values()) {
@@ -102,37 +100,31 @@ public class gerenciaTime extends JFrame {
 				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" } };
 		JTable jogadores = new JTable(players, colunas);
 		jogadores.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
-			},
-			new String[] {
-				"Posi\u00E7\u00E3o", "Nome", "Habilidade", "Chute", "Passe", "Desarme", "Defesa"
-			}
-		) {
-			boolean[] columnEditables = new boolean[] {
-				false, false, false, false, false, false, false
-			};
+				new Object[][] { { "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
+						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" }, },
+				new String[] { "Posi\u00E7\u00E3o", "Nome", "Habilidade", "Chute", "Passe", "Desarme", "Defesa" }) {
+			boolean[] columnEditables = new boolean[] { false, false, false, false, false, false, false };
+
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}
@@ -162,11 +154,11 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
-		Time adversario = time.getAdversario(campeonato.getRodadaAtual()-1);
-		
+		Time adversario = time.getAdversario(campeonato.getRodadaAtual() - 1);
+
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(this.getClass().getResource(adversario.getEscudo())).getImage();//getescudo
+		Image escudoAdver = new ImageIcon(this.getClass().getResource(adversario.getEscudo())).getImage();// getescudo
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
 
@@ -219,5 +211,20 @@ public class gerenciaTime extends JFrame {
 		bg.setIcon(new ImageIcon(gerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
 		bg.setBounds(0, 0, 628, 467);
 		contentPane.add(bg);
+
+		// TODO: Criar um botão que quando clicado, chama o método abaixo
+		// salvarJogo(campeonato);
+	}
+
+	public void salvarJogo(Campeonato campeonato) {
+		try {
+			ObjectOutputStream objOut = new ObjectOutputStream(
+					new BufferedOutputStream(new FileOutputStream("src/entity/save")));
+			objOut.writeObject(campeonato);
+			objOut.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 }
