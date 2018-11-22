@@ -17,8 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import entity.Time;
-import entity.Campeonato;
+import entity.*;
+
 
 public class newGame extends JFrame {
 
