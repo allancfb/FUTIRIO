@@ -75,6 +75,21 @@ public class Time implements Serializable {
 		return getJogadores().get(i);
 	}
 
+	public ArrayList<String[]> getAllAtributosJogador() {
+		
+		ArrayList<String[]> retorno = new ArrayList<String[]>();
+		
+		for(int i = 0 ; i<jogadores.size();i++) {
+			String[] aux = {this.jogadores.get(i).getPosicao().getNome(),jogadores.get(i).getNome(),Double.toString(jogadores.get(i).getHabilidade()),Integer.toString(jogadores.get(i).getChute()),Integer.toString(jogadores.get(i).getPasse()),Integer.toString(jogadores.get(i).getDesarme()), Integer.toString(jogadores.get(i).getDefesa())};
+			retorno.add(aux);
+			
+			
+		}
+		return retorno;
+		
+	}
+	
+	
 	// TODO: comentar
 	public void setNome(String nome) {
 		this.nome = nome;
