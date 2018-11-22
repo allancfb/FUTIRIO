@@ -59,14 +59,6 @@ public class gerenciaTime extends JFrame {
 				break;
 			}
 		}
-		
-		for (Partida partida : campeonato.getProximaRodada().getPartidas()) {
-			if (partida.getTime1().getNome() == time.getNome()) {
-				Time adversario = partida.getTime2();
-			}else if(partida.getTime2().getNome() == time.getNome()) {
-				Time adversario = partida.getTime1();
-			}
-		}
 
 		JLabel escudoTime = new JLabel();
 		Image escudo = new ImageIcon(this.getClass().getResource("/Imagens/" + Integer.toString(index) + ".png"))
@@ -139,7 +131,7 @@ public class gerenciaTime extends JFrame {
 			}
 		) {
 			boolean[] columnEditables = new boolean[] {
-				false, true, true, true, true, true, true
+				false, false, false, false, false, false, false
 			};
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
@@ -170,13 +162,15 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
+		Time adversario = time.getAdversario(campeonato.getRodadaAtual()-1);
+		
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(this.getClass().getResource("")).getImage();//getescudo
+		Image escudoAdver = new ImageIcon(this.getClass().getResource(adversario.getEscudo())).getImage();//getescudo
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
 
-		JLabel nomeAdversario = new JLabel();
+		JLabel nomeAdversario = new JLabel(adversario.getNome());
 		nomeAdversario.setForeground(Color.WHITE);
 		nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
 		nomeAdversario.setBounds(498, 322, 110, 23);
