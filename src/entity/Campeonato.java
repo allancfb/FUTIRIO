@@ -15,6 +15,7 @@ public class Campeonato {
 	private ArrayList<Time> timesJogos;
 	private ArrayList<Time> times;
 	private Rodada[] rodadas;
+	private ListaDeTransferencia listaDeTransferencia;
 
 	// Construtor
 
@@ -27,6 +28,7 @@ public class Campeonato {
 		tabela = new ArrayList<TimeTabela>();
 		timesJogos = new ArrayList<Time>();
 		times = new ArrayList<Time>();
+		listaDeTransferencia = new ListaDeTransferencia();
 
 		adicionarTimes();
 
