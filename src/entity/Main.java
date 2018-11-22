@@ -122,14 +122,12 @@ public class Main {
 	}
 
 	public static void main(String args[]) {		
-		gerarTimes();
-		gerarTimesPrincipais();
 		
-		Time america = carregarTime("América");
+		Time america = carregarTime("America");
 		america.setEscudo("/iconTimes/iconAmerica.png");
 		Time bangu = carregarTime("Bangu");
 		bangu.setEscudo("/iconTimes/iconBangu.png");
-		Time boavista = carregarTime("Boavista");
+		Time boavista = carregarTime("Boavista-RJ");
 		boavista.setEscudo("/iconTimes/iconBoavista.png");
 		Time bonsucesso = carregarTime("Bonsucesso");
 		bonsucesso.setEscudo("/iconTimes/iconBonsucesso.png");
@@ -149,7 +147,7 @@ public class Main {
 		madureira.setEscudo("/iconTimes/iconMadureira.png");
 		Time novaIguacu = carregarTime("Nova Iguaçu");
 		novaIguacu.setEscudo("/iconTimes/iconNovaIguacu.png");
-		Time portuguesa = carregarTime("Portuguesa");
+		Time portuguesa = carregarTime("Portuguesa-RJ");
 		portuguesa.setEscudo("/iconTimes/iconPortuguesa.png");
 		Time resende = carregarTime("Resende");
 		resende.setEscudo("/iconTimes/iconResende.png");
@@ -157,6 +155,7 @@ public class Main {
 		vasco.setEscudo("/iconTimes/iconVasco.png");
 		Time voltaRedonda = carregarTime("Volta Redonda");
 		voltaRedonda.setEscudo("/iconTimes/iconVoltaRedonda.png");
+		
 	}
 
 }
