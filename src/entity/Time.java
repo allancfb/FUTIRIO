@@ -14,6 +14,7 @@ public class Time implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String escudo;
+	private ArrayList<Time> adversarios;
 	private ArrayList<Jogador> jogadores;
 	private ArrayList<Jogador> jogadoresTitulares;
 	private ArrayList<Jogador> jogadoresReservas;
@@ -25,6 +26,7 @@ public class Time implements Serializable {
 
 	// TODO: comentar
 	public Time() {
+		adversarios = new ArrayList<Time>();
 		jogadores = new ArrayList<Jogador>();
 		jogadoresTitulares = new ArrayList<Jogador>();
 		jogadoresReservas = new ArrayList<Jogador>();
@@ -37,6 +39,7 @@ public class Time implements Serializable {
 		jogadores = new ArrayList<Jogador>();
 		jogadoresTitulares = new ArrayList<Jogador>();
 		jogadoresReservas = new ArrayList<Jogador>();
+		adversarios = new ArrayList<Time>();
 		
 		this.nome = nome;
 	}

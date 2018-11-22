@@ -35,7 +35,7 @@ public class Campeonato {
 		}
 		
 		gerarRodadas();
-
+		//MEEEE TODO : gerarAdversarios
 	}
 	
 	// Getters and Setters
@@ -109,6 +109,7 @@ public class Campeonato {
 		for (int i = 0; i < 30; i++) {
 			rodadas[i] = new Rodada(timesJogos);
 			organizaJogos();
+			
 		}
 	}
 
