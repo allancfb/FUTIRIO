@@ -13,6 +13,7 @@ public class Campeonato {
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela;
 	private ArrayList<Time> timesJogos;
+	private ArrayList<Time> times;
 	private Rodada[] rodadas;
 
 	// Construtor
@@ -25,8 +26,14 @@ public class Campeonato {
 		rodadas = new Rodada[30];
 		tabela = new ArrayList<TimeTabela>();
 		timesJogos = new ArrayList<Time>();
+		times = new ArrayList<Time>();
 
 		adicionarTimes();
+		
+		for (Time time : timesJogos) {
+			times.add(time);
+		}
+		
 		gerarRodadas();
 
 	}
@@ -37,13 +44,17 @@ public class Campeonato {
 	public String getNome() {
 		return nome;
 	}
+	
+	public Time getTime(int posicao) {
+		return times.get(posicao);
+	}
+
+	public ArrayList<Time> getTimes() {
+		return times;
+	}
 
 	public Rodada[] getRodadas() {
 		return rodadas;
-	}
-
-	public ArrayList<Time> getTimesJogos() {
-		return timesJogos;
 	}
 
 	// TODO: comentar
@@ -105,14 +116,14 @@ public class Campeonato {
 
 	public void organizaJogos() {
 		ArrayList<Time> auxiliarJogos = new ArrayList<Time>();
-		for(int i = 0; i < timesJogos.size(); i++) {
-		auxiliarJogos.add(timesJogos.get(i));
+		for (int i = 0; i < timesJogos.size(); i++) {
+			auxiliarJogos.add(timesJogos.get(i));
 		}
 		timesJogos.clear();
-		//0 -- 15     8 ir para 1 ; 9 ir para 15  
-		//0  8 1  2  3  4  5  6 
-		//9 10 11 12 13 14 15 7 
-		
+		// 0 -- 15 8 ir para 1 ; 9 ir para 15
+		// 0 8 1 2 3 4 5 6
+		// 9 10 11 12 13 14 15 7
+
 		timesJogos.add(auxiliarJogos.get(0));
 		timesJogos.add(auxiliarJogos.get(8));
 		timesJogos.add(auxiliarJogos.get(1));
