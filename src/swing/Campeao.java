@@ -13,6 +13,9 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
 
+import entity.Time;
+import entity.Campeonato;
+
 public class Campeao extends JFrame {
 
 	private JPanel contentPane;
@@ -24,8 +27,6 @@ public class Campeao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Campeao frame = new Campeao();
-					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,7 +37,7 @@ public class Campeao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Campeao() {
+	public Campeao(Time time, Campeonato carioca) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 426);
 		setResizable(false);
@@ -45,24 +46,25 @@ public class Campeao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel nomeTime = new JLabel("VOLTA REDONDA");
+		JLabel nomeTime = new JLabel(time.getNome());
 		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		nomeTime.setForeground(Color.WHITE);
 		nomeTime.setHorizontalAlignment(SwingConstants.CENTER);
 		nomeTime.setBounds(156, 11, 428, 64);
 		contentPane.add(nomeTime);
 		
-		JLabel lblCampeoCarioca = new JLabel("CAMPE\u00C3O CARIOCA 2019");
+		JLabel lblCampeoCarioca = new JLabel("CAMPE\u00C3O CARIOCA "+carioca.getAno());
 		lblCampeoCarioca.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblCampeoCarioca.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCampeoCarioca.setForeground(Color.WHITE);
 		lblCampeoCarioca.setBounds(156, 86, 428, 36);
 		contentPane.add(lblCampeoCarioca);
 		
-		JLabel escudo = new JLabel("");
+		//time.getescudo
+		/*JLabel escudo = new JLabel("");
 		escudo.setIcon(new ImageIcon(Campeao.class.getResource("/iconTimes/iconVoltaRedonda.png")));
 		escudo.setBounds(36, 11, 110, 111);
-		contentPane.add(escudo);
+		contentPane.add(escudo);*/
 		
 		JLabel taca = new JLabel("");
 		taca.setIcon(new ImageIcon(Campeao.class.getResource("/Imagens/taca.png")));

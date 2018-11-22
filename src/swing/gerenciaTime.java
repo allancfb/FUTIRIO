@@ -24,6 +24,8 @@ import javax.swing.JButton;
 import java.awt.Color;
 
 import entity.Campeonato;
+import entity.Time;
+import entity.TimeTabela;
 
 public class gerenciaTime extends JFrame {
 
@@ -41,7 +43,7 @@ public class gerenciaTime extends JFrame {
 		});
 	}
 
-	public gerenciaTime(String nome, String tecnico, int index) {
+	public gerenciaTime(Time time, String tecnico, int index) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
 		setResizable(false);
@@ -49,27 +51,28 @@ public class gerenciaTime extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		// Pega o nome completo do time
-		for (Time getTime : Time.values()) {
-			if (getTime.name() == nome) {
-				nome = getTime.getNomeCompleto();
-				index = getTime.getIndex();
+		
+		String nomeCompleto = new String("");
+		// Pega o nome completo do time e seu index no enum timesGrandes
+		for (timesGrandes getTime : timesGrandes.values()) {
+			if (getTime.name() == time.getNome()) {
+				nomeCompleto = getTime.getNomeCompleto();
 			}
 		}
-		// pegando o time adversário
-		int intAdver = 2; // número do adversário
-		String nomeAdver = new String("");
-		for (Time getTime : Time.values()) {
-			if (getTime.getIndex() == intAdver) {
-				nomeAdver = getTime.name().toString();
-				intAdver = getTime.getIndex();
-			}
-		}
+		System.out.println(nomeCompleto);
 
 		JLabel escudoTime = new JLabel();
 		Image escudo = new ImageIcon(this.getClass().getResource("/Imagens/" + Integer.toString(index) + ".png"))
 				.getImage();
+		escudoTime.setIcon(new ImageIcon(escudo));
+		escudoTime.setBounds(21, 11, 110, 110);
+		contentPane.add(escudoTime);
+
+		JLabel nomeTime = new JLabel(nomeCompleto);
+		nomeTime.setForeground(Color.WHITE);
+		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		nomeTime.setBounds(152, 20, 336, 33);
+		contentPane.add(nomeTime);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(31, 132, 457, 302);
@@ -101,21 +104,12 @@ public class gerenciaTime extends JFrame {
 		JTable jogadores = new JTable(players, colunas);
 		jogadores.setShowVerticalLines(false);
 		scrollPane.setViewportView(jogadores);
-		escudoTime.setIcon(new ImageIcon(escudo));
-		escudoTime.setBounds(21, 11, 110, 110);
-		contentPane.add(escudoTime);
 
 		JLabel lblFundosR = new JLabel("Fundos: R$");// +Time.getFundos()
 		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblFundosR.setForeground(Color.WHITE);
-		lblFundosR.setBounds(378, 64, 110, 20);
+		lblFundosR.setBounds(508, 101, 110, 20);
 		contentPane.add(lblFundosR);
-
-		JLabel nomeTime = new JLabel(nome);
-		nomeTime.setForeground(Color.WHITE);
-		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomeTime.setBounds(152, 20, 336, 33);
-		contentPane.add(nomeTime);
 
 		JLabel nomeTecnico = new JLabel("Técnico: " + tecnico);
 		nomeTecnico.setForeground(Color.WHITE);
@@ -132,18 +126,20 @@ public class gerenciaTime extends JFrame {
 
 		// Dados do Adversário
 
-		JLabel escudoAdversario = new JLabel("");
-		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(
-				this.getClass().getResource("/Imagens/" + Integer.toString(intAdver) + ".png")).getImage();
-		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
-		contentPane.add(escudoAdversario);
+		/*
+		 * JLabel escudoAdversario = new JLabel(""); escudoAdversario.setBounds(498,
+		 * 201, 110, 110); Image escudoAdver = new ImageIcon(
+		 * this.getClass().getResource("/Imagens/" + Integer.toString(intAdver) +
+		 * ".png")).getImage(); escudoAdversario.setIcon(new ImageIcon(escudoAdver));
+		 * contentPane.add(escudoAdversario);
+		 */
 
-		JLabel nomeAdversario = new JLabel(nomeAdver);
-		nomeAdversario.setForeground(Color.WHITE);
-		nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
-		nomeAdversario.setBounds(498, 322, 110, 23);
-		contentPane.add(nomeAdversario);
+		/*
+		 * JLabel nomeAdversario = new JLabel(nomeAdver);
+		 * nomeAdversario.setForeground(Color.WHITE);
+		 * nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
+		 * nomeAdversario.setBounds(498, 322, 110, 23); contentPane.add(nomeAdversario);
+		 */
 
 		JLabel lblPosio = new JLabel("Posição:");// +time.getposicao();
 		lblPosio.setForeground(Color.WHITE);

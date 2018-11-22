@@ -1,12 +1,12 @@
 package swing;
 
-public enum Time {
+public enum timesGrandes {
 	Botafogo(0, "Botafogo de Futebol e Regatas"), Flamengo(1, "Clube de Regatas do Flamengo"), Fluminense(
 			2, "Fluminense Football Club"), Vasco(3, "Clube de Regatas Vasco da Gama");
 
 	private int index;
 	private String nomeCompleto;
-	Time(int index, String nomeCompleto) {
+	timesGrandes(int index, String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 		this.index = index;
 	}

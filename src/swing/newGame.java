@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import entity.Time;
 import entity.Campeonato;
 
 public class newGame extends JFrame {
@@ -75,8 +76,17 @@ public class newGame extends JFrame {
 					JOptionPane.showMessageDialog(null, "Selecione todas as opções para continuar", "Erro",
 							JOptionPane.ERROR_MESSAGE);
 				} else {
-					gerenciaTime jogo = new gerenciaTime(times.getItemAt(times.getSelectedIndex()).toString(),
-							nomeTecnico.getText(), times.getSelectedIndex());
+					int index = 0;
+					if(times.getSelectedIndex()==0) {
+						index = 4;
+					}else if(times.getSelectedIndex()==1) {
+						index = 6;
+					}else if(times.getSelectedIndex()==2) {
+						index = 7;
+					}else if(times.getSelectedIndex()==3){
+						index = 14;
+					}
+					gerenciaTime jogo = new gerenciaTime(carioca.getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex());
 					jogo.setVisible(true);
 					newGame.this.dispose();
 				}
