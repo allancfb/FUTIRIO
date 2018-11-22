@@ -29,7 +29,6 @@ public class gerenciaTime extends JFrame {
 
 	private JPanel contentPane;
 	private JTable jogadores;
-	public static int ano = 2019;
 
 	static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -43,9 +42,6 @@ public class gerenciaTime extends JFrame {
 	}
 
 	public gerenciaTime(String nome, String tecnico, int index) {
-		//Criando o campeonato
-		Campeonato carioca = new Campeonato(ano);
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
 		setResizable(false);
@@ -108,8 +104,8 @@ public class gerenciaTime extends JFrame {
 		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(21, 11, 110, 110);
 		contentPane.add(escudoTime);
-		
-		JLabel lblFundosR = new JLabel("Fundos: R$");//+Time.getFundos()
+
+		JLabel lblFundosR = new JLabel("Fundos: R$");// +Time.getFundos()
 		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblFundosR.setForeground(Color.WHITE);
 		lblFundosR.setBounds(378, 64, 110, 20);
@@ -149,14 +145,14 @@ public class gerenciaTime extends JFrame {
 		nomeAdversario.setBounds(498, 322, 110, 23);
 		contentPane.add(nomeAdversario);
 
-		JLabel lblPosio = new JLabel("Posição:");//+time.getposicao();
+		JLabel lblPosio = new JLabel("Posição:");// +time.getposicao();
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPosio.setBounds(498, 356, 110, 23);
 		contentPane.add(lblPosio);
 		////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblCampeonato = new JLabel(carioca.getNome());
+		JLabel lblCampeonato = new JLabel("cariocaçoooo");
 		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
@@ -170,7 +166,7 @@ public class gerenciaTime extends JFrame {
 		JButton btnTabela = new JButton("Tabela");
 		btnTabela.setBounds(508, 20, 110, 23);
 		contentPane.add(btnTabela);
-		
+
 		JButton btnNegociarJogador = new JButton("Negociar Jogador");
 		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		btnNegociarJogador.setBounds(508, 59, 110, 23);
@@ -182,7 +178,7 @@ public class gerenciaTime extends JFrame {
 		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 
-		JLabel lblAno = new JLabel("Ano: "+carioca.getAno()); // +campeonato.getAno();
+		JLabel lblAno = new JLabel("Ano: "); // +campeonato.getAno();
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAno.setBounds(378, 94, 110, 27);
