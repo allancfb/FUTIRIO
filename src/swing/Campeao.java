@@ -15,6 +15,8 @@ import javax.swing.JButton;
 
 import entity.Time;
 import entity.Campeonato;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Campeao extends JFrame {
 
@@ -37,7 +39,7 @@ public class Campeao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Campeao(Time time, Campeonato carioca) {
+	public Campeao(Time time, Campeonato campeonato) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 426);
 		setResizable(false);
@@ -53,7 +55,7 @@ public class Campeao extends JFrame {
 		nomeTime.setBounds(156, 11, 428, 64);
 		contentPane.add(nomeTime);
 		
-		JLabel lblCampeoCarioca = new JLabel("CAMPE\u00C3O CARIOCA "+carioca.getAno());
+		JLabel lblCampeoCarioca = new JLabel("CAMPE\u00C3O CARIOCA "+campeonato.getAno());
 		lblCampeoCarioca.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblCampeoCarioca.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCampeoCarioca.setForeground(Color.WHITE);
@@ -72,6 +74,15 @@ public class Campeao extends JFrame {
 		contentPane.add(taca);
 		
 		JButton btnContinuar = new JButton("Continuar");
+		btnContinuar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//Começa o campeonato do ano seguinte
+				Campeonato carioca = new Campeonato(campeonato.getAno()+1);
+				//gerenciaTime jogo = new gerenciaTime(carioca.getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex(),carioca);
+				//jogo.setVisible(true);
+				Campeao.this.dispose();
+			}
+		});
 		btnContinuar.setBounds(461, 349, 89, 23);
 		contentPane.add(btnContinuar);
 		

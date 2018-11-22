@@ -86,7 +86,8 @@ public class newGame extends JFrame {
 					}else if(times.getSelectedIndex()==3){
 						index = 14;
 					}
-					gerenciaTime jogo = new gerenciaTime(carioca.getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex());
+					Campeonato carioca = new Campeonato(2019);
+					gerenciaTime jogo = new gerenciaTime(carioca.getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex(),carioca);
 					jogo.setVisible(true);
 					newGame.this.dispose();
 				}

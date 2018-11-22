@@ -43,7 +43,7 @@ public class gerenciaTime extends JFrame {
 		});
 	}
 
-	public gerenciaTime(Time time, String tecnico, int index) {
+	public gerenciaTime(Time time, String tecnico, int index, Campeonato campeonato) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
 		setResizable(false);
@@ -51,15 +51,15 @@ public class gerenciaTime extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		String nomeCompleto = new String("");
+
 		// Pega o nome completo do time e seu index no enum timesGrandes
+		String nomeCompleto = new String("");
 		for (timesGrandes getTime : timesGrandes.values()) {
-			if (getTime.name() == time.getNome()) {
+			if (index == getTime.getIndex()) {
 				nomeCompleto = getTime.getNomeCompleto();
+				break;
 			}
 		}
-		System.out.println(nomeCompleto);
 
 		JLabel escudoTime = new JLabel();
 		Image escudo = new ImageIcon(this.getClass().getResource("/Imagens/" + Integer.toString(index) + ".png"))
@@ -125,30 +125,27 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
+		JLabel escudoAdversario = new JLabel("");
+		escudoAdversario.setBounds(498, 201, 110, 110);
+		Image escudoAdver = new ImageIcon(this.getClass().getResource("")).getImage();
+		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
+		contentPane.add(escudoAdversario);
 
 		/*
-		 * JLabel escudoAdversario = new JLabel(""); escudoAdversario.setBounds(498,
-		 * 201, 110, 110); Image escudoAdver = new ImageIcon(
-		 * this.getClass().getResource("/Imagens/" + Integer.toString(intAdver) +
-		 * ".png")).getImage(); escudoAdversario.setIcon(new ImageIcon(escudoAdver));
-		 * contentPane.add(escudoAdversario);
-		 */
-
-		/*
-		 * JLabel nomeAdversario = new JLabel(nomeAdver);
+		 * JLabel nomeAdversario = new JLabel();
 		 * nomeAdversario.setForeground(Color.WHITE);
 		 * nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
 		 * nomeAdversario.setBounds(498, 322, 110, 23); contentPane.add(nomeAdversario);
 		 */
 
-		JLabel lblPosio = new JLabel("Posição:");// +time.getposicao();
+		JLabel lblPosio = new JLabel("Posição: ");// +time.getposicao();
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPosio.setBounds(498, 356, 110, 23);
 		contentPane.add(lblPosio);
 		////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblCampeonato = new JLabel("cariocaçoooo");
+		JLabel lblCampeonato = new JLabel(campeonato.getNome());
 		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
@@ -174,7 +171,7 @@ public class gerenciaTime extends JFrame {
 		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 
-		JLabel lblAno = new JLabel("Ano: "); // +campeonato.getAno();
+		JLabel lblAno = new JLabel("Ano: "+campeonato.getAno());
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAno.setBounds(378, 94, 110, 27);
