@@ -15,6 +15,7 @@ public class Time implements Serializable {
 	private String nome;
 	private ArrayList<Jogador> jogadores;
 	private ArrayList<Jogador> jogadoresTitulares;
+	private ArrayList<Jogador> jogadoresReservas;
 	private double habilidadeGeral;
 	private double fundos;
 	private double salarioTotal;
@@ -25,7 +26,8 @@ public class Time implements Serializable {
 	public Time() {
 		jogadores = new ArrayList<Jogador>();
 		jogadoresTitulares = new ArrayList<Jogador>();
-
+		jogadoresReservas = new ArrayList<Jogador>();
+		
 		gerarNomeTime();
 	}
 
@@ -33,7 +35,8 @@ public class Time implements Serializable {
 	public Time(String nome) {
 		jogadores = new ArrayList<Jogador>();
 		jogadoresTitulares = new ArrayList<Jogador>();
-
+		jogadoresReservas = new ArrayList<Jogador>();
+		
 		this.nome = nome;
 	}
 
@@ -119,6 +122,7 @@ public class Time implements Serializable {
 
 	// TODO: comentar
 	public void addJogador(Jogador jogador) {
+		
 		jogadores.add(jogador);
 		atualizarSalarioTotal();
 	}
@@ -127,9 +131,10 @@ public class Time implements Serializable {
 	// fazer isso" ESSA PORRA AKI N TA PRONTA N!!! FALTA FAZER ELE GASTAR O DINHEIRO
 	// DO CONTRATO
 	public void comprarJogador(Jogador jogador) {
+		jogador.setPosicao(Posicao.DEFAULT);
 		jogadores.add(jogador);
 		this.subtrairFundos(jogador.getTxContrato());
-
+		
 		bancarExcesso();
 		atualizarHabilidadeGeral();
 		atualizarSalarioTotal();
@@ -139,7 +144,8 @@ public class Time implements Serializable {
 	// fazer isso"
 	public Jogador venderJogador(Jogador jogador) {
 		jogadores.remove(jogador);
-
+		addFundos(jogador.getTxContrato());
+		
 		bancarExcesso();
 		atualizarHabilidadeGeral();
 		atualizarSalarioTotal();
@@ -295,6 +301,7 @@ public class Time implements Serializable {
 			if (contadorDeJogadores == 11)
 				break;
 		}
+		
 
 		atualizarHabilidadeGeral();
 	}
