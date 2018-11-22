@@ -13,6 +13,7 @@ public class Time implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String nome;
+	private String escudo;
 	private ArrayList<Jogador> jogadores;
 	private ArrayList<Jogador> jogadoresTitulares;
 	private ArrayList<Jogador> jogadoresReservas;
@@ -47,6 +48,14 @@ public class Time implements Serializable {
 		return nome;
 	}
 
+	public String getEscudo() {
+		return escudo;
+	}
+
+	public void setEscudo(String escudo) {
+		this.escudo = escudo;
+	}
+	
 	// TODO: comentar
 	public double getSalarioTotal() {
 		return salarioTotal;
