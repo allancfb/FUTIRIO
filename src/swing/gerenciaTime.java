@@ -24,6 +24,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 
 import entity.*;
+import javax.swing.table.DefaultTableModel;
 
 public class gerenciaTime extends JFrame {
 
@@ -108,6 +109,42 @@ public class gerenciaTime extends JFrame {
 				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
 				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" } };
 		JTable jogadores = new JTable(players, colunas);
+		jogadores.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+				{"kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas"},
+			},
+			new String[] {
+				"Posi\u00E7\u00E3o", "Nome", "Habilidade", "Chute", "Passe", "Desarme", "Defesa"
+			}
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, true, true, true, true, true, true
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
 		jogadores.setBackground(new Color(255, 255, 255));
 		jogadores.setForeground(Color.BLACK);
 		jogadores.setShowVerticalLines(false);
