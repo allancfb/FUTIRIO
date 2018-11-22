@@ -19,7 +19,6 @@ import javax.swing.border.EmptyBorder;
 
 import entity.*;
 
-
 public class newGame extends JFrame {
 
 	private JPanel contentPane;
