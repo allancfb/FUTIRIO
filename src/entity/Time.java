@@ -76,20 +76,21 @@ public class Time implements Serializable {
 	}
 
 	public ArrayList<String[]> getAllAtributosJogador() {
-		
+
 		ArrayList<String[]> retorno = new ArrayList<String[]>();
-		
-		for(int i = 0 ; i<jogadores.size();i++) {
-			String[] aux = {this.jogadores.get(i).getPosicao().getNome(),jogadores.get(i).getNome(),Double.toString(jogadores.get(i).getHabilidade()),Integer.toString(jogadores.get(i).getChute()),Integer.toString(jogadores.get(i).getPasse()),Integer.toString(jogadores.get(i).getDesarme()), Integer.toString(jogadores.get(i).getDefesa())};
+
+		for (int i = 0; i < jogadores.size(); i++) {
+			String[] aux = { this.jogadores.get(i).getPosicao().getNome(), jogadores.get(i).getNome(),
+					Double.toString(jogadores.get(i).getHabilidade()), Integer.toString(jogadores.get(i).getChute()),
+					Integer.toString(jogadores.get(i).getPasse()), Integer.toString(jogadores.get(i).getDesarme()),
+					Integer.toString(jogadores.get(i).getDefesa()) };
 			retorno.add(aux);
-			
-			
+
 		}
 		return retorno;
-		
+
 	}
-	
-	
+
 	// TODO: comentar
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -253,50 +254,50 @@ public class Time implements Serializable {
 		String nomePosicao = jogadorTroca2.getPosicao().getNome();
 		jogadorTroca2.setPosicao(jogadorTroca1.getPosicao());
 		jogadorTroca1.setPosicao(Posicao.retornaPosicao(nomePosicao));
-		
+
 		atualizarTitulares();
 	}
 
 	// TODO: comentar
 	public void atualizarTitulares() {
 		jogadoresTitulares.clear();
-		    int contadorDeJogadores = 1;
-		    for (int i = 0; i < jogadores.size(); i++) {
-			    if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Gol")) {
-				    jogadoresTitulares.add(jogadores.get(i));
-				    break;
-			    }
-		    }
-			
-		    for (int i = 0; i < jogadores.size(); i++) {
-			    if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Defesa")) {
-			     	jogadoresTitulares.add(jogadores.get(i));	
-			     	contadorDeJogadores++;
-			    }
-			    if (contadorDeJogadores == 5)
-			    	break;
-			    
-		    }
-		    
-		    for (int i = 0; i < jogadores.size(); i++) {
-		    	if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Meia")) {
-		    		jogadoresTitulares.add(jogadores.get(i));
-		    		contadorDeJogadores++;
-		    	}
-		    	if (contadorDeJogadores == 9)
-			    	break;
-		    }
-		    
-		    for (int i = 0; i < jogadores.size(); i++) {
-		    	if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Ataque")) {
-		    		jogadoresTitulares.add(jogadores.get(i));
-		    		contadorDeJogadores++;
-		    	}
-		    	if (contadorDeJogadores == 11)
-			    	break;
-		    }
-		    
-		    atualizarHabilidadeGeral();
+		int contadorDeJogadores = 1;
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Gol")) {
+				jogadoresTitulares.add(jogadores.get(i));
+				break;
+			}
+		}
+
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Defesa")) {
+				jogadoresTitulares.add(jogadores.get(i));
+				contadorDeJogadores++;
+			}
+			if (contadorDeJogadores == 5)
+				break;
+
+		}
+
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Meia")) {
+				jogadoresTitulares.add(jogadores.get(i));
+				contadorDeJogadores++;
+			}
+			if (contadorDeJogadores == 9)
+				break;
+		}
+
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Ataque")) {
+				jogadoresTitulares.add(jogadores.get(i));
+				contadorDeJogadores++;
+			}
+			if (contadorDeJogadores == 11)
+				break;
+		}
+
+		atualizarHabilidadeGeral();
 	}
 
 }
