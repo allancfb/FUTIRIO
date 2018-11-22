@@ -127,16 +127,15 @@ public class gerenciaTime extends JFrame {
 		// Dados do Adversário
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(this.getClass().getResource("")).getImage();
+		Image escudoAdver = new ImageIcon(this.getClass().getResource("")).getImage(); //adversario.getescudo no resource
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
 
-		/*
-		 * JLabel nomeAdversario = new JLabel();
-		 * nomeAdversario.setForeground(Color.WHITE);
-		 * nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
-		 * nomeAdversario.setBounds(498, 322, 110, 23); contentPane.add(nomeAdversario);
-		 */
+		JLabel nomeAdversario = new JLabel();
+		nomeAdversario.setForeground(Color.WHITE);
+		nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
+		nomeAdversario.setBounds(498, 322, 110, 23); 
+		contentPane.add(nomeAdversario);
 
 		JLabel lblPosio = new JLabel("Posição: ");// +time.getposicao();
 		lblPosio.setForeground(Color.WHITE);

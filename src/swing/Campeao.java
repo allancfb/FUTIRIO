@@ -62,11 +62,10 @@ public class Campeao extends JFrame {
 		lblCampeoCarioca.setBounds(156, 86, 428, 36);
 		contentPane.add(lblCampeoCarioca);
 		
-		//time.getescudo
-		/*JLabel escudo = new JLabel("");
-		escudo.setIcon(new ImageIcon(Campeao.class.getResource("/iconTimes/iconVoltaRedonda.png")));
+		JLabel escudo = new JLabel("");
+		escudo.setIcon(new ImageIcon(Campeao.class.getResource(time.getEscudo())));
 		escudo.setBounds(36, 11, 110, 111);
-		contentPane.add(escudo);*/
+		contentPane.add(escudo);
 		
 		JLabel taca = new JLabel("");
 		taca.setIcon(new ImageIcon(Campeao.class.getResource("/Imagens/taca.png")));
