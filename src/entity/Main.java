@@ -121,41 +121,42 @@ public class Main {
 		}
 	}
 
-	public static void main(String args[]) {
-		/*
-		Campeonato c = new Campeonato(2018);
-		int nRodada = 0;
-		for (Rodada rodada : c.getRodadas()) {
-			int nPartida = 0;
-			nRodada++;
-			System.out.println("-----Rodada " + nRodada + "-----");
-			
-			for (Partida partida : rodada.getPartidas()) {
-				nPartida++;
-				System.out.println("-----Partida " + nPartida + " da rodada " + nRodada + "-----");
-				System.out.println(partida.getPlacar());
-			}
-		}
-		*/
-		/*
-		Time a = carregarTime("America");
-		Time b = carregarTime("Botafogo");
-		Time c = carregarTime("Cabofriense");
-		Time f = carregarTime("Flamengo");
-		Time g = carregarTime("Goytacaz");
-		Time m = carregarTime("Macaé");
+	public static void main(String args[]) {		
+		gerarTimes();
+		gerarTimesPrincipais();
 		
-		ArrayList<Time> timesJogos = new ArrayList<Time>();
-		timesJogos.add(a);
-		timesJogos.add(b);
-		timesJogos.add(c);
-		timesJogos.add(f);
-		timesJogos.add(g);
-		timesJogos.add(m);
-		Rodada r = new Rodada(timesJogos);
-		r.start();
-		r.start();
-		*/
+		Time america = carregarTime("América");
+		america.setEscudo("/iconTimes/iconAmerica.png");
+		Time bangu = carregarTime("Bangu");
+		bangu.setEscudo("/iconTimes/iconBangu.png");
+		Time boavista = carregarTime("Boavista");
+		boavista.setEscudo("/iconTimes/iconBoavista.png");
+		Time bonsucesso = carregarTime("Bonsucesso");
+		bonsucesso.setEscudo("/iconTimes/iconBonsucesso.png");
+		Time botafogo = carregarTime("Botafogo");
+		botafogo.setEscudo("/iconTimes/iconBotafogo.png");
+		Time cabofriense = carregarTime("Cabofriense");
+		cabofriense.setEscudo("/iconTimes/iconCabofriense.png");
+		Time flamengo = carregarTime("Flamengo");
+		flamengo.setEscudo("/iconTimes/iconFlamengo.png");
+		Time fluminense = carregarTime("Fluminense");
+		fluminense.setEscudo("/iconTimes/iconFluminense.png");
+		Time goytacaz = carregarTime("Goytacaz");
+		goytacaz.setEscudo("/iconTimes/iconGoytacaz.png");
+		Time macae = carregarTime("Macaé");
+		macae.setEscudo("/iconTimes/iconMacae.png");
+		Time madureira = carregarTime("Madureira");
+		madureira.setEscudo("/iconTimes/iconMadureira.png");
+		Time novaIguacu = carregarTime("Nova Iguaçu");
+		novaIguacu.setEscudo("/iconTimes/iconNovaIguacu.png");
+		Time portuguesa = carregarTime("Portuguesa");
+		portuguesa.setEscudo("/iconTimes/iconPortuguesa.png");
+		Time resende = carregarTime("Resende");
+		resende.setEscudo("/iconTimes/iconResende.png");
+		Time vasco = carregarTime("Vasco");
+		vasco.setEscudo("/iconTimes/iconVasco.png");
+		Time voltaRedonda = carregarTime("Volta Redonda");
+		voltaRedonda.setEscudo("/iconTimes/iconVoltaRedonda.png");
 	}
 
 }
