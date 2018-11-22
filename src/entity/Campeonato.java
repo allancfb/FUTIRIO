@@ -37,7 +37,7 @@ public class Campeonato {
 		gerarRodadas();
 
 	}
-
+	
 	// Getters and Setters
 
 	// TODO: comentar
@@ -99,6 +99,10 @@ public class Campeonato {
 	}
 
 	// Métodos
+	
+	public Rodada getProximaRodada() {
+		return rodadas[rodadaAtual + 1];
+	}
 
 	public void gerarRodadas() { /* 0--------------------------------------0 */
 
