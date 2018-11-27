@@ -65,7 +65,7 @@ public class GerenciaTime extends JFrame {
 		Image escudo = new ImageIcon(futirio.getTimeJogador().getEscudo()).getImage();
 
 		String[] colunas = { "Posição", "Nome", "Habilidade" };
-		String[][] teste = {{ "   ", "   e", "    " },{ "  o", "    ", "   " }};
+//		String[][] teste = {{ "   ", "   e", "    " },{ "  o", "    ", "   " }};
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
