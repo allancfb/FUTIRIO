@@ -126,38 +126,43 @@ public class Main {
 		 * SUGESTÃO: Colocar isso no NewGame
 		 */
 		
-		Time america = carregarTime("America");
-		america.setEscudo("/iconTimes/iconAmerica.png");
-		Time bangu = carregarTime("Bangu");
-		bangu.setEscudo("/iconTimes/iconBangu.png");
-		Time boavista = carregarTime("Boavista-RJ");
-		boavista.setEscudo("/iconTimes/iconBoavista.png");
-		Time bonsucesso = carregarTime("Bonsucesso");
-		bonsucesso.setEscudo("/iconTimes/iconBonsucesso.png");
-		Time botafogo = carregarTime("Botafogo");
-		botafogo.setEscudo("/iconTimes/iconBotafogo.png");
-		Time cabofriense = carregarTime("Cabofriense");
-		cabofriense.setEscudo("/iconTimes/iconCabofriense.png");
 		Time flamengo = carregarTime("Flamengo");
-		flamengo.setEscudo("/iconTimes/iconFlamengo.png");
-		Time fluminense = carregarTime("Fluminense");
-		fluminense.setEscudo("/iconTimes/iconFluminense.png");
-		Time goytacaz = carregarTime("Goytacaz");
-		goytacaz.setEscudo("/iconTimes/iconGoytacaz.png");
-		Time macae = carregarTime("Macaé");
-		macae.setEscudo("/iconTimes/iconMacae.png");
-		Time madureira = carregarTime("Madureira");
-		madureira.setEscudo("/iconTimes/iconMadureira.png");
-		Time novaIguacu = carregarTime("Nova Iguaçu");
-		novaIguacu.setEscudo("/iconTimes/iconNovaIguacu.png");
-		Time portuguesa = carregarTime("Portuguesa-RJ");
-		portuguesa.setEscudo("/iconTimes/iconPortuguesa.png");
-		Time resende = carregarTime("Resende");
-		resende.setEscudo("/iconTimes/iconResende.png");
-		Time vasco = carregarTime("Vasco");
-		vasco.setEscudo("/iconTimes/iconVasco.png");
-		Time voltaRedonda = carregarTime("Volta Redonda");
-		voltaRedonda.setEscudo("/iconTimes/iconVoltaRedonda.png");
+		System.out.println(flamengo.getJogadoresTitulares().get(0).getNome());
+		flamengo.substituicao(flamengo.getJogadoresTitulares().get(0), flamengo.getJogador(20));
+		System.out.println(flamengo.getJogadoresTitulares().get(0).getNome());
+		
+//		Time america = carregarTime("America");
+//		america.setEscudo("/iconTimes/iconAmerica.png");
+//		Time bangu = carregarTime("Bangu");
+//		bangu.setEscudo("/iconTimes/iconBangu.png");
+//		Time boavista = carregarTime("Boavista-RJ");
+//		boavista.setEscudo("/iconTimes/iconBoavista.png");
+//		Time bonsucesso = carregarTime("Bonsucesso");
+//		bonsucesso.setEscudo("/iconTimes/iconBonsucesso.png");
+//		Time botafogo = carregarTime("Botafogo");
+//		botafogo.setEscudo("/iconTimes/iconBotafogo.png");
+//		Time cabofriense = carregarTime("Cabofriense");
+//		cabofriense.setEscudo("/iconTimes/iconCabofriense.png");
+//		Time flamengo = carregarTime("Flamengo");
+//		flamengo.setEscudo("/iconTimes/iconFlamengo.png");
+//		Time fluminense = carregarTime("Fluminense");
+//		fluminense.setEscudo("/iconTimes/iconFluminense.png");
+//		Time goytacaz = carregarTime("Goytacaz");
+//		goytacaz.setEscudo("/iconTimes/iconGoytacaz.png");
+//		Time macae = carregarTime("Macaé");
+//		macae.setEscudo("/iconTimes/iconMacae.png");
+//		Time madureira = carregarTime("Madureira");
+//		madureira.setEscudo("/iconTimes/iconMadureira.png");
+//		Time novaIguacu = carregarTime("Nova Iguaçu");
+//		novaIguacu.setEscudo("/iconTimes/iconNovaIguacu.png");
+//		Time portuguesa = carregarTime("Portuguesa-RJ");
+//		portuguesa.setEscudo("/iconTimes/iconPortuguesa.png");
+//		Time resende = carregarTime("Resende");
+//		resende.setEscudo("/iconTimes/iconResende.png");
+//		Time vasco = carregarTime("Vasco");
+//		vasco.setEscudo("/iconTimes/iconVasco.png");
+//		Time voltaRedonda = carregarTime("Volta Redonda");
+//		voltaRedonda.setEscudo("/iconTimes/iconVoltaRedonda.png");
 	}
 
 }
