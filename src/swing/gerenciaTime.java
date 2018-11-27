@@ -21,10 +21,9 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import entity.Campeonato;
-import entity.Time;
+import entity.*;
 
-public class gerenciaTime extends JFrame {
+public class GerenciaTime extends JFrame {
 
 	private JPanel contentPane;
 	private JTable jogadores;
@@ -40,7 +39,7 @@ public class gerenciaTime extends JFrame {
 		});
 	}
 
-	public gerenciaTime(Time time, String tecnico, int index, Campeonato campeonato) {
+	public GerenciaTime(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
 		setResizable(false);
@@ -52,15 +51,14 @@ public class gerenciaTime extends JFrame {
 		// Pega o nome completo do time e seu index no enum timesGrandes
 		String nomeCompleto = new String("");
 		for (timesGrandes getTime : timesGrandes.values()) {
-			if (index == getTime.getIndex()) {
+			if (futirio.getIndexENUM() == getTime.getIndex()) {
 				nomeCompleto = getTime.getNomeCompleto();
 				break;
 			}
 		}
 
 		JLabel escudoTime = new JLabel();
-		Image escudo = new ImageIcon(this.getClass().getResource("/Imagens/" + Integer.toString(index) + ".png"))
-				.getImage();
+		Image escudo = new ImageIcon(futirio.getTimeJogador().getEscudo()).getImage();
 		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(21, 11, 110, 110);
 		contentPane.add(escudoTime);
@@ -76,53 +74,10 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(scrollPane);
 
 		String[] colunas = { "Posição", "Nome", "Habilidade", "Chute", "Passe", "Desarme", "Defesa" };
-		String[][] players = { { "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" } };
+		String[][] players = futirio.getCarioca().getTimes().get(futirio.getIndexTime()).getAllAtributosJogador();
+
 		JTable jogadores = new JTable(players, colunas);
-		jogadores.setModel(new DefaultTableModel(
-				new Object[][] { { "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" },
-						{ "kk", "blz", "fera", "das", "asdasd", "asdasdas", "asdsdas" }, },
-				new String[] { "Posi\u00E7\u00E3o", "Nome", "Habilidade", "Chute", "Passe", "Desarme", "Defesa" }) {
+		jogadores.setModel(new DefaultTableModel(players,colunas){
 			boolean[] columnEditables = new boolean[] { false, false, false, false, false, false, false };
 
 			public boolean isCellEditable(int row, int column) {
@@ -140,7 +95,7 @@ public class gerenciaTime extends JFrame {
 		lblFundosR.setBounds(498, 99, 110, 20);
 		contentPane.add(lblFundosR);
 
-		JLabel nomeTecnico = new JLabel("Técnico: " + tecnico);
+		JLabel nomeTecnico = new JLabel("Técnico: " + futirio.getNomeTecnico());
 		nomeTecnico.setForeground(Color.WHITE);
 		nomeTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		nomeTecnico.setBounds(152, 56, 336, 33);
@@ -154,11 +109,13 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
-		Time adversario = time.getAdversario(campeonato.getRodadaAtual() - 1);
+		// Time adversario = time.getAdversario(campeonato.getRodadaAtual() -
+		// 1);
+		Time adversario = futirio.getTimeJogador().getAdversario(futirio.getCarioca().getRodadaAtual() - 1);
 
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(this.getClass().getResource(adversario.getEscudo())).getImage();// getescudo
+		Image escudoAdver = new ImageIcon(adversario.getEscudo()).getImage();// getescudo
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
 
@@ -175,7 +132,7 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(lblPosio);
 		////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblCampeonato = new JLabel(campeonato.getNome());
+		JLabel lblCampeonato = new JLabel(futirio.getCarioca().getNome());
 		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
@@ -201,14 +158,14 @@ public class gerenciaTime extends JFrame {
 		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 
-		JLabel lblAno = new JLabel("Ano: " + campeonato.getAno());
+		JLabel lblAno = new JLabel("Ano: " + futirio.getCarioca().getAno());
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAno.setBounds(378, 94, 110, 27);
 		contentPane.add(lblAno);
 
 		JLabel bg = new JLabel("");
-		bg.setIcon(new ImageIcon(gerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
+		bg.setIcon(new ImageIcon(GerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
 		bg.setBounds(0, 0, 628, 467);
 		contentPane.add(bg);
 

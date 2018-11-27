@@ -125,7 +125,7 @@ public class Main {
 		/*
 		 * SUGESTÃO: Colocar isso no NewGame
 		 */
-		/*
+		
 		Time america = carregarTime("America");
 		america.setEscudo("/iconTimes/iconAmerica.png");
 		Time bangu = carregarTime("Bangu");
@@ -158,7 +158,6 @@ public class Main {
 		vasco.setEscudo("/iconTimes/iconVasco.png");
 		Time voltaRedonda = carregarTime("Volta Redonda");
 		voltaRedonda.setEscudo("/iconTimes/iconVoltaRedonda.png");
-		*/
 	}
 
 }

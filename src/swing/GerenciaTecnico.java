@@ -24,7 +24,7 @@ public class GerenciaTecnico extends JFrame {
 	private JPanel contentPane;
 	private JTextField nomeTecnico;
 	public static int ano = 2019;
-	protected NewGame futirio;
+	protected OJogo futirio;
 	// Criando o campeonato
 //	protected ;
 
@@ -52,7 +52,10 @@ public class GerenciaTecnico extends JFrame {
 	
 	public GerenciaTecnico() {
 
-		futirio = new NewGame(ano);
+		futirio = new OJogo();
+		futirio.createCarioca(ano);
+		
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		setResizable(false);
@@ -82,15 +85,23 @@ public class GerenciaTecnico extends JFrame {
 				} else {
 					int index = 0;
 					if(times.getSelectedIndex()==0) {
-						index = 4;
+						futirio.setIndexENUM(0);
+						futirio.setIndexTime(4);
 					}else if(times.getSelectedIndex()==1) {
-						index = 6;
+						futirio.setIndexENUM(1);
+						futirio.setIndexTime(6);
 					}else if(times.getSelectedIndex()==2) {
-						index = 7;
+						futirio.setIndexENUM(2);
+						futirio.setIndexTime(7);
 					}else if(times.getSelectedIndex()==3){
-						index = 14;
+						futirio.setIndexENUM(3);
+						futirio.setIndexTime(14);
 					}
-					gerenciaTime jogo = new gerenciaTime(futirio.getCarioca().getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex(),futirio.getCarioca());
+					
+					futirio.setTimeJogador(futirio.getCarioca().getTimes().get(futirio.getIndexTime()));
+					futirio.setNomeTecnico(nomeTecnico.getText());
+					
+					GerenciaTime jogo = new GerenciaTime(futirio);
 					jogo.setVisible(true);
 					GerenciaTecnico.this.dispose();
 				}

@@ -106,17 +106,16 @@ public class Time implements Serializable {
 		return adversarios.get(i);
 	}
 
-	public ArrayList<String[]> getAllAtributosJogador() {
+	public String[][] getAllAtributosJogador() {
 
-		ArrayList<String[]> retorno = new ArrayList<String[]>();
+		String[][] retorno = new String[jogadores.size()][7];
 
 		for (int i = 0; i < jogadores.size(); i++) {
 			String[] aux = { this.jogadores.get(i).getPosicao().getNome(), jogadores.get(i).getNome(),
 					Double.toString(jogadores.get(i).getHabilidade()), Integer.toString(jogadores.get(i).getChute()),
 					Integer.toString(jogadores.get(i).getPasse()), Integer.toString(jogadores.get(i).getDesarme()),
 					Integer.toString(jogadores.get(i).getDefesa()) };
-			retorno.add(aux);
-
+			retorno[i] = aux;
 		}
 		return retorno;
 	}
