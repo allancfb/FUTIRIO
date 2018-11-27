@@ -135,7 +135,7 @@ public class Main {
 		Time bonsucesso = carregarTime("Bonsucesso");
 		bonsucesso.setEscudo("/iconTimes/iconBonsucesso.png");
 		Time botafogo = carregarTime("Botafogo");
-		botafogo.setEscudo("/iconTimestgr5fhjn/iconBotafogo.png");
+		botafogo.setEscudo("/iconTimes/iconBotafogo.png");
 		Time cabofriense = carregarTime("Cabofriense");
 		cabofriense.setEscudo("/iconTimes/iconCabofriense.png");
 		Time flamengo = carregarTime("Flamengo");
