@@ -25,14 +25,14 @@ import entity.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class gerenciaTime extends JFrame {
+public class GerenciaTime extends JFrame {
 
 	private JPanel contentPane;
 	private JTable jogadores;
 	private JTable TabelaTitulares;
 	private JTable TabelaReservas;
 
-	public gerenciaTime(OJogo futirio) {
+	public GerenciaTime(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
 		setResizable(false);
@@ -164,7 +164,7 @@ public class gerenciaTime extends JFrame {
 		contentPane.add(lblAno);
 
 		JLabel bg = new JLabel("");
-		bg.setIcon(new ImageIcon(gerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
+		bg.setIcon(new ImageIcon(GerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
 		bg.setBounds(0, 0, 628, 467);
 		contentPane.add(bg);
 
