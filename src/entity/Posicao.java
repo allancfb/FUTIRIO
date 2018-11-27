@@ -5,7 +5,7 @@ import java.io.Serializable;
 public enum Posicao implements Serializable {
 
 	GOL("Gol", 7, 1, 1, 1, 90), DEFESA("Defesa", 10, 5, 35, 45, 5), MEIA("Meia", 25, 20, 25, 25, 5),
-	ATAQUE("Ataque", 50, 30, 10, 5, 5), DEFAULT("Sem posição", 20, 20, 20, 20, 20);
+	ATAQUE("Ataque", 50, 30, 10, 5, 5), DEFAULT("Reserva", 20, 20, 20, 20, 20);
 
 	private String nome;
 	private int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;

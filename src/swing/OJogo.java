@@ -1,4 +1,6 @@
-package entity;
+package swing;
+
+import entity.*;
 
 public class OJogo {
 
