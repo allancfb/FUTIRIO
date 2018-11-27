@@ -126,9 +126,13 @@ public class Main {
 		 */
 
 		Time flamengo = carregarTime("Flamengo");
-		System.out.println(flamengo.getJogadoresTitulares().get(0).getNome());
+		for (Jogador jogador : flamengo.getJogadoresReservas()) {
+			System.out.println(jogador.getNome());
+		}
 		flamengo.substituicao(flamengo.getJogadoresTitulares().get(0), flamengo.getJogador(20));
-		System.out.println(flamengo.getJogadoresTitulares().get(0).getNome());
+		for (Jogador jogador : flamengo.getJogadoresReservas()) {
+			System.out.println(jogador.getNome());
+		}
 
 		// Time america = carregarTime("America");
 		// america.setEscudo("/iconTimes/iconAmerica.png");
