@@ -22,11 +22,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import entity.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GerenciaTime extends JFrame {
 
 	private JPanel contentPane;
 	private JTable jogadores;
+	private JTable TabelaTitulares;
+	private JTable TabelaReservas;
 
 	static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -59,6 +63,28 @@ public class GerenciaTime extends JFrame {
 
 		JLabel escudoTime = new JLabel();
 		Image escudo = new ImageIcon(futirio.getTimeJogador().getEscudo()).getImage();
+
+		String[] colunas = { "Posição", "Nome", "Habilidade" };
+		String[][] teste = {{ "   ", "   e", "    " },{ "  o", "    ", "   " }};
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(21, 133, 207, 294);
+		contentPane.add(scrollPane);
+		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime()).getAtributosJogadoresTitulares();
+		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime()).getAtributosJogadoresReservas();
+		
+		TabelaTitulares = new JTable(playersTitulares,colunas);
+//		TabelaTitulares = new JTable(teste,colunas);
+		scrollPane.setViewportView(TabelaTitulares);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(281, 133, 207, 294);
+		contentPane.add(scrollPane_1);
+
+		TabelaReservas = new JTable(playersReservas,colunas);
+//		TabelaReservas = new JTable(teste,colunas);
+		scrollPane_1.setViewportView(TabelaReservas);
 		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(21, 11, 110, 110);
 		contentPane.add(escudoTime);
@@ -69,26 +95,6 @@ public class GerenciaTime extends JFrame {
 		nomeTime.setBounds(152, 20, 336, 33);
 		contentPane.add(nomeTime);
 
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(31, 132, 457, 302);
-		contentPane.add(scrollPane);
-
-		String[] colunas = { "Posição", "Nome", "Habilidade", "Chute", "Passe", "Desarme", "Defesa" };
-		String[][] players = futirio.getCarioca().getTimes().get(futirio.getIndexTime()).getAllAtributosJogador();
-
-		JTable jogadores = new JTable(players, colunas);
-		jogadores.setModel(new DefaultTableModel(players,colunas){
-			boolean[] columnEditables = new boolean[] { false, false, false, false, false, false, false };
-
-			public boolean isCellEditable(int row, int column) {
-				return columnEditables[column];
-			}
-		});
-		jogadores.setBackground(new Color(255, 255, 255));
-		jogadores.setForeground(Color.BLACK);
-		jogadores.setShowVerticalLines(false);
-		scrollPane.setViewportView(jogadores);
-
 		JLabel lblFundosR = new JLabel("Fundos: R$");// +Time.getFundos()
 		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblFundosR.setForeground(Color.WHITE);
@@ -98,7 +104,7 @@ public class GerenciaTime extends JFrame {
 		JLabel nomeTecnico = new JLabel("Técnico: " + futirio.getNomeTecnico());
 		nomeTecnico.setForeground(Color.WHITE);
 		nomeTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomeTecnico.setBounds(152, 56, 336, 33);
+		nomeTecnico.setBounds(152, 56, 251, 33);
 		contentPane.add(nomeTecnico);
 
 		JLabel lblPrximoJogo = new JLabel("Pr\u00F3ximo jogo:");
@@ -146,6 +152,22 @@ public class GerenciaTime extends JFrame {
 		JButton btnTabela = new JButton("Tabela");
 		btnTabela.setBounds(508, 20, 110, 23);
 		contentPane.add(btnTabela);
+		
+		JButton btnStatus = new JButton("Visualizar Status");
+		btnStatus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnStatus.setBounds(195, 433, 120, 23);
+		contentPane.add(btnStatus);
+		
+		JButton btnNewButton = new JButton(">");
+		btnNewButton.setBounds(232, 244, 43, 28);
+		contentPane.add(btnNewButton);
+		
+		JButton button = new JButton("<");
+		button.setBounds(232, 283, 43, 28);
+		contentPane.add(button);
 
 		JButton btnNegociarJogador = new JButton("Negociar Jogador");
 		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 9));

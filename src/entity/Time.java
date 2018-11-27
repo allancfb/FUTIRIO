@@ -101,20 +101,44 @@ public class Time implements Serializable {
 	public ArrayList<Time> getAdversarios() {
 		return adversarios;
 	}
-	
-	public Time getAdversario(int i){
+
+	public Time getAdversario(int i) {
 		return adversarios.get(i);
 	}
 
 	public String[][] getAllAtributosJogador() {
 
-		String[][] retorno = new String[jogadores.size()][7];
+		String[][] retorno = new String[jogadores.size()][8];
 
 		for (int i = 0; i < jogadores.size(); i++) {
 			String[] aux = { this.jogadores.get(i).getPosicao().getNome(), jogadores.get(i).getNome(),
 					Double.toString(jogadores.get(i).getHabilidade()), Integer.toString(jogadores.get(i).getChute()),
-					Integer.toString(jogadores.get(i).getPasse()), Integer.toString(jogadores.get(i).getDesarme()),
-					Integer.toString(jogadores.get(i).getDefesa()) };
+					Integer.toString(jogadores.get(i).getPasse()), Integer.toString(jogadores.get(i).getDrible()),
+					Integer.toString(jogadores.get(i).getDesarme()), Integer.toString(jogadores.get(i).getDefesa()) };
+			retorno[i] = aux;
+		}
+		return retorno;
+	}
+
+	public String[][] getAtributosJogadoresTitulares() {
+
+		String[][] retorno = new String[jogadoresTitulares.size()][3];
+
+		for (int i = 0; i < jogadoresTitulares.size(); i++) {
+			String[] aux = { this.jogadoresTitulares.get(i).getPosicao().getNome(), jogadoresTitulares.get(i).getNome(),
+					Double.toString(jogadoresTitulares.get(i).getHabilidade()) };
+			retorno[i] = aux;
+		}
+		return retorno;
+	}
+
+	public String[][] getAtributosJogadoresReservas() {
+
+		String[][] retorno = new String[jogadoresReservas.size()][3];
+
+		for (int i = 0; i < jogadoresReservas.size(); i++) {
+			String[] aux = { this.jogadoresReservas.get(i).getPosicao().getNome(), jogadoresReservas.get(i).getNome(),
+					Double.toString(jogadoresReservas.get(i).getHabilidade()) };
 			retorno[i] = aux;
 		}
 		return retorno;
