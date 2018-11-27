@@ -56,7 +56,7 @@ public enum Posicao implements Serializable {
 			return Posicao.MEIA;
 		} else if (nome == "Ataque" || nome == "ATAQUE") {
 			return Posicao.ATAQUE;
-		} else if (nome == "Sem posição" || nome == "SEM POSIÇÃO") {
+		} else if (nome == "Reserva" || nome == "RESERVA") {
 		    return Posicao.DEFAULT;
 		}
 		
