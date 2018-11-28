@@ -106,37 +106,37 @@ public class Main {
 
 	public static void carregarEscudos() {
 		Time america = carregarTime("America");
-		america.setEscudo("/iconTimes/iconAmerica.png");
+		america.setEscudo("src/iconTimes/iconAmerica.png");
 		Time bangu = carregarTime("Bangu");
-		bangu.setEscudo("/iconTimes/iconBangu.png");
+		bangu.setEscudo("src/iconTimes/iconBangu.png");
 		Time boavista = carregarTime("Boavista-RJ");
-		boavista.setEscudo("/iconTimes/iconBoavista.png");
+		boavista.setEscudo("src/iconTimes/iconBoavista.png");
 		Time bonsucesso = carregarTime("Bonsucesso");
-		bonsucesso.setEscudo("/iconTimes/iconBonsucesso.png");
+		bonsucesso.setEscudo("src/iconTimes/iconBonsucesso.png");
 		Time botafogo = carregarTime("Botafogo");
-		botafogo.setEscudo("/iconTimes/iconBotafogo.png");
+		botafogo.setEscudo("src/iconTimes/iconBotafogo.png");
 		Time cabofriense = carregarTime("Cabofriense");
-		cabofriense.setEscudo("/iconTimes/iconCabofriense.png");
+		cabofriense.setEscudo("src/iconTimes/iconCabofriense.png");
 		Time flamengo = carregarTime("Flamengo");
-		flamengo.setEscudo("/iconTimes/iconFlamengo.png");
+		flamengo.setEscudo("src/iconTimes/iconFlamengo.png");
 		Time fluminense = carregarTime("Fluminense");
-		fluminense.setEscudo("/iconTimes/iconFluminense.png");
+		fluminense.setEscudo("src/iconTimes/iconFluminense.png");
 		Time goytacaz = carregarTime("Goytacaz");
-		goytacaz.setEscudo("/iconTimes/iconGoytacaz.png");
+		goytacaz.setEscudo("src/iconTimes/iconGoytacaz.png");
 		Time macae = carregarTime("Macaé");
-		macae.setEscudo("/iconTimes/iconMacae.png");
+		macae.setEscudo("src/iconTimes/iconMacae.png");
 		Time madureira = carregarTime("Madureira");
-		madureira.setEscudo("/iconTimes/iconMadureira.png");
+		madureira.setEscudo("src/iconTimes/iconMadureira.png");
 		Time novaIguacu = carregarTime("Nova Iguaçu");
-		novaIguacu.setEscudo("/iconTimes/iconNovaIguacu.png");
+		novaIguacu.setEscudo("src/iconTimes/iconNovaIguacu.png");
 		Time portuguesa = carregarTime("Portuguesa-RJ");
-		portuguesa.setEscudo("/iconTimes/iconPortuguesa.png");
+		portuguesa.setEscudo("src/iconTimes/iconPortuguesa.png");
 		Time resende = carregarTime("Resende");
-		resende.setEscudo("/iconTimes/iconResende.png");
+		resende.setEscudo("src/iconTimes/iconResende.png");
 		Time vasco = carregarTime("Vasco");
-		vasco.setEscudo("/iconTimes/iconVasco.png");
+		vasco.setEscudo("src/iconTimes/iconVasco.png");
 		Time voltaRedonda = carregarTime("Volta Redonda");
-		voltaRedonda.setEscudo("/iconTimes/iconVoltaRedonda.png");
+		voltaRedonda.setEscudo("src/iconTimes/iconVoltaRedonda.png");
 	}
 
 	// TODO: comentar
