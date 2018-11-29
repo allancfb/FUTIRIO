@@ -325,6 +325,14 @@ public class Time implements Serializable {
 		jogadoresTitulares.clear();
 		jogadoresReservas.clear();
 		int contadorDeJogadores = 1;
+		
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Sem posição")) {
+				jogadoresReservas.add(jogadores.get(i));
+				
+			}
+		}
+		
 		for (int i = 0; i < jogadores.size(); i++) {
 			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Gol")) {
 				jogadoresTitulares.add(jogadores.get(i));
@@ -358,13 +366,6 @@ public class Time implements Serializable {
 			}
 			if (contadorDeJogadores == 11)
 				break;
-		}
-
-		for (int i = 0; i < jogadores.size(); i++) {
-			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Sem posição")) {
-				jogadoresReservas.add(jogadores.get(i));
-				contadorDeJogadores++;
-			}
 		}
 
 		atualizarHabilidadeGeral();
