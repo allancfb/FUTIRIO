@@ -6,7 +6,7 @@ public class Rodada {
 
 	private ArrayList<Time> timesJogos;
 	private ArrayList<Partida> partidas;
-	private int minuto;
+	private int minuto = 0;
 	private Tempo tempo;
 
 	// Construtor
@@ -50,45 +50,35 @@ public class Rodada {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
+		for (int i = 1; i <= 90; i++) {
 		
-		for (int i = 1; i <= 45; i++) {
-			// Esse for é só enquanto não tem a interação com a interface
-			for (int j = 0; j < 1000; j++) {
-				System.out.println();
-			}
-			
-			minuto++;
-			
-			// TODO: mostrar minuto na tela
-			System.out.println(minuto);
-			
-			atualizarTempo();
-			// TODO: mostra tempo na tela
-			System.out.println(tempo.getNome());
-			
 			run();
-			
-			// TODO: atualizar placares na tela
-			
-			// Esse for é só enquanto não tem a interação com a interface, para visualizar
-			for (Partida partida : partidas) {
-				System.out.println(partida.getPlacar());
-			}
-			
-			// Sleep meio segundo
+
 			Thread.currentThread();
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+
 		}
+
 	}
 
 	// Roda 1 minuto de todas as partidas da rodada
-	private void run() {
+	public void run() {
+		
+		minuto +=1;
 		for (Partida partida : partidas) {
 			partida.run();
+		}
+		
+		Thread.currentThread();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -99,9 +89,9 @@ public class Rodada {
 			tempo = Tempo.PRIMEIRO;
 			break;
 
-		case 45:
-			tempo = Tempo.INTERVALO;
-			break;
+		// case 45:
+		// tempo = Tempo.INTERVALO;
+		// break;
 
 		case 46:
 			tempo = Tempo.SEGUNDO;
@@ -111,25 +101,25 @@ public class Rodada {
 			tempo = Tempo.FIM;
 			break;
 
-		case 91:
-			tempo = Tempo.PRORROGAÇÃO1;
-			break;
-
-		case 105:
-			tempo = Tempo.INTERVALOPRORROGAÇÃO;
-			break;
-
-		case 106:
-			tempo = Tempo.PRORROGAÇÃO2;
-			break;
-
-		case 120:
-			tempo = Tempo.DEFAULT;
-			break;
+		// case 91:
+		// tempo = Tempo.PRORROGAÇÃO1;
+		// break;
+		//
+		// case 105:
+		// tempo = Tempo.INTERVALOPRORROGAÇÃO;
+		// break;
+		//
+		// case 106:
+		// tempo = Tempo.PRORROGAÇÃO2;
+		// break;
+		//
+		// case 120:
+		// tempo = Tempo.DEFAULT;
+		// break;
 
 		default:
 			break;
 		}
 	}
-	
+
 }
