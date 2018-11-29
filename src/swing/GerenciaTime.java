@@ -52,7 +52,7 @@ public class GerenciaTime extends JFrame {
 		}
 		
 		// ==================================================================== //
-		String[] colunas = { "Posiï¿½ï¿½o", "Nome", "Habilidade" };
+		String[] colunas = { "Posição", "Nome", "Habilidade" };
 		String[][] teste = { { "   ", "   e", "    " }, { "  o", "    ", "   " } };
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -95,7 +95,7 @@ public class GerenciaTime extends JFrame {
 		lblFundosR.setBounds(498, 99, 110, 20);
 		contentPane.add(lblFundosR);
 
-		JLabel nomeTecnico = new JLabel("Tï¿½cnico: " + futirio.getNomeTecnico());
+		JLabel nomeTecnico = new JLabel("Técnico: " + futirio.getNomeTecnico());
 		nomeTecnico.setForeground(Color.WHITE);
 		nomeTecnico.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		nomeTecnico.setBounds(152, 56, 251, 33);
@@ -108,12 +108,12 @@ public class GerenciaTime extends JFrame {
 		lblPrximoJogo.setBounds(498, 133, 110, 23);
 		contentPane.add(lblPrximoJogo);
 
-		// Dados do Adversï¿½rio
-		Time adversario = futirio.getTimeJogador().getAdversario(futirio.getCarioca().getRodadaAtual()-1);
+		// Dados do Adversário
+		Time adversario = futirio.getTimeJogador().getAdversario(futirio.getCarioca().getRodadaAtual()+11);
 
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(Main.carregarEscudo(adversario)).getImage();
+		Image escudoAdver = new ImageIcon(Main.carregarEscudo(adversario)).getImage();// getescudo
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
 
@@ -123,18 +123,18 @@ public class GerenciaTime extends JFrame {
 		nomeAdversario.setBounds(498, 322, 110, 23);
 		contentPane.add(nomeAdversario);
 
-		JLabel lblPosio = new JLabel("Posiï¿½ï¿½o: ");// +time.getposicao();
+		JLabel lblPosio = new JLabel("Posição: ");// +time.getposicao();
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPosio.setBounds(498, 356, 110, 23);
 		contentPane.add(lblPosio);
 		////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblCampeonato = new JLabel("Campeonato Carioca");
-		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		JLabel lblCampeonato = new JLabel(futirio.getCarioca().getNome());
+		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCampeonato.setBounds(498, 167, 120, 20);
+		lblCampeonato.setBounds(498, 167, 110, 33);
 		contentPane.add(lblCampeonato);
 
 		JButton btnJogar = new JButton("Jogar");
@@ -165,7 +165,7 @@ public class GerenciaTime extends JFrame {
 		});
 		btnSubstituir.setBounds(327, 433, 120, 23);
 		contentPane.add(btnSubstituir);
-		btnStatus.setBounds(55, 433, 145, 23);
+		btnStatus.setBounds(60, 433, 120, 23);
 		contentPane.add(btnStatus);
 
 		JButton btnNegociarJogador = new JButton("Negociar Jogador");
@@ -173,7 +173,7 @@ public class GerenciaTime extends JFrame {
 		btnNegociarJogador.setBounds(508, 59, 110, 23);
 		contentPane.add(btnNegociarJogador);
 
-		JLabel lblNewLabel = new JLabel("Posiï¿½ï¿½o: ");// +
+		JLabel lblNewLabel = new JLabel("Posição: ");// +
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(152, 94, 123, 27);
@@ -190,34 +190,14 @@ public class GerenciaTime extends JFrame {
 		bg.setBounds(0, 0, 628, 467);
 		contentPane.add(bg);
 
-		// TODO: Criar um botï¿½o que quando clicado, chama o mï¿½todo abaixo
+		// TODO: Criar um botão que quando clicado, chama o método abaixo
 		// salvarJogo(campeonato);
 	}
 	
 	public void atualizarTabelas(JTable TabelaTitulares, JTable TabelaReservas) {
-		String[] colunas = { "Posiï¿½ï¿½o", "Nome", "Habilidade" };
-		String[][] teste = { { "   ", "   e", "    " }, { "  o", "    ", "   " } };
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(21, 133, 207, 294);
-		contentPane.add(scrollPane);
-		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
-				.getAtributosJogadoresTitulares();
-		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
-				.getAtributosJogadoresReservas();
-
-		 //TabelaTitulares = new JTable(playersTitulares,colunas);
-		TabelaTitulares = new JTable(teste, colunas);
-		scrollPane.setViewportView(TabelaTitulares);
-		// TabelaTitulares.getse
-
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(281, 133, 207, 294);
-		contentPane.add(scrollPane_1);
-
-		//TabelaReservas = new JTable(playersReservas,colunas);
-		TabelaReservas = new JTable(teste, colunas);
-		scrollPane_1.setViewportView(TabelaReservas);
+		String[] colunas = { "Posição", "Nome", "Habilidade" };
+		
+		
 	}
 	
 	public void salvarJogo(Campeonato campeonato) {
