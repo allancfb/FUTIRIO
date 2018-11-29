@@ -106,49 +106,57 @@ public class Main {
 		salvarTimeDeTXT("Vasco", "src/times/Vasco.txt");
 	}
 
-	public static void carregarEscudos() {
-		Time america = carregarTime("America");
-		america.setEscudo("src/iconTimes/iconAmerica.png");
-		Time bangu = carregarTime("Bangu");
-		bangu.setEscudo("src/iconTimes/iconBangu.png");
-		Time boavista = carregarTime("Boavista-RJ");
-		boavista.setEscudo("src/iconTimes/iconBoavista.png");
-		Time bonsucesso = carregarTime("Bonsucesso");
-		bonsucesso.setEscudo("src/iconTimes/iconBonsucesso.png");
-		Time botafogo = carregarTime("Botafogo");
-		botafogo.setEscudo("src/iconTimes/iconBotafogo.png");
-		Time cabofriense = carregarTime("Cabofriense");
-		cabofriense.setEscudo("src/iconTimes/iconCabofriense.png");
-		Time flamengo = carregarTime("Flamengo");
-		flamengo.setEscudo("src/iconTimes/iconFlamengo.png");
-		Time fluminense = carregarTime("Fluminense");
-		fluminense.setEscudo("src/iconTimes/iconFluminense.png");
-		Time goytacaz = carregarTime("Goytacaz");
-		goytacaz.setEscudo("src/iconTimes/iconGoytacaz.png");
-		Time macae = carregarTime("Macaé");
-		macae.setEscudo("src/iconTimes/iconMacae.png");
-		Time madureira = carregarTime("Madureira");
-		madureira.setEscudo("src/iconTimes/iconMadureira.png");
-		Time novaIguacu = carregarTime("Nova Iguaçu");
-		novaIguacu.setEscudo("src/iconTimes/iconNovaIguacu.png");
-		Time portuguesa = carregarTime("Portuguesa-RJ");
-		portuguesa.setEscudo("src/iconTimes/iconPortuguesa.png");
-		Time resende = carregarTime("Resende");
-		resende.setEscudo("src/iconTimes/iconResende.png");
-		Time vasco = carregarTime("Vasco");
-		vasco.setEscudo("src/iconTimes/iconVasco.png");
-		Time voltaRedonda = carregarTime("Volta Redonda");
-		voltaRedonda.setEscudo("src/iconTimes/iconVoltaRedonda.png");
-	}
-
-	public static String escudow(Time time) {
-		System.out.println("pelo menos to entrando aqui");
-		if(time.getNome().equals("Botafogo")) {
+	public static String carregarEscudo(Time time) {
+		switch (time.getNome()) {
+		case "America":
+			time.setEscudo("src/iconTimes/iconAmerica.png");
+			return time.getEscudo();
+		case "Bangu":
+			time.setEscudo("src/iconTimes/iconBangu.png");
+			return time.getEscudo();
+		case "Boavista-RJ":
+			time.setEscudo("src/iconTimes/iconBoavista.png");
+			return time.getEscudo();
+		case "Bonsucesso":
+			time.setEscudo("src/iconTimes/iconBonsucesso.png");
+			return time.getEscudo();
+		case "Botafogo":
 			time.setEscudo("src/iconTimes/iconBotafogo.png");
 			return time.getEscudo();
-		}else if(time.getNome().equals("Portuguesa-RJ")) {
-			return "src/iconTimes/iconPortuguesa.png";
-		}else {
+		case "Cabofriense":
+			time.setEscudo("src/iconTimes/iconCabofriense.png");
+			return time.getEscudo();
+		case "Flamengo":
+			time.setEscudo("src/iconTimes/iconFlamengo.png");
+			return time.getEscudo();
+		case "Fluminense":
+			time.setEscudo("src/iconTimes/iconFluminense.png");
+			return time.getEscudo();
+		case "Goytacaz":
+			time.setEscudo("src/iconTimes/iconGoytacaz.png");
+			return time.getEscudo();
+		case "Macaé":
+			time.setEscudo("src/iconTimes/iconMacae.png");
+			return time.getEscudo();
+		case "Madureira":
+			time.setEscudo("src/iconTimes/iconMadureira.png");
+			return time.getEscudo();
+		case "Nova Iguaçu":
+			time.setEscudo("src/iconTimes/iconNovaIguacu.png");
+			return time.getEscudo();
+		case "Portuguesa-RJ":
+			time.setEscudo("src/iconTimes/iconPortuguesa.png");
+			return time.getEscudo();
+		case "Resende":
+			time.setEscudo("src/iconTimes/iconResense.png");
+			return time.getEscudo();
+		case "Vasco":
+			time.setEscudo("src/iconTimes/iconVasco.png");
+			return time.getEscudo();
+		case "Volta Redonda":
+			time.setEscudo("src/iconTimes/iconVoltaRedonda.png");
+			return time.getEscudo();
+		default:
 			return "";
 		}
 	}

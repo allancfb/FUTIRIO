@@ -54,7 +54,7 @@ public class GerenciaTime extends JFrame {
 		criarTabelasJogadores(futirio);
 
 		JLabel escudoTime = new JLabel();
-		Image escudo = new ImageIcon(Main.escudow(futirio.getTimeJogador())).getImage();
+		Image escudo = new ImageIcon(Main.carregarEscudo(futirio.getTimeJogador())).getImage();
 		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(21, 11, 110, 110);
 		contentPane.add(escudoTime);
@@ -89,7 +89,7 @@ public class GerenciaTime extends JFrame {
 
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(Main.escudow(adversario)).getImage();// getescudo
+		Image escudoAdver = new ImageIcon(Main.carregarEscudo(adversario)).getImage();// getescudo
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
 
