@@ -187,6 +187,7 @@ public class Main {
 			System.out.println(jogador.getNome());
 		}
 		flamengo.substituicao(flamengo.getJogadoresTitulares().get(0), flamengo.getJogador(20));
+		
 		for (Jogador jogador : flamengo.getJogadoresReservas()) {
 			System.out.println(jogador.getNome());
 		}
