@@ -113,7 +113,7 @@ public class GerenciaTime extends JFrame {
 
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(Main.carregarEscudo(adversario)).getImage();// getescudo
+		Image escudoAdver = new ImageIcon(Main.carregarEscudo(adversario)).getImage();
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
 
