@@ -51,11 +51,10 @@ public class GerenciaTecnico extends JFrame {
 	
 	
 	public GerenciaTecnico() {
-
 		futirio = new OJogo();
 		futirio.createCarioca(ano);
 		
-		
+		setTitle("Escolha o time que deseja jogar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		setResizable(false);
