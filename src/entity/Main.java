@@ -90,7 +90,7 @@ public class Main {
 				"Madureira", "Nova Iguaçu", "Portuguesa-RJ", "Resende", "Volta Redonda" };
 
 		for (String nome : nomes) {
-			Time t = new Time(nome); // gfvbgfbvgtfegfwe
+			Time t = new Time(nome);
 			t.gerarJogadores();
 			t.bancarExcesso();
 			t.atualizarTitulares();
@@ -190,42 +190,6 @@ public class Main {
 		for (Jogador jogador : flamengo.getJogadoresReservas()) {
 			System.out.println(jogador.getNome());
 		}
-
-		// carregando escudos
-		// carregarEscudos();
-
-		// Time america = carregarTime("America");
-		// america.setEscudo("/iconTimes/iconAmerica.png");
-		// Time bangu = carregarTime("Bangu");
-		// bangu.setEscudo("/iconTimes/iconBangu.png");
-		// Time boavista = carregarTime("Boavista-RJ");
-		// boavista.setEscudo("/iconTimes/iconBoavista.png");
-		// Time bonsucesso = carregarTime("Bonsucesso");
-		// bonsucesso.setEscudo("/iconTimes/iconBonsucesso.png");
-		// Time botafogo = carregarTime("Botafogo");
-		// botafogo.setEscudo("/iconTimes/iconBotafogo.png");
-		// Time cabofriense = carregarTime("Cabofriense");
-		// cabofriense.setEscudo("/iconTimes/iconCabofriense.png");
-		// Time flamengo = carregarTime("Flamengo");
-		// flamengo.setEscudo("/iconTimes/iconFlamengo.png");
-		// Time fluminense = carregarTime("Fluminense");
-		// fluminense.setEscudo("/iconTimes/iconFluminense.png");
-		// Time goytacaz = carregarTime("Goytacaz");
-		// goytacaz.setEscudo("/iconTimes/iconGoytacaz.png");
-		// Time macae = carregarTime("Macaé");
-		// macae.setEscudo("/iconTimes/iconMacae.png");
-		// Time madureira = carregarTime("Madureira");
-		// madureira.setEscudo("/iconTimes/iconMadureira.png");
-		// Time novaIguacu = carregarTime("Nova Iguaçu");
-		// novaIguacu.setEscudo("/iconTimes/iconNovaIguacu.png");
-		// Time portuguesa = carregarTime("Portuguesa-RJ");
-		// portuguesa.setEscudo("/iconTimes/iconPortuguesa.png");
-		// Time resende = carregarTime("Resende");
-		// resende.setEscudo("/iconTimes/iconResende.png");
-		// Time vasco = carregarTime("Vasco");
-		// vasco.setEscudo("/iconTimes/iconVasco.png");
-		// Time voltaRedonda = carregarTime("Volta Redonda");
-		// voltaRedonda.setEscudo("/iconTimes/iconVoltaRedonda.png");
 	}
 
 }
