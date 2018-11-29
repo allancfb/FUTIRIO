@@ -148,7 +148,7 @@ public class Main {
 			time.setEscudo("src/iconTimes/iconPortuguesa.png");
 			return time.getEscudo();
 		case "Resende":
-			time.setEscudo("src/iconTimes/iconResense.png");
+			time.setEscudo("src/iconTimes/iconResende.png");
 			return time.getEscudo();
 		case "Vasco":
 			time.setEscudo("src/iconTimes/iconVasco.png");
