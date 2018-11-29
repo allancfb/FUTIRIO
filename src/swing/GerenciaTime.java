@@ -33,7 +33,7 @@ public class GerenciaTime extends JFrame {
 	private JTable TabelaReservas;
 
 	public GerenciaTime(OJogo futirio) {
-		setTitle(futirio.getTimeJogador().getNome()+" - "+futirio.getNomeTecnico());
+		setTitle(futirio.getTimeJogador().getNome() + " - " + futirio.getNomeTecnico());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
 		setResizable(false);
@@ -50,7 +50,7 @@ public class GerenciaTime extends JFrame {
 				break;
 			}
 		}
-		
+
 		// ==================================================================== //
 		String[] colunas = { "Posição", "Nome", "Habilidade" };
 		String[][] teste = { { "   ", "   e", "    " }, { "  o", "    ", "   " } };
@@ -63,8 +63,8 @@ public class GerenciaTime extends JFrame {
 		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
 				.getAtributosJogadoresReservas();
 
-		 TabelaTitulares = new JTable(playersTitulares,colunas);
-		//TabelaTitulares = new JTable(teste, colunas);
+		TabelaTitulares = new JTable(playersTitulares, colunas);
+		// TabelaTitulares = new JTable(teste, colunas);
 		scrollPane.setViewportView(TabelaTitulares);
 		// TabelaTitulares.getse
 
@@ -72,8 +72,8 @@ public class GerenciaTime extends JFrame {
 		scrollPane_1.setBounds(281, 133, 207, 294);
 		contentPane.add(scrollPane_1);
 
-		TabelaReservas = new JTable(playersReservas,colunas);
-		//TabelaReservas = new JTable(teste, colunas);
+		TabelaReservas = new JTable(playersReservas, colunas);
+		// TabelaReservas = new JTable(teste, colunas);
 		scrollPane_1.setViewportView(TabelaReservas);
 		// ==================================================================== //
 
@@ -89,7 +89,7 @@ public class GerenciaTime extends JFrame {
 		nomeTime.setBounds(152, 20, 336, 33);
 		contentPane.add(nomeTime);
 
-		JLabel lblFundosR = new JLabel("Fundos: R$"+futirio.getTimeJogador().getFundos());
+		JLabel lblFundosR = new JLabel("Fundos: R$" + futirio.getTimeJogador().getFundos());
 		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblFundosR.setForeground(Color.WHITE);
 		lblFundosR.setBounds(498, 99, 110, 20);
@@ -109,7 +109,7 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
-		Time adversario = futirio.getTimeJogador().getAdversario(futirio.getCarioca().getRodadaAtual()+11);
+		Time adversario = futirio.getTimeJogador().getAdversario(futirio.getCarioca().getRodadaAtual() + 11);
 
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
@@ -159,8 +159,8 @@ public class GerenciaTime extends JFrame {
 								.getJogador(TabelaTitulares.getSelectedRow()),
 						futirio.getCarioca().getTimes().get(futirio.getIndexTime())
 								.getJogador(TabelaReservas.getSelectedRow()));
-				
-				atualizarTabelas(TabelaTitulares, TabelaReservas);
+
+				atualizarTabelas(TabelaTitulares, TabelaReservas, futirio, scrollPane, scrollPane_1);
 			}
 		});
 		btnSubstituir.setBounds(327, 433, 120, 23);
@@ -193,13 +193,29 @@ public class GerenciaTime extends JFrame {
 		// TODO: Criar um botão que quando clicado, chama o método abaixo
 		// salvarJogo(campeonato);
 	}
-	
-	public void atualizarTabelas(JTable TabelaTitulares, JTable TabelaReservas) {
+
+	public void atualizarTabelas(JTable TabelaTitulares, JTable TabelaReservas, OJogo futirio, JScrollPane scrollPane,
+			JScrollPane scrollPane_1) {
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(21, 133, 207, 294);
+		contentPane.add(scrollPane);
+		
 		String[] colunas = { "Posição", "Nome", "Habilidade" };
-		
-		
+
+		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
+				.getAtributosJogadoresTitulares();
+		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
+				.getAtributosJogadoresReservas();
+
+		TabelaTitulares = new JTable(playersTitulares, colunas);
+		scrollPane.setViewportView(TabelaTitulares);
+		contentPane.add(scrollPane);
+
+		TabelaReservas = new JTable(playersReservas, colunas);
+		scrollPane_1.setViewportView(TabelaReservas);
+		contentPane.add(scrollPane_1);
 	}
-	
+
 	public void salvarJogo(Campeonato campeonato) {
 		try {
 			ObjectOutputStream objOut = new ObjectOutputStream(
@@ -222,5 +238,5 @@ public class GerenciaTime extends JFrame {
 			}
 		});
 	}
-	
+
 }
