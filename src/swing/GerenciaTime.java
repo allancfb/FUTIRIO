@@ -50,12 +50,11 @@ public class GerenciaTime extends JFrame {
 				break;
 			}
 		}
+		
+		criarTabelasJogadores(futirio);
 
 		JLabel escudoTime = new JLabel();
-		Image escudo = new ImageIcon(futirio.getTimeJogador().getEscudo()).getImage();
-
-		criarTabelasJogadores(futirio);
-		
+		Image escudo = new ImageIcon(Main.escudow(futirio.getTimeJogador())).getImage();
 		escudoTime.setIcon(new ImageIcon(escudo));
 		escudoTime.setBounds(21, 11, 110, 110);
 		contentPane.add(escudoTime);
@@ -66,7 +65,7 @@ public class GerenciaTime extends JFrame {
 		nomeTime.setBounds(152, 20, 336, 33);
 		contentPane.add(nomeTime);
 
-		JLabel lblFundosR = new JLabel("Fundos: R$");// +Time.getFundos()
+		JLabel lblFundosR = new JLabel("Fundos: R$"+futirio.getTimeJogador().getFundos());
 		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblFundosR.setForeground(Color.WHITE);
 		lblFundosR.setBounds(498, 99, 110, 20);
@@ -86,13 +85,11 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
-		// Time adversario = time.getAdversario(campeonato.getRodadaAtual() -
-		// 1);
 		Time adversario = futirio.getTimeJogador().getAdversario(futirio.getCarioca().getRodadaAtual() - 1);
 
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
-		Image escudoAdver = new ImageIcon(adversario.getEscudo()).getImage();// getescudo
+		Image escudoAdver = new ImageIcon(Main.escudow(adversario)).getImage();// getescudo
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
 

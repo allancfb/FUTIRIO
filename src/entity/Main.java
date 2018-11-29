@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import swing.OJogo;
+
 public class Main {
 
 	// TODO: comentar
@@ -139,6 +141,18 @@ public class Main {
 		voltaRedonda.setEscudo("src/iconTimes/iconVoltaRedonda.png");
 	}
 
+	public static String escudow(Time time) {
+		System.out.println("pelo menos to entrando aqui");
+		if(time.getNome().equals("Botafogo")) {
+			time.setEscudo("src/iconTimes/iconBotafogo.png");
+			return time.getEscudo();
+		}else if(time.getNome().equals("Portuguesa-RJ")) {
+			return "src/iconTimes/iconPortuguesa.png";
+		}else {
+			return "";
+		}
+	}
+
 	// TODO: comentar
 	public static Time carregarTime(String nome) {
 		try {
@@ -168,9 +182,9 @@ public class Main {
 		for (Jogador jogador : flamengo.getJogadoresReservas()) {
 			System.out.println(jogador.getNome());
 		}
-		
-		//carregando escudos
-		carregarEscudos();
+
+		// carregando escudos
+		// carregarEscudos();
 
 		// Time america = carregarTime("America");
 		// america.setEscudo("/iconTimes/iconAmerica.png");

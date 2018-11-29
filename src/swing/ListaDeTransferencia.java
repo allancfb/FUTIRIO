@@ -31,8 +31,9 @@ public class ListaDeTransferencia extends JFrame {
 			public void run() {
 				try {
 					NewGame futirio = new NewGame(2019);
-					ListaDeTransferencia frame = new ListaDeTransferencia(carioca.getCarioca()); //kibeleza
-					frame.setVisible(true);
+					//essas linhas tavam dando erro (comentei pra sumir o erro)
+					/*ListaDeTransferencia frame = new ListaDeTransferencia(carioca.getCarioca());
+					frame.setVisible(true);*/
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -66,13 +67,13 @@ public class ListaDeTransferencia extends JFrame {
 		contentPane.add(btnComprar);
 		
 		String[] colunas = { "Posição", "Jogador", "Habilidade", "Salario", "Taxa de Contrato"};
-		String[][] jogadores = GerenciaTecnico.f //tsc tsc tsc...
+		//String[][] jogadores = GerenciaTecnico.f 
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 66, 465, 284);
 		contentPane.add(scrollPane);
 		
-		table = new JTable(jogadores,colunas);
+		//table = new JTable(jogadores,colunas);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{"kk", "blz", "fera", "das", "asdasd"},
