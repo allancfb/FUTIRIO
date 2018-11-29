@@ -109,7 +109,7 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
-		Time adversario = futirio.getTimeJogador().getAdversario(futirio.getCarioca().getRodadaAtual() + 11);
+		Time adversario = futirio.getTimeJogador().getAdversario((futirio.getCarioca().getIndexRodadaAtual()-1));
 
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
