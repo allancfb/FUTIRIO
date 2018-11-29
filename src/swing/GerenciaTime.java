@@ -106,11 +106,11 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(lblPosio);
 		////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblCampeonato = new JLabel(futirio.getCarioca().getNome());
-		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		JLabel lblCampeonato = new JLabel("Campeonato Carioca");
+		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCampeonato.setBounds(498, 167, 110, 33);
+		lblCampeonato.setBounds(498, 167, 120, 20);
 		contentPane.add(lblCampeonato);
 
 		JButton btnJogar = new JButton("Jogar");
@@ -141,7 +141,7 @@ public class GerenciaTime extends JFrame {
 		});
 		btnSubstituir.setBounds(327, 433, 120, 23);
 		contentPane.add(btnSubstituir);
-		btnStatus.setBounds(60, 433, 120, 23);
+		btnStatus.setBounds(55, 433, 145, 23);
 		contentPane.add(btnStatus);
 
 		JButton btnNegociarJogador = new JButton("Negociar Jogador");
@@ -182,8 +182,8 @@ public class GerenciaTime extends JFrame {
 		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
 				.getAtributosJogadoresReservas();
 
-		 TabelaTitulares = new JTable(playersTitulares,colunas);
-		//TabelaTitulares = new JTable(teste, colunas);
+		 //TabelaTitulares = new JTable(playersTitulares,colunas);
+		TabelaTitulares = new JTable(teste, colunas);
 		scrollPane.setViewportView(TabelaTitulares);
 		// TabelaTitulares.getse
 
@@ -191,8 +191,8 @@ public class GerenciaTime extends JFrame {
 		scrollPane_1.setBounds(281, 133, 207, 294);
 		contentPane.add(scrollPane_1);
 
-		TabelaReservas = new JTable(playersReservas,colunas);
-		//TabelaReservas = new JTable(teste, colunas);
+		//TabelaReservas = new JTable(playersReservas,colunas);
+		TabelaReservas = new JTable(teste, colunas);
 		scrollPane_1.setViewportView(TabelaReservas);
 	}
 	
