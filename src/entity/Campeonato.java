@@ -9,7 +9,7 @@ public class Campeonato {
 	private Time Campeao;
 	private static int rodadasTotais = 30;
 	private static int numPartidasTotal = 240;
-	private int rodadaAtual = 1;
+	private int rodadaAtual;
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela;
 	private ArrayList<Time> timesJogos;
@@ -59,10 +59,6 @@ public class Campeonato {
 		return rodadas;
 	}
 
-	public Rodada getRodadaAtual() {
-		return getRodadas()[getIndexRodadaAtual()-1];
-	}
-	
 	// TODO: comentar
 	public static int getRodadasTotais() {
 		return rodadasTotais;
@@ -74,7 +70,7 @@ public class Campeonato {
 	}
 
 	// TODO: comentar
-	public int getIndexRodadaAtual() {
+	public int getRodadaAtual() {
 		return rodadaAtual;
 	}
 

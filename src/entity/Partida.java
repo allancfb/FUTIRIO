@@ -38,14 +38,6 @@ public class Partida {
 	public String getPlacar() {
 		return placar;
 	}
-	
-	public int getTime1Gols() {
-		return time1Gols;
-	}
-
-	public int getTime2Gols() {
-		return time2Gols;
-	}
 
 	// TODO: comentar
 	public int getMinuto() {
@@ -113,9 +105,9 @@ public class Partida {
 			tempo = Tempo.PRIMEIRO;
 			break;
 
-//		case 45:
-//			tempo = Tempo.INTERVALO;
-//			break;
+		case 45:
+			tempo = Tempo.INTERVALO;
+			break;
 
 		case 46:
 			tempo = Tempo.SEGUNDO;
@@ -126,20 +118,20 @@ public class Partida {
 			break;
 
 		case 91:
-//			tempo = Tempo.PRORROGA플O1;
-//			break;
-//
-//		case 105:
-//			tempo = Tempo.INTERVALOPRORROGA플O;
-//			break;
-//
-//		case 106:
-//			tempo = Tempo.PRORROGA플O2;
-//			break;
-//
-//		case 120:
-//			tempo = Tempo.DEFAULT;
-//			break;
+			tempo = Tempo.PRORROGA플O1;
+			break;
+
+		case 105:
+			tempo = Tempo.INTERVALOPRORROGA플O;
+			break;
+
+		case 106:
+			tempo = Tempo.PRORROGA플O2;
+			break;
+
+		case 120:
+			tempo = Tempo.DEFAULT;
+			break;
 
 		default:
 			break;
