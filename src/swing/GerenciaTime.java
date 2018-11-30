@@ -200,6 +200,14 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(btnJogar);
 
 		JButton btnTabela = new JButton("Tabela");
+		btnTabela.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Tabela tabela = new Tabela(futirio);
+				tabela.setLocationRelativeTo(null);
+				tabela.setVisible(true);
+				dispose();
+			}
+		});
 		btnTabela.setBounds(498, 20, 120, 23);
 		contentPane.add(btnTabela);
 

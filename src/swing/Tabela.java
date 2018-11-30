@@ -17,6 +17,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.ScrollPane;
 import javax.swing.JScrollPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Tabela extends JFrame {
 
@@ -27,7 +29,7 @@ public class Tabela extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -38,12 +40,12 @@ public class Tabela extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
-	public Tabela() {
+	public Tabela(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		contentPane = new JPanel();
@@ -58,6 +60,14 @@ public class Tabela extends JFrame {
 		contentPane.add(lblTabela);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				GerenciaTime telaTime = new GerenciaTime(futirio);
+				telaTime.setLocationRelativeTo(null);
+				telaTime.setVisible(true);
+				dispose();
+			}
+		});
 		btnVoltar.setBounds(485, 326, 89, 23);
 		contentPane.add(btnVoltar);
 		
@@ -84,6 +94,7 @@ public class Tabela extends JFrame {
 		contentPane.add(scrollPane);
 		
 		table = new JTable(times,colunas);
+		table.setShowVerticalLines(false);
 		table.setEnabled(false);
 		scrollPane.setViewportView(table);
 		table.setFillsViewportHeight(true);
