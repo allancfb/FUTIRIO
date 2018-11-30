@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.prism.Image;
+
 import entity.Main;
 
 import javax.swing.JButton;
@@ -18,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Canvas;
 import java.awt.Label;
+import java.awt.Toolkit;
 import java.awt.Button;
 import javax.swing.ImageIcon;
 
@@ -33,6 +36,7 @@ public class Inicio extends JFrame {
 			public void run() {
 				try {
 					Inicio frame = new Inicio();
+					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
