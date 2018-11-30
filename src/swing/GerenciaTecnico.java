@@ -101,6 +101,7 @@ public class GerenciaTecnico extends JFrame {
 					futirio.setNomeTecnico(nomeTecnico.getText());
 					
 					GerenciaTime jogo = new GerenciaTime(futirio);
+					jogo.setLocationRelativeTo(null);
 					jogo.setVisible(true);
 					GerenciaTecnico.this.dispose();
 				}

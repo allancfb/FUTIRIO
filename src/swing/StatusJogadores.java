@@ -60,6 +60,7 @@ public class StatusJogadores extends JFrame {
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GerenciaTime telaTime = new GerenciaTime(futirio);
+				telaTime.setLocationRelativeTo(null);
 				telaTime.setVisible(true);
 				dispose();
 			}

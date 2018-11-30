@@ -51,6 +51,7 @@ public class Creditos extends JFrame {
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Inicio inicio = new Inicio();
+				inicio.setLocationRelativeTo(null);
 				inicio.setVisible(true);
 				Creditos.this.dispose();
 			}

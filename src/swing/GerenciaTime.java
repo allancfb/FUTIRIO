@@ -1,9 +1,11 @@
 package swing;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -33,7 +35,7 @@ public class GerenciaTime extends JFrame {
 	private JTable jogadores;
 	private JTable TabelaTitulares;
 	private JTable TabelaReservas;
-
+	
 	public GerenciaTime(OJogo futirio) {
 		setTitle(futirio.getTimeJogador().getNome() + " - " + futirio.getNomeTecnico());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -188,6 +190,7 @@ public class GerenciaTime extends JFrame {
 		btnJogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RodadaSwing partida = new RodadaSwing(futirio);
+				partida.setLocationRelativeTo(null);
 				partida.setVisible(true);
 				dispose();
 
@@ -204,6 +207,7 @@ public class GerenciaTime extends JFrame {
 		btnStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				StatusJogadores telaStatus = new StatusJogadores(futirio);
+				telaStatus.setLocationRelativeTo(null);
 				telaStatus.setVisible(true);
 				dispose();
 			}
@@ -230,6 +234,7 @@ public class GerenciaTime extends JFrame {
 		btnNegociarJogador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ListaDeTransferenciaSwing telaLista = new ListaDeTransferenciaSwing(futirio);
+				telaLista.setLocationRelativeTo(null);
 				telaLista.setVisible(true);
 				dispose();
 			}

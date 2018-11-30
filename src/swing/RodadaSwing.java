@@ -103,19 +103,20 @@ public class RodadaSwing extends JFrame {
 		progressBar.setBounds(428, 11, 146, 25);
 		contentPane.add(progressBar);
 		
-		JButton terminar = new JButton("Terminar");
-		terminar.setVisible(false);
-		terminar.addActionListener(new ActionListener() {
+		JButton continuar = new JButton("Continuar");
+		continuar.setVisible(false);
+		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(podeTerminar) {
 					GerenciaTime telaTime = new GerenciaTime(futirio);
+					telaTime.setLocationRelativeTo(null);
 					telaTime.setVisible(true);
 					dispose();
 				}
 			}
 		});
-		terminar.setBounds(490, 326, 89, 23);
-		contentPane.add(terminar);
+		continuar.setBounds(490, 326, 89, 23);
+		contentPane.add(continuar);
 
 		JButton começar = new JButton("Come\u00E7ar");
 		começar.addActionListener(new ActionListener() {
@@ -136,7 +137,7 @@ public class RodadaSwing extends JFrame {
 
 							if (i == 90) {
 								JOptionPane.showMessageDialog(null, "A rodada acabou!");
-								terminar.setVisible(true);
+								continuar.setVisible(true);
 								futirio.getCarioca().PassarRodada();
 								podeTerminar = true;
 							}

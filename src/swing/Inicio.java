@@ -60,6 +60,7 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//JOptionPane.showMessageDialog(null, "vai pra cena de crédito");
 				Creditos creditos = new Creditos();
+				creditos.setLocationRelativeTo(null);
 				creditos.setVisible(true);
 				Inicio.this.dispose();
 			}
@@ -78,6 +79,7 @@ public class Inicio extends JFrame {
 		jogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GerenciaTecnico gerencia = new GerenciaTecnico();
+				gerencia.setLocationRelativeTo(null);
 				gerencia.setVisible(true);
 				Inicio.this.dispose();				
 			}
