@@ -31,11 +31,11 @@ public class OJogo {
 		fluminense.setEscudo("/iconTimes/iconFluminense.png");
 		Time goytacaz = Main.carregarTime("Goytacaz");
 		goytacaz.setEscudo("/iconTimes/iconGoytacaz.png");
-		Time macae = Main.carregarTime("MacaÃ©");
+		Time macae = Main.carregarTime("Macaé");
 		macae.setEscudo("/iconTimes/iconMacae.png");
 		Time madureira = Main.carregarTime("Madureira");
 		madureira.setEscudo("/iconTimes/iconMadureira.png");
-		Time novaIguacu = Main.carregarTime("Nova IguaÃ§u");
+		Time novaIguacu = Main.carregarTime("Nova Iguaçu");
 		novaIguacu.setEscudo("/iconTimes/iconNovaIguacu.png");
 		Time portuguesa = Main.carregarTime("Portuguesa-RJ");
 		portuguesa.setEscudo("/iconTimes/iconPortuguesa.png");
