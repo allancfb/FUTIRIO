@@ -239,7 +239,7 @@ public class GerenciaTime extends JFrame {
 				dispose();
 			}
 		});
-		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnNegociarJogador.setBounds(498, 59, 120, 23);
 		contentPane.add(btnNegociarJogador);
 

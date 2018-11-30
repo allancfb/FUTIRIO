@@ -105,27 +105,27 @@ public class RodadaSwing extends JFrame {
 		continuar.setVisible(false);
 		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(futirio.getCarioca().getIndexRodadaAtual()!=16) {
+				if (futirio.getCarioca().getIndexRodadaAtual() != 16) {
 					GerenciaTime telaTime = new GerenciaTime(futirio);
 					telaTime.setLocationRelativeTo(null);
 					telaTime.setVisible(true);
 					dispose();
-				}else {
-					//vai pra tela de campeão
-					/*Campeao campeao = new Campeao(primeiroColocadoNaTabela, campeonato);
-					campeao.setLocationRelativeTo(null);
-					campeao.setVisible(true);
-					dispose();*/
+				} else {
+					// vai pra tela de campeão
+					/*
+					 * Campeao campeao = new Campeao(primeiroColocadoNaTabela, campeonato);
+					 * campeao.setLocationRelativeTo(null); campeao.setVisible(true); dispose();
+					 */
 				}
 			}
 		});
 		continuar.setBounds(490, 326, 89, 23);
 		contentPane.add(continuar);
 
-		JButton começar = new JButton("Come\u00E7ar");
-		começar.addActionListener(new ActionListener() {
+		JButton comecar = new JButton("Come\u00E7ar");
+		comecar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				começar.setVisible(false);
+				comecar.setVisible(false);
 				new Thread(new Runnable() {
 
 					public void run() {
@@ -153,8 +153,8 @@ public class RodadaSwing extends JFrame {
 
 			}
 		});
-		começar.setBounds(5, 326, 89, 23);
-		contentPane.add(começar);
+		comecar.setBounds(5, 326, 89, 23);
+		contentPane.add(comecar);
 
 		bg.setIcon(new ImageIcon(RodadaSwing.class.getResource("/Imagens/fundo.png")));
 		bg.setBounds(0, 0, 584, 360);
