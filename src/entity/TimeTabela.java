@@ -54,6 +54,10 @@ public class TimeTabela implements Comparable<TimeTabela>{
 		return time;
 	}
 
+	public void setPontos(int pontos) {
+		this.pontos = pontos;
+	}
+
 	// TODO: comentar
 	public int getQtGols() {
 		return qtGols;
@@ -99,39 +103,39 @@ public class TimeTabela implements Comparable<TimeTabela>{
 	
 	public int compareTo(TimeTabela outroTimeTabela) {
         if (this.getPontos() < outroTimeTabela.getPontos()) {
-            return -1;
-        }else if(this.getPontos() > outroTimeTabela.getPontos()) {
             return 1;
+        }else if(this.getPontos() > outroTimeTabela.getPontos()) {
+            return -1;
         }else {
         	if(this.getVitorias() < outroTimeTabela.getVitorias()) {
-        		return -1;
+        		return 1;
         	}else if(this.getVitorias() > outroTimeTabela.getVitorias()) {
-                return 1;
+                return -1;
             }else {
             	if(this.getSaldoGols() < outroTimeTabela.getSaldoGols()) {
-            		return -1;
-            	}else if(this.getSaldoGols() > outroTimeTabela.getSaldoGols()) {
             		return 1;
+            	}else if(this.getSaldoGols() > outroTimeTabela.getSaldoGols()) {
+            		return -1;
             	}else {
             		if(this.getQtGols() < outroTimeTabela.getQtGols()) {
-            			return -1;
-            		}else if(this.getQtGols() > outroTimeTabela.getQtGols()) {
             			return 1;
+            		}else if(this.getQtGols() > outroTimeTabela.getQtGols()) {
+            			return -1;
             		}else {
             			if(this.getEmpates() > outroTimeTabela.getEmpates()) {
-            				return -1;
-            			}else if(this.getEmpates() < outroTimeTabela.getEmpates()) {
             				return 1;
+            			}else if(this.getEmpates() < outroTimeTabela.getEmpates()) {
+            				return -1;
             			}else {
             				if(this.getDerrotas() > outroTimeTabela.getDerrotas()) {
-            					return -1;
-            				}else if(this.getDerrotas() < outroTimeTabela.getDerrotas()){
             					return 1;
+            				}else if(this.getDerrotas() < outroTimeTabela.getDerrotas()){
+            					return -1;
             				}else {
             					if(this.getGolsSofridos() > outroTimeTabela.getGolsSofridos()) {
-            						return -1;
-            					}else if(this.getGolsSofridos() < outroTimeTabela.getGolsSofridos()) {
             						return 1;
+            					}else if(this.getGolsSofridos() < outroTimeTabela.getGolsSofridos()) {
+            						return -1;
             					}else {
             					    if(Campeonato.retornaPosicao(this.getTime()) > Campeonato.retornaPosicao(outroTimeTabela.getTime())) {
             					       return -1;
