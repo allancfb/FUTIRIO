@@ -181,9 +181,6 @@ public class Campeonato {
 	// TODO: comentar
 	public void organizaTabela() {
 
-		ArrayList<TimeTabela> tabela = new ArrayList<TimeTabela>();
-		tabela = this.tabela;
-
 		TabelaComparator tabelaComparator = new TabelaComparator();
         Collections.sort(tabela, tabelaComparator);
 
@@ -201,48 +198,4 @@ public class Campeonato {
 			timesJogos.add(Main.carregarTime(nomes[i]));
 		}
 	}
-
-	// TODO: comentar
-	private void organizador(ArrayList<TimeTabela> tabela) {
-		 
-		
-		
-//		for (int i = 0; i <= tabela.size(); i++) {
-//			if (timeTabela.getPontos() > tabela.get(i).getPontos()) {
-//				tabela.set(i, timeTabela);
-//				break;
-//			} else if (timeTabela.getPontos() == tabela.get(i).getPontos()) {
-//				if (timeTabela.getVitorias() > tabela.get(i).getVitorias()) {
-//					tabela.set(i, timeTabela);
-//					break;
-//				} else if (timeTabela.getVitorias() == tabela.get(i).getVitorias()) {
-//					if (timeTabela.getSaldoGols() > tabela.get(i).getSaldoGols()) {
-//						tabela.set(i, timeTabela);
-//						break;
-//					} else if (timeTabela.getSaldoGols() == tabela.get(i).getSaldoGols()) {
-//						if (timeTabela.getQtGols() > tabela.get(i).getQtGols()) {
-//							tabela.set(i, timeTabela);
-//							break;
-//						} else if (timeTabela.getQtGols() == tabela.get(i).getQtGols()) {
-//							if (timeTabela.getEmpates() < tabela.get(i).getEmpates()) {
-//								tabela.set(i, timeTabela);
-//								break;
-//							} else if (timeTabela.getEmpates() == tabela.get(i).getEmpates()) {
-//								if (timeTabela.getDerrotas() < tabela.get(i).getDerrotas()) {
-//									tabela.set(i, timeTabela);
-//									break;
-//								} else if (timeTabela.getDerrotas() == tabela.get(i).getDerrotas()) {
-//									if (timeTabela.getGolsSofridos() < tabela.get(i).getGolsSofridos()) {
-//										tabela.set(i, timeTabela);
-//										break;
-//									}
-//								}
-//							}
-//						}
-//					}
-//				}
-//			}
-//		}
-	}
-
 }

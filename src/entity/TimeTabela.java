@@ -54,9 +54,9 @@ public class TimeTabela implements Comparable<TimeTabela>{
 		return time;
 	}
 
-	public void setPontos(int pontos) {
-		this.pontos = pontos;
-	}
+//	public void setPontos(int pontos) {
+//		this.pontos = pontos;
+//	}
 
 	// TODO: comentar
 	public int getQtGols() {
