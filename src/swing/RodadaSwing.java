@@ -27,7 +27,6 @@ public class RodadaSwing extends JFrame {
 
 	private JPanel contentPane;
 	private final JLabel bg = new JLabel("");
-	private boolean podeTerminar = false;
 
 	/**
 	 * Launch the application.
@@ -39,12 +38,11 @@ public class RodadaSwing extends JFrame {
 
 		Rodada rodada = futirio.getCarioca().getRodadaAtual();
 		PartidaSwing[] partidas = new PartidaSwing[8];
-		
 
 		for (int i = 0; i < 8; i++) {
 			int y = 60;
-			partidas[i] = new PartidaSwing((y + (36 * i)),
-					rodada.getPartidas().get(i).getTime1().getNome(), rodada.getPartidas().get(i).getTime2().getNome());
+			partidas[i] = new PartidaSwing((y + (36 * i)), rodada.getPartidas().get(i).getTime1().getNome(),
+					rodada.getPartidas().get(i).getTime2().getNome());
 
 		}
 
@@ -55,7 +53,7 @@ public class RodadaSwing extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblRodada = new JLabel("Rodada: "+Integer.toString(futirio.getCarioca().getIndexRodadaAtual()));
+		JLabel lblRodada = new JLabel("Rodada: " + Integer.toString(futirio.getCarioca().getIndexRodadaAtual()));
 		lblRodada.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblRodada.setForeground(Color.WHITE);
 		lblRodada.setBounds(26, 11, 91, 25);
@@ -102,16 +100,22 @@ public class RodadaSwing extends JFrame {
 		progressBar.setMaximum(89);
 		progressBar.setBounds(428, 11, 146, 25);
 		contentPane.add(progressBar);
-		
+
 		JButton continuar = new JButton("Continuar");
 		continuar.setVisible(false);
 		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(podeTerminar) {
+				if(futirio.getCarioca().getIndexRodadaAtual()!=16) {
 					GerenciaTime telaTime = new GerenciaTime(futirio);
 					telaTime.setLocationRelativeTo(null);
 					telaTime.setVisible(true);
 					dispose();
+				}else {
+					//vai pra tela de campeão
+					/*Campeao campeao = new Campeao(primeiroColocadoNaTabela, campeonato);
+					campeao.setLocationRelativeTo(null);
+					campeao.setVisible(true);
+					dispose();*/
 				}
 			}
 		});
@@ -131,15 +135,16 @@ public class RodadaSwing extends JFrame {
 							progressBar.setValue(rodada.getMinuto());
 
 							for (int j = 0; j < 8; j++) {
-								golsA.get(j).setText(" "+Integer.toString(rodada.getPartidas().get(j).getTime1Gols()));
-								golsB.get(j).setText(" "+Integer.toString(rodada.getPartidas().get(j).getTime2Gols()));
+								golsA.get(j)
+										.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime1Gols()));
+								golsB.get(j)
+										.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime2Gols()));
 							}
 
 							if (i == 90) {
 								JOptionPane.showMessageDialog(null, "A rodada acabou!");
 								continuar.setVisible(true);
 								futirio.getCarioca().PassarRodada();
-								podeTerminar = true;
 							}
 
 						}

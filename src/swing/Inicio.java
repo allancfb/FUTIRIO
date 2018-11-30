@@ -23,7 +23,6 @@ import javax.swing.ImageIcon;
 
 public class Inicio extends JFrame {
 	
-	//private JFrame inicio;
 	private JPanel contentPane;
 
 	/**
@@ -45,7 +44,7 @@ public class Inicio extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Inicio() {		
+	public Inicio() {	
 		setTitle("FUTIRIO");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
