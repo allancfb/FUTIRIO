@@ -176,11 +176,11 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(lblPosio);
 		////////////////////////////////////////////////////////////////////////////////////////////
 
-		JLabel lblCampeonato = new JLabel(futirio.getCarioca().getNome());
-		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		JLabel lblCampeonato = new JLabel("Campeonato Carioca");
+		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCampeonato.setBounds(498, 167, 110, 33);
+		lblCampeonato.setBounds(498, 167, 120, 23);
 		contentPane.add(lblCampeonato);
 
 		JButton btnJogar = new JButton("Jogar");
