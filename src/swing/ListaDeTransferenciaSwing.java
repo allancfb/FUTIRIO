@@ -54,7 +54,7 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		btnVoltar.setBounds(485, 24, 89, 23);
 		contentPane.add(btnVoltar);
 
-		//TEM Q VER SE ESSA PARADA AKI FUNCIONA
+		// TEM Q VER SE ESSA PARADA AKI FUNCIONA
 		JButton btnComprar = new JButton("Comprar");
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -65,7 +65,7 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		btnComprar.setBounds(485, 203, 89, 23);
 		contentPane.add(btnComprar);
 
-		String[] colunas = { "PosiÁ„o", "Jogador", "Habilidade", "Salario", "Taxa de Contrato" };
+		String[] colunas = { "Posi√ß√£o", "Jogador", "Habilidade", "Sal√°rio", "Taxa de Contrato" };
 		String[][] jogadores = futirio.getCarioca().getListaDeTransferencia().getAllAtributosJogador();
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -77,10 +77,11 @@ public class ListaDeTransferenciaSwing extends JFrame {
 			falses[i] = false;
 		}
 
-		//table = new JTable();
-		table = new JTable(jogadores,colunas);
-		table.setModel(new DefaultTableModel(jogadores,colunas) {
+		// table = new JTable();
+		table = new JTable(jogadores, colunas);
+		table.setModel(new DefaultTableModel(jogadores, colunas) {
 			boolean[] columnEditables = falses;
+
 			public boolean isCellEditable(int row, int column) {
 				return columnEditables[column];
 			}

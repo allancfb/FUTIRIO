@@ -25,7 +25,7 @@ import java.awt.Button;
 import javax.swing.ImageIcon;
 
 public class Inicio extends JFrame {
-	
+
 	private JPanel contentPane;
 
 	/**
@@ -48,7 +48,7 @@ public class Inicio extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Inicio() {	
+	public Inicio() {
 		setTitle("FUTIRIO");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,11 +57,11 @@ public class Inicio extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton creditos = new JButton("Cr\u00E9ditos");
 		creditos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//JOptionPane.showMessageDialog(null, "vai pra cena de crédito");
+				// JOptionPane.showMessageDialog(null, "vai pra cena de crï¿½dito");
 				Creditos creditos = new Creditos();
 				creditos.setLocationRelativeTo(null);
 				creditos.setVisible(true);
@@ -70,28 +70,28 @@ public class Inicio extends JFrame {
 		});
 		creditos.setBounds(252, 252, 89, 23);
 		contentPane.add(creditos);
-		
+
 		JButton sair = new JButton("Sair");
 		sair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
-		
+
 		JButton jogar = new JButton("Jogar");
 		jogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GerenciaTecnico gerencia = new GerenciaTecnico();
 				gerencia.setLocationRelativeTo(null);
 				gerencia.setVisible(true);
-				Inicio.this.dispose();				
+				Inicio.this.dispose();
 			}
 		});
 		jogar.setBounds(252, 200, 89, 23);
 		contentPane.add(jogar);
 		sair.setBounds(252, 299, 89, 23);
 		contentPane.add(sair);
-		
+
 		JLabel background = new JLabel("New label");
 		background.setIcon(new ImageIcon(Inicio.class.getResource("/Imagens/mainBG.png")));
 		background.setBounds(0, 0, 594, 370);
