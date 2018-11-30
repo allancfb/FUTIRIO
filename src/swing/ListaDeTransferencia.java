@@ -24,27 +24,9 @@ public class ListaDeTransferencia extends JFrame {
 	private JTable table;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					NewGame futirio = new NewGame(2019);
-					//essas linhas tavam dando erro (comentei pra sumir o erro)
-					/*ListaDeTransferencia frame = new ListaDeTransferencia(carioca.getCarioca());
-					frame.setVisible(true);*/
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the frame.
 	 */
-	public ListaDeTransferencia(Campeonato carioca) {
+	public ListaDeTransferencia(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 400);
 		contentPane = new JPanel();
@@ -67,7 +49,7 @@ public class ListaDeTransferencia extends JFrame {
 		contentPane.add(btnComprar);
 		
 		String[] colunas = { "Posição", "Jogador", "Habilidade", "Salario", "Taxa de Contrato"};
-		//String[][] jogadores = GerenciaTecnico.f 
+//		String[][] jogadores = futirio.getCarioca().get
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 66, 465, 284);

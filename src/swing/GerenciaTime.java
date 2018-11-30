@@ -202,6 +202,9 @@ public class GerenciaTime extends JFrame {
 		JButton btnStatus = new JButton("Visualizar Status");
 		btnStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				StatusJogadores telaStatus = new StatusJogadores(futirio);
+				telaStatus.setVisible(true);
+				dispose();
 			}
 		});
 
@@ -217,9 +220,9 @@ public class GerenciaTime extends JFrame {
 				atualizarTabelas(TabelaTitulares, TabelaReservas, futirio, scrollPane, scrollPane_1);
 			}
 		});
-		btnSubstituir.setBounds(327, 433, 120, 23);
+		btnSubstituir.setBounds(302, 433, 168, 23);
 		contentPane.add(btnSubstituir);
-		btnStatus.setBounds(60, 433, 120, 23);
+		btnStatus.setBounds(42, 433, 168, 23);
 		contentPane.add(btnStatus);
 
 		JButton btnNegociarJogador = new JButton("Negociar Jogador");
