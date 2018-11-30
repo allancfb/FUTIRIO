@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import entity.*;
 
 
-public class PartidasSwing {
+public class PartidaSwing {
 
 	
 	private JPanel TimeA = new JPanel();
@@ -21,7 +21,7 @@ public class PartidasSwing {
 	private JLabel PartidaGolsB = new JLabel(" 0");
 
 	
-	public PartidasSwing(int y, String timeA, String timeB) {
+	public PartidaSwing(int y, String timeA, String timeB) {
 		
 		setTimeA(timeA);
 		setTimeB(timeB);

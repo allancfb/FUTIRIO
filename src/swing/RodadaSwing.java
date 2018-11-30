@@ -37,12 +37,12 @@ public class RodadaSwing extends JFrame {
 	public RodadaSwing(OJogo futirio) {
 
 		Rodada rodada = futirio.getCarioca().getRodadaAtual();
-		PartidasSwing[] partidas = new PartidasSwing[8];
+		PartidaSwing[] partidas = new PartidaSwing[8];
 		
 
 		for (int i = 0; i < 8; i++) {
 			int y = 60;
-			partidas[i] = new PartidasSwing((y + (36 * i)),
+			partidas[i] = new PartidaSwing((y + (36 * i)),
 					rodada.getPartidas().get(i).getTime1().getNome(), rodada.getPartidas().get(i).getTime2().getNome());
 
 		}
@@ -142,6 +142,14 @@ public class RodadaSwing extends JFrame {
 		contentPane.add(começar);
 
 		JButton terminar = new JButton("Terminar");
+		terminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GerenciaTime telaTime = new GerenciaTime(futirio);
+				telaTime.setVisible(true);
+				dispose();
+				
+			}
+		});
 		terminar.setBounds(490, 326, 89, 23);
 		contentPane.add(terminar);
 		bg.setIcon(new ImageIcon(RodadaSwing.class.getResource("/Imagens/fundo.png")));
