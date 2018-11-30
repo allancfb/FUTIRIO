@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Label;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
@@ -54,7 +55,7 @@ public class RodadaSwing extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblRodada = new JLabel("Rodada: ");
+		JLabel lblRodada = new JLabel("Rodada: "+Integer.toString(futirio.getCarioca().getIndexRodadaAtual()));
 		lblRodada.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblRodada.setForeground(Color.WHITE);
 		lblRodada.setBounds(26, 11, 91, 25);
@@ -65,12 +66,6 @@ public class RodadaSwing extends JFrame {
 		lblTempo.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTempo.setBounds(318, 11, 75, 25);
 		contentPane.add(lblTempo);
-
-		JLabel intRodada = new JLabel("00");
-		intRodada.setForeground(Color.WHITE);
-		intRodada.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		intRodada.setBounds(109, 11, 26, 25);
-		contentPane.add(intRodada);
 
 		JLabel intTempo = new JLabel("00");
 		intTempo.setBounds(396, 11, 22, 25);
@@ -107,6 +102,20 @@ public class RodadaSwing extends JFrame {
 		progressBar.setMaximum(89);
 		progressBar.setBounds(428, 11, 146, 25);
 		contentPane.add(progressBar);
+		
+		JButton terminar = new JButton("Terminar");
+		terminar.setVisible(false);
+		terminar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(podeTerminar) {
+					GerenciaTime telaTime = new GerenciaTime(futirio);
+					telaTime.setVisible(true);
+					dispose();
+				}
+			}
+		});
+		terminar.setBounds(490, 326, 89, 23);
+		contentPane.add(terminar);
 
 		JButton começar = new JButton("Come\u00E7ar");
 		começar.addActionListener(new ActionListener() {
@@ -116,10 +125,8 @@ public class RodadaSwing extends JFrame {
 
 					public void run() {
 						for (int i = 1; i <= 90; i++) {
-
 							rodada.run();
 							intTempo.setText(Integer.toString(rodada.getMinuto()));
-							intRodada.setText(Integer.toString(futirio.getCarioca().getIndexRodadaAtual()));
 							progressBar.setValue(rodada.getMinuto());
 
 							for (int j = 0; j < 8; j++) {
@@ -128,6 +135,8 @@ public class RodadaSwing extends JFrame {
 							}
 
 							if (i == 90) {
+								JOptionPane.showMessageDialog(null, "A rodada acabou!");
+								terminar.setVisible(true);
 								futirio.getCarioca().PassarRodada();
 								podeTerminar = true;
 							}
@@ -141,18 +150,6 @@ public class RodadaSwing extends JFrame {
 		começar.setBounds(5, 326, 89, 23);
 		contentPane.add(começar);
 
-		JButton terminar = new JButton("Terminar");
-		terminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(podeTerminar) {
-					GerenciaTime telaTime = new GerenciaTime(futirio);
-					telaTime.setVisible(true);
-					dispose();
-				}
-			}
-		});
-		terminar.setBounds(490, 326, 89, 23);
-		contentPane.add(terminar);
 		bg.setIcon(new ImageIcon(RodadaSwing.class.getResource("/Imagens/fundo.png")));
 		bg.setBounds(0, 0, 584, 360);
 		contentPane.add(bg);

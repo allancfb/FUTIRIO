@@ -159,7 +159,7 @@ public class GerenciaTime extends JFrame {
 		Time adversario = futirio.getTimeJogador().getAdversario((futirio.getCarioca().getIndexRodadaAtual() - 1));
 
 		JLabel escudoAdversario = new JLabel("");
-		escudoAdversario.setBounds(498, 201, 110, 110);
+		escudoAdversario.setBounds(503, 201, 110, 110);
 		Image escudoAdver = new ImageIcon(Main.carregarEscudo(adversario)).getImage();
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
@@ -167,13 +167,13 @@ public class GerenciaTime extends JFrame {
 		JLabel nomeAdversario = new JLabel(adversario.getNome());
 		nomeAdversario.setForeground(Color.WHITE);
 		nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
-		nomeAdversario.setBounds(498, 322, 110, 23);
+		nomeAdversario.setBounds(498, 322, 120, 23);
 		contentPane.add(nomeAdversario);
 
 		JLabel lblPosio = new JLabel("Posição: ");// +time.getposicao();
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPosio.setBounds(498, 356, 110, 23);
+		lblPosio.setBounds(498, 356, 120, 23);
 		contentPane.add(lblPosio);
 		////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -193,7 +193,7 @@ public class GerenciaTime extends JFrame {
 
 			}
 		});
-		btnJogar.setBounds(508, 390, 89, 23);
+		btnJogar.setBounds(503, 390, 110, 23);
 		contentPane.add(btnJogar);
 
 		JButton btnTabela = new JButton("Tabela");
@@ -238,7 +238,7 @@ public class GerenciaTime extends JFrame {
 		btnNegociarJogador.setBounds(498, 59, 120, 23);
 		contentPane.add(btnNegociarJogador);
 
-		JLabel lblNewLabel = new JLabel("Posição: ");// +
+		JLabel lblNewLabel = new JLabel("Posição: ");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(152, 94, 123, 27);
