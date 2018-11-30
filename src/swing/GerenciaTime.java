@@ -64,7 +64,7 @@ public class GerenciaTime extends JFrame {
 				.getAtributosJogadoresReservas();
 
 		TabelaTitulares = new JTable(playersTitulares, colunas);
-		// TabelaTitulares = new JTable(teste, colunas);
+		//TabelaTitulares = new JTable(teste, colunas);
 		scrollPane.setViewportView(TabelaTitulares);
 		// TabelaTitulares.getse
 
@@ -73,7 +73,7 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(scrollPane_1);
 
 		TabelaReservas = new JTable(playersReservas, colunas);
-		// TabelaReservas = new JTable(teste, colunas);
+		//TabelaReservas = new JTable(teste, colunas);
 		scrollPane_1.setViewportView(TabelaReservas);
 		// ==================================================================== //
 
@@ -138,6 +138,14 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(lblCampeonato);
 
 		JButton btnJogar = new JButton("Jogar");
+		btnJogar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RodadaSwing partida = new RodadaSwing(futirio);
+				partida.setVisible(true);
+				dispose();
+				
+			}
+		});
 		btnJogar.setBounds(508, 390, 89, 23);
 		contentPane.add(btnJogar);
 
