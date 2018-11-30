@@ -144,10 +144,11 @@ public class RodadaSwing extends JFrame {
 		JButton terminar = new JButton("Terminar");
 		terminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				GerenciaTime telaTime = new GerenciaTime(futirio);
-				telaTime.setVisible(true);
-				dispose();
-				
+				if(podeTerminar) {
+					GerenciaTime telaTime = new GerenciaTime(futirio);
+					telaTime.setVisible(true);
+					dispose();
+				}
 			}
 		});
 		terminar.setBounds(490, 326, 89, 23);
