@@ -226,6 +226,13 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(btnStatus);
 
 		JButton btnNegociarJogador = new JButton("Negociar Jogador");
+		btnNegociarJogador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ListaDeTransferenciaSwing telaLista = new ListaDeTransferenciaSwing(futirio);
+				telaLista.setVisible(true);
+				dispose();
+			}
+		});
 		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		btnNegociarJogador.setBounds(508, 59, 110, 23);
 		contentPane.add(btnNegociarJogador);

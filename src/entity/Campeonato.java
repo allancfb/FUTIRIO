@@ -86,6 +86,10 @@ public class Campeonato {
 		return numPartidasJogadas;
 	}
 
+	public ListaDeTransferencia getListaDeTransferencia() {
+		return listaDeTransferencia;
+	}
+
 	// TODO: comentar
 	public Time getCampeao() {
 		return Campeao;

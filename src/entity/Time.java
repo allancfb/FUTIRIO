@@ -19,7 +19,7 @@ public class Time implements Serializable {
 	private ArrayList<Jogador> jogadoresTitulares;
 	private ArrayList<Jogador> jogadoresReservas;
 	private double habilidadeGeral;
-	private double fundos;
+	private double fundos = 800000;
 	private double salarioTotal;
 
 	// Construtores
