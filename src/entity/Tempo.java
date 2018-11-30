@@ -3,8 +3,8 @@ package entity;
 public enum Tempo {
 
 	PRIMEIRO("Primeiro tempo"), INTERVALO("Intevalo"), SEGUNDO("Segundo Tempo"),
-	PRORROGAÇÃO1("Primeiro Tempo da Prorrogação"), INTERVALOPRORROGAÇÃO("Intevalo da Prorrogação"),
-	PRORROGAÇÃO2("Segundo Tempo da Prorrogação"), DEFAULT("Não iniciado"), FIM("Fim de jogo");
+	PRORROGACAO("Primeiro Tempo da ProrrogaÃ§Ã£o"), INTERVALOPRORROGACAO("Intevalo da Prorrogaï¿½ï¿½o"),
+	PRORROGACAO2("Segundo Tempo da ProrrogaÃ§Ã£o"), DEFAULT("Nï¿½o iniciado"), FIM("Fim de jogo");
 
 	private String nome;
 
