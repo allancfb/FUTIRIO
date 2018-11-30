@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -134,11 +135,13 @@ public class GerenciaTime extends JFrame {
 		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		nomeTime.setBounds(152, 20, 336, 33);
 		contentPane.add(nomeTime);
+		
+		//JOptionPane.showMessageDialog(null, "Clique em OK para começar");
 
 		JLabel lblFundosR = new JLabel("Fundos: R$" + futirio.getTimeJogador().getFundos());
-		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblFundosR.setForeground(Color.WHITE);
-		lblFundosR.setBounds(498, 99, 110, 20);
+		lblFundosR.setBounds(281, 99, 207, 20);
 		contentPane.add(lblFundosR);
 
 		JLabel nomeTecnico = new JLabel("Técnico: " + futirio.getNomeTecnico());
@@ -151,7 +154,7 @@ public class GerenciaTime extends JFrame {
 		lblPrximoJogo.setForeground(Color.WHITE);
 		lblPrximoJogo.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblPrximoJogo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPrximoJogo.setBounds(498, 133, 110, 23);
+		lblPrximoJogo.setBounds(498, 133, 120, 23);
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
@@ -196,7 +199,7 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(btnJogar);
 
 		JButton btnTabela = new JButton("Tabela");
-		btnTabela.setBounds(508, 20, 110, 23);
+		btnTabela.setBounds(498, 20, 120, 23);
 		contentPane.add(btnTabela);
 
 		JButton btnStatus = new JButton("Visualizar Status");
@@ -234,7 +237,7 @@ public class GerenciaTime extends JFrame {
 			}
 		});
 		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnNegociarJogador.setBounds(508, 59, 110, 23);
+		btnNegociarJogador.setBounds(498, 59, 120, 23);
 		contentPane.add(btnNegociarJogador);
 
 		JLabel lblNewLabel = new JLabel("Posição: ");// +
@@ -246,7 +249,7 @@ public class GerenciaTime extends JFrame {
 		JLabel lblAno = new JLabel("Ano: " + futirio.getCarioca().getAno());
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblAno.setBounds(378, 94, 110, 27);
+		lblAno.setBounds(498, 96, 120, 27);
 		contentPane.add(lblAno);
 
 		JLabel bg = new JLabel("");
