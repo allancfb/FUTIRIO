@@ -180,8 +180,8 @@ public class Campeonato {
 		ArrayList<TimeTabela> tabela = new ArrayList<TimeTabela>();
 		tabela = this.tabela;
 
-		for (int i = tabela.size() - 1; i >= 0; i--)
-			organizador(tabela, tabela.get(i));
+		TabelaComparator tabelaComparator = new TabelaComparator();
+        Collections.sort(tabela, tabelaComparator);
 
 	}
 
@@ -199,9 +199,8 @@ public class Campeonato {
 	}
 
 	// TODO: comentar
-	private void organizador(ArrayList<TimeTabela> tabela, TimeTabela timeTabela) {
-		 TabelaComparator tabelaComparator = new TabelaComparator();
-          Collections.sort(tabela, tabelaComparator);
+	private void organizador(ArrayList<TimeTabela> tabela) {
+		 
 		
 		
 //		for (int i = 0; i <= tabela.size(); i++) {

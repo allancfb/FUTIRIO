@@ -182,14 +182,28 @@ public class Main {
 		 * SUGESTÃO: Colocar isso no NewGame
 		 */
 
-		Time flamengo = carregarTime("Flamengo");
-		for (Jogador jogador : flamengo.getJogadoresReservas()) {
-			System.out.println(jogador.getNome());
+		Campeonato c = new Campeonato(2019);
+		
+		for (TimeTabela timeTabela : c.getTabela()) {
+			System.out.println(timeTabela.getTime().getNome());
 		}
-		flamengo.substituicao(flamengo.getJogadoresTitulares().get(0), flamengo.getJogador(20));
-		for (Jogador jogador : flamengo.getJogadoresReservas()) {
-			System.out.println(jogador.getNome());
+		System.out.println("----------");
+		c.getTabela().get(3).setPontos(2);
+		
+		c.organizaTabela();
+		
+		for (TimeTabela timeTabela : c.getTabela()) {
+			System.out.println(timeTabela.getTime().getNome());
 		}
+		
+//		Time flamengo = carregarTime("Flamengo");
+//		for (Jogador jogador : flamengo.getJogadoresReservas()) {
+//			System.out.println(jogador.getNome());
+//		}
+//		flamengo.substituicao(flamengo.getJogadoresTitulares().get(0), flamengo.getJogador(20));
+//		for (Jogador jogador : flamengo.getJogadoresReservas()) {
+//			System.out.println(jogador.getNome());
+//		}
 	}
 
 }
