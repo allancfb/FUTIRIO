@@ -1,6 +1,6 @@
 package entity;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Campeonato {
 
@@ -13,7 +13,7 @@ public class Campeonato {
 	private int numPartidasJogadas;
 	private ArrayList<TimeTabela> tabela;
 	private ArrayList<Time> timesJogos;
-	private ArrayList<Time> times;
+	private static ArrayList<Time> times;
 	private Rodada[] rodadas;
 	private ListaDeTransferencia listaDeTransferencia;
 
@@ -53,6 +53,9 @@ public class Campeonato {
 
 	public ArrayList<Time> getTimes() {
 		return times;
+	}
+	public static int retornaPosicao(Time time) {
+		return times.indexOf(time);
 	}
 
 	public Rodada[] getRodadas() {
@@ -105,6 +108,8 @@ public class Campeonato {
 	}
 
 	// Métodos
+	
+	 
 	// ////////////////////////////////////////////////////////////////////////
 
 	public Rodada getProximaRodada() {
@@ -176,7 +181,7 @@ public class Campeonato {
 		tabela = this.tabela;
 
 		for (int i = tabela.size() - 1; i >= 0; i--)
-			organizador(tabela.get(i));
+			organizador(tabela, tabela.get(i));
 
 	}
 
@@ -194,44 +199,47 @@ public class Campeonato {
 	}
 
 	// TODO: comentar
-	private void organizador(TimeTabela timeTabela) {
-
-		for (int i = 0; i <= tabela.size(); i++) {
-			if (timeTabela.getPontos() > tabela.get(i).getPontos()) {
-				tabela.set(i, timeTabela);
-				break;
-			} else if (timeTabela.getPontos() == tabela.get(i).getPontos()) {
-				if (timeTabela.getVitorias() > tabela.get(i).getVitorias()) {
-					tabela.set(i, timeTabela);
-					break;
-				} else if (timeTabela.getVitorias() == tabela.get(i).getVitorias()) {
-					if (timeTabela.getSaldoGols() > tabela.get(i).getSaldoGols()) {
-						tabela.set(i, timeTabela);
-						break;
-					} else if (timeTabela.getSaldoGols() == tabela.get(i).getSaldoGols()) {
-						if (timeTabela.getQtGols() > tabela.get(i).getQtGols()) {
-							tabela.set(i, timeTabela);
-							break;
-						} else if (timeTabela.getQtGols() == tabela.get(i).getQtGols()) {
-							if (timeTabela.getEmpates() < tabela.get(i).getEmpates()) {
-								tabela.set(i, timeTabela);
-								break;
-							} else if (timeTabela.getEmpates() == tabela.get(i).getEmpates()) {
-								if (timeTabela.getDerrotas() < tabela.get(i).getDerrotas()) {
-									tabela.set(i, timeTabela);
-									break;
-								} else if (timeTabela.getDerrotas() == tabela.get(i).getDerrotas()) {
-									if (timeTabela.getGolsSofridos() < tabela.get(i).getGolsSofridos()) {
-										tabela.set(i, timeTabela);
-										break;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+	private void organizador(ArrayList<TimeTabela> tabela, TimeTabela timeTabela) {
+		 TabelaComparator tabelaComparator = new TabelaComparator();
+          Collections.sort(tabela, tabelaComparator);
+		
+		
+//		for (int i = 0; i <= tabela.size(); i++) {
+//			if (timeTabela.getPontos() > tabela.get(i).getPontos()) {
+//				tabela.set(i, timeTabela);
+//				break;
+//			} else if (timeTabela.getPontos() == tabela.get(i).getPontos()) {
+//				if (timeTabela.getVitorias() > tabela.get(i).getVitorias()) {
+//					tabela.set(i, timeTabela);
+//					break;
+//				} else if (timeTabela.getVitorias() == tabela.get(i).getVitorias()) {
+//					if (timeTabela.getSaldoGols() > tabela.get(i).getSaldoGols()) {
+//						tabela.set(i, timeTabela);
+//						break;
+//					} else if (timeTabela.getSaldoGols() == tabela.get(i).getSaldoGols()) {
+//						if (timeTabela.getQtGols() > tabela.get(i).getQtGols()) {
+//							tabela.set(i, timeTabela);
+//							break;
+//						} else if (timeTabela.getQtGols() == tabela.get(i).getQtGols()) {
+//							if (timeTabela.getEmpates() < tabela.get(i).getEmpates()) {
+//								tabela.set(i, timeTabela);
+//								break;
+//							} else if (timeTabela.getEmpates() == tabela.get(i).getEmpates()) {
+//								if (timeTabela.getDerrotas() < tabela.get(i).getDerrotas()) {
+//									tabela.set(i, timeTabela);
+//									break;
+//								} else if (timeTabela.getDerrotas() == tabela.get(i).getDerrotas()) {
+//									if (timeTabela.getGolsSofridos() < tabela.get(i).getGolsSofridos()) {
+//										tabela.set(i, timeTabela);
+//										break;
+//									}
+//								}
+//							}
+//						}
+//					}
+//				}
+//			}
+//		}
 	}
 
 }
