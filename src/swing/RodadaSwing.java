@@ -111,7 +111,7 @@ public class RodadaSwing extends JFrame {
 		JButton começar = new JButton("Come\u00E7ar");
 		começar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				começar.setVisible(false);
 				new Thread(new Runnable() {
 
 					public void run() {

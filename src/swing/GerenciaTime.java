@@ -135,8 +135,6 @@ public class GerenciaTime extends JFrame {
 		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		nomeTime.setBounds(152, 20, 336, 33);
 		contentPane.add(nomeTime);
-		
-		//JOptionPane.showMessageDialog(null, "Clique em OK para começar");
 
 		JLabel lblFundosR = new JLabel("Fundos: R$" + futirio.getTimeJogador().getFundos());
 		lblFundosR.setFont(new Font("Tahoma", Font.PLAIN, 20));
