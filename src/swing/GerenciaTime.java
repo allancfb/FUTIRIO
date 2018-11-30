@@ -24,6 +24,7 @@ import javax.swing.table.DefaultTableModel;
 import entity.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ListSelectionModel;
 
 public class GerenciaTime extends JFrame {
 
@@ -63,17 +64,62 @@ public class GerenciaTime extends JFrame {
 		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
 				.getAtributosJogadoresReservas();
 
+		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
+		boolean[] falsesTitulares = new boolean[playersTitulares.length];
+		for (int i = 0; i < playersTitulares.length; i++) {
+			falsesTitulares[i] = false;
+		}
+
+		// TabelaTitulares = new JTable(teste, colunas);
+
+		// SE FOR MEXER NO DESIGN TEM Q COMENTAR DAKI \/ E DESCOMENTAR O DE CIMA
+		// ======================================================================== //
 		TabelaTitulares = new JTable(playersTitulares, colunas);
-		//TabelaTitulares = new JTable(teste, colunas);
+		TabelaTitulares.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		TabelaTitulares.setModel(new DefaultTableModel(playersTitulares, colunas) {
+			boolean[] columnEditables = falsesTitulares;
+
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		TabelaTitulares.getColumnModel().getColumn(0).setResizable(false);
+		TabelaTitulares.getColumnModel().getColumn(1).setResizable(false);
+		TabelaTitulares.getColumnModel().getColumn(2).setResizable(false);
+		// ======================================================================== //
+		// ATÉ AKI
+
 		scrollPane.setViewportView(TabelaTitulares);
-		// TabelaTitulares.getse
 
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(281, 133, 207, 294);
 		contentPane.add(scrollPane_1);
 
+		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
+		boolean[] falsesReservas = new boolean[playersTitulares.length];
+		for (int i = 0; i < playersTitulares.length; i++) {
+			falsesReservas[i] = false;
+		}
+
+		// TabelaReservas = new JTable(teste, colunas);
+
+		// SE FOR MEXER NO DESIGN TEM Q COMENTAR DAKI \/ E DESCOMENTAR O DE CIMA
+		// ======================================================================== //
 		TabelaReservas = new JTable(playersReservas, colunas);
-		//TabelaReservas = new JTable(teste, colunas);
+		TabelaReservas.setModel(new DefaultTableModel(playersReservas, colunas) {
+			boolean[] columnEditables = falsesReservas;
+
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		TabelaReservas.getColumnModel().getColumn(0).setResizable(false);
+		TabelaReservas.getColumnModel().getColumn(1).setResizable(false);
+		TabelaReservas.getColumnModel().getColumn(2).setResizable(false);
+		TabelaReservas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		// ======================================================================== //
+		// ATÉ AKI
+
 		scrollPane_1.setViewportView(TabelaReservas);
 		// ==================================================================== //
 
@@ -109,7 +155,7 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
-		Time adversario = futirio.getTimeJogador().getAdversario((futirio.getCarioca().getIndexRodadaAtual()-1));
+		Time adversario = futirio.getTimeJogador().getAdversario((futirio.getCarioca().getIndexRodadaAtual() - 1));
 
 		JLabel escudoAdversario = new JLabel("");
 		escudoAdversario.setBounds(498, 201, 110, 110);
@@ -143,7 +189,7 @@ public class GerenciaTime extends JFrame {
 				RodadaSwing partida = new RodadaSwing(futirio);
 				partida.setVisible(true);
 				dispose();
-				
+
 			}
 		});
 		btnJogar.setBounds(508, 390, 89, 23);
@@ -207,7 +253,7 @@ public class GerenciaTime extends JFrame {
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(21, 133, 207, 294);
 		contentPane.add(scrollPane);
-		
+
 		String[] colunas = { "Posição", "Nome", "Habilidade" };
 
 		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
