@@ -47,31 +47,38 @@ public class Jogador implements Serializable {
 		Random random = new Random();
 
 		if (random.nextInt(1000) == 7) {
-			this.nome = "Pelézin";
-			this.gerarPelezinShiny();
-			this.isEstrela = true;
-			this.posicaoRecomendada = posicao;
+			gerarPelezinShiny();
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
 			gerarTxContrato();
-
 		} else if (random.nextInt(50) == 7) {
-			this.isEstrela = true;
 			gerarNome();
-			gerarAtributos(posicao);
+			
+			if (nome.equals("Pelézin")) {
+				gerarPelezinShiny();
+			} else {
+				gerarAtributos(posicao);
+				setIsEstrela(true);
+			}
+			
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
 			gerarTxContrato();
 		} else {
 			gerarNome();
-			gerarAtributos(posicao);
+			
+			if (nome.equals("Pelézin")) {
+				gerarPelezinShiny();
+			} else {
+				gerarAtributos(posicao);
+			}
+			
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
 			gerarTxContrato();
-			
 		}
 
 	}
@@ -98,23 +105,30 @@ public class Jogador implements Serializable {
 		Random random = new Random();
 
 		if (random.nextInt(1000) == 7) {
-			this.gerarPelezinShiny();
-			this.isEstrela = true;
-			this.posicaoRecomendada = posicao;
+			gerarPelezinShiny();
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
 			gerarTxContrato();
-
 		} else if (random.nextInt(50) == 7) {
-			this.isEstrela = true;
-			gerarAtributos(posicao);
+			if (nome.equals("Pelézin")) {
+				gerarPelezinShiny();
+			} else {
+				gerarAtributos(posicao);
+				setIsEstrela(true);
+			}
+			
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
 			gerarTxContrato();
 		} else {
-			gerarAtributos(posicao);
+			if (nome.equals("Pelézin")) {
+				gerarPelezinShiny();
+			} else {
+				gerarAtributos(posicao);
+			}
+			
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
@@ -465,42 +479,42 @@ public class Jogador implements Serializable {
 	// Métodos
 
 	// TODO: COMENTAR
-	
+
 	private void gerarTxContrato() {
-		
-		this.txContrato = this.getSalario()*3;
-		
+
+		this.txContrato = this.getSalario() * 3;
+
 	}
-	
+
 	private void gerarPelezinShiny() {
-
-		this.chute = 150;
-		this.drible = 150;
-		this.passe = 150;
-		this.desarme = 150;
-		this.defesa = 150;
-
+		nome = "Pelézin";
+		this.chute = 100;
+		this.drible = 100;
+		this.passe = 100;
+		this.desarme = 100;
+		this.defesa = 100;
+		setIsEstrela(true);
 	}
 
 	private void gerarSalario() {
 
 		if (this.getHabilidade() >= 90) {
-			this.salario = this.getHabilidade()*1000;
+			this.salario = this.getHabilidade() * 1000;
 
 		} else if ((this.getHabilidade() >= 80) && (this.getHabilidade() < 90)) {
-			this.salario = this.getHabilidade()*900;
+			this.salario = this.getHabilidade() * 900;
 
 		} else if ((this.getHabilidade() >= 65) && (this.getHabilidade() < 80)) {
-			this.salario = this.getHabilidade()*600;
+			this.salario = this.getHabilidade() * 600;
 
 		} else if ((this.getHabilidade() >= 50) && (this.getHabilidade() < 65)) {
-			this.salario = this.getHabilidade()*450;
+			this.salario = this.getHabilidade() * 450;
 
 		} else if ((this.getHabilidade() >= 30) && (this.getHabilidade() < 50)) {
-			this.salario = this.getHabilidade()*300;
+			this.salario = this.getHabilidade() * 300;
 
 		} else if (this.getHabilidade() < 30) {
-			this.salario = this.getHabilidade()*250;
+			this.salario = this.getHabilidade() * 250;
 		}
 	}
 
@@ -580,6 +594,9 @@ public class Jogador implements Serializable {
 	private Posicao calcularPosicaoRecomendada() {
 		double mediaGOL, mediaDEFESA, mediaMEIA, mediaATAQUE;
 		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
+		
+		if (chute == 150 && drible == 150 && passe == 150 && desarme == 150 && defesa == 150)
+			return Posicao.TODAS;
 
 		// Pesos da posição GOL
 		chutePeso = Posicao.GOL.getChutePeso();

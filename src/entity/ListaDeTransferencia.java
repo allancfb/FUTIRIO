@@ -53,7 +53,7 @@ public class ListaDeTransferencia {
 
 	// METODOS
 
-	public void AtualizaLista() {
+	public void atualizaLista() {
 
 		if (jogadores.size() < 25) {
 
@@ -104,7 +104,7 @@ public class ListaDeTransferencia {
 	public Jogador enviarJogadorComprado(Jogador jogador) {
 
 		jogadores.remove(jogador);
-		AtualizaLista();
+		atualizaLista();
 		return jogador;
 
 	}

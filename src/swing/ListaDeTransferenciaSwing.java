@@ -55,17 +55,6 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		btnVoltar.setBounds(485, 24, 89, 23);
 		contentPane.add(btnVoltar);
 
-		// TEM Q VER SE ESSA PARADA AKI FUNCIONA
-		JButton btnComprar = new JButton("Comprar");
-		btnComprar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				futirio.getCarioca().getTimes().get(futirio.getIndexTime()).comprarJogador(
-						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
-			}
-		});
-		btnComprar.setBounds(485, 203, 89, 23);
-		contentPane.add(btnComprar);
-
 		String[] colunas = { "Posição", "Jogador", "Habilidade", "Salário", "Taxa de Contrato" };
 		String[][] jogadores = futirio.getCarioca().getListaDeTransferencia().getAllAtributosJogador();
 
@@ -89,6 +78,33 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		});
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
+
+		JButton btnComprar = new JButton("Comprar");
+		btnComprar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				futirio.getCarioca().getTimes().get(futirio.getIndexTime()).comprarJogador(
+						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
+				futirio.getCarioca().getListaDeTransferencia().enviarJogadorComprado(
+						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
+				
+				futirio.getCarioca().getListaDeTransferencia().atualizaLista();
+				
+				String[] colunas = { "Posição", "Jogador", "Habilidade", "Salário", "Taxa de Contrato" };
+				String[][] jogadores = futirio.getCarioca().getListaDeTransferencia().getAllAtributosJogador();
+
+				table.setModel(new DefaultTableModel(jogadores, colunas) {
+					boolean[] columnEditables = falses;
+
+					public boolean isCellEditable(int row, int column) {
+						return columnEditables[column];
+					}
+				});
+				
+				scrollPane.setViewportView(table);
+			}
+		});
+		btnComprar.setBounds(485, 203, 89, 23);
+		contentPane.add(btnComprar);
 
 		JLabel bg = new JLabel("");
 		bg.setIcon(new ImageIcon(ListaDeTransferenciaSwing.class.getResource("/Imagens/fundoGrande.png")));
