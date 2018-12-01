@@ -93,6 +93,14 @@ public class Time implements Serializable {
 	public Jogador getJogador(int i) {
 		return getJogadores().get(i);
 	}
+	
+	public Jogador getJogadorTitular(int i) {
+		return getJogadoresTitulares().get(i);
+	}
+	
+	public Jogador getJogadorReserva(int i) {
+		return getJogadoresReservas().get(i);
+	} 
 
 	public void addAdversario(Time adversario) {
 		adversarios.add(adversario);
