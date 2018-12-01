@@ -14,7 +14,7 @@ public class ListaDeTransferencia {
 		Random random = new Random();
 
 		for (int i = 0; i < 25; i++) {
-			int aux = random.nextInt(3);
+			int aux = random.nextInt(4);
 			Posicao posicao;
 			switch (aux) {
 
@@ -60,7 +60,7 @@ public class ListaDeTransferencia {
 			Random random = new Random();
 
 			for (int i = 0; i < (25 - jogadores.size()); i++) {
-				int aux = random.nextInt(3);
+				int aux = random.nextInt(4);
 				Posicao posicao;
 				switch (aux) {
 
@@ -116,7 +116,8 @@ public class ListaDeTransferencia {
 
 		for (int i = 0; i < jogadores.size(); i++) {
 			String[] aux = { this.jogadores.get(i).getPosicao().getNome(), jogadores.get(i).getNome(),
-					Double.toString(jogadores.get(i).getHabilidade()), Double.toString(jogadores.get(i).getSalario()),Double.toString(jogadores.get(i).getTxContrato()) };
+					Double.toString(jogadores.get(i).getHabilidade()), Double.toString(jogadores.get(i).getSalario()),
+					Double.toString(jogadores.get(i).getTxContrato()) };
 			retorno[i] = aux;
 		}
 		return retorno;
