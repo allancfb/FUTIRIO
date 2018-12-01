@@ -154,7 +154,7 @@ public class Campeonato {
 		}
 	}
 
-	public void PassarRodada() {
+	public void passarRodada() {
 		rodadaAtual++;
 		numPartidasJogadas = numPartidasJogadas + 8;
 

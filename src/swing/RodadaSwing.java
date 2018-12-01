@@ -123,7 +123,7 @@ public class RodadaSwing extends JFrame {
 		continuar.setBounds(490, 326, 89, 23);
 		contentPane.add(continuar);
 
-		JButton comecar = new JButton("Come\u00E7ar");
+		JButton comecar = new JButton("Começar");
 		comecar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				comecar.setVisible(false);
@@ -143,9 +143,11 @@ public class RodadaSwing extends JFrame {
 							}
 
 							if (i == 90) {
+								terminarRodada(futirio);
+								
 								JOptionPane.showMessageDialog(null, "A rodada acabou!");
 								continuar.setVisible(true);
-								futirio.getCarioca().PassarRodada();
+								futirio.getCarioca().passarRodada();
 							}
 
 						}
@@ -161,5 +163,9 @@ public class RodadaSwing extends JFrame {
 		bg.setBounds(0, 0, 594, 370);
 		contentPane.add(bg);
 
+	}
+
+	public void terminarRodada(OJogo futirio) {
+		
 	}
 }
