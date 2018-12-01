@@ -54,6 +54,7 @@ public class Campeonato {
 	public ArrayList<Time> getTimes() {
 		return times;
 	}
+
 	public static int retornaPosicao(Time time) {
 		return times.indexOf(time);
 	}
@@ -63,9 +64,9 @@ public class Campeonato {
 	}
 
 	public Rodada getRodadaAtual() {
-		return getRodadas()[getIndexRodadaAtual()-1];
+		return getRodadas()[getIndexRodadaAtual() - 1];
 	}
-	
+
 	// TODO: comentar
 	public static int getRodadasTotais() {
 		return rodadasTotais;
@@ -112,8 +113,7 @@ public class Campeonato {
 	}
 
 	// M�todos
-	
-	 
+
 	// ////////////////////////////////////////////////////////////////////////
 
 	public Rodada getProximaRodada() {
@@ -182,7 +182,7 @@ public class Campeonato {
 	public void organizaTabela() {
 
 		TabelaComparator tabelaComparator = new TabelaComparator();
-        Collections.sort(tabela, tabelaComparator);
+		Collections.sort(tabela, tabelaComparator);
 
 	}
 

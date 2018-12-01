@@ -85,7 +85,7 @@ public class teste extends JFrame {
 		bg.setBounds(0, 0, 584, 361);
 		bg.setIcon(new ImageIcon(teste.class.getResource("/Imagens/fundo.png")));
 		contentPane.add(bg);
-		
+
 		JList list = new JList();
 		list.setBounds(10, 54, 463, 296);
 		contentPane.add(list);

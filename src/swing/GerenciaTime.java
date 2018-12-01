@@ -262,14 +262,14 @@ public class GerenciaTime extends JFrame {
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAno.setBounds(498, 96, 120, 27);
 		contentPane.add(lblAno);
-		
+
 		JLabel lblReservas = new JLabel("Reservas");
 		lblReservas.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblReservas.setHorizontalAlignment(SwingConstants.CENTER);
 		lblReservas.setForeground(Color.WHITE);
 		lblReservas.setBounds(281, 130, 207, 22);
 		contentPane.add(lblReservas);
-		
+
 		JLabel labelTitulares = new JLabel("Titulares");
 		labelTitulares.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitulares.setForeground(Color.WHITE);
@@ -289,24 +289,24 @@ public class GerenciaTime extends JFrame {
 	public void atualizarTabelas(JTable TabelaTitulares, JTable TabelaReservas, OJogo futirio, JScrollPane scrollPane,
 			JScrollPane scrollPane_1) {
 		String[] colunas = { "Posição", "Nome", "Habilidade" };
-		
+
 		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
 				.getAtributosJogadoresTitulares();
 		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
 				.getAtributosJogadoresReservas();
-		
+
 		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
 		boolean[] falsesTitulares = new boolean[playersTitulares.length];
 		for (int i = 0; i < playersTitulares.length; i++) {
 			falsesTitulares[i] = false;
 		}
-		
+
 		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
 		boolean[] falsesReservas = new boolean[playersReservas.length];
 		for (int i = 0; i < playersReservas.length; i++) {
 			falsesReservas[i] = false;
 		}
-		
+
 		TabelaTitulares.setModel(new DefaultTableModel(playersTitulares, colunas) {
 			boolean[] columnEditables = falsesTitulares;
 
@@ -314,7 +314,7 @@ public class GerenciaTime extends JFrame {
 				return columnEditables[column];
 			}
 		});
-		
+
 		TabelaReservas.setModel(new DefaultTableModel(playersReservas, colunas) {
 			boolean[] columnEditables = falsesReservas;
 

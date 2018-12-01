@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 
 public class Creditos extends JFrame {
 
-	//private JFrame creditos;
+	// private JFrame creditos;
 	private JPanel contentPane;
 
 	/**
@@ -46,7 +46,7 @@ public class Creditos extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -58,7 +58,7 @@ public class Creditos extends JFrame {
 		});
 		btnVoltar.setBounds(10, 336, 89, 23);
 		contentPane.add(btnVoltar);
-		
+
 		JLabel background = new JLabel("");
 		background.setIcon(new ImageIcon(Creditos.class.getResource("/Imagens/creditosBG.png")));
 		background.setBounds(0, 0, 600, 399);

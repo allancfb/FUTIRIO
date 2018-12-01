@@ -86,9 +86,9 @@ public class ListaDeTransferenciaSwing extends JFrame {
 						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
 				futirio.getCarioca().getListaDeTransferencia().enviarJogadorComprado(
 						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
-				
+
 				futirio.getCarioca().getListaDeTransferencia().atualizaLista();
-				
+
 				String[] colunas = { "Posição", "Jogador", "Habilidade", "Salário", "Taxa de Contrato" };
 				String[][] jogadores = futirio.getCarioca().getListaDeTransferencia().getAllAtributosJogador();
 
@@ -99,7 +99,7 @@ public class ListaDeTransferenciaSwing extends JFrame {
 						return columnEditables[column];
 					}
 				});
-				
+
 				scrollPane.setViewportView(table);
 			}
 		});

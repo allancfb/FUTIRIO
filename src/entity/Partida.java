@@ -38,7 +38,7 @@ public class Partida {
 	public String getPlacar() {
 		return placar;
 	}
-	
+
 	public int getTime1Gols() {
 		return time1Gols;
 	}
@@ -145,5 +145,5 @@ public class Partida {
 			break;
 		}
 	}
-	
+
 }

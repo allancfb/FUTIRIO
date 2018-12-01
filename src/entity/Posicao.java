@@ -46,7 +46,7 @@ public enum Posicao implements Serializable {
 	public int getSomaPesos() {
 		return somaPesos;
 	}
-	
+
 	public static Posicao retornaPosicao(String nome) {
 		if (nome == "Gol" || nome == "GOL") {
 			return Posicao.GOL;
@@ -57,9 +57,9 @@ public enum Posicao implements Serializable {
 		} else if (nome == "Ataque" || nome == "ATAQUE") {
 			return Posicao.ATAQUE;
 		} else if (nome == "Reserva" || nome == "RESERVA") {
-		    return Posicao.DEFAULT;
+			return Posicao.DEFAULT;
 		}
-		
+
 		return null;
 	}
 

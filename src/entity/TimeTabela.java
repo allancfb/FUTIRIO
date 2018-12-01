@@ -1,9 +1,8 @@
 package entity;
+
 import java.util.*;
 
-
-
-public class TimeTabela implements Comparable<TimeTabela>{
+public class TimeTabela implements Comparable<TimeTabela> {
 
 	private Time time;
 	private int pontos;
@@ -16,7 +15,7 @@ public class TimeTabela implements Comparable<TimeTabela>{
 	private String nome;
 
 	// Contrutores
-	
+
 	// Construtor Definitivo
 	public TimeTabela(Time time) {
 
@@ -48,7 +47,7 @@ public class TimeTabela implements Comparable<TimeTabela>{
 	}
 
 	// Getters and Setters
-	
+
 	// TODO: comentar
 	public Time getTime() {
 		return time;
@@ -97,63 +96,64 @@ public class TimeTabela implements Comparable<TimeTabela>{
 	public String getNome() {
 		return nome;
 	}
-	
+
 	// Métodos
-	
-	
+
 	public int compareTo(TimeTabela outroTimeTabela) {
-        if (this.getPontos() < outroTimeTabela.getPontos()) {
-            return 1;
-        }else if(this.getPontos() > outroTimeTabela.getPontos()) {
-            return -1;
-        }else {
-        	if(this.getVitorias() < outroTimeTabela.getVitorias()) {
-        		return 1;
-        	}else if(this.getVitorias() > outroTimeTabela.getVitorias()) {
-                return -1;
-            }else {
-            	if(this.getSaldoGols() < outroTimeTabela.getSaldoGols()) {
-            		return 1;
-            	}else if(this.getSaldoGols() > outroTimeTabela.getSaldoGols()) {
-            		return -1;
-            	}else {
-            		if(this.getQtGols() < outroTimeTabela.getQtGols()) {
-            			return 1;
-            		}else if(this.getQtGols() > outroTimeTabela.getQtGols()) {
-            			return -1;
-            		}else {
-            			if(this.getEmpates() > outroTimeTabela.getEmpates()) {
-            				return 1;
-            			}else if(this.getEmpates() < outroTimeTabela.getEmpates()) {
-            				return -1;
-            			}else {
-            				if(this.getDerrotas() > outroTimeTabela.getDerrotas()) {
-            					return 1;
-            				}else if(this.getDerrotas() < outroTimeTabela.getDerrotas()){
-            					return -1;
-            				}else {
-            					if(this.getGolsSofridos() > outroTimeTabela.getGolsSofridos()) {
-            						return 1;
-            					}else if(this.getGolsSofridos() < outroTimeTabela.getGolsSofridos()) {
-            						return -1;
-            					}else {
-            					    if(Campeonato.retornaPosicao(this.getTime()) > Campeonato.retornaPosicao(outroTimeTabela.getTime())) {
-            					       return -1;
-            					    }else if(Campeonato.retornaPosicao(this.getTime()) < Campeonato.retornaPosicao(outroTimeTabela.getTime())) {
-            					    	return 1;
-            					    }
-            					}
-            					
-            				}
-            			}
-            		}
-            	}
-            }
-        }
-        
-        return 0;
-    }
-	
+		if (this.getPontos() < outroTimeTabela.getPontos()) {
+			return 1;
+		} else if (this.getPontos() > outroTimeTabela.getPontos()) {
+			return -1;
+		} else {
+			if (this.getVitorias() < outroTimeTabela.getVitorias()) {
+				return 1;
+			} else if (this.getVitorias() > outroTimeTabela.getVitorias()) {
+				return -1;
+			} else {
+				if (this.getSaldoGols() < outroTimeTabela.getSaldoGols()) {
+					return 1;
+				} else if (this.getSaldoGols() > outroTimeTabela.getSaldoGols()) {
+					return -1;
+				} else {
+					if (this.getQtGols() < outroTimeTabela.getQtGols()) {
+						return 1;
+					} else if (this.getQtGols() > outroTimeTabela.getQtGols()) {
+						return -1;
+					} else {
+						if (this.getEmpates() > outroTimeTabela.getEmpates()) {
+							return 1;
+						} else if (this.getEmpates() < outroTimeTabela.getEmpates()) {
+							return -1;
+						} else {
+							if (this.getDerrotas() > outroTimeTabela.getDerrotas()) {
+								return 1;
+							} else if (this.getDerrotas() < outroTimeTabela.getDerrotas()) {
+								return -1;
+							} else {
+								if (this.getGolsSofridos() > outroTimeTabela.getGolsSofridos()) {
+									return 1;
+								} else if (this.getGolsSofridos() < outroTimeTabela.getGolsSofridos()) {
+									return -1;
+								} else {
+									if (Campeonato.retornaPosicao(this.getTime()) > Campeonato
+											.retornaPosicao(outroTimeTabela.getTime())) {
+										return -1;
+									} else if (Campeonato.retornaPosicao(this.getTime()) < Campeonato
+											.retornaPosicao(outroTimeTabela.getTime())) {
+										return 1;
+									}
+								}
+
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return 0;
+	}
+
 	// Atualiza o saldo de gols
 	public void atualizarSaldoGols(int gols) {
 		this.saldoGols = this.qtGols - this.golsSofridos;
@@ -169,7 +169,7 @@ public class TimeTabela implements Comparable<TimeTabela>{
 		this.vitorias += 1;
 		this.pontos += 3;
 	}
-	
+
 	// Adiciona empate
 	public void addEmpate() {
 		this.empates += 1;

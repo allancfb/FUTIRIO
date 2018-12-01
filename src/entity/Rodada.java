@@ -52,7 +52,7 @@ public class Rodada {
 		}
 
 		for (int i = 1; i <= 90; i++) {
-		
+
 			run();
 
 			Thread.currentThread();
@@ -68,12 +68,12 @@ public class Rodada {
 
 	// Roda 1 minuto de todas as partidas da rodada
 	public void run() {
-		
-		minuto +=1;
+
+		minuto += 1;
 		for (Partida partida : partidas) {
 			partida.run();
 		}
-		
+
 		Thread.currentThread();
 		try {
 			Thread.sleep(500);

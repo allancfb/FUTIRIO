@@ -54,27 +54,27 @@ public class Jogador implements Serializable {
 			gerarTxContrato();
 		} else if (random.nextInt(50) == 7) {
 			gerarNome();
-			
+
 			if (nome.equals("Pelézin")) {
 				gerarPelezinShiny();
 			} else {
 				gerarAtributos(posicao);
 				setIsEstrela(true);
 			}
-			
+
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
 			gerarTxContrato();
 		} else {
 			gerarNome();
-			
+
 			if (nome.equals("Pelézin")) {
 				gerarPelezinShiny();
 			} else {
 				gerarAtributos(posicao);
 			}
-			
+
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
@@ -117,7 +117,7 @@ public class Jogador implements Serializable {
 				gerarAtributos(posicao);
 				setIsEstrela(true);
 			}
-			
+
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
@@ -128,7 +128,7 @@ public class Jogador implements Serializable {
 			} else {
 				gerarAtributos(posicao);
 			}
-			
+
 			atualizarHabilidade();
 			atualizarPosicaoRecomendada();
 			gerarSalario();
@@ -594,7 +594,7 @@ public class Jogador implements Serializable {
 	private Posicao calcularPosicaoRecomendada() {
 		double mediaGOL, mediaDEFESA, mediaMEIA, mediaATAQUE;
 		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
-		
+
 		if (chute == 150 && drible == 150 && passe == 150 && desarme == 150 && defesa == 150)
 			return Posicao.TODAS;
 

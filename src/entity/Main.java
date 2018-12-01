@@ -174,7 +174,7 @@ public class Main {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Usar quando quiser gerar os times novamente
 	 */

@@ -29,18 +29,12 @@ public class Tabela extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Tabela frame = new Tabela();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
+	/*
+	 * public static void main(String[] args) { EventQueue.invokeLater(new
+	 * Runnable() { public void run() { try { Tabela frame = new Tabela();
+	 * frame.setVisible(true); } catch (Exception e) { e.printStackTrace(); } } });
+	 * }
+	 */
 
 	/**
 	 * Create the frame.
@@ -53,13 +47,13 @@ public class Tabela extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblTabela = new JLabel("Tabela");
 		lblTabela.setForeground(Color.WHITE);
 		lblTabela.setFont(new Font("Tahoma", Font.PLAIN, 34));
 		lblTabela.setBounds(241, 11, 101, 41);
 		contentPane.add(lblTabela);
-		
+
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -71,30 +65,30 @@ public class Tabela extends JFrame {
 		});
 		btnVoltar.setBounds(485, 326, 89, 23);
 		contentPane.add(btnVoltar);
-		
-		String[] colunas = { "Time", "Pontos", "Vitorias", "Saldo de Gols", "Empates", "Derrotas"};
+
+		String[] colunas = { "Time", "Pontos", "Vitorias", "Saldo de Gols", "Empates", "Derrotas" };
 		String[][] times = { { "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"},
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas"}};
-		
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
+				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" } };
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(52, 59, 480, 256);
 		contentPane.add(scrollPane);
-		
-		table = new JTable(times,colunas);
+
+		table = new JTable(times, colunas);
 		table.setShowVerticalLines(false);
 		table.setEnabled(false);
 		scrollPane.setViewportView(table);

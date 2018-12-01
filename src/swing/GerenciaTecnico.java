@@ -47,13 +47,11 @@ public class GerenciaTecnico extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	
-	
-	
+
 	public GerenciaTecnico() {
 		futirio = new OJogo();
 		futirio.createCarioca(ano);
-		
+
 		setTitle("Escolha o time que deseja jogar");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
@@ -83,23 +81,23 @@ public class GerenciaTecnico extends JFrame {
 							JOptionPane.ERROR_MESSAGE);
 				} else {
 					int index = 0;
-					if(times.getSelectedIndex()==0) {
+					if (times.getSelectedIndex() == 0) {
 						futirio.setIndexENUM(0);
 						futirio.setIndexTime(4);
-					}else if(times.getSelectedIndex()==1) {
+					} else if (times.getSelectedIndex() == 1) {
 						futirio.setIndexENUM(1);
 						futirio.setIndexTime(6);
-					}else if(times.getSelectedIndex()==2) {
+					} else if (times.getSelectedIndex() == 2) {
 						futirio.setIndexENUM(2);
 						futirio.setIndexTime(7);
-					}else if(times.getSelectedIndex()==3){
+					} else if (times.getSelectedIndex() == 3) {
 						futirio.setIndexENUM(3);
 						futirio.setIndexTime(14);
 					}
-					
+
 					futirio.setTimeJogador(futirio.getCarioca().getTimes().get(futirio.getIndexTime()));
 					futirio.setNomeTecnico(nomeTecnico.getText());
-					
+
 					GerenciaTime jogo = new GerenciaTime(futirio);
 					jogo.setLocationRelativeTo(null);
 					jogo.setVisible(true);
