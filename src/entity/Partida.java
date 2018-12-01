@@ -93,11 +93,11 @@ public class Partida {
 		double sorteioPosse = r.nextDouble() * 100;
 
 		// Confere se algum time fez gol
-		if (sorteioPosse <= geral1Partida / 18) {
+		if (sorteioPosse <= geral1Partida / 20) {
 			time1Gols++;
 
 			atualizarPlacar();
-		} else if (sorteioPosse <= (geral2Partida / 18) + (geral1Partida / 18)) {
+		} else if (sorteioPosse <= (geral2Partida / 20) + (geral1Partida / 18)) {
 			time2Gols++;
 
 			atualizarPlacar();
