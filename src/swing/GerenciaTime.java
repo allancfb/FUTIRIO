@@ -73,6 +73,7 @@ public class GerenciaTime extends JFrame {
 			falsesTitulares[i] = false;
 		}
 
+
 		// TabelaTitulares = new JTable(teste, colunas);
 
 		// SE FOR MEXER NO DESIGN TEM Q COMENTAR DAKI \/ E DESCOMENTAR O DE CIMA
@@ -99,8 +100,8 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(scrollPane_1);
 
 		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
-		boolean[] falsesReservas = new boolean[playersTitulares.length];
-		for (int i = 0; i < playersTitulares.length; i++) {
+		boolean[] falsesReservas = new boolean[playersReservas.length];
+		for (int i = 0; i < playersReservas.length; i++) {
 			falsesReservas[i] = false;
 		}
 
