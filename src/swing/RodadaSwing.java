@@ -48,6 +48,7 @@ public class RodadaSwing extends JFrame {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -156,8 +157,8 @@ public class RodadaSwing extends JFrame {
 		comecar.setBounds(5, 326, 89, 23);
 		contentPane.add(comecar);
 
-		bg.setIcon(new ImageIcon(RodadaSwing.class.getResource("/Imagens/fundo.png")));
-		bg.setBounds(0, 0, 584, 360);
+		bg.setIcon(new ImageIcon(RodadaSwing.class.getResource("/Imagens/fundoGrande.png")));
+		bg.setBounds(0, 0, 594, 370);
 		contentPane.add(bg);
 
 	}

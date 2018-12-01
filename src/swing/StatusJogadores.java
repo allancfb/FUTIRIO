@@ -31,6 +31,7 @@ public class StatusJogadores extends JFrame {
 	public StatusJogadores(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -69,8 +70,8 @@ public class StatusJogadores extends JFrame {
 		contentPane.add(btnVoltar);
 		
 		JLabel bg = new JLabel("");
-		bg.setIcon(new ImageIcon(StatusJogadores.class.getResource("/Imagens/fundo.png")));
-		bg.setBounds(0, 0, 584, 360);
+		bg.setIcon(new ImageIcon(StatusJogadores.class.getResource("/Imagens/fundoGrande.png")));
+		bg.setBounds(0, 0, 594, 370);
 		contentPane.add(bg);
 	}
 }
