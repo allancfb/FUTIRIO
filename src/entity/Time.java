@@ -93,14 +93,14 @@ public class Time implements Serializable {
 	public Jogador getJogador(int i) {
 		return getJogadores().get(i);
 	}
-	
+
 	public Jogador getJogadorTitular(int i) {
 		return getJogadoresTitulares().get(i);
 	}
-	
+
 	public Jogador getJogadorReserva(int i) {
 		return getJogadoresReservas().get(i);
-	} 
+	}
 
 	public void addAdversario(Time adversario) {
 		adversarios.add(adversario);
@@ -145,8 +145,8 @@ public class Time implements Serializable {
 		String[][] retorno = new String[jogadoresReservas.size()][3];
 
 		for (int i = 0; i < jogadoresReservas.size(); i++) {
-			String[] aux = { this.jogadoresReservas.get(i).getPosicaoRecomendada().getNome(), jogadoresReservas.get(i).getNome(),
-					Double.toString(jogadoresReservas.get(i).getHabilidade()) };
+			String[] aux = { this.jogadoresReservas.get(i).getPosicaoRecomendada().getNome(),
+					jogadoresReservas.get(i).getNome(), Double.toString(jogadoresReservas.get(i).getHabilidade()) };
 			retorno[i] = aux;
 		}
 		return retorno;

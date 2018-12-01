@@ -184,33 +184,8 @@ public class Main {
 	}
 
 	public static void main(String args[]) {
-		// DESCOMENTAR A LINHA ABAIXO SE QUISER ATUALIZAR OS TIMES
-		// atualizarTimes();
-		
-		Time a = carregarTime("Flamengo");
-		
-		System.out.println("-----TITULARES-----");
-		for (Jogador jogador : a.getJogadoresTitulares()) {
-			System.out.println(jogador.getNome());
-		}
-		
-		System.out.println("-----RESERVAS-----");
-		for (Jogador jogador : a.getJogadoresReservas()) {
-			System.out.println(jogador.getNome());
-		}
-
-		System.out.println("-------SUBSTITUIÇÃO--------");
-		a.substituicao(a.getJogadoresTitulares().get(5), a.getJogadoresReservas().get(5));
-
-		System.out.println("-----TITULARES-----");
-		for (Jogador jogador : a.getJogadoresTitulares()) {
-			System.out.println(jogador.getNome());
-		}
-		
-		System.out.println("-----RESERVAS-----");
-		for (Jogador jogador : a.getJogadoresReservas()) {
-			System.out.println(jogador.getNome());
-		}
+//		DESCOMENTAR A LINHA ABAIXO SE QUISER ATUALIZAR OS TIMES (NÃO ESQUECER DE COMENTAR NOVAMENTE APÓS RODAR)
+//		atualizarTimes();
 	}
 
 }
