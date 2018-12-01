@@ -36,7 +36,7 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblListaDeTransferncias = new JLabel("Lista de Transfer\u00EAncias");
+		JLabel lblListaDeTransferncias = new JLabel("Lista de Transferências");
 		lblListaDeTransferncias.setForeground(Color.WHITE);
 		lblListaDeTransferncias.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblListaDeTransferncias.setBounds(81, -1, 323, 56);
@@ -65,7 +65,7 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		btnComprar.setBounds(485, 203, 89, 23);
 		contentPane.add(btnComprar);
 
-		String[] colunas = { "PosiÃ§Ã£o", "Jogador", "Habilidade", "SalÃ¡rio", "Taxa de Contrato" };
+		String[] colunas = { "Posição", "Jogador", "Habilidade", "Salário", "Taxa de Contrato" };
 		String[][] jogadores = futirio.getCarioca().getListaDeTransferencia().getAllAtributosJogador();
 
 		JScrollPane scrollPane = new JScrollPane();
