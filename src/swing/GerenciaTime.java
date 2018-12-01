@@ -288,9 +288,6 @@ public class GerenciaTime extends JFrame {
 
 	public void atualizarTabelas(JTable TabelaTitulares, JTable TabelaReservas, OJogo futirio, JScrollPane scrollPane,
 			JScrollPane scrollPane_1) {
-		TabelaTitulares.removeAll();
-		TabelaReservas.removeAll();
-		
 		String[] colunas = { "Posição", "Nome", "Habilidade" };
 		
 		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
@@ -325,44 +322,6 @@ public class GerenciaTime extends JFrame {
 				return columnEditables[column];
 			}
 		});
-		
-		scrollPane.setViewportView(TabelaTitulares);
-		scrollPane_1.setViewportView(TabelaReservas);
-		
-//		scrollPane_1.remove(TabelaReservas);
-//		scrollPane_1.setViewportView(TabelaReservas);
-
-//
-//
-//		TabelaTitulares = new JTable(playersTitulares, colunas);
-//		TabelaTitulares.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//		TabelaTitulares.setModel(new DefaultTableModel(playersTitulares, colunas) {
-//			boolean[] columnEditables = falsesTitulares;
-//
-//			public boolean isCellEditable(int row, int column) {
-//				return columnEditables[column];
-//			}
-//		});
-//		TabelaTitulares.getColumnModel().getColumn(0).setResizable(false);
-//		TabelaTitulares.getColumnModel().getColumn(1).setResizable(false);
-//		TabelaTitulares.getColumnModel().getColumn(2).setResizable(false);
-//
-//		scrollPane.setViewportView(TabelaTitulares);
-//
-//		TabelaReservas = new JTable(playersReservas, colunas);
-//		TabelaReservas.setModel(new DefaultTableModel(playersReservas, colunas) {
-//			boolean[] columnEditables = falsesReservas;
-//
-//			public boolean isCellEditable(int row, int column) {
-//				return columnEditables[column];
-//			}
-//		});
-//		TabelaReservas.getColumnModel().getColumn(0).setResizable(false);
-//		TabelaReservas.getColumnModel().getColumn(1).setResizable(false);
-//		TabelaReservas.getColumnModel().getColumn(2).setResizable(false);
-//		TabelaReservas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//
-//		scrollPane_1.setViewportView(TabelaReservas);
 	}
 
 	public void salvarJogo(Campeonato campeonato) {
