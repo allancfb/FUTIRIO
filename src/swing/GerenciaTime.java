@@ -60,7 +60,7 @@ public class GerenciaTime extends JFrame {
 		String[][] teste = { { "   ", "   e", "    " }, { "  o", "    ", "   " } };
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(21, 133, 207, 294);
+		scrollPane.setBounds(21, 154, 207, 273);
 		contentPane.add(scrollPane);
 		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
 				.getAtributosJogadoresTitulares();
@@ -95,7 +95,7 @@ public class GerenciaTime extends JFrame {
 		scrollPane.setViewportView(TabelaTitulares);
 
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(281, 133, 207, 294);
+		scrollPane_1.setBounds(281, 154, 207, 273);
 		contentPane.add(scrollPane_1);
 
 		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
@@ -211,7 +211,7 @@ public class GerenciaTime extends JFrame {
 		btnTabela.setBounds(498, 20, 120, 23);
 		contentPane.add(btnTabela);
 
-		JButton btnStatus = new JButton("Visualizar Status");
+		JButton btnStatus = new JButton("Status dos jogadores");
 		btnStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				StatusJogadores telaStatus = new StatusJogadores(futirio);
@@ -262,6 +262,20 @@ public class GerenciaTime extends JFrame {
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAno.setBounds(498, 96, 120, 27);
 		contentPane.add(lblAno);
+		
+		JLabel lblReservas = new JLabel("Reservas");
+		lblReservas.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblReservas.setHorizontalAlignment(SwingConstants.CENTER);
+		lblReservas.setForeground(Color.WHITE);
+		lblReservas.setBounds(281, 130, 207, 22);
+		contentPane.add(lblReservas);
+		
+		JLabel labelTitulares = new JLabel("Titulares");
+		labelTitulares.setHorizontalAlignment(SwingConstants.CENTER);
+		labelTitulares.setForeground(Color.WHITE);
+		labelTitulares.setFont(new Font("Tahoma", Font.BOLD, 15));
+		labelTitulares.setBounds(21, 130, 207, 22);
+		contentPane.add(labelTitulares);
 
 		JLabel bg = new JLabel("");
 		bg.setIcon(new ImageIcon(GerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
@@ -373,5 +387,4 @@ public class GerenciaTime extends JFrame {
 			}
 		});
 	}
-
 }
