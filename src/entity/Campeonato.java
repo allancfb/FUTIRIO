@@ -112,7 +112,17 @@ public class Campeonato {
 		return ano;
 	}
 
-	// Mï¿½todos
+	public String[][] getInformacoesTimesTabela() {
+		String [][] informacoesTimesTabela = new String[tabela.size()][6];
+		
+		for (int i = 0; i < tabela.size(); i++) {
+			informacoesTimesTabela[i] = tabela.get(i).getInformacoes();
+		}
+		
+		return informacoesTimesTabela;
+	}
+	
+	// Métodos
 
 	// ////////////////////////////////////////////////////////////////////////
 

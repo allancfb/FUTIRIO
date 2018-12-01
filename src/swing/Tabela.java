@@ -67,22 +67,7 @@ public class Tabela extends JFrame {
 		contentPane.add(btnVoltar);
 
 		String[] colunas = { "Time", "Pontos", "Vitorias", "Saldo de Gols", "Empates", "Derrotas" };
-		String[][] times = { { "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" },
-				{ "kk", "blz", "fera", "das", "asdasd", "asdasdas" } };
+		String[][] times = futirio.getCarioca().getInformacoesTimesTabela();
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(52, 59, 480, 256);
@@ -94,6 +79,7 @@ public class Tabela extends JFrame {
 		scrollPane.setViewportView(table);
 		table.setFillsViewportHeight(true);
 		table.setBorder(new LineBorder(new Color(0, 0, 0)));
+		
 		bg.setIcon(new ImageIcon(Tabela.class.getResource("/Imagens/fundoGrande.png")));
 		bg.setBounds(0, 0, 594, 370);
 		contentPane.add(bg);

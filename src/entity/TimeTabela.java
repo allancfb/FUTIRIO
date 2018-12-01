@@ -97,6 +97,13 @@ public class TimeTabela implements Comparable<TimeTabela> {
 		return nome;
 	}
 
+	public String[] getInformacoes() {
+		String[] informacoes = { nome, Integer.toString(pontos), Integer.toString(vitorias),
+				Integer.toString(saldoGols), Integer.toString(empates), Integer.toString(derrotas) };
+		
+		return informacoes;
+	}
+
 	// Métodos
 
 	public int compareTo(TimeTabela outroTimeTabela) {

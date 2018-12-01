@@ -40,32 +40,7 @@ public class Rodada {
 	}
 
 	// Métodos
-
-	// Roda 45 minutos de todas as partidas da rodada
-	public void start() {
-		// Delay pra não bugar o timer
-		Thread.currentThread();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		for (int i = 1; i <= 90; i++) {
-
-			run();
-
-			Thread.currentThread();
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-
-		}
-
-	}
-
+	
 	// Roda 1 minuto de todas as partidas da rodada
 	public void run() {
 
