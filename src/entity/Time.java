@@ -361,7 +361,7 @@ public class Time implements Serializable {
 		}
 
 		for (int i = 0; i < jogadores.size(); i++) {
-			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Sem posição")) {
+			if (jogadores.get(i).getPosicao() == Posicao.retornaPosicao("Reserva")) {
 				jogadoresReservas.add(jogadores.get(i));
 				contadorDeJogadores++;
 			}

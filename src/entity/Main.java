@@ -7,8 +7,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 import swing.OJogo;
@@ -176,37 +174,43 @@ public class Main {
 			return null;
 		}
 	}
+	
+	/**
+	 * Usar quando quiser gerar os times novamente
+	 */
+	public static void atualizarTimes() {
+		gerarTimes();
+		gerarTimesPrincipais();
+	}
 
 	public static void main(String args[]) {
-		/*
-		 * SUGESTÃO: Colocar isso no NewGame
-		 */
-
-//		Campeonato c = new Campeonato(2019);
-//		
-//		for (TimeTabela timeTabela : c.getTabela()) {
-//			System.out.println(timeTabela.getTime().getNome());
+		// atualizarTimes();
+		
+//		Time a = carregarTime("America");
+//		for (String[] jogador : a.getAtributosJogadoresReservas()) {
+//			for (String atributo : jogador) {
+//				System.out.println(atributo);
+//			}
 //		}
-//		System.out.println("----------");
-//		c.getTabela().get(3).setPontos(2);
-//		
-//		c.organizaTabela();
-//		
-//		for (TimeTabela timeTabela : c.getTabela()) {
-//			System.out.println(timeTabela.getTime().getNome());
-//		}
-		
-		
-		
-		
-		
-		
-//		Time flamengo = carregarTime("Flamengo");
-//		for (Jogador jogador : flamengo.getJogadoresReservas()) {
+//
+//		System.out.println("----------------");
+//
+//		for (Jogador jogador : a.getJogadoresReservas()) {
 //			System.out.println(jogador.getNome());
 //		}
-//		flamengo.substituicao(flamengo.getJogadoresTitulares().get(0), flamengo.getJogador(20));
-//		for (Jogador jogador : flamengo.getJogadoresReservas()) {
+//
+//		System.out.println("-------SUBSTITUIÇÃO--------");
+//		a.substituicao(a.getJogadoresTitulares().get(0), a.getJogadoresReservas().get(0));
+//
+//		for (String[] jogador : a.getAtributosJogadoresReservas()) {
+//			for (String atributo : jogador) {
+//				System.out.println(atributo);
+//			}
+//		}
+//
+//		System.out.println("----------------");
+//
+//		for (Jogador jogador : a.getJogadoresReservas()) {
 //			System.out.println(jogador.getNome());
 //		}
 	}
