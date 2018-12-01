@@ -162,13 +162,15 @@ public class TimeTabela implements Comparable<TimeTabela> {
 	}
 
 	// Atualiza o saldo de gols
-	public void atualizarSaldoGols(int gols) {
+	private void atualizarSaldoGols() {
 		this.saldoGols = this.qtGols - this.golsSofridos;
 	}
 
 	// Adiciona qtdGols
 	public void addQtGols(int Gols) {
 		this.qtGols += Gols;
+		
+		atualizarSaldoGols();
 	}
 
 	// Adiciona Vitoria
@@ -191,6 +193,8 @@ public class TimeTabela implements Comparable<TimeTabela> {
 	// Adicionar os gols sofridos no ultimo jogo
 	public void addGolsSofridos(int golsSofridos) {
 		this.golsSofridos += golsSofridos;
+		
+		atualizarSaldoGols();
 	}
 
 }

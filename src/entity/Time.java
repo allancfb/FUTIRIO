@@ -14,6 +14,7 @@ public class Time implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String escudo;
+	private TimeTabela timeTabela;
 	private ArrayList<Time> adversarios;
 	private ArrayList<Jogador> jogadores;
 	private ArrayList<Jogador> jogadoresTitulares;
@@ -55,8 +56,12 @@ public class Time implements Serializable {
 		return escudo;
 	}
 
-	public void setEscudo(String escudo) {
-		this.escudo = escudo;
+	public TimeTabela getTimeTabela() {
+		return timeTabela;
+	}
+
+	public void setTimeTabela(TimeTabela timeTabela) {
+		this.timeTabela = timeTabela;
 	}
 
 	// TODO: comentar
@@ -150,6 +155,10 @@ public class Time implements Serializable {
 			retorno[i] = aux;
 		}
 		return retorno;
+	}
+	
+	public void setEscudo(String escudo) {
+		this.escudo = escudo;
 	}
 
 	// TODO: comentar

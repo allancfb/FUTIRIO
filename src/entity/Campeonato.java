@@ -204,8 +204,10 @@ public class Campeonato {
 				"Volta Redonda" };
 
 		for (int i = 0; i < nomes.length; i++) {
-			tabela.add(new TimeTabela(Main.carregarTime(nomes[i])));
+			TimeTabela timeTabela = new TimeTabela(Main.carregarTime(nomes[i]));
+			tabela.add(timeTabela);
 			timesJogos.add(Main.carregarTime(nomes[i]));
+			timeTabela.getTime().setTimeTabela(timeTabela);
 		}
 	}
 }

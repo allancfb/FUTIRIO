@@ -144,7 +144,7 @@ public class RodadaSwing extends JFrame {
 
 							if (i == 90) {
 								terminarRodada(futirio);
-								
+
 								JOptionPane.showMessageDialog(null, "A rodada acabou!");
 								continuar.setVisible(true);
 								futirio.getCarioca().passarRodada();
@@ -166,6 +166,27 @@ public class RodadaSwing extends JFrame {
 	}
 
 	public void terminarRodada(OJogo futirio) {
-		
+		ArrayList<Partida> partidas = futirio.getCarioca().getRodadaAtual().getPartidas();
+		for (Partida partida : partidas) {
+			TimeTabela time1 = partida.getTime1().getTimeTabela();
+			TimeTabela time2 = partida.getTime2().getTimeTabela();
+			System.out.println(time2.getNome());
+
+			if (partida.getTime1Gols() > partida.getTime2Gols()) {
+				time1.addVitoria();
+				time2.addDerrota();
+			} else if (partida.getTime2Gols() > partida.getTime1Gols()) {
+				time2.addVitoria();
+				time1.addDerrota();
+			} else {
+				time1.addEmpate();
+				time2.addEmpate();
+			}
+			
+			time1.addQtGols(partida.getTime1Gols());
+			time1.addGolsSofridos(partida.getTime2Gols());
+			time2.addQtGols(partida.getTime2Gols());
+			time2.addGolsSofridos(partida.getTime1Gols());
+		}
 	}
 }
