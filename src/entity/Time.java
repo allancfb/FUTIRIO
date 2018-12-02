@@ -152,7 +152,7 @@ public class Time implements Serializable {
 		}
 		return retorno;
 	}
-	
+
 	public void setEscudo(String escudo) {
 		this.escudo = escudo;
 	}
@@ -161,7 +161,7 @@ public class Time implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public void setTimeTabela(TimeTabela timeTabela) {
 		this.timeTabela = timeTabela;
 	}
@@ -378,7 +378,32 @@ public class Time implements Serializable {
 		}
 
 		for (int i = 0; i < jogadores.size(); i++) {
-			if (jogadores.get(i).getPosicao() == Posicao.DEFAULT) {
+			if (jogadores.get(i).getPosicao() == Posicao.DEFAULT
+					&& jogadores.get(i).getPosicaoRecomendada() == Posicao.GOL) {
+				jogadoresReservas.add(jogadores.get(i));
+				contadorDeJogadores++;
+			}
+		}
+		
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.DEFAULT
+					&& jogadores.get(i).getPosicaoRecomendada() == Posicao.DEFESA) {
+				jogadoresReservas.add(jogadores.get(i));
+				contadorDeJogadores++;
+			}
+		}
+		
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.DEFAULT
+					&& jogadores.get(i).getPosicaoRecomendada() == Posicao.MEIA) {
+				jogadoresReservas.add(jogadores.get(i));
+				contadorDeJogadores++;
+			}
+		}
+		
+		for (int i = 0; i < jogadores.size(); i++) {
+			if (jogadores.get(i).getPosicao() == Posicao.DEFAULT
+					&& jogadores.get(i).getPosicaoRecomendada() == Posicao.ATAQUE) {
 				jogadoresReservas.add(jogadores.get(i));
 				contadorDeJogadores++;
 			}
