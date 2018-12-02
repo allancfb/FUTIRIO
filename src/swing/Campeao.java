@@ -11,10 +11,14 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JButton;
 
 import entity.Time;
 import entity.Campeonato;
+import entity.Main;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -63,8 +67,9 @@ public class Campeao extends JFrame {
 		contentPane.add(lblCampeoCarioca);
 
 		JLabel escudo = new JLabel("");
-		escudo.setIcon(new ImageIcon(Campeao.class.getResource(futirio.getCarioca().getCampeao().getEscudo())));
 		escudo.setBounds(36, 11, 110, 111);
+		Image escudoCampeao = new ImageIcon(Main.carregarEscudo(futirio.getCarioca().getCampeao())).getImage();
+		escudo.setIcon(new ImageIcon(escudoCampeao));
 		contentPane.add(escudo);
 
 		JLabel taca = new JLabel("");
