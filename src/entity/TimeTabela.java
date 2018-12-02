@@ -12,6 +12,7 @@ public class TimeTabela implements Comparable<TimeTabela> {
 	private int empates;
 	private int derrotas;
 	private int golsSofridos;
+	private int posicao;
 	private String nome;
 
 	// Contrutores
@@ -95,6 +96,14 @@ public class TimeTabela implements Comparable<TimeTabela> {
 	// TODO: comentar
 	public String getNome() {
 		return nome;
+	}
+
+	public int getPosicao() {
+		return posicao;
+	}
+
+	public void setPosicao(int posicao) {
+		this.posicao = posicao;
 	}
 
 	public String[] getInformacoes() {

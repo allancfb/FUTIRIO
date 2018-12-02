@@ -330,9 +330,9 @@ public class Time implements Serializable {
 
 	// TODO: comentar
 	public void substituicao(Jogador jogadorTroca1, Jogador jogadorTroca2) {
-		String nomePosicao = jogadorTroca2.getPosicao().getNome();
+		Posicao posicao = jogadorTroca2.getPosicao();
 		jogadorTroca2.setPosicao(jogadorTroca1.getPosicao());
-		jogadorTroca1.setPosicao(Posicao.retornaPosicao(nomePosicao));
+		jogadorTroca1.setPosicao(posicao);
 
 		atualizarTitulares();
 	}
