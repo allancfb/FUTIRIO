@@ -1,26 +1,19 @@
 package swing;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import entity.Main;
-
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Canvas;
-import java.awt.Label;
-import java.awt.Toolkit;
-import java.awt.Button;
-import javax.swing.ImageIcon;
 
 public class Inicio extends JFrame {
 
@@ -56,10 +49,10 @@ public class Inicio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton creditos = new JButton("Cr\u00E9ditos");
+		JButton creditos = new JButton("Créditos");
 		creditos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// JOptionPane.showMessageDialog(null, "vai pra cena de crï¿½dito");
+				// JOptionPane.showMessageDialog(null, "vai pra cena de crédito");
 				Creditos creditos = new Creditos();
 				creditos.setLocationRelativeTo(null);
 				creditos.setVisible(true);
@@ -87,11 +80,15 @@ public class Inicio extends JFrame {
 		});
 		jogar.setBounds(233, 200, 133, 23);
 		contentPane.add(jogar);
-		
+
 		JButton btnCarregarJogo = new JButton("Carregar Jogo");
 		btnCarregarJogo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//seja feliz carregando
+				OJogo futirio = carregarJogo();
+				GerenciaTime jogo = new GerenciaTime(futirio);
+//				jogo.setLocationRelativeTo(null);
+//				jogo.setVisible(true);
+//				dispose();
 			}
 		});
 		btnCarregarJogo.setBounds(233, 234, 133, 23);
@@ -104,6 +101,19 @@ public class Inicio extends JFrame {
 		background.setBounds(0, 0, 594, 370);
 		contentPane.add(background);
 	}
-	
-	
+
+	public OJogo carregarJogo() {
+		OJogo oJogo = new OJogo();
+
+		try {
+			ObjectInputStream objIn = new ObjectInputStream(
+					new BufferedInputStream(new FileInputStream("src/entity/save")));
+			oJogo = (OJogo) objIn.readObject();
+			objIn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return oJogo;
+	}
 }
