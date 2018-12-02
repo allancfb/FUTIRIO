@@ -131,38 +131,9 @@ public class RodadaSwing extends JFrame {
 				Thread jogo = new Thread(new RodaJogos(rodada,intTempo,progressBar,golsA,golsB));
 					
 			        jogo.start();
-					
-					
 					terminarRodada(futirio);
-
-//                	JOptionPane.showMessageDialog(null, "A rodada acabou!");
 					continuar.setVisible(true);
 					futirio.getCarioca().passarRodada();
-					
-					//					public void run() {
-//						for (int i = 1; i <= 90; i++) {
-//							rodada.run();
-//							intTempo.setText(Integer.toString(rodada.getMinuto()));
-//							progressBar.setValue(rodada.getMinuto());
-//
-//							for (int j = 0; j < 8; j++) {
-//								golsA.get(j)
-//										.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime1Gols()));
-//								golsB.get(j)
-//										.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime2Gols()));
-//							}
-//
-//							if (i == 90) {
-//								terminarRodada(futirio);
-//
-//								JOptionPane.showMessageDialog(null, "A rodada acabou!");
-//								continuar.setVisible(true);
-//								futirio.getCarioca().passarRodada();
-//							}
-//
-//						}
-//					}
-//			}).start();
 
 			}
 		});
