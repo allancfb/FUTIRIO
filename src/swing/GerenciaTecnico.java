@@ -77,7 +77,7 @@ public class GerenciaTecnico extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				if (nomeTecnico.getText() == null || nomeTecnico.getText().trim().equals("")
 						|| times.getSelectedItem() == null) {
-					JOptionPane.showMessageDialog(null, "Selecione todas as opï¿½ï¿½es para continuar", "Erro",
+					JOptionPane.showMessageDialog(null, "Selecione todas as opções para continuar", "Erro",
 							JOptionPane.ERROR_MESSAGE);
 				} else {
 					int index = 0;
