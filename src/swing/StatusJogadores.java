@@ -47,7 +47,7 @@ public class StatusJogadores extends JFrame {
 		contentPane.add(scrollPane);
 
 		String[] colunas = { "Posição", "Nome", "Habilidade", "Chute", "Passe", "Drible", "Desarme", "Defesa" };
-		String[][] jogadores = futirio.getCarioca().getTimes().get(futirio.getIndexTime()).getAllAtributosJogador();
+		String[][] jogadores = futirio.getTimeJogador().getAllAtributosJogador();
 
 		table = new JTable(jogadores, colunas);
 		// table = new JTable();

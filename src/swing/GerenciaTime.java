@@ -64,10 +64,8 @@ public class GerenciaTime extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(21, 154, 207, 273);
 		contentPane.add(scrollPane);
-		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
-				.getAtributosJogadoresTitulares();
-		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
-				.getAtributosJogadoresReservas();
+		String[][] playersTitulares = futirio.getTimeJogador().getAtributosJogadoresTitulares();
+		String[][] playersReservas = futirio.getTimeJogador().getAtributosJogadoresReservas();
 
 		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
 		boolean[] falsesTitulares = new boolean[playersTitulares.length];
