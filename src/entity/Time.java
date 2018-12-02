@@ -408,13 +408,6 @@ public class Time implements Serializable {
 				contadorDeJogadores++;
 			}
 		}
-		
-		for (int i = 0; i < jogadores.size(); i++) {
-			if (jogadores.get(i).getPosicao() == Posicao.TODAS) {
-				jogadoresReservas.add(jogadores.get(i));
-				contadorDeJogadores++;
-			}
-		}
 
 		atualizarHabilidadeGeral();
 	}

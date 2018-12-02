@@ -595,9 +595,6 @@ public class Jogador implements Serializable {
 		double mediaGOL, mediaDEFESA, mediaMEIA, mediaATAQUE;
 		int chutePeso, driblePeso, passePeso, desarmePeso, defesaPeso, somaPesos;
 
-		if (chute == 150 && drible == 150 && passe == 150 && desarme == 150 && defesa == 150)
-			return Posicao.TODAS;
-
 		// Pesos da posição GOL
 		chutePeso = Posicao.GOL.getChutePeso();
 		driblePeso = Posicao.GOL.getDriblePeso();
