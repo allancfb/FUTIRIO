@@ -172,7 +172,7 @@ public class GerenciaTime extends JFrame {
 		nomeAdversario.setBounds(498, 366, 120, 23);
 		contentPane.add(nomeAdversario);
 
-		JLabel lblPosio = new JLabel("Posição: ");// +time.getposicao();
+		JLabel lblPosio = new JLabel("Posição: "+adversario.getTimeTabela().getPosicao()+"º");
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPosio.setBounds(498, 399, 120, 23);
@@ -260,7 +260,7 @@ public class GerenciaTime extends JFrame {
 		btnSalvar.setBounds(498, 99, 120, 23);
 		contentPane.add(btnSalvar);
 		
-		JLabel lblNewLabel = new JLabel("Posição: ");
+		JLabel lblNewLabel = new JLabel("Posição: "+futirio.getTimeJogador().getTimeTabela().getPosicao()+"º");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(152, 94, 123, 27);
