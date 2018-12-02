@@ -57,7 +57,7 @@ public class RodadaSwing extends JFrame {
 		JLabel lblRodada = new JLabel("Rodada: " + Integer.toString(futirio.getCarioca().getIndexRodadaAtual()));
 		lblRodada.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblRodada.setForeground(Color.WHITE);
-		lblRodada.setBounds(26, 11, 91, 25);
+		lblRodada.setBounds(26, 11, 112, 25);
 		contentPane.add(lblRodada);
 
 		JLabel lblTempo = new JLabel("Tempo: ");
@@ -114,8 +114,10 @@ public class RodadaSwing extends JFrame {
 				} else {
 					// vai pra tela de campeão
 					/*
-					 * Campeao campeao = new Campeao(primeiroColocadoNaTabela, campeonato);
-					 * campeao.setLocationRelativeTo(null); campeao.setVisible(true); dispose();
+					 Campeao campeao = new Campeao(primeiroColocadoNaTabela, campeonato);
+					 campeao.setLocationRelativeTo(null); 
+					 campeao.setVisible(true); 
+					 dispose();
 					 */
 				}
 			}

@@ -66,7 +66,7 @@ public class Tabela extends JFrame {
 		btnVoltar.setBounds(485, 326, 89, 23);
 		contentPane.add(btnVoltar);
 
-		String[] colunas = { "Time", "Pontos", "Vitorias", "Saldo de Gols", "Empates", "Derrotas" };
+		String[] colunas = { "Time", "Pontos", "V", "SG", "E", "D" };
 		String[][] times = futirio.getCarioca().getInformacoesTimesTabela();
 
 		JScrollPane scrollPane = new JScrollPane();
