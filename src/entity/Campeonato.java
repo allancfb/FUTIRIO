@@ -99,7 +99,7 @@ public class Campeonato {
 	// TODO: comentar POR ENQUANTO O TIME GANHA UM MILHAO QD GANHA O CAMPEONATO
 	public void setCampeao(Time campeao) {
 		Campeao = campeao;
-		campeao.addFundos(1000000000);
+		campeao.addFundos(10000000);
 	}
 
 	// TODO: comentar
@@ -193,6 +193,10 @@ public class Campeonato {
 
 		TabelaComparator tabelaComparator = new TabelaComparator();
 		Collections.sort(tabela, tabelaComparator);
+		
+		for (int i = 0; i < tabela.size(); i++) {
+			tabela.get(i).setPosicao(i + 1);
+		}
 
 	}
 
