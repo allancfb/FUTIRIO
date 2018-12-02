@@ -161,7 +161,7 @@ public class GerenciaTime extends JFrame {
 		Time adversario = futirio.getTimeJogador().getAdversario((futirio.getCarioca().getIndexRodadaAtual() - 1));
 
 		JLabel escudoAdversario = new JLabel("");
-		escudoAdversario.setBounds(503, 244, 110, 110);
+		escudoAdversario.setBounds(503, 245, 110, 110);
 		Image escudoAdver = new ImageIcon(Main.carregarEscudo(adversario)).getImage();
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
@@ -169,7 +169,7 @@ public class GerenciaTime extends JFrame {
 		JLabel nomeAdversario = new JLabel(adversario.getNome());
 		nomeAdversario.setForeground(Color.WHITE);
 		nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
-		nomeAdversario.setBounds(498, 365, 120, 23);
+		nomeAdversario.setBounds(498, 366, 120, 23);
 		contentPane.add(nomeAdversario);
 
 		JLabel lblPosio = new JLabel("Posição: ");// +time.getposicao();
@@ -183,7 +183,7 @@ public class GerenciaTime extends JFrame {
 		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCampeonato.setBounds(498, 188, 120, 23);
+		lblCampeonato.setBounds(498, 176, 120, 23);
 		contentPane.add(lblCampeonato);
 
 		JButton btnJogar = new JButton("Jogar");
@@ -270,7 +270,7 @@ public class GerenciaTime extends JFrame {
 		lblAno.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblAno.setBounds(498, 210, 120, 22);
+		lblAno.setBounds(498, 198, 120, 22);
 		contentPane.add(lblAno);
 
 		JLabel lblReservas = new JLabel("Reservas");
@@ -286,6 +286,13 @@ public class GerenciaTime extends JFrame {
 		labelTitulares.setFont(new Font("Tahoma", Font.BOLD, 15));
 		labelTitulares.setBounds(21, 130, 207, 22);
 		contentPane.add(labelTitulares);
+		
+		JLabel lblNewLabel_1 = new JLabel("Rodada: "+futirio.getCarioca().getIndexRodadaAtual());
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_1.setBounds(503, 220, 115, 14);
+		contentPane.add(lblNewLabel_1);
 
 		JLabel bg = new JLabel("");
 		bg.setIcon(new ImageIcon(GerenciaTime.class.getResource("/Imagens/fundoGrande.png")));

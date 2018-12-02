@@ -78,6 +78,7 @@ public class Campeao extends JFrame {
 				// Começa o campeonato do ano seguinte
 				//Campeonato carioca = new Campeonato(campeonato.getAno() + 1);
 				// gerenciaTime jogo = new
+				//jogo.setLocationRelativeTo(null);
 				// gerenciaTime(carioca.getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex(),carioca);
 				// jogo.setVisible(true);
 				dispose();
