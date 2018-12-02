@@ -71,7 +71,7 @@ public class GerenciaTecnico extends JFrame {
 		times.setBounds(114, 191, 142, 32);
 		contentPane.add(times);
 
-		JButton btnAvancar = new JButton("Avan\u00E7ar");
+		JButton btnAvancar = new JButton("Avançar");
 		btnAvancar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnAvancar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
