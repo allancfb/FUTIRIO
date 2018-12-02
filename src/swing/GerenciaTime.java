@@ -256,7 +256,7 @@ public class GerenciaTime extends JFrame {
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				salvarJogo(futirio);
+				salvarJogo(futirio, futirio.getCarioca());
 			}
 		});
 		btnSalvar.setBounds(498, 99, 120, 23);
@@ -343,10 +343,19 @@ public class GerenciaTime extends JFrame {
 		});
 	}
 
-	public void salvarJogo(OJogo oJogo) {
+	public void salvarJogo(OJogo oJogo, Campeonato carioca) {
 		try {
 			ObjectOutputStream objOut = new ObjectOutputStream(
-					new BufferedOutputStream(new FileOutputStream("src/entity/save")));
+					new BufferedOutputStream(new FileOutputStream("src/saves/carioca")));
+			objOut.writeObject(carioca);
+			objOut.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			ObjectOutputStream objOut = new ObjectOutputStream(
+					new BufferedOutputStream(new FileOutputStream("src/saves/futirio")));
 			objOut.writeObject(oJogo);
 			objOut.close();
 		} catch (Exception e) {

@@ -86,6 +86,10 @@ public class OJogo implements Serializable {
 		return indexTime;
 	}
 
+	public void setCarioca(Campeonato carioca) {
+		this.carioca = carioca;
+	}
+
 	public void setIndexTime(int indexTime) {
 		this.indexTime = indexTime;
 	}

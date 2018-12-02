@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 
 import javax.swing.ImageIcon;
@@ -14,6 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import entity.Campeonato;
 
 public class Inicio extends JFrame {
 
@@ -84,10 +85,11 @@ public class Inicio extends JFrame {
 		btnCarregarJogo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OJogo futirio = carregarJogo();
+				futirio.setCarioca(carregarCarioca());
 				GerenciaTime jogo = new GerenciaTime(futirio);
-//				jogo.setLocationRelativeTo(null);
-//				jogo.setVisible(true);
-//				dispose();
+				jogo.setLocationRelativeTo(null);
+				jogo.setVisible(true);
+				dispose();
 			}
 		});
 		btnCarregarJogo.setBounds(233, 234, 133, 23);
@@ -106,7 +108,7 @@ public class Inicio extends JFrame {
 
 		try {
 			ObjectInputStream objIn = new ObjectInputStream(
-					new BufferedInputStream(new FileInputStream("src/entity/save")));
+					new BufferedInputStream(new FileInputStream("src/saves/futirio")));
 			oJogo = (OJogo) objIn.readObject();
 			objIn.close();
 		} catch (Exception e) {
@@ -114,5 +116,20 @@ public class Inicio extends JFrame {
 		}
 
 		return oJogo;
+	}
+	
+	public Campeonato carregarCarioca() {
+		Campeonato carioca = new Campeonato(0);
+
+		try {
+			ObjectInputStream objIn = new ObjectInputStream(
+					new BufferedInputStream(new FileInputStream("src/saves/carioca")));
+			carioca = (Campeonato) objIn.readObject();
+			objIn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return carioca;
 	}
 }
