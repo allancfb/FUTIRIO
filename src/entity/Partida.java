@@ -1,9 +1,11 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Partida {
+public class Partida implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Time time1;
 	private Time time2;
 	private String placar;

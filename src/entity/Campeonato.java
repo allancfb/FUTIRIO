@@ -1,9 +1,11 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Campeonato {
+public class Campeonato implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private int ano;
 	private Time Campeao;
