@@ -19,7 +19,8 @@ public class RodaJogos implements Runnable {
 	private JButton continuar;
 	private OJogo futirio;
 
-	public RodaJogos( RodadaSwing rodadaSwing, Rodada rodada, JLabel intTempo, JProgressBar progressBar, ArrayList<JLabel> golsA,ArrayList<JLabel> golsB, OJogo futirio, JButton continuar) {
+	public RodaJogos(RodadaSwing rodadaSwing, Rodada rodada, JLabel intTempo, JProgressBar progressBar,
+			ArrayList<JLabel> golsA, ArrayList<JLabel> golsB, OJogo futirio, JButton continuar) {
 		this.rodada = rodada;
 		this.intTempo = intTempo;
 		this.progressBar = progressBar;
@@ -47,7 +48,6 @@ public class RodaJogos implements Runnable {
 				futirio.getCarioca().passarRodada();
 			}
 
-			
 		}
 	}
 

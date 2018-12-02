@@ -128,9 +128,10 @@ public class RodadaSwing extends JFrame {
 		comecar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				comecar.setVisible(false);
-				Thread jogo = new Thread(new RodaJogos(RodadaSwing.this, rodada, intTempo, progressBar, golsA, golsB, futirio, continuar));
+				Thread jogo = new Thread(new RodaJogos(RodadaSwing.this, rodada, intTempo, progressBar, golsA, golsB,
+						futirio, continuar));
 
-				jogo.start();	
+				jogo.start();
 			}
 		});
 		comecar.setBounds(5, 326, 89, 23);
