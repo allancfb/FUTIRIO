@@ -113,6 +113,7 @@ public class RodadaSwing extends JFrame {
 					dispose();
 				} else {
 					futirio.getCarioca().setCampeao(futirio.getCarioca().getTabela().get(0).getTime());
+					System.out.println(futirio.getCarioca().getCampeao().getNome());
 					Campeao campeao = new Campeao(futirio);
 					campeao.setLocationRelativeTo(null);
 					campeao.setVisible(true);
@@ -127,32 +128,41 @@ public class RodadaSwing extends JFrame {
 		comecar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				comecar.setVisible(false);
-				new Thread(new Runnable() {
+				Thread jogo = new Thread(new RodaJogos(rodada,intTempo,progressBar,golsA,golsB));
+					
+			        jogo.start();
+					
+					
+					terminarRodada(futirio);
 
-					public void run() {
-						for (int i = 1; i <= 90; i++) {
-							rodada.run();
-							intTempo.setText(Integer.toString(rodada.getMinuto()));
-							progressBar.setValue(rodada.getMinuto());
-
-							for (int j = 0; j < 8; j++) {
-								golsA.get(j)
-										.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime1Gols()));
-								golsB.get(j)
-										.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime2Gols()));
-							}
-
-							if (i == 90) {
-								terminarRodada(futirio);
-
-								JOptionPane.showMessageDialog(null, "A rodada acabou!");
-								continuar.setVisible(true);
-								futirio.getCarioca().passarRodada();
-							}
-
-						}
-					}
-				}).start();
+					JOptionPane.showMessageDialog(null, "A rodada acabou!");
+					continuar.setVisible(true);
+					futirio.getCarioca().passarRodada();
+					
+					//					public void run() {
+//						for (int i = 1; i <= 90; i++) {
+//							rodada.run();
+//							intTempo.setText(Integer.toString(rodada.getMinuto()));
+//							progressBar.setValue(rodada.getMinuto());
+//
+//							for (int j = 0; j < 8; j++) {
+//								golsA.get(j)
+//										.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime1Gols()));
+//								golsB.get(j)
+//										.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime2Gols()));
+//							}
+//
+//							if (i == 90) {
+//								terminarRodada(futirio);
+//
+//								JOptionPane.showMessageDialog(null, "A rodada acabou!");
+//								continuar.setVisible(true);
+//								futirio.getCarioca().passarRodada();
+//							}
+//
+//						}
+//					}
+//			}).start();
 
 			}
 		});
