@@ -80,12 +80,11 @@ public class Campeao extends JFrame {
 		JButton btnContinuar = new JButton("Continuar");
 		btnContinuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// Começa o campeonato do ano seguinte
-				//Campeonato carioca = new Campeonato(campeonato.getAno() + 1);
-				// gerenciaTime jogo = new
-				//jogo.setLocationRelativeTo(null);
-				// gerenciaTime(carioca.getTimes().get(index),nomeTecnico.getText(),times.getSelectedIndex(),carioca);
-				// jogo.setVisible(true);
+//				 Começa o campeonato do ano seguinte
+				futirio.createCarioca(futirio.getCarioca().getAno() + 1);
+				GerenciaTime jogo = new GerenciaTime(futirio);
+				jogo.setLocationRelativeTo(null);
+				jogo.setVisible(true);
 				dispose();
 			}
 		});
