@@ -68,9 +68,9 @@ public class RodadaSwing extends JFrame {
 
 		JLabel intTempo = new JLabel("00");
 		intTempo.setBounds(396, 11, 22, 25);
-		contentPane.add(intTempo);
 		intTempo.setForeground(Color.WHITE);
 		intTempo.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(intTempo);
 
 		ArrayList<JPanel> timesA = new ArrayList<JPanel>();
 		ArrayList<JPanel> timesB = new ArrayList<JPanel>();
@@ -128,13 +128,12 @@ public class RodadaSwing extends JFrame {
 		comecar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				comecar.setVisible(false);
-				Thread jogo = new Thread(new RodaJogos(rodada,intTempo,progressBar,golsA,golsB));
-					
-			        jogo.start();
-					terminarRodada(futirio);
-					continuar.setVisible(true);
-					futirio.getCarioca().passarRodada();
+				Thread jogo = new Thread(new RodaJogos(rodada, intTempo, progressBar, golsA, golsB));
 
+				jogo.start();
+				terminarRodada(futirio);
+				continuar.setVisible(true);
+				futirio.getCarioca().passarRodada();
 			}
 		});
 		comecar.setBounds(5, 326, 89, 23);

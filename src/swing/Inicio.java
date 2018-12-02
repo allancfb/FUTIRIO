@@ -52,7 +52,6 @@ public class Inicio extends JFrame {
 		JButton creditos = new JButton("Créditos");
 		creditos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// JOptionPane.showMessageDialog(null, "vai pra cena de crédito");
 				Creditos creditos = new Creditos();
 				creditos.setLocationRelativeTo(null);
 				creditos.setVisible(true);
