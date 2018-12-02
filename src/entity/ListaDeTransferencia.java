@@ -1,9 +1,11 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class ListaDeTransferencia {
+public class ListaDeTransferencia implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
 
 	// CONSTRUTOR

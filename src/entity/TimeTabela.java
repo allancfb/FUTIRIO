@@ -1,9 +1,11 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class TimeTabela implements Comparable<TimeTabela> {
+public class TimeTabela implements Comparable<TimeTabela>, Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Time time;
 	private int pontos;
 	private int vitorias;

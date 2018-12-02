@@ -1,6 +1,8 @@
 package entity;
 
-public enum Tempo {
+import java.io.Serializable;
+
+public enum Tempo implements Serializable {
 
 	PRIMEIRO("Primeiro tempo"), INTERVALO("Intevalo"), SEGUNDO("Segundo Tempo"),
 	PRORROGACAO("Primeiro Tempo da Prorrogação"), INTERVALOPRORROGACAO("Intevalo da Prorroga��o"),

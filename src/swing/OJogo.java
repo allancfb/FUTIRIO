@@ -1,9 +1,12 @@
 package swing;
 
+import java.io.Serializable;
+
 import entity.*;
 
-public class OJogo {
+public class OJogo implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private Time timeJogador;
 	private Campeonato carioca;
 	private String nomeTecnico;

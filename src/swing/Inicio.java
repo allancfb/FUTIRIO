@@ -104,4 +104,6 @@ public class Inicio extends JFrame {
 		background.setBounds(0, 0, 594, 370);
 		contentPane.add(background);
 	}
+	
+	
 }

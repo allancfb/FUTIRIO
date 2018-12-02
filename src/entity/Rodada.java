@@ -1,9 +1,11 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Rodada {
+public class Rodada implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Time> timesJogos;
 	private ArrayList<Partida> partidas;
 	private int minuto = 0;
