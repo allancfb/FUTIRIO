@@ -66,7 +66,7 @@ public class Inicio extends JFrame {
 				Inicio.this.dispose();
 			}
 		});
-		creditos.setBounds(252, 252, 89, 23);
+		creditos.setBounds(247, 265, 101, 23);
 		contentPane.add(creditos);
 
 		JButton sair = new JButton("Sair");
@@ -76,7 +76,7 @@ public class Inicio extends JFrame {
 			}
 		});
 
-		JButton jogar = new JButton("Jogar");
+		JButton jogar = new JButton("Novo Jogo");
 		jogar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GerenciaTecnico gerencia = new GerenciaTecnico();
@@ -85,9 +85,13 @@ public class Inicio extends JFrame {
 				Inicio.this.dispose();
 			}
 		});
-		jogar.setBounds(252, 200, 89, 23);
+		jogar.setBounds(247, 200, 101, 23);
 		contentPane.add(jogar);
-		sair.setBounds(252, 299, 89, 23);
+		
+		JButton btnCarregarJogo = new JButton("Carregar Jogo");
+		btnCarregarJogo.setBounds(247, 234, 101, 23);
+		contentPane.add(btnCarregarJogo);
+		sair.setBounds(247, 299, 101, 23);
 		contentPane.add(sair);
 
 		JLabel background = new JLabel("New label");
