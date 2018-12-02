@@ -82,7 +82,7 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		JButton btnComprar = new JButton("Comprar");
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				futirio.getCarioca().getTimes().get(futirio.getIndexTime()).comprarJogador(
+				futirio.getTimeJogador().comprarJogador(
 						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
 				futirio.getCarioca().getListaDeTransferencia().enviarJogadorComprado(
 						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));

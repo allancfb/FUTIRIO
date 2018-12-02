@@ -38,7 +38,7 @@ public class GerenciaTime extends JFrame {
 
 	public GerenciaTime(OJogo futirio) {
 		futirio.getCarioca().organizaTabela();
-		
+
 		setTitle(futirio.getTimeJogador().getNome() + " - " + futirio.getNomeTecnico());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
@@ -174,7 +174,7 @@ public class GerenciaTime extends JFrame {
 		nomeAdversario.setBounds(498, 366, 120, 23);
 		contentPane.add(nomeAdversario);
 
-		JLabel lblPosio = new JLabel("Posição: "+adversario.getTimeTabela().getPosicao()+"º");
+		JLabel lblPosio = new JLabel("Posição: " + adversario.getTimeTabela().getPosicao() + "º");
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPosio.setBounds(498, 399, 120, 23);
@@ -226,11 +226,9 @@ public class GerenciaTime extends JFrame {
 		JButton btnSubstituir = new JButton("Substituir");
 		btnSubstituir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				futirio.getCarioca().getTimes().get(futirio.getIndexTime()).substituicao(
-						futirio.getCarioca().getTimes().get(futirio.getIndexTime())
-								.getJogadorTitular(TabelaTitulares.getSelectedRow()),
-						futirio.getCarioca().getTimes().get(futirio.getIndexTime())
-								.getJogadorReserva(TabelaReservas.getSelectedRow()));
+				futirio.getTimeJogador().substituicao(
+						futirio.getTimeJogador().getJogadorTitular(TabelaTitulares.getSelectedRow()),
+						futirio.getTimeJogador().getJogadorReserva(TabelaReservas.getSelectedRow()));
 
 				atualizarTabelas(TabelaTitulares, TabelaReservas, futirio, scrollPane, scrollPane_1);
 			}
@@ -252,7 +250,7 @@ public class GerenciaTime extends JFrame {
 		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnNegociarJogador.setBounds(498, 59, 120, 23);
 		contentPane.add(btnNegociarJogador);
-		
+
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -261,14 +259,14 @@ public class GerenciaTime extends JFrame {
 		});
 		btnSalvar.setBounds(498, 99, 120, 23);
 		contentPane.add(btnSalvar);
-		
-		JLabel lblNewLabel = new JLabel("Posição: "+futirio.getTimeJogador().getTimeTabela().getPosicao()+"º");
+
+		JLabel lblNewLabel = new JLabel("Posição: " + futirio.getTimeJogador().getTimeTabela().getPosicao() + "º");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 
-		JLabel lblAno = new JLabel(futirio.getCarioca().getAno()+"");
+		JLabel lblAno = new JLabel(futirio.getCarioca().getAno() + "");
 		lblAno.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAno.setForeground(Color.WHITE);
 		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -288,8 +286,8 @@ public class GerenciaTime extends JFrame {
 		labelTitulares.setFont(new Font("Tahoma", Font.BOLD, 15));
 		labelTitulares.setBounds(21, 130, 207, 22);
 		contentPane.add(labelTitulares);
-		
-		JLabel lblNewLabel_1 = new JLabel("Rodada: "+futirio.getCarioca().getIndexRodadaAtual());
+
+		JLabel lblNewLabel_1 = new JLabel("Rodada: " + futirio.getCarioca().getIndexRodadaAtual());
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -309,10 +307,8 @@ public class GerenciaTime extends JFrame {
 			JScrollPane scrollPane_1) {
 		String[] colunas = { "Posição", "Nome", "Habilidade" };
 
-		String[][] playersTitulares = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
-				.getAtributosJogadoresTitulares();
-		String[][] playersReservas = futirio.getCarioca().getTimes().get(futirio.getIndexTime())
-				.getAtributosJogadoresReservas();
+		String[][] playersTitulares = futirio.getTimeJogador().getAtributosJogadoresTitulares();
+		String[][] playersReservas = futirio.getTimeJogador().getAtributosJogadoresReservas();
 
 		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
 		boolean[] falsesTitulares = new boolean[playersTitulares.length];
@@ -352,7 +348,7 @@ public class GerenciaTime extends JFrame {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		try {
 			ObjectOutputStream objOut = new ObjectOutputStream(
 					new BufferedOutputStream(new FileOutputStream("src/saves/futirio")));
