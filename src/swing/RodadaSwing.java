@@ -167,6 +167,7 @@ public class RodadaSwing extends JFrame {
 
 	public void terminarRodada(OJogo futirio) {
 		ArrayList<Partida> partidas = futirio.getCarioca().getRodadaAtual().getPartidas();
+		
 		for (Partida partida : partidas) {
 			TimeTabela time1 = partida.getTime1().getTimeTabela();
 			TimeTabela time2 = partida.getTime2().getTimeTabela();
@@ -187,5 +188,7 @@ public class RodadaSwing extends JFrame {
 			time2.addQtGols(partida.getTime2Gols());
 			time2.addGolsSofridos(partida.getTime1Gols());
 		}
+		
+		futirio.getCarioca().organizaTabela();
 	}
 }
