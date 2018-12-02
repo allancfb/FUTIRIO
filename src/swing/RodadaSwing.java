@@ -135,7 +135,7 @@ public class RodadaSwing extends JFrame {
 					
 					terminarRodada(futirio);
 
-					JOptionPane.showMessageDialog(null, "A rodada acabou!");
+//                	JOptionPane.showMessageDialog(null, "A rodada acabou!");
 					continuar.setVisible(true);
 					futirio.getCarioca().passarRodada();
 					
