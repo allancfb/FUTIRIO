@@ -40,6 +40,8 @@ public class Tabela extends JFrame {
 	 * Create the frame.
 	 */
 	public Tabela(OJogo futirio) {
+		futirio.getCarioca().organizaTabela();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		setResizable(false);
@@ -66,7 +68,7 @@ public class Tabela extends JFrame {
 		btnVoltar.setBounds(485, 326, 89, 23);
 		contentPane.add(btnVoltar);
 
-		String[] colunas = { "Posição", "Time", "J", "Pontos", "V", "SG", "E", "D" };
+		String[] colunas = { "Posição", "Time", "Pontos", "V", "SG", "E", "D" };
 		String[][] times = futirio.getCarioca().getInformacoesTimesTabela();
 		
 		JScrollPane scrollPane = new JScrollPane();

@@ -32,21 +32,6 @@ public class TimeTabela implements Comparable<TimeTabela> {
 
 	}
 
-	// Construtor Teste (DEPOIS DE TESTAR PODE APAGAR)
-	TimeTabela(Time time, int pontos, int vitorias, int saldoGols, int qtdGols, int empates, int derrotas,
-			int golSofrido) {
-
-		this.time = time;
-		this.pontos = pontos;
-		this.vitorias = vitorias;
-		this.saldoGols = saldoGols;
-		this.qtGols = qtdGols;
-		this.empates = empates;
-		this.derrotas = derrotas;
-		this.golsSofridos = golSofrido;
-
-	}
-
 	// Getters and Setters
 
 	// TODO: comentar
@@ -107,7 +92,7 @@ public class TimeTabela implements Comparable<TimeTabela> {
 	}
 
 	public String[] getInformacoes() {
-		String[] informacoes = { nome, Integer.toString(pontos), Integer.toString(vitorias),
+		String[] informacoes = { Integer.toString(posicao), nome, Integer.toString(pontos), Integer.toString(vitorias),
 				Integer.toString(saldoGols), Integer.toString(empates), Integer.toString(derrotas) };
 		
 		return informacoes;
