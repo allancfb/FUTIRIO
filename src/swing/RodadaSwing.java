@@ -112,13 +112,10 @@ public class RodadaSwing extends JFrame {
 					telaTime.setVisible(true);
 					dispose();
 				} else {
-					// vai pra tela de campeão
-					/*
-					 Campeao campeao = new Campeao(primeiroColocadoNaTabela, campeonato);
+					 Campeao campeao = new Campeao(futirio.getCarioca().getCampeao(), futirio.getCarioca());
 					 campeao.setLocationRelativeTo(null); 
 					 campeao.setVisible(true); 
 					 dispose();
-					 */
 				}
 			}
 		});

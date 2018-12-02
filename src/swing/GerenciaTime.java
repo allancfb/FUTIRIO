@@ -154,14 +154,14 @@ public class GerenciaTime extends JFrame {
 		lblPrximoJogo.setForeground(Color.WHITE);
 		lblPrximoJogo.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblPrximoJogo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPrximoJogo.setBounds(498, 133, 120, 23);
+		lblPrximoJogo.setBounds(498, 154, 120, 23);
 		contentPane.add(lblPrximoJogo);
 
 		// Dados do Adversário
 		Time adversario = futirio.getTimeJogador().getAdversario((futirio.getCarioca().getIndexRodadaAtual() - 1));
 
 		JLabel escudoAdversario = new JLabel("");
-		escudoAdversario.setBounds(503, 201, 110, 110);
+		escudoAdversario.setBounds(503, 244, 110, 110);
 		Image escudoAdver = new ImageIcon(Main.carregarEscudo(adversario)).getImage();
 		escudoAdversario.setIcon(new ImageIcon(escudoAdver));
 		contentPane.add(escudoAdversario);
@@ -169,13 +169,13 @@ public class GerenciaTime extends JFrame {
 		JLabel nomeAdversario = new JLabel(adversario.getNome());
 		nomeAdversario.setForeground(Color.WHITE);
 		nomeAdversario.setHorizontalAlignment(SwingConstants.CENTER);
-		nomeAdversario.setBounds(498, 322, 120, 23);
+		nomeAdversario.setBounds(498, 365, 120, 23);
 		contentPane.add(nomeAdversario);
 
 		JLabel lblPosio = new JLabel("Posição: ");// +time.getposicao();
 		lblPosio.setForeground(Color.WHITE);
 		lblPosio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPosio.setBounds(498, 356, 120, 23);
+		lblPosio.setBounds(498, 399, 120, 23);
 		contentPane.add(lblPosio);
 		////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -183,7 +183,7 @@ public class GerenciaTime extends JFrame {
 		lblCampeonato.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblCampeonato.setForeground(Color.WHITE);
 		lblCampeonato.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCampeonato.setBounds(498, 167, 120, 23);
+		lblCampeonato.setBounds(498, 188, 120, 23);
 		contentPane.add(lblCampeonato);
 
 		JButton btnJogar = new JButton("Jogar");
@@ -196,7 +196,7 @@ public class GerenciaTime extends JFrame {
 
 			}
 		});
-		btnJogar.setBounds(503, 390, 110, 23);
+		btnJogar.setBounds(503, 433, 110, 23);
 		contentPane.add(btnJogar);
 
 		JButton btnTabela = new JButton("Tabela");
@@ -250,17 +250,27 @@ public class GerenciaTime extends JFrame {
 		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnNegociarJogador.setBounds(498, 59, 120, 23);
 		contentPane.add(btnNegociarJogador);
-
+		
+		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//salva o jogo
+			}
+		});
+		btnSalvar.setBounds(498, 99, 120, 23);
+		contentPane.add(btnSalvar);
+		
 		JLabel lblNewLabel = new JLabel("Posição: ");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(152, 94, 123, 27);
 		contentPane.add(lblNewLabel);
 
-		JLabel lblAno = new JLabel("Ano: " + futirio.getCarioca().getAno());
+		JLabel lblAno = new JLabel(futirio.getCarioca().getAno()+"");
+		lblAno.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAno.setForeground(Color.WHITE);
-		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblAno.setBounds(498, 96, 120, 27);
+		lblAno.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblAno.setBounds(498, 210, 120, 22);
 		contentPane.add(lblAno);
 
 		JLabel lblReservas = new JLabel("Reservas");
