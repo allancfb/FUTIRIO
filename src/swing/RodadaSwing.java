@@ -113,7 +113,7 @@ public class RodadaSwing extends JFrame {
 					dispose();
 				} else {
 					futirio.getCarioca().setCampeao(futirio.getCarioca().getTabela().get(0).getTime());
-					Campeao campeao = new Campeao(futirio.getCarioca().getCampeao(), futirio.getCarioca());
+					Campeao campeao = new Campeao(futirio);
 					campeao.setLocationRelativeTo(null);
 					campeao.setVisible(true);
 					dispose();
