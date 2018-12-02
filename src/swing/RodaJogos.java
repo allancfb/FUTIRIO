@@ -15,32 +15,31 @@ public class RodaJogos implements Runnable {
 	private JProgressBar progressBar;
 	private ArrayList<JLabel> golsA;
 	private ArrayList<JLabel> golsB;
-	
-	public RodaJogos(Rodada rodada,JLabel intTempo, JProgressBar progressBar, ArrayList<JLabel> golsA, ArrayList<JLabel> golsB) {
+	private RodadaSwing rodadaSwing;
+	private JButton continuar;
+	private OJogo futirio;
+
+	public RodaJogos(Rodada rodada, JLabel intTempo, JProgressBar progressBar, ArrayList<JLabel> golsA,
+			ArrayList<JLabel> golsB) {
 		this.rodada = rodada;
 		this.intTempo = intTempo;
 		this.progressBar = progressBar;
 		this.golsA = golsA;
 		this.golsB = golsB;
-		
 	}
-	
-	
-    public void run() {
-    	for (int i = 1; i <= 90; i++) {
-    		
-    		
+
+	public void run() {
+		for (int i = 1; i <= 90; i++) {
+
 			rodada.run();
 			intTempo.setText(Integer.toString(rodada.getMinuto()));
 			progressBar.setValue(rodada.getMinuto());
 
 			for (int j = 0; j < 8; j++) {
-				golsA.get(j)
-						.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime1Gols()));
-				golsB.get(j)
-						.setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime2Gols()));
+				golsA.get(j).setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime1Gols()));
+				golsB.get(j).setText(" " + Integer.toString(rodada.getPartidas().get(j).getTime2Gols()));
 			}
-
 		}
-    }
+	}
+
 }

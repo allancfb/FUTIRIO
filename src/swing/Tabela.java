@@ -40,8 +40,6 @@ public class Tabela extends JFrame {
 	 * Create the frame.
 	 */
 	public Tabela(OJogo futirio) {
-		futirio.getCarioca().organizaTabela();
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		setResizable(false);

@@ -37,6 +37,8 @@ public class GerenciaTime extends JFrame {
 	private JTable TabelaReservas;
 
 	public GerenciaTime(OJogo futirio) {
+		futirio.getCarioca().organizaTabela();
+		
 		setTitle(futirio.getTimeJogador().getNome() + " - " + futirio.getNomeTecnico());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 496);
