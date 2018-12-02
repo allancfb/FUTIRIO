@@ -112,10 +112,11 @@ public class RodadaSwing extends JFrame {
 					telaTime.setVisible(true);
 					dispose();
 				} else {
-					 Campeao campeao = new Campeao(futirio.getCarioca().getCampeao(), futirio.getCarioca());
-					 campeao.setLocationRelativeTo(null); 
-					 campeao.setVisible(true); 
-					 dispose();
+					futirio.getCarioca().setCampeao(futirio.getCarioca().getTabela().get(0).getTime());
+					Campeao campeao = new Campeao(futirio.getCarioca().getCampeao(), futirio.getCarioca());
+					campeao.setLocationRelativeTo(null);
+					campeao.setVisible(true);
+					dispose();
 				}
 			}
 		});
@@ -166,7 +167,7 @@ public class RodadaSwing extends JFrame {
 
 	public void terminarRodada(OJogo futirio) {
 		ArrayList<Partida> partidas = futirio.getCarioca().getRodadaAtual().getPartidas();
-		
+
 		for (Partida partida : partidas) {
 			TimeTabela time1 = partida.getTime1().getTimeTabela();
 			TimeTabela time2 = partida.getTime2().getTimeTabela();
@@ -181,13 +182,13 @@ public class RodadaSwing extends JFrame {
 				time1.addEmpate();
 				time2.addEmpate();
 			}
-			
+
 			time1.addQtGols(partida.getTime1Gols());
 			time1.addGolsSofridos(partida.getTime2Gols());
 			time2.addQtGols(partida.getTime2Gols());
 			time2.addGolsSofridos(partida.getTime1Gols());
 		}
-		
+
 		futirio.getCarioca().organizaTabela();
 	}
 }

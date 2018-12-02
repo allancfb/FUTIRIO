@@ -69,8 +69,6 @@ public class Tabela extends JFrame {
 		String[] colunas = { "Posição", "Time", "J", "Pontos", "V", "SG", "E", "D" };
 		String[][] times = futirio.getCarioca().getInformacoesTimesTabela();
 		
-		
-
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(52, 59, 480, 256);
 		contentPane.add(scrollPane);
