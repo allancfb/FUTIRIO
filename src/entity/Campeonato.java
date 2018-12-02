@@ -207,7 +207,7 @@ public class Campeonato {
 			TimeTabela timeTabela = new TimeTabela(Main.carregarTime(nomes[i]));
 			tabela.add(timeTabela);
 			timesJogos.add(Main.carregarTime(nomes[i]));
-			timeTabela.getTime().setTimeTabela(timeTabela);
+			timesJogos.get(timesJogos.size() - 1).setTimeTabela(timeTabela);
 		}
 	}
 }

@@ -170,7 +170,6 @@ public class RodadaSwing extends JFrame {
 		for (Partida partida : partidas) {
 			TimeTabela time1 = partida.getTime1().getTimeTabela();
 			TimeTabela time2 = partida.getTime2().getTimeTabela();
-			System.out.println(time2.getNome());
 
 			if (partida.getTime1Gols() > partida.getTime2Gols()) {
 				time1.addVitoria();

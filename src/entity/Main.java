@@ -186,6 +186,10 @@ public class Main {
 	public static void main(String args[]) {
 //		DESCOMENTAR A LINHA ABAIXO SE QUISER ATUALIZAR OS TIMES (NÃO ESQUECER DE COMENTAR NOVAMENTE APÓS RODAR)
 //		atualizarTimes();
+		
+//		Campeonato c = new Campeonato(2019);
+//		System.out.println(c.getTime(0).getNome());
+//		System.out.println(c.getTime(0).getTimeTabela());
 	}
 
 }

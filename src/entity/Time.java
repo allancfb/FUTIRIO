@@ -60,10 +60,6 @@ public class Time implements Serializable {
 		return timeTabela;
 	}
 
-	public void setTimeTabela(TimeTabela timeTabela) {
-		this.timeTabela = timeTabela;
-	}
-
 	// TODO: comentar
 	public double getSalarioTotal() {
 		return salarioTotal;
@@ -164,6 +160,10 @@ public class Time implements Serializable {
 	// TODO: comentar
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public void setTimeTabela(TimeTabela timeTabela) {
+		this.timeTabela = timeTabela;
 	}
 
 	// Métodos
