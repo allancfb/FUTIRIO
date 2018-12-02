@@ -52,7 +52,7 @@ public class Campeao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel nomeTime = new JLabel(futirio.getCarioca().getCampeao().getNome());
+		JLabel nomeTime = new JLabel(futirio.getCarioca().getCampeao().getNome().toUpperCase());
 		nomeTime.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		nomeTime.setForeground(Color.WHITE);
 		nomeTime.setHorizontalAlignment(SwingConstants.CENTER);
