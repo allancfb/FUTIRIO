@@ -202,6 +202,10 @@ public class Campeonato implements Serializable {
 
 	}
 
+	public void criarListaDeTransferencia() {
+		listaDeTransferencia = new ListaDeTransferencia();
+	}
+	
 	// TODO: comentar
 	private void adicionarTimes() {
 

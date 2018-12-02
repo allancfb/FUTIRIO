@@ -168,5 +168,6 @@ public class RodadaSwing extends JFrame {
 		}
 
 		futirio.getCarioca().organizaTabela();
+		futirio.getCarioca().criarListaDeTransferencia();
 	}
 }
