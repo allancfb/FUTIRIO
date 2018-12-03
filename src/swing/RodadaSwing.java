@@ -38,6 +38,7 @@ public class RodadaSwing extends JFrame {
 
 		Rodada rodada = futirio.getCarioca().getRodadaAtual();
 		PartidaSwing[] partidas = new PartidaSwing[8];
+		Time timeJogador = futirio.getCarioca().getTimes().get(futirio.getIndexTime());
 
 		for (int i = 0; i < 8; i++) {
 			int y = 60;
@@ -150,6 +151,26 @@ public class RodadaSwing extends JFrame {
 			TimeTabela time1 = partida.getTime1().getTimeTabela();
 			TimeTabela time2 = partida.getTime2().getTimeTabela();
 
+			if(futirio.getTimeJogador().getNome().equals(time1.getTime().getNome())) {
+				
+				if (partida.getTime1Gols() > partida.getTime2Gols()) {
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/2));
+				} else if (partida.getTime2Gols() > partida.getTime1Gols()) {
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/4));
+				} else {
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/3));
+				}
+				
+			}else if(futirio.getTimeJogador().getNome().equals(time2.getTime().getNome())) {
+				if (partida.getTime1Gols() > partida.getTime2Gols()) {
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/4));
+				} else if (partida.getTime2Gols() > partida.getTime1Gols()) {
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/2));
+				} else {
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/3));
+				}
+			}
+			
 			if (partida.getTime1Gols() > partida.getTime2Gols()) {
 				time1.addVitoria();
 				time2.addDerrota();

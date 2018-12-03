@@ -82,12 +82,14 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		JButton btnComprar = new JButton("Comprar");
 		btnComprar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				futirio.getTimeJogador().comprarJogador(
-						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
-				futirio.getCarioca().getListaDeTransferencia().enviarJogadorComprado(
-						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
+				if(futirio.getTimeJogador().comprarJogador(
+						futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()))) {
+					futirio.getCarioca().getListaDeTransferencia().enviarJogadorComprado(
+							futirio.getCarioca().getListaDeTransferencia().getJogadores().get(table.getSelectedRow()));
 
-				futirio.getCarioca().getListaDeTransferencia().atualizaLista();
+					futirio.getCarioca().getListaDeTransferencia().atualizaLista();
+				}
+				
 
 				String[] colunas = { "Posição", "Jogador", "Habilidade", "Salário", "Taxa de Contrato" };
 				String[][] jogadores = futirio.getCarioca().getListaDeTransferencia().getAllAtributosJogador();

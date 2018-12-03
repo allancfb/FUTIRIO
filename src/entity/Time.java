@@ -202,15 +202,24 @@ public class Time implements Serializable {
 	// DINHEIRO
 	// DO CONTRATO
 
-	public void comprarJogador(Jogador jogador) {
+	public void pagarSalarios() {
+		subtrairFundos(salarioTotal);
+	}
+	
+	public boolean comprarJogador(Jogador jogador) {
 		jogador.setPosicao(Posicao.DEFAULT);
 		jogadores.add(jogador);
-		this.subtrairFundos(jogador.getTxContrato());
+		if(jogador.getTxContrato()<=this.fundos) {
+			this.subtrairFundos(jogador.getTxContrato());
+			bancarExcesso();
+			atualizarHabilidadeGeral();
+			atualizarSalarioTotal();
+			atualizarTitulares();
+			return true;
+		}else {
+			return false;
+		}
 
-		bancarExcesso();
-		atualizarHabilidadeGeral();
-		atualizarSalarioTotal();
-		atualizarTitulares();
 	}
 
 	// TODO: COMENTAR AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n

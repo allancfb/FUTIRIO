@@ -38,6 +38,11 @@ public class GerenciaTime extends JFrame {
 
 	public GerenciaTime(OJogo futirio) {
 		futirio.getCarioca().organizaTabela();
+		
+		//de 4 em 4 rodadas ele paga o salário
+		if(futirio.getCarioca().getIndexRodadaAtual()%4==0) {
+			futirio.getCarioca().getTimes().get(futirio.getIndexTime()).pagarSalarios();
+		}
 
 		setTitle(futirio.getTimeJogador().getNome() + " - " + futirio.getNomeTecnico());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
