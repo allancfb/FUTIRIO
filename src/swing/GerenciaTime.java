@@ -67,15 +67,11 @@ public class GerenciaTime extends JFrame {
 		String[][] playersTitulares = futirio.getTimeJogador().getAtributosJogadoresTitulares();
 		String[][] playersReservas = futirio.getTimeJogador().getAtributosJogadoresReservas();
 
-		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
+		// ISSO DAQUI É PARA NÃO DEIXAR EDITAR A TABLE
 		boolean[] falsesTitulares = new boolean[playersTitulares.length];
 		for (int i = 0; i < playersTitulares.length; i++) {
 			falsesTitulares[i] = false;
 		}
-
-		// TabelaTitulares = new JTable(teste, colunas);
-
-		// SE FOR MEXER NO DESIGN TEM Q COMENTAR DAKI \/ E DESCOMENTAR O DE CIMA
 		// ======================================================================== //
 		TabelaTitulares = new JTable(playersTitulares, colunas);
 		TabelaTitulares.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -90,23 +86,18 @@ public class GerenciaTime extends JFrame {
 		TabelaTitulares.getColumnModel().getColumn(1).setResizable(false);
 		TabelaTitulares.getColumnModel().getColumn(2).setResizable(false);
 		// ======================================================================== //
-		// ATÉ AKI
 
 		scrollPane.setViewportView(TabelaTitulares);
 
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(260, 154, 228, 246);
 		contentPane.add(scrollPane_1);
-
-		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
+		
+		// ISSO DAQUI É PARA NÃO DEIXAR EDITAR A TABLE
 		boolean[] falsesReservas = new boolean[playersReservas.length];
 		for (int i = 0; i < playersReservas.length; i++) {
 			falsesReservas[i] = false;
 		}
-
-		// TabelaReservas = new JTable(teste, colunas);
-
-		// SE FOR MEXER NO DESIGN TEM Q COMENTAR DAKI \/ E DESCOMENTAR O DE CIMA
 		// ======================================================================== //
 		TabelaReservas = new JTable(playersReservas, colunas);
 		TabelaReservas.setModel(new DefaultTableModel(playersReservas, colunas) {
@@ -121,8 +112,6 @@ public class GerenciaTime extends JFrame {
 		TabelaReservas.getColumnModel().getColumn(2).setResizable(false);
 		TabelaReservas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		// ======================================================================== //
-		// ATÉ AKI
-
 		scrollPane_1.setViewportView(TabelaReservas);
 		// ==================================================================== //
 
@@ -193,7 +182,6 @@ public class GerenciaTime extends JFrame {
 				partida.setLocationRelativeTo(null);
 				partida.setVisible(true);
 				dispose();
-
 			}
 		});
 		btnJogar.setBounds(503, 433, 110, 23);
@@ -294,9 +282,6 @@ public class GerenciaTime extends JFrame {
 		bg.setIcon(new ImageIcon(GerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
 		bg.setBounds(0, 0, 628, 467);
 		contentPane.add(bg);
-
-		// TODO: Criar um botão que quando clicado, chama o método abaixo
-		// salvarJogo(campeonato);
 	}
 
 	public void atualizarTabelas(JTable TabelaTitulares, JTable TabelaReservas, OJogo futirio, JScrollPane scrollPane,
@@ -306,13 +291,13 @@ public class GerenciaTime extends JFrame {
 		String[][] playersTitulares = futirio.getTimeJogador().getAtributosJogadoresTitulares();
 		String[][] playersReservas = futirio.getTimeJogador().getAtributosJogadoresReservas();
 
-		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
+		// ISSO DAQUI É PARA NÃO DEIXAR EDITAR A TABLE
 		boolean[] falsesTitulares = new boolean[playersTitulares.length];
 		for (int i = 0; i < playersTitulares.length; i++) {
 			falsesTitulares[i] = false;
 		}
 
-		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
+		// ISSO DAQUI É PARA NÃO DEIXAR EDITAR A TABLE
 		boolean[] falsesReservas = new boolean[playersReservas.length];
 		for (int i = 0; i < playersReservas.length; i++) {
 			falsesReservas[i] = false;

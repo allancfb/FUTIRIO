@@ -66,10 +66,6 @@ public class Rodada implements Serializable {
 			tempo = Tempo.PRIMEIRO;
 			break;
 
-		// case 45:
-		// tempo = Tempo.INTERVALO;
-		// break;
-
 		case 46:
 			tempo = Tempo.SEGUNDO;
 			break;
@@ -77,22 +73,6 @@ public class Rodada implements Serializable {
 		case 90:
 			tempo = Tempo.FIM;
 			break;
-
-		// case 91:
-		// tempo = Tempo.PRORROGAÇÃO1;
-		// break;
-		//
-		// case 105:
-		// tempo = Tempo.INTERVALOPRORROGAÇÃO;
-		// break;
-		//
-		// case 106:
-		// tempo = Tempo.PRORROGAÇÃO2;
-		// break;
-		//
-		// case 120:
-		// tempo = Tempo.DEFAULT;
-		// break;
 
 		default:
 			break;

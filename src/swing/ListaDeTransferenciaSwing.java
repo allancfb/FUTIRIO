@@ -25,9 +25,6 @@ public class ListaDeTransferenciaSwing extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 
-	/**
-	 * Create the frame.
-	 */
 	public ListaDeTransferenciaSwing(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
@@ -68,7 +65,6 @@ public class ListaDeTransferenciaSwing extends JFrame {
 			falses[i] = false;
 		}
 
-		// table = new JTable();
 		table = new JTable(jogadores, colunas);
 		table.setModel(new DefaultTableModel(jogadores, colunas) {
 			boolean[] columnEditables = falses;
@@ -114,5 +110,4 @@ public class ListaDeTransferenciaSwing extends JFrame {
 		bg.setBounds(0, 0, 594, 370);
 		contentPane.add(bg);
 	}
-
 }

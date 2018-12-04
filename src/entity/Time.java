@@ -25,7 +25,6 @@ public class Time implements Serializable {
 
 	// Construtores
 
-	// TODO: comentar
 	public Time() {
 		adversarios = new ArrayList<Time>();
 		jogadores = new ArrayList<Jogador>();
@@ -35,7 +34,6 @@ public class Time implements Serializable {
 		gerarNomeTime();
 	}
 
-	// TODO: comentar
 	public Time(String nome) {
 		jogadores = new ArrayList<Jogador>();
 		jogadoresTitulares = new ArrayList<Jogador>();
@@ -47,7 +45,6 @@ public class Time implements Serializable {
 
 	// Getters and Setters
 
-	// TODO: comentar
 	public String getNome() {
 		return nome;
 	}
@@ -60,22 +57,18 @@ public class Time implements Serializable {
 		return timeTabela;
 	}
 
-	// TODO: comentar
 	public double getSalarioTotal() {
 		return salarioTotal;
 	}
 
-	// TODO: comentar
 	public double getFundos() {
 		return fundos;
 	}
 
-	// TODO: comentar
 	public ArrayList<Jogador> getJogadores() {
 		return jogadores;
 	}
 
-	// TODO: comentar
 	public double getHabilidadeGeral() {
 		atualizarHabilidadeGeral();
 
@@ -90,7 +83,6 @@ public class Time implements Serializable {
 		return jogadoresReservas;
 	}
 
-	// TODO: comentar
 	public Jogador getJogador(int i) {
 		return getJogadores().get(i);
 	}
@@ -157,7 +149,6 @@ public class Time implements Serializable {
 		this.escudo = escudo;
 	}
 
-	// TODO: comentar
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -168,12 +159,10 @@ public class Time implements Serializable {
 
 	// Métodos
 
-	// TODO: comentar
 	public void addFundos(double fundos) {
 		this.fundos += fundos;
 	}
 
-	// TODO: comentar
 	public void atualizarSalarioTotal() {
 		this.salarioTotal = 0;
 
@@ -183,24 +172,16 @@ public class Time implements Serializable {
 
 	}
 
-	// TODO: comentar
 	public void subtrairFundos(double fundos) {
 		this.fundos -= fundos;
 	}
 
-	// TODO: comentar
 	public void addJogador(Jogador jogador) {
 
 		jogadores.add(jogador);
 		atualizarSalarioTotal();
 
 	}
-
-	// TODO: comentar AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n
-	// sei
-	// fazer isso" ESSA PORRA AKI N TA PRONTA N!!! FALTA FAZER ELE GASTAR O
-	// DINHEIRO
-	// DO CONTRATO
 
 	public void pagarSalarios() {
 		subtrairFundos(salarioTotal);
@@ -222,9 +203,6 @@ public class Time implements Serializable {
 
 	}
 
-	// TODO: COMENTAR AND FAZER A INTERAÇAO COM A LISTA DE TRANFERENCIA JV - "n
-	// sei
-	// fazer isso"
 	public Jogador venderJogador(Jogador jogador) {
 		jogadores.remove(jogador);
 		addFundos(jogador.getTxContrato());
@@ -236,7 +214,6 @@ public class Time implements Serializable {
 		return jogador;
 	}
 
-	// TODO: comentar
 	public void gerarJogadores() {
 		// Gera jogadores para as posições
 		for (int i = 0; i < 2; i++) {
@@ -253,7 +230,6 @@ public class Time implements Serializable {
 		}
 	}
 
-	// TODO: comentar
 	public void bancarExcesso() {
 		int qtdGOL = 0, qtdDEFESA = 0, qtdMEIA = 0, qtdATAQUE = 0;
 
@@ -283,7 +259,6 @@ public class Time implements Serializable {
 		}
 	}
 
-	// TODO: comentar
 	public void criarBackup() {
 		try {
 			ObjectOutputStream objectOut = new ObjectOutputStream(
@@ -295,7 +270,6 @@ public class Time implements Serializable {
 		}
 	}
 
-	// TODO: comentar
 	private void gerarNomeTime() {
 		try {
 			Random random = new Random();
@@ -319,12 +293,10 @@ public class Time implements Serializable {
 		}
 	}
 
-	// TODO: comentar
 	public void atualizarHabilidadeGeral() { /*----------------------------------------------*/
 		habilidadeGeral = calcularHabilidadeGeral();
 	}
 
-	// TODO: comentar
 	private double calcularHabilidadeGeral() {
 		int somaMedia = 0;
 
@@ -337,7 +309,6 @@ public class Time implements Serializable {
 		return somaMedia / 11;
 	}
 
-	// TODO: comentar
 	public void substituicao(Jogador jogadorTroca1, Jogador jogadorTroca2) {
 		Posicao posicao = jogadorTroca2.getPosicao();
 		jogadorTroca2.setPosicao(jogadorTroca1.getPosicao());
@@ -346,7 +317,6 @@ public class Time implements Serializable {
 		atualizarTitulares();
 	}
 
-	// TODO: comentar
 	public void atualizarTitulares() { // seta os titulares e os reservas
 		jogadoresTitulares.clear();
 		jogadoresReservas.clear();

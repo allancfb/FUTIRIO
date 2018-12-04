@@ -13,7 +13,6 @@ import swing.OJogo;
 
 public class Main {
 
-	// TODO: comentar
 	public static void salvarTimeDeTXT(String nome, String urlTXT) {
 		try {
 			Time time = new Time(nome);
@@ -70,7 +69,6 @@ public class Main {
 		}
 	}
 
-	// TODO: comentar
 	public static void salvarTime(Time time) {
 		try {
 			ObjectOutputStream objectOut = new ObjectOutputStream(
@@ -82,7 +80,6 @@ public class Main {
 		}
 	}
 
-	// TODO: comentar
 	public static void gerarTimes() {
 		String[] nomes = { "America", "Bangu", "Boavista-RJ", "Bonsucesso", "Cabofriense", "Goytacaz", "Macaé",
 				"Madureira", "Nova Iguaçu", "Portuguesa-RJ", "Resende", "Volta Redonda" };
@@ -96,7 +93,6 @@ public class Main {
 		}
 	}
 
-	// TODO: comentar
 	public static void gerarTimesPrincipais() {
 		salvarTimeDeTXT("Botafogo", "src/times/Botafogo.txt");
 		salvarTimeDeTXT("Flamengo", "src/times/Flamengo.txt");
@@ -159,7 +155,6 @@ public class Main {
 		}
 	}
 
-	// TODO: comentar
 	public static Time carregarTime(String nome) {
 		try {
 			ObjectInputStream objectIn = new ObjectInputStream(
@@ -184,12 +179,7 @@ public class Main {
 	}
 
 	public static void main(String args[]) {
-//		DESCOMENTAR A LINHA ABAIXO SE QUISER ATUALIZAR OS TIMES (NÃO ESQUECER DE COMENTAR NOVAMENTE APÓS RODAR)
-//		atualizarTimes();
 		
-//		Campeonato c = new Campeonato(2019);
-//		System.out.println(c.getTime(0).getNome());
-//		System.out.println(c.getTime(0).getTimeTabela());
 	}
 
 }

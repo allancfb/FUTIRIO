@@ -15,8 +15,6 @@ public class Partida implements Serializable {
 	private int time2Gols;
 
 	// Construtor
-
-	// TODO: comentar
 	public Partida(Time time1, Time time2) {
 		setTime1(time1);
 		setTime2(time2);
@@ -26,17 +24,14 @@ public class Partida implements Serializable {
 
 	// Getters and Setters
 
-	// TODO: comentar
 	public Time getTime1() {
 		return time1;
 	}
 
-	// TODO: comentar
 	public Time getTime2() {
 		return time2;
 	}
 
-	// TODO: comentar
 	public String getPlacar() {
 		return placar;
 	}
@@ -49,27 +44,22 @@ public class Partida implements Serializable {
 		return time2Gols;
 	}
 
-	// TODO: comentar
 	public int getMinuto() {
 		return minuto;
 	}
 
-	// TODO: comentar
 	public Tempo getTempo() {
 		return tempo;
 	}
 
-	// TODO: comentar
 	private void setTime1(Time time1) {
 		this.time1 = time1;
 	}
 
-	// TODO: comentar
 	private void setTime2(Time time2) {
 		this.time2 = time2;
 	}
 
-	// TODO: comentar
 	private void atualizarPlacar() {
 		placar = time1.getNome() + " " + time1Gols + " x " + time2Gols + " " + time2.getNome();
 	}
@@ -115,10 +105,6 @@ public class Partida implements Serializable {
 			tempo = Tempo.PRIMEIRO;
 			break;
 
-//		case 45:
-//			tempo = Tempo.INTERVALO;
-//			break;
-
 		case 46:
 			tempo = Tempo.SEGUNDO;
 			break;
@@ -126,22 +112,6 @@ public class Partida implements Serializable {
 		case 90:
 			tempo = Tempo.FIM;
 			break;
-
-		case 91:
-//			tempo = Tempo.PRORROGAÇÃO1;
-//			break;
-//
-//		case 105:
-//			tempo = Tempo.INTERVALOPRORROGAÇÃO;
-//			break;
-//
-//		case 106:
-//			tempo = Tempo.PRORROGAÇÃO2;
-//			break;
-//
-//		case 120:
-//			tempo = Tempo.DEFAULT;
-//			break;
 
 		default:
 			break;

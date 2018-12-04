@@ -49,7 +49,6 @@ public class PartidaSwing {
 		placar.add(PartidaGolsB);
 		PartidaGolsB.setForeground(Color.WHITE);
 		PartidaGolsB.setFont(new Font("Tahoma", Font.PLAIN, 17));
-
 	}
 
 	public JPanel getTimeA() {

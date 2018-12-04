@@ -26,7 +26,6 @@ public class GerenciaTecnico extends JFrame {
 	public static int ano = 2019;
 	protected OJogo futirio;
 	// Criando o campeonato
-//	protected ;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

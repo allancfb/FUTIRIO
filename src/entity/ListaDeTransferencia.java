@@ -10,7 +10,6 @@ public class ListaDeTransferencia implements Serializable {
 
 	// CONSTRUTOR
 
-	// TODO: COMENTAR
 	public ListaDeTransferencia() {
 
 		Random random = new Random();
@@ -47,14 +46,12 @@ public class ListaDeTransferencia implements Serializable {
 
 	// GETTERS AND SETTERS
 
-	// TODO : COMENTAR
 	public ArrayList<Jogador> getJogadores() {
 		return jogadores;
 
 	}
 
 	// METODOS
-
 	public void atualizaLista() {
 
 		if (jogadores.size() < 25) {
@@ -111,7 +108,6 @@ public class ListaDeTransferencia implements Serializable {
 
 	}
 
-	// TODO: COMENTAR
 	public String[][] getAllAtributosJogador() {
 
 		String[][] retorno = new String[jogadores.size()][5];

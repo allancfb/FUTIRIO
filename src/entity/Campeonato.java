@@ -44,7 +44,6 @@ public class Campeonato implements Serializable {
 
 	// Getters and Setters
 
-	// TODO: comentar
 	public String getNome() {
 		return nome;
 	}
@@ -69,22 +68,18 @@ public class Campeonato implements Serializable {
 		return getRodadas()[getIndexRodadaAtual() - 1];
 	}
 
-	// TODO: comentar
 	public static int getRodadasTotais() {
 		return rodadasTotais;
 	}
 
-	// TODO: comentar
 	public static int getNumPartidasTotal() {
 		return numPartidasTotal;
 	}
 
-	// TODO: comentar
 	public int getIndexRodadaAtual() {
 		return rodadaAtual;
 	}
 
-	// TODO: comentar
 	public int getNumPartidasJogadas() {
 		return numPartidasJogadas;
 	}
@@ -93,23 +88,19 @@ public class Campeonato implements Serializable {
 		return listaDeTransferencia;
 	}
 
-	// TODO: comentar
 	public Time getCampeao() {
 		return Campeao;
 	}
 
-	// TODO: comentar POR ENQUANTO O TIME GANHA UM MILHAO QD GANHA O CAMPEONATO
 	public void setCampeao(Time campeao) {
 		Campeao = campeao;
 		campeao.addFundos(10000000);
 	}
 
-	// TODO: comentar
 	public ArrayList<TimeTabela> getTabela() {
 		return tabela;
 	}
 
-	// TODO: comentar
 	public int getAno() {
 		return ano;
 	}
@@ -126,14 +117,11 @@ public class Campeonato implements Serializable {
 	
 	// Métodos
 
-	// ////////////////////////////////////////////////////////////////////////
-
 	public Rodada getProximaRodada() {
 		return rodadas[rodadaAtual + 1];
 	}
 
 	public void gerarAdversarios() {
-
 		for (Rodada rodada : rodadas) {
 			for (Time time : times) {
 				for (Partida partida : rodada.getPartidas()) {
@@ -190,9 +178,7 @@ public class Campeonato implements Serializable {
 		timesJogos.add(auxiliarJogos.get(7));
 	}
 
-	// TODO: comentar
 	public void organizaTabela() {
-
 		TabelaComparator tabelaComparator = new TabelaComparator();
 		Collections.sort(tabela, tabelaComparator);
 		
@@ -206,9 +192,7 @@ public class Campeonato implements Serializable {
 		listaDeTransferencia = new ListaDeTransferencia();
 	}
 	
-	// TODO: comentar
 	private void adicionarTimes() {
-
 		String[] nomes = { "America", "Bangu", "Boavista-RJ", "Bonsucesso", "Botafogo", "Cabofriense", "Flamengo",
 				"Fluminense", "Goytacaz", "Macaé", "Madureira", "Nova Iguaçu", "Portuguesa-RJ", "Resende", "Vasco",
 				"Volta Redonda" };

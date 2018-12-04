@@ -149,7 +149,6 @@ public class Jogador implements Serializable {
 		return nome;
 	}
 
-	// TODO: COMENTAR
 	public double getTxContrato() {
 		return txContrato;
 	}
@@ -649,7 +648,6 @@ public class Jogador implements Serializable {
 			return Posicao.ATAQUE;
 	}
 
-	// TODO: comentar
 	private String gerarNome() {
 		Random random = new Random();
 		String nomes[] = new String[468];
@@ -696,7 +694,6 @@ public class Jogador implements Serializable {
 		return nome;
 	}
 
-	// TODO: comentar
 	private void gerarAtributos(Posicao posicao) {
 		Random random = new Random();
 
@@ -740,5 +737,4 @@ public class Jogador implements Serializable {
 			break;
 		}
 	}
-
 }

@@ -139,7 +139,6 @@ public class RodadaSwing extends JFrame {
 		bg.setIcon(new ImageIcon(RodadaSwing.class.getResource("/Imagens/fundoGrande.png")));
 		bg.setBounds(0, 0, 594, 370);
 		contentPane.add(bg);
-
 	}
 
 	public void terminarRodada(OJogo futirio) {
