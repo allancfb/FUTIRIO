@@ -118,7 +118,7 @@ public class ListaDeTransferencia implements Serializable {
 
 		for (int i = 0; i < jogadores.size(); i++) {
 			String[] aux = { this.jogadores.get(i).getPosicao().getNome(), jogadores.get(i).getNome(),
-					Double.toString(jogadores.get(i).getHabilidade()), Double.toString(jogadores.get(i).getSalario()),
+					Double.toString(jogadores.get(i).getHabilidade()),
 					Double.toString(jogadores.get(i).getTxContrato()) };
 			retorno[i] = aux;
 		}

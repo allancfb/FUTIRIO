@@ -205,7 +205,7 @@ public class Time implements Serializable {
 	public void pagarSalarios() {
 		subtrairFundos(salarioTotal);
 	}
-	
+
 	public boolean comprarJogador(Jogador jogador) {
 		jogador.setPosicao(Posicao.DEFAULT);
 		jogadores.add(jogador);

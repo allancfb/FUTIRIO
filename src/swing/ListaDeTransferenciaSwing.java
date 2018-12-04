@@ -92,7 +92,7 @@ public class ListaDeTransferenciaSwing extends JFrame {
 				}
 				
 
-				String[] colunas = { "Posição", "Jogador", "Habilidade", "Salário", "Taxa de Contrato" };
+				String[] colunas = { "Posição", "Jogador", "Habilidade", "Taxa de Contrato" };
 				String[][] jogadores = futirio.getCarioca().getListaDeTransferencia().getAllAtributosJogador();
 
 				table.setModel(new DefaultTableModel(jogadores, colunas) {
