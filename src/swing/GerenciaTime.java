@@ -67,7 +67,7 @@ public class GerenciaTime extends JFrame {
 		String[][] teste = { { "   ", "   e", "    " }, { "  o", "    ", "   " } };
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(21, 154, 207, 273);
+		scrollPane.setBounds(21, 154, 222, 246);
 		contentPane.add(scrollPane);
 		String[][] playersTitulares = futirio.getTimeJogador().getAtributosJogadoresTitulares();
 		String[][] playersReservas = futirio.getTimeJogador().getAtributosJogadoresReservas();
@@ -100,7 +100,7 @@ public class GerenciaTime extends JFrame {
 		scrollPane.setViewportView(TabelaTitulares);
 
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(281, 154, 207, 273);
+		scrollPane_1.setBounds(260, 154, 228, 246);
 		contentPane.add(scrollPane_1);
 
 		// ISSO DAKI É PARA NÃO DEIXAR EDITAR A TABLE
@@ -217,6 +217,7 @@ public class GerenciaTime extends JFrame {
 		contentPane.add(btnTabela);
 
 		JButton btnStatus = new JButton("Status dos jogadores");
+		btnStatus.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		btnStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				StatusJogadores telaStatus = new StatusJogadores(futirio);
@@ -236,9 +237,9 @@ public class GerenciaTime extends JFrame {
 				atualizarTabelas(TabelaTitulares, TabelaReservas, futirio, scrollPane, scrollPane_1);
 			}
 		});
-		btnSubstituir.setBounds(302, 433, 168, 23);
+		btnSubstituir.setBounds(166, 411, 168, 23);
 		contentPane.add(btnSubstituir);
-		btnStatus.setBounds(42, 433, 168, 23);
+		btnStatus.setBounds(498, 98, 120, 23);
 		contentPane.add(btnStatus);
 
 		JButton btnNegociarJogador = new JButton("Negociar Jogador");
@@ -253,15 +254,6 @@ public class GerenciaTime extends JFrame {
 		btnNegociarJogador.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnNegociarJogador.setBounds(498, 59, 120, 23);
 		contentPane.add(btnNegociarJogador);
-
-		JButton btnSalvar = new JButton("Salvar");
-		btnSalvar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				salvarJogo(futirio, futirio.getCarioca());
-			}
-		});
-		btnSalvar.setBounds(498, 99, 120, 23);
-		contentPane.add(btnSalvar);
 
 		JLabel lblNewLabel = new JLabel("Posição: " + futirio.getTimeJogador().getTimeTabela().getPosicao() + "º");
 		lblNewLabel.setForeground(Color.WHITE);
@@ -280,14 +272,14 @@ public class GerenciaTime extends JFrame {
 		lblReservas.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblReservas.setHorizontalAlignment(SwingConstants.CENTER);
 		lblReservas.setForeground(Color.WHITE);
-		lblReservas.setBounds(281, 130, 207, 22);
+		lblReservas.setBounds(260, 130, 228, 22);
 		contentPane.add(lblReservas);
 
 		JLabel labelTitulares = new JLabel("Titulares");
 		labelTitulares.setHorizontalAlignment(SwingConstants.CENTER);
 		labelTitulares.setForeground(Color.WHITE);
 		labelTitulares.setFont(new Font("Tahoma", Font.BOLD, 15));
-		labelTitulares.setBounds(21, 130, 207, 22);
+		labelTitulares.setBounds(21, 130, 222, 22);
 		contentPane.add(labelTitulares);
 
 		JLabel lblNewLabel_1 = new JLabel("Rodada: " + futirio.getCarioca().getIndexRodadaAtual());
@@ -296,6 +288,12 @@ public class GerenciaTime extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(503, 220, 115, 14);
 		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblselecioneUmJogador = new JLabel("(Selecione um jogador de cada tabela para fazer a substitui\u00E7\u00E3o)");
+		lblselecioneUmJogador.setHorizontalAlignment(SwingConstants.CENTER);
+		lblselecioneUmJogador.setForeground(Color.WHITE);
+		lblselecioneUmJogador.setBounds(21, 437, 467, 14);
+		contentPane.add(lblselecioneUmJogador);
 
 		JLabel bg = new JLabel("");
 		bg.setIcon(new ImageIcon(GerenciaTime.class.getResource("/Imagens/fundoGrande.png")));
@@ -340,27 +338,6 @@ public class GerenciaTime extends JFrame {
 				return columnEditables[column];
 			}
 		});
-	}
-
-	public void salvarJogo(OJogo oJogo, Campeonato carioca) {
-		try {
-			ObjectOutputStream objOut = new ObjectOutputStream(
-					new BufferedOutputStream(new FileOutputStream("src/saves/carioca")));
-			objOut.writeObject(carioca);
-			objOut.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		try {
-			ObjectOutputStream objOut = new ObjectOutputStream(
-					new BufferedOutputStream(new FileOutputStream("src/saves/futirio")));
-			objOut.writeObject(oJogo);
-			objOut.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	static void main(String[] args) {
