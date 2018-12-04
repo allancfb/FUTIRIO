@@ -31,6 +31,7 @@ public class ListaDeTransferenciaSwing extends JFrame {
 	public ListaDeTransferenciaSwing(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
+		setTitle("Lista de Transferência");
 		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

@@ -28,9 +28,6 @@ public class GerenciaTecnico extends JFrame {
 	// Criando o campeonato
 //	protected ;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,10 +40,6 @@ public class GerenciaTecnico extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
 
 	public GerenciaTecnico() {
 		futirio = new OJogo();

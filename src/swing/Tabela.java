@@ -43,6 +43,8 @@ public class Tabela extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		setResizable(false);
+		setTitle("Tabela do Carioca "+futirio.getCarioca().getAno());
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

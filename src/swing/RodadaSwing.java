@@ -35,7 +35,6 @@ public class RodadaSwing extends JFrame {
 	 * Create the frame.
 	 */
 	public RodadaSwing(OJogo futirio) {
-
 		Rodada rodada = futirio.getCarioca().getRodadaAtual();
 		PartidaSwing[] partidas = new PartidaSwing[8];
 		Time timeJogador = futirio.getCarioca().getTimes().get(futirio.getIndexTime());
@@ -49,6 +48,7 @@ public class RodadaSwing extends JFrame {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
+		setTitle("Rodada "+futirio.getCarioca().getIndexRodadaAtual());
 		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

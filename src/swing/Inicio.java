@@ -59,7 +59,7 @@ public class Inicio extends JFrame {
 				Inicio.this.dispose();
 			}
 		});
-		creditos.setBounds(233, 268, 133, 23);
+		creditos.setBounds(233, 234, 133, 23);
 		contentPane.add(creditos);
 
 		JButton sair = new JButton("Sair");
@@ -80,21 +80,7 @@ public class Inicio extends JFrame {
 		});
 		jogar.setBounds(233, 200, 133, 23);
 		contentPane.add(jogar);
-
-		JButton btnCarregarJogo = new JButton("Carregar Jogo");
-		btnCarregarJogo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				OJogo futirio = carregarJogo();
-				futirio.setCarioca(carregarCarioca());
-				GerenciaTime jogo = new GerenciaTime(futirio);
-				jogo.setLocationRelativeTo(null);
-				jogo.setVisible(true);
-				dispose();
-			}
-		});
-		btnCarregarJogo.setBounds(233, 234, 133, 23);
-		contentPane.add(btnCarregarJogo);
-		sair.setBounds(233, 302, 133, 23);
+		sair.setBounds(233, 268, 133, 23);
 		contentPane.add(sair);
 
 		JLabel background = new JLabel("New label");
