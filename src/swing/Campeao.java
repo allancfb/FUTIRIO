@@ -78,19 +78,14 @@ public class Campeao extends JFrame {
 		taca.setBounds(140, 133, 277, 210);
 		contentPane.add(taca);
 
-		JButton btnContinuar = new JButton("Continuar");
-		btnContinuar.addActionListener(new ActionListener() {
+		JButton btnTerminar = new JButton("Terminar");
+		btnTerminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-//				 Começa o campeonato do ano seguinte
-				futirio.createCarioca(futirio.getCarioca().getAno() + 1);
-				GerenciaTime jogo = new GerenciaTime(futirio);
-				jogo.setLocationRelativeTo(null);
-				jogo.setVisible(true);
 				dispose();
 			}
 		});
-		btnContinuar.setBounds(461, 349, 89, 23);
-		contentPane.add(btnContinuar);
+		btnTerminar.setBounds(461, 349, 89, 23);
+		contentPane.add(btnTerminar);
 
 		JLabel bg = new JLabel("");
 		bg.setIcon(new ImageIcon(Campeao.class.getResource("/Imagens/fundo.png")));
