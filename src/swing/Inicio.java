@@ -19,10 +19,7 @@ import entity.Campeonato;
 public class Inicio extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,9 +34,6 @@ public class Inicio extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Inicio() {
 		setTitle("FUTIRIO");
 		setResizable(false);
@@ -87,35 +81,5 @@ public class Inicio extends JFrame {
 		background.setIcon(new ImageIcon(Inicio.class.getResource("/Imagens/mainBG.png")));
 		background.setBounds(0, 0, 594, 370);
 		contentPane.add(background);
-	}
-
-	public OJogo carregarJogo() {
-		OJogo oJogo = new OJogo();
-
-		try {
-			ObjectInputStream objIn = new ObjectInputStream(
-					new BufferedInputStream(new FileInputStream("src/saves/futirio")));
-			oJogo = (OJogo) objIn.readObject();
-			objIn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return oJogo;
-	}
-	
-	public Campeonato carregarCarioca() {
-		Campeonato carioca = new Campeonato(0);
-
-		try {
-			ObjectInputStream objIn = new ObjectInputStream(
-					new BufferedInputStream(new FileInputStream("src/saves/carioca")));
-			carioca = (Campeonato) objIn.readObject();
-			objIn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return carioca;
 	}
 }
