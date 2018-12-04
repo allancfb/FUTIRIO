@@ -53,7 +53,7 @@ public class Rodada implements Serializable {
 
 		Thread.currentThread();
 		try {
-			Thread.sleep(10);
+			Thread.sleep(170);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
