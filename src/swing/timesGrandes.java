@@ -1,5 +1,9 @@
 package swing;
 
+/* 
+ * Esse enum ajuda a carregar os times jogaveis do jogo na tela de novo jogo
+ */
+
 public enum timesGrandes {
 	Botafogo(0, "Botafogo de Futebol e Regatas"), Flamengo(1, "Clube de Regatas do Flamengo"),
 	Fluminense(2, "Fluminense Football Club"), Vasco(3, "Clube de Regatas Vasco da Gama");

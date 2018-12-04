@@ -21,12 +21,8 @@ public class StatusJogadores extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 
-	/**
-	 * Launch the application.
-	 *
-	 * 
-	 * /** Create the frame.
-	 */
+//	tela que mostra todos os status dos jogadores do time
+	
 	public StatusJogadores(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
@@ -47,16 +43,17 @@ public class StatusJogadores extends JFrame {
 		scrollPane.setBounds(34, 73, 443, 259);
 		contentPane.add(scrollPane);
 
+		//elementos da tabela
 		String[] colunas = { "Posição", "Nome", "Habilidade", "Chute", "Passe", "Drible", "Desarme", "Defesa" };
 		String[][] jogadores = futirio.getTimeJogador().getAllAtributosJogador();
 
 		table = new JTable(jogadores, colunas);
-		// table = new JTable();
 		table.setEnabled(false);
 		table.setRowSelectionAllowed(false);
 		table.setShowVerticalLines(false);
 		scrollPane.setViewportView(table);
 
+		//Botão que volta para a gerencia de time
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

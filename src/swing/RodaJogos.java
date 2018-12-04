@@ -9,6 +9,8 @@ import javax.swing.JProgressBar;
 
 import entity.Rodada;
 
+// Thread que roda os jogos da rodada
+
 public class RodaJogos implements Runnable {
 	private Rodada rodada;
 	private JLabel intTempo;
@@ -19,6 +21,7 @@ public class RodaJogos implements Runnable {
 	private JButton continuar;
 	private OJogo futirio;
 
+	//Construtor
 	public RodaJogos(RodadaSwing rodadaSwing, Rodada rodada, JLabel intTempo, JProgressBar progressBar,
 			ArrayList<JLabel> golsA, ArrayList<JLabel> golsB, OJogo futirio, JButton continuar) {
 		this.rodada = rodada;
@@ -31,6 +34,7 @@ public class RodaJogos implements Runnable {
 		this.futirio = futirio;
 	}
 
+	//Roda a Partida em uma Thread 
 	public void run() {
 		for (int i = 1; i <= 90; i++) {
 

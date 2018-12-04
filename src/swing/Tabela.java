@@ -26,36 +26,27 @@ public class Tabela extends JFrame {
 	private final JLabel bg = new JLabel("");
 	private JTable table;
 
-	/**
-	 * Launch the application.
-	 */
-	/*
-	 * public static void main(String[] args) { EventQueue.invokeLater(new
-	 * Runnable() { public void run() { try { Tabela frame = new Tabela();
-	 * frame.setVisible(true); } catch (Exception e) { e.printStackTrace(); } } });
-	 * }
-	 */
+//	Tabela de posições do campeonato
 
-	/**
-	 * Create the frame.
-	 */
 	public Tabela(OJogo futirio) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 399);
 		setResizable(false);
-		setTitle("Tabela do Carioca "+futirio.getCarioca().getAno());
-		
+		setTitle("Tabela do Carioca " + futirio.getCarioca().getAno());
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		
+		//Titulo da tela
 		JLabel lblTabela = new JLabel("Tabela");
 		lblTabela.setForeground(Color.WHITE);
 		lblTabela.setFont(new Font("Tahoma", Font.PLAIN, 34));
 		lblTabela.setBounds(241, 11, 101, 41);
 		contentPane.add(lblTabela);
 
+		//Botão que volta para a gerencia de times
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -68,9 +59,10 @@ public class Tabela extends JFrame {
 		btnVoltar.setBounds(485, 326, 89, 23);
 		contentPane.add(btnVoltar);
 
+		//Elementos da Tabela
 		String[] colunas = { "Posição", "Time", "Pontos", "V", "SG", "E", "D" };
 		String[][] times = futirio.getCarioca().getInformacoesTimesTabela();
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(52, 59, 480, 256);
 		contentPane.add(scrollPane);
@@ -81,7 +73,7 @@ public class Tabela extends JFrame {
 		scrollPane.setViewportView(table);
 		table.setFillsViewportHeight(true);
 		table.setBorder(new LineBorder(new Color(0, 0, 0)));
-		
+
 		bg.setIcon(new ImageIcon(Tabela.class.getResource("/Imagens/fundoGrande.png")));
 		bg.setBounds(0, 0, 594, 370);
 		contentPane.add(bg);

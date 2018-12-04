@@ -23,17 +23,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+//Base do jogo que armazena todos os dados
+
 public class RodadaSwing extends JFrame {
 
 	private JPanel contentPane;
 	private final JLabel bg = new JLabel("");
-
-	/**
-	 * Launch the application.
-	 */
-	/**
-	 * Create the frame.
-	 */
+	
 	public RodadaSwing(OJogo futirio) {
 		Rodada rodada = futirio.getCarioca().getRodadaAtual();
 		PartidaSwing[] partidas = new PartidaSwing[8];
@@ -41,6 +37,8 @@ public class RodadaSwing extends JFrame {
 
 		for (int i = 0; i < 8; i++) {
 			int y = 60;
+			
+			//cria as labels de cada partida na interface grafica
 			partidas[i] = new PartidaSwing((y + (36 * i)), rodada.getPartidas().get(i).getTime1().getNome(),
 					rodada.getPartidas().get(i).getTime2().getNome());
 
@@ -154,20 +152,20 @@ public class RodadaSwing extends JFrame {
 			if(futirio.getTimeJogador().getNome().equals(time1.getTime().getNome())) {
 				
 				if (partida.getTime1Gols() > partida.getTime2Gols()) {
-					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/2));
-				} else if (partida.getTime2Gols() > partida.getTime1Gols()) {
 					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/4));
+				} else if (partida.getTime2Gols() > partida.getTime1Gols()) {
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/8));
 				} else {
-					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/3));
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/6));
 				}
 				
 			}else if(futirio.getTimeJogador().getNome().equals(time2.getTime().getNome())) {
 				if (partida.getTime1Gols() > partida.getTime2Gols()) {
-					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/4));
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/8));
 				} else if (partida.getTime2Gols() > partida.getTime1Gols()) {
-					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/2));
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/4));
 				} else {
-					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/3));
+					futirio.getCarioca().getTimes().get(futirio.getIndexTime()).addFundos((time1.getTime().getSalarioTotal()/6));
 				}
 			}
 			
